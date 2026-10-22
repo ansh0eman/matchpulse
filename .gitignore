@@ -1,0 +1,4 @@
+**/node_modules/
+upstream/
+poc/output/
+.DS_Store

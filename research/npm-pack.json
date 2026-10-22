@@ -1,0 +1,61 @@
+[
+  {
+    "id": "@bleckert/football-simulator@2.0.0",
+    "name": "@bleckert/football-simulator",
+    "version": "2.0.0",
+    "size": 107214,
+    "unpackedSize": 494522,
+    "shasum": "8a5dcad5ad7deb5056d0943f7ea59045f2a8807a",
+    "integrity": "sha512-Wvyr1DZz9Ut0dYoI9nSVsnY/tI0aqv5B9PaIM/LqsJkDCVDnZhSdne/TjXis8BnXvpmnvkLrLcaDHkrHp5nwMg==",
+    "filename": "bleckert-football-simulator-2.0.0.tgz",
+    "files": [
+      {
+        "path": "README.md",
+        "size": 2062,
+        "mode": 420
+      },
+      {
+        "path": "dist/index.d.ts",
+        "size": 29536,
+        "mode": 420
+      },
+      {
+        "path": "dist/index.js",
+        "size": 121671,
+        "mode": 420
+      },
+      {
+        "path": "dist/index.js.map",
+        "size": 310196,
+        "mode": 420
+      },
+      {
+        "path": "docs/api-reference.md",
+        "size": 9554,
+        "mode": 420
+      },
+      {
+        "path": "docs/examples.md",
+        "size": 7893,
+        "mode": 420
+      },
+      {
+        "path": "docs/README.md",
+        "size": 1856,
+        "mode": 420
+      },
+      {
+        "path": "docs/web-manager-integration.md",
+        "size": 9502,
+        "mode": 420
+      },
+      {
+        "path": "package.json",
+        "size": 2252,
+        "mode": 420
+      }
+    ],
+    "entryCount": 9,
+    "bundled": []
+  }
+]

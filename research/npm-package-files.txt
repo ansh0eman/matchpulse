@@ -1,0 +1,9 @@
+package/dist/index.js
+package/package.json
+package/dist/index.js.map
+package/docs/api-reference.md
+package/docs/examples.md
+package/docs/README.md
+package/README.md
+package/docs/web-manager-integration.md
+package/dist/index.d.ts

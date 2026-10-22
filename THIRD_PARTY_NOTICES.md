@@ -1,0 +1,37 @@
+# Third-party notices
+
+## football-simulator
+
+Author: Tobias Bleckert. Source: https://github.com/tbleckert/football-simulator
+Commit: 39529b19c40868d66aa47db084ebc9ea29c86e70; source manifest version 2.0.0.
+
+Used through direct TypeScript source imports in this research PoC. No upstream implementation modifications. Team/Player construction and injected random-function usage follow upstream public examples and tests. The event adapter, experiments, schema and evaluation reports are MatchPulse research work.
+
+MIT License
+
+Copyright (c) 2026 Tobias Bleckert
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+## PoC dependency notices
+
+Zod 4.1.12 is MIT; its installed full license is in poc/node_modules/zod/LICENSE.
+Runtime source imports use the upstream source's MIT grant above. The upstream package's declared events dependency is MIT. Development dependencies and transitive declared licenses are inventoried in research/dependency-licenses.json; their installed notice files are retained in their respective node_modules directories. If packaging this research for redistribution, include those applicable license/notice files, rather than relying only on this inventory.
+
+No third-party media or football datasets are used in generated matches. Other candidates were inspected as references only.

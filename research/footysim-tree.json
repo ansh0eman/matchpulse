@@ -1,0 +1,316 @@
+{
+  "commit": "5127557d6ca888a1611ec0c57fb95fe35a431986",
+  "sha": "5127557d6ca888a1611ec0c57fb95fe35a431986",
+  "url": "https://api.github.com/repos/Tobilion/footysim/git/trees/5127557d6ca888a1611ec0c57fb95fe35a431986",
+  "tree": [
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2360e83e226a35c98d14080d7727ff15793373f8",
+      "size": 60,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/2360e83e226a35c98d14080d7727ff15793373f8"
+    },
+    {
+      "path": "Play FootySim.bat",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d2bc472b32b2ca1f8453e80a983530cf2caac37",
+      "size": 1083,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/0d2bc472b32b2ca1f8453e80a983530cf2caac37"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "64f685d87176d1fa416e3f53657a2b8a704ccf9c",
+      "size": 7647,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/64f685d87176d1fa416e3f53657a2b8a704ccf9c"
+    },
+    {
+      "path": "console.config.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "55aeb8b238c33d29453de9341bcfbdc9533cf4ee",
+      "size": 746,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/55aeb8b238c33d29453de9341bcfbdc9533cf4ee"
+    },
+    {
+      "path": "example.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4fa26dfbedbaa9b4e5c20c36295817a07ceef308",
+      "size": 1635,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/4fa26dfbedbaa9b4e5c20c36295817a07ceef308"
+    },
+    {
+      "path": "example_match_output.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "be4008a5f3c13b7c893077a6de3688f2a8ce8311",
+      "size": 7541190,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/be4008a5f3c13b7c893077a6de3688f2a8ce8311"
+    },
+    {
+      "path": "example_teams.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "30c82789f52feef0efe01c46c64a5989266817ec",
+      "size": 18235,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/30c82789f52feef0efe01c46c64a5989266817ec"
+    },
+    {
+      "path": "footysim",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8037549630fda08f65f8e1690e6b49ea6e244655",
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/trees/8037549630fda08f65f8e1690e6b49ea6e244655"
+    },
+    {
+      "path": "footysim/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "footysim/__pycache__",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c3591fc2f78431ddd32c49ec4e8410f11bf6df1f",
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/trees/c3591fc2f78431ddd32c49ec4e8410f11bf6df1f"
+    },
+    {
+      "path": "footysim/__pycache__/__init__.cpython-310.pyc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "01e99c043a8f14053e67fe9b1152b6de62ffee92",
+      "size": 165,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/01e99c043a8f14053e67fe9b1152b6de62ffee92"
+    },
+    {
+      "path": "footysim/__pycache__/decisions.cpython-310.pyc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ed9477f0bb1940a15af5e1364a0a2c2f97704606",
+      "size": 8599,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/ed9477f0bb1940a15af5e1364a0a2c2f97704606"
+    },
+    {
+      "path": "footysim/__pycache__/engine.cpython-310.pyc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d941641ebfc26a83d31e87f1e05e7f1554a05cbd",
+      "size": 21796,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/d941641ebfc26a83d31e87f1e05e7f1554a05cbd"
+    },
+    {
+      "path": "footysim/__pycache__/entities.cpython-310.pyc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3f16454250f7fb88ce31ce3253e00b99494f46ca",
+      "size": 7116,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/3f16454250f7fb88ce31ce3253e00b99494f46ca"
+    },
+    {
+      "path": "footysim/__pycache__/modifiers.cpython-310.pyc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d306e2521e788efc9c9e7ea3495422b6ed9f4da",
+      "size": 3361,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/2d306e2521e788efc9c9e7ea3495422b6ed9f4da"
+    },
+    {
+      "path": "footysim/__pycache__/output.cpython-310.pyc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c163779887b51df2c7538ad51f7a2f28bd0f4a70",
+      "size": 5678,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/c163779887b51df2c7538ad51f7a2f28bd0f4a70"
+    },
+    {
+      "path": "footysim/__pycache__/physics.cpython-310.pyc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8de3f5a1fb214f27807c31560a5ef8fd2d4aa3af",
+      "size": 3444,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/8de3f5a1fb214f27807c31560a5ef8fd2d4aa3af"
+    },
+    {
+      "path": "footysim/__pycache__/pitch.cpython-310.pyc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d28b2d31d32f70f45a1b0bdbebd57dfb1122c6dd",
+      "size": 3661,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/d28b2d31d32f70f45a1b0bdbebd57dfb1122c6dd"
+    },
+    {
+      "path": "footysim/__pycache__/ratings.cpython-310.pyc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "79c5cb73f279902dd1b9800ae0410937c4854e12",
+      "size": 1628,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/79c5cb73f279902dd1b9800ae0410937c4854e12"
+    },
+    {
+      "path": "footysim/__pycache__/resolution.cpython-310.pyc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d842874955e9adeb3144d914b0400696889b4bc",
+      "size": 7669,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/2d842874955e9adeb3144d914b0400696889b4bc"
+    },
+    {
+      "path": "footysim/__pycache__/sim.cpython-310.pyc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "61fbeede32ee33f8396a8d50e2ec130217560f6b",
+      "size": 2557,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/61fbeede32ee33f8396a8d50e2ec130217560f6b"
+    },
+    {
+      "path": "footysim/__pycache__/tactics.cpython-310.pyc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f4db429400aa41becb97f94a0309659ac00352d2",
+      "size": 4019,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/f4db429400aa41becb97f94a0309659ac00352d2"
+    },
+    {
+      "path": "footysim/decisions.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "069a112b28003a7e4ec2dbe57be63be57bee8778",
+      "size": 7951,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/069a112b28003a7e4ec2dbe57be63be57bee8778"
+    },
+    {
+      "path": "footysim/engine.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "783613ee7bed4fe20051359a492f9dc43c50ca41",
+      "size": 28678,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/783613ee7bed4fe20051359a492f9dc43c50ca41"
+    },
+    {
+      "path": "footysim/entities.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb9ff7a3cb9bef34a0955e429a4d285ce250d892",
+      "size": 5383,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/fb9ff7a3cb9bef34a0955e429a4d285ce250d892"
+    },
+    {
+      "path": "footysim/modifiers.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "446e9218e7537ddfc915b36661f4520c4d774703",
+      "size": 3241,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/446e9218e7537ddfc915b36661f4520c4d774703"
+    },
+    {
+      "path": "footysim/output.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aef7dc39e38a5a948277afe8242130552499ca91",
+      "size": 4637,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/aef7dc39e38a5a948277afe8242130552499ca91"
+    },
+    {
+      "path": "footysim/physics.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8180a3fec4de02adba0b7189c97413a121eca850",
+      "size": 3566,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/8180a3fec4de02adba0b7189c97413a121eca850"
+    },
+    {
+      "path": "footysim/pitch.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "10166959165ecb47a661e5a8fb4cedc7c58a70fa",
+      "size": 2896,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/10166959165ecb47a661e5a8fb4cedc7c58a70fa"
+    },
+    {
+      "path": "footysim/ratings.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a37646bac3a10c1ab41ee0dc7b5de12202e9e40",
+      "size": 1204,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/9a37646bac3a10c1ab41ee0dc7b5de12202e9e40"
+    },
+    {
+      "path": "footysim/resolution.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d0eff59a27645b834073a10b88f72f0050c25f7",
+      "size": 9051,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/0d0eff59a27645b834073a10b88f72f0050c25f7"
+    },
+    {
+      "path": "footysim/sim.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8200cdbe089871b96114520d0c00cf62f74970e8",
+      "size": 2455,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/8200cdbe089871b96114520d0c00cf62f74970e8"
+    },
+    {
+      "path": "footysim/tactics.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0fa2e67e3419098d4ab97e8d0faa938c919c3d7c",
+      "size": 4514,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/0fa2e67e3419098d4ab97e8d0faa938c919c3d7c"
+    },
+    {
+      "path": "match_output.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "be4008a5f3c13b7c893077a6de3688f2a8ce8311",
+      "size": 7541190,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/be4008a5f3c13b7c893077a6de3688f2a8ce8311"
+    },
+    {
+      "path": "sportsim-engine-demo (2).jsx",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "451faed77e18b1abc70b972be133fc91cfdb4845",
+      "size": 24351,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/451faed77e18b1abc70b972be133fc91cfdb4845"
+    },
+    {
+      "path": "tests",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2ff7d482f205de0d3a62bbb62c4e3c8956647ded",
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/trees/2ff7d482f205de0d3a62bbb62c4e3c8956647ded"
+    },
+    {
+      "path": "tests/__pycache__",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "522bcf230d072cfda5779d26c4db1c3eace50557",
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/trees/522bcf230d072cfda5779d26c4db1c3eace50557"
+    },
+    {
+      "path": "tests/__pycache__/test_engine.cpython-310-pytest-9.1.1.pyc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ebd662dd52635e53e40534b906bcc8174984a1e7",
+      "size": 25635,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/ebd662dd52635e53e40534b906bcc8174984a1e7"
+    },
+    {
+      "path": "tests/test_engine.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "26902aa0a92e66310ed0c2d0bd3cbfb9c09eceec",
+      "size": 9120,
+      "url": "https://api.github.com/repos/Tobilion/footysim/git/blobs/26902aa0a92e66310ed0c2d0bd3cbfb9c09eceec"
+    }
+  ],
+  "truncated": false
+}

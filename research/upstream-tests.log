@@ -1,0 +1,72 @@
+
+> @bleckert/football-simulator@2.0.0 test
+> npm run test:pitch-geometry && npm run test:realtime && npm run test:calibration && npm run test:season
+
+
+> @bleckert/football-simulator@2.0.0 test:pitch-geometry
+> TS_NODE_PREFER_TS_EXTS=true node --loader ts-node/esm --experimental-specifier-resolution=node test/pitchGeometry.ts
+
+(node:60868) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("ts-node/esm", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+{ pitchBounds: [ 7, 7, 93, 93 ] }
+(node:60868) [DEP0180] DeprecationWarning: fs.Stats constructor is deprecated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+> @bleckert/football-simulator@2.0.0 test:realtime
+> TS_NODE_PREFER_TS_EXTS=true node --loader ts-node/esm --experimental-specifier-resolution=node test/realtime.ts
+
+(node:60915) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("ts-node/esm", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  snapshots: 481,
+  events: 151,
+  openPlayEvents: [
+    'pass',      'receive',
+    'challenge', 'pass',
+    'receive',   'pass',
+    'receive',   'challenge',
+    'pass',      'interception'
+  ],
+  score: { home: 0, away: 0 }
+}
+(node:60915) [DEP0180] DeprecationWarning: fs.Stats constructor is deprecated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+> @bleckert/football-simulator@2.0.0 test:calibration
+> TS_NODE_PREFER_TS_EXTS=true node --loader ts-node/esm --experimental-specifier-resolution=node test/calibration.ts
+
+(node:60955) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("ts-node/esm", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  passQualityGap: 0.277,
+  shotQualityGap: 0.255,
+  interceptionGap: 0.24,
+  fastSpeed: 6.8,
+  tiredSpeed: 3.74
+}
+(node:60955) [DEP0180] DeprecationWarning: fs.Stats constructor is deprecated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+> @bleckert/football-simulator@2.0.0 test:season
+> TS_NODE_PREFER_TS_EXTS=true node --loader ts-node/esm --experimental-specifier-resolution=node test/season.ts
+
+(node:60987) ExperimentalWarning: `--experimental-loader` may be removed in the future; instead use `register()`:
+--import 'data:text/javascript,import { register } from "node:module"; import { pathToFileURL } from "node:url"; register("ts-node/esm", pathToFileURL("./"));'
+(Use `node --trace-warnings ...` to show where the warning was created)
+{
+  matches: 6,
+  table: [ 'Direct City 5', 'Pass United 5', 'Press FC 3', 'Block Town 1' ],
+  metrics: {
+    goalsPerMatch: 1,
+    shotsPerMatch: 13.167,
+    yellowCardsPerMatch: 1.667,
+    redCardsPerMatch: 0,
+    injuriesPerMatch: 0.167,
+    homeWinShare: 0
+  }
+}
+(node:60987) [DEP0180] DeprecationWarning: fs.Stats constructor is deprecated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
