@@ -4,15 +4,15 @@ This is a **presentation quality gate**, not a new tactical-change detector. It 
 
 ## Exact flow
 
-\`\`\`text
+```text
 frozen PositionalDetector -> original positional EvidencePack [research, all alerts]
     -> independent raw-geometry and canonical-event verification
     -> observation recency + temporal-coverage checks
     -> deterministic, narrowly worded verified line claim OR suppression
     -> future Microsoft Foundry fact registry [not implemented]
-\`\`\`
+```
 
-Implemented in \`backend/src/matchpulse/tracking/presentation.py\`, exposed in \`tracking/cli.py\`.
+Implemented in `backend/src/matchpulse/tracking/presentation.py`, exposed in `tracking/cli.py`.
 
 ## Quality policy (initial, not benchmark-tuned)
 
@@ -35,14 +35,14 @@ It does **not** establish a coach's tactical instruction, objectively effective 
 
 ## CLI outputs
 
-Run the original documented command with \`--events\`, \`--config\`, \`--output backend/output/step25/demo.json\` and optionally \`--debug\`.
+Run the original documented command with `--events`, `--config`, `--output backend/output/step25/demo.json` and optionally `--debug`.
 
-- \`demo.json\`: **research-only**, all original EvidencePacks.
-- \`demo.facts.json\`: **research-only**, compact unscreened facts (legacy compatibility).
-- \`demo.presentation.json\`: all alert presentation decisions, reasons and observation freshness.
-- \`demo.broadcast.json\`: **only verified presentation-eligible claims**, safe to expose to an eventual fact registry.
+- `demo.json`: **research-only**, all original EvidencePacks.
+- `demo.facts.json`: **research-only**, compact unscreened facts (legacy compatibility).
+- `demo.presentation.json`: all alert presentation decisions, reasons and observation freshness.
+- `demo.broadcast.json`: **only verified presentation-eligible claims**, safe to expose to an eventual fact registry.
 
-The CLI distinguishes research alerts from eligible stories and reports each suppression reason in debug mode. Do not send \`demo.facts.json\` directly to an agent as verified live narration.
+The CLI distinguishes research alerts from eligible stories and reports each suppression reason in debug mode. Do not send `demo.facts.json` directly to an agent as verified live narration.
 
 ## Research freeze and next engineering step
 
