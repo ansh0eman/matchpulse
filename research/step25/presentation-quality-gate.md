@@ -17,7 +17,7 @@ Implemented in `backend/src/matchpulse/tracking/presentation.py`, exposed in `tr
 ## Quality policy (initial, not benchmark-tuned)
 
 - Evidence references must exist; no future frame may contribute.
-- Independently recompute the numerical geometry and fused event confirmation.
+- Independently recompute the numerical geometry and fused event facts. For fused episodes, also require the existing confirmation predicate (supported windows and direction-aligned location change >=3m OR high-share change >=0.05). Correctly recomputed zero-support or contrary evidence is not confirmation.
 - Enforce the **original detector's** minimum counts: 12 reference and 6 recent eligible frames under the selected configuration.
 - Latest contributing recent tracking observation must be at most **60 match-clock seconds** old at alert emission.
 - Recent eligible observations must span at least **30 seconds**, and reference observations at least **60 seconds**. These spans are conservative display checks, **not** proof of statistically independent samples.
@@ -51,3 +51,7 @@ Retain Step 2.5's source/config hashes, holdout metrics, and negative results. T
 **Next:** deterministic multi-event Match Story Engine -> verified facts registry -> Microsoft Foundry Tactical Analyst -> Broadcast Narrator -> numeric/claim grounding verifier with safe fallback -> playback dashboard.
 
 This gate is only one input to that future story registry. Goals, high-turnover-to-shot sequences and other match moments need their own explicit event definitions, independent tests and claim boundaries.
+
+## Completed PR reliability review
+
+The full local review now passes 71 Python tests, 10 TypeScript tests, type checking, and both documented fixtures through the real tracking CLI. Successful output retains one research alert and exports one verified broadcast claim; the known stale episode retains one research alert and exports no broadcast claim. Both research exports are byte-identical to the exact frozen CLI. See [commands, findings and limitations](presentation-pr1-review.md) and [machine-readable outcomes](presentation-review-results.json). This review does not evaluate accuracy on a new cohort.

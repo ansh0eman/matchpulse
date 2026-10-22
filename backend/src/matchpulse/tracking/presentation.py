@@ -112,6 +112,16 @@ def review_episode(
             event_ok = False
         if not event_ok:
             reasons.append('unverified_event_confirmation')
+        elif pack.detector.method == 'fused':
+            # Equality with recomputed counters is not proof that those counters
+            # confirm the episode. Enforce the existing frozen fusion predicate;
+            # this changes presentation eligibility only, never research alerts.
+            facts = pack.event_facts
+            sign = 1 if pack.direction == 'advance' else -1
+            if (facts['supported'] is not True or not (
+                    sign * facts['location_delta_m'] >= 3 or
+                    sign * facts['share_delta'] >= .05)):
+                reasons.append('unconfirmed_event_evidence')
 
     claim = None
     if not reasons:

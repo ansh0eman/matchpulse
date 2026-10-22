@@ -1,0 +1,244 @@
+{
+  "source_sha256": {
+    "backend/src/matchpulse/tracking/cli.py": "3a36a0846a3cce0fde9b53719b3df78b57394de7dd3b12dcedc3eaf38c75184c",
+    "backend/src/matchpulse/tracking/presentation.py": "053d15348476e023b516757a2de93a8290da76a94d2aa8389c99515c5c29581b",
+    "backend/tests/step25/test_presentation.py": "40ccc28b7e930b0f70df41999dd57cc31d613a8a7b82b660f0cf063460856e82",
+    "backend/tests/step25/test_presentation_cli.py": "d516b1264cd2c1fdfa8376b0befdc802aaaf1fced0be327e265d912b0ea2e1ae",
+    "backend/scripts/step25/review_presentation.py": "492330ce410a128f12f0e4ed2ff4313172ad013bd4e9093da0a187030901f4fc"
+  },
+  "new_canonical_prefixes": {
+    "research/step25/fixtures/success-event-prefix.jsonl.gz": {
+      "uncompressed_sha256": "0a3572702118dbe8e9cd13cc70f1b9d5f477e8f91512794195d79522c294acc2",
+      "events": 3983
+    },
+    "research/step25/fixtures/false_alert-event-prefix.jsonl.gz": {
+      "uncompressed_sha256": "6589ad53ccb34a4eaeb7f7b70e0c5a90862f422df005c6267cf3ec15348b433e",
+      "events": 1529
+    }
+  },
+  "reviewed_at_utc": "2026-10-22T21:13:17.286819+00:00",
+  "pr": 1,
+  "branch": "feat/presentation-quality-gate",
+  "frozen_base_commit": "759aa226b508df2a69bbe7c5522b3743d812bd4c",
+  "frozen_sha256": "6b8f4682ec3e8c4b966c8821fd006a89b14746dca49667cbbafbf296d7c8ec24",
+  "unchanged_frozen_inputs": [
+    "backend/src/matchpulse/tracking/__init__.py",
+    "backend/src/matchpulse/tracking/detector.py",
+    "backend/src/matchpulse/tracking/evidence.py",
+    "backend/src/matchpulse/tracking/features.py",
+    "backend/src/matchpulse/tracking/ingestion.py",
+    "backend/src/matchpulse/tracking/replay.py",
+    "backend/src/matchpulse/tracking/schemas.py",
+    "backend/src/matchpulse/tracking/windows.py",
+    "backend/scripts/step25/compare.py",
+    "backend/scripts/step25/common.py",
+    "backend/uv.lock",
+    "backend/src/matchpulse/evaluation.py",
+    "backend/src/matchpulse/replay.py",
+    "backend/src/matchpulse/signals.py",
+    "backend/src/matchpulse/schemas.py",
+    "backend/src/matchpulse/ingestion.py",
+    "backend/src/matchpulse/detectors/rolling.py",
+    "backend/config/selected.json",
+    "poc/src/simulation.ts",
+    "poc/src/tracking/schema.ts",
+    "poc/src/tracking/generate.ts"
+  ],
+  "historical_evaluation_artifacts_unchanged": true,
+  "commands": [
+    {
+      "name": "pytest",
+      "argv": [
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/.venv/bin/python",
+        "-m",
+        "pytest",
+        "backend/tests",
+        "-q"
+      ],
+      "cwd": "/Users/ansh0eman/Documents/Projects/inside the game - microsoft",
+      "exit_code": 0,
+      "seconds": 2.4376482919906266
+    },
+    {
+      "name": "typescript-tests",
+      "argv": [
+        "/Users/ansh0eman/.nvm/versions/node/v24.19.0/bin/node",
+        "--import",
+        "tsx",
+        "--test",
+        "tests/artifacts.test.ts",
+        "tests/simulation.test.ts",
+        "tests/tracking.test.ts"
+      ],
+      "cwd": "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/poc",
+      "exit_code": 0,
+      "seconds": 9.664037499998813
+    },
+    {
+      "name": "typecheck",
+      "argv": [
+        "/Users/ansh0eman/.nvm/versions/node/v24.19.0/bin/node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "cwd": "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/poc",
+      "exit_code": 0,
+      "seconds": 0.49799820900079794
+    },
+    {
+      "name": "cli-success",
+      "argv": [
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/.venv/bin/python",
+        "-m",
+        "matchpulse.tracking.cli",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/data/step25/inference/f2a3e267-d3e5-4c90-ae07-b5a39607ab2d.tracking.jsonl.gz",
+        "--events",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/data/step25/inference/f2a3e267-d3e5-4c90-ae07-b5a39607ab2d.jsonl",
+        "--config",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/research/step25/artifacts/selected.json",
+        "--debug",
+        "--output",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/output/step25/pr1-review/success.json"
+      ],
+      "cwd": "/Users/ansh0eman/Documents/Projects/inside the game - microsoft",
+      "exit_code": 0,
+      "seconds": 0.6845463329955237
+    },
+    {
+      "name": "frozen-cli-success",
+      "argv": [
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/.venv/bin/python",
+        "-c",
+        "import sys; p=sys.argv.pop(1); sys.argv[0]=p; exec(compile(open(p).read(),p,'exec'), {'__name__':'__main__','__package__':'matchpulse.tracking','__file__':p})",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/output/step25/pr1-review/frozen_cli.py",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/data/step25/inference/f2a3e267-d3e5-4c90-ae07-b5a39607ab2d.tracking.jsonl.gz",
+        "--events",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/data/step25/inference/f2a3e267-d3e5-4c90-ae07-b5a39607ab2d.jsonl",
+        "--config",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/research/step25/artifacts/selected.json",
+        "--debug",
+        "--output",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/output/step25/pr1-review/success-frozen.json"
+      ],
+      "cwd": "/Users/ansh0eman/Documents/Projects/inside the game - microsoft",
+      "exit_code": 0,
+      "seconds": 0.6082772920053685
+    },
+    {
+      "name": "cli-stale",
+      "argv": [
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/.venv/bin/python",
+        "-m",
+        "matchpulse.tracking.cli",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/data/step25/inference/31c70a92-4ce1-4ec2-a570-e8112bfcc5fc.tracking.jsonl.gz",
+        "--events",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/data/step25/inference/31c70a92-4ce1-4ec2-a570-e8112bfcc5fc.jsonl",
+        "--config",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/research/step25/artifacts/selected.json",
+        "--debug",
+        "--output",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/output/step25/pr1-review/stale.json"
+      ],
+      "cwd": "/Users/ansh0eman/Documents/Projects/inside the game - microsoft",
+      "exit_code": 0,
+      "seconds": 0.6366272500017658
+    },
+    {
+      "name": "frozen-cli-stale",
+      "argv": [
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/.venv/bin/python",
+        "-c",
+        "import sys; p=sys.argv.pop(1); sys.argv[0]=p; exec(compile(open(p).read(),p,'exec'), {'__name__':'__main__','__package__':'matchpulse.tracking','__file__':p})",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/output/step25/pr1-review/frozen_cli.py",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/data/step25/inference/31c70a92-4ce1-4ec2-a570-e8112bfcc5fc.tracking.jsonl.gz",
+        "--events",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/data/step25/inference/31c70a92-4ce1-4ec2-a570-e8112bfcc5fc.jsonl",
+        "--config",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/research/step25/artifacts/selected.json",
+        "--debug",
+        "--output",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/output/step25/pr1-review/stale-frozen.json"
+      ],
+      "cwd": "/Users/ansh0eman/Documents/Projects/inside the game - microsoft",
+      "exit_code": 0,
+      "seconds": 0.587931333007873
+    }
+  ],
+  "cases": [
+    {
+      "case": "success",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "research_alerts": 1,
+      "broadcast_claims": 1,
+      "research_export_byte_equal_to_frozen_cli": true,
+      "research_facts_byte_equal_to_frozen_cli": true,
+      "decisions": [
+        {
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "detection_id": "pos_37f092a17bccf2579bc6",
+          "detected_at_seconds": 3360.0,
+          "status": "eligible",
+          "reasons": [],
+          "latest_recent_seconds": 3360.0,
+          "recent_age_seconds": 0.0,
+          "recent_span_seconds": 64.0,
+          "reference_span_seconds": 382.0,
+          "claim": {
+            "claim_id": "pos_37f092a17bccf2579bc6:line3",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "detection_id": "pos_37f092a17bccf2579bc6",
+            "as_of_seconds": 3360.0,
+            "latest_observation_seconds": 3360.0,
+            "team_id": "NORTH",
+            "direction": "advance",
+            "metric": "three_deepest_outfield_mean_x",
+            "before_m": 21.951300813008128,
+            "after_m": 31.96388888888889,
+            "change_m": 10.01258807588076,
+            "unit": "m",
+            "reference_window": [
+              2710.0,
+              3180.0
+            ],
+            "recent_window": [
+              3180.0,
+              3360.0
+            ],
+            "reference_frames": 41,
+            "recent_frames": 18,
+            "statement": "During sampled opponent build-up, NORTH's three deepest outfield players averaged 22.0m and then 32.0m from their own goal: they advanced by 10.0m between the compared observations.",
+            "qualification": "Observed synthetic positioning only; not evidence that the coach ordered a tactic or that pressure was effective."
+          }
+        }
+      ],
+      "independent_line_arithmetic_passed": true
+    },
+    {
+      "case": "stale",
+      "match_id": "31c70a92-4ce1-4ec2-a570-e8112bfcc5fc",
+      "research_alerts": 1,
+      "broadcast_claims": 0,
+      "research_export_byte_equal_to_frozen_cli": true,
+      "research_facts_byte_equal_to_frozen_cli": true,
+      "decisions": [
+        {
+          "match_id": "31c70a92-4ce1-4ec2-a570-e8112bfcc5fc",
+          "detection_id": "pos_5ea68083df2dfcd6f59a",
+          "detected_at_seconds": 1350.0,
+          "status": "suppressed",
+          "reasons": [
+            "stale_recent_evidence",
+            "insufficient_recent_time_coverage"
+          ],
+          "latest_recent_seconds": 1218.0,
+          "recent_age_seconds": 132.0,
+          "recent_span_seconds": 13.0,
+          "reference_span_seconds": 892.0,
+          "claim": null
+        }
+      ],
+      "independent_line_arithmetic_passed": false
+    }
+  ],
+  "scope": "Reliability checks on documented fixtures only; no accuracy retuning, rescoring, or new calibration."
+}
