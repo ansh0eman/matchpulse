@@ -1,0 +1,121 @@
+[
+  {
+    "case": "demo",
+    "claim_id": "5cc7f774-c215-4773-9318-3a01ad8b23af:claim:c1da52905fe4b3017687abec",
+    "episode_id": "episode-001",
+    "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af"
+  },
+  {
+    "case": "demo",
+    "claim_id": "5cc7f774-c215-4773-9318-3a01ad8b23af:claim:d4a774adea6012f8ff4ad6b3",
+    "episode_id": "episode-002",
+    "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af"
+  },
+  {
+    "case": "demo",
+    "claim_id": "5cc7f774-c215-4773-9318-3a01ad8b23af:claim:cdbee60d017684cbadcd070f",
+    "episode_id": "episode-003",
+    "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af"
+  },
+  {
+    "case": "demo",
+    "claim_id": "5cc7f774-c215-4773-9318-3a01ad8b23af:claim:d3dcb6968592b8e160dd7eab",
+    "episode_id": "episode-004",
+    "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af"
+  },
+  {
+    "case": "fresh",
+    "claim_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d:claim:c086715e25da3e69cd02d890",
+    "episode_id": "episode-005",
+    "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d"
+  },
+  {
+    "case": "fresh",
+    "claim_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d:claim:37580d987e8d4f4905692405",
+    "episode_id": "episode-006",
+    "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d"
+  },
+  {
+    "case": "fresh",
+    "claim_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d:claim:7baa7569d0122e20e42135d2",
+    "episode_id": "episode-007",
+    "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d"
+  },
+  {
+    "case": "fresh",
+    "claim_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d:claim:2f622965bccbeaf9dd0f7d2f",
+    "episode_id": "episode-008",
+    "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d"
+  },
+  {
+    "case": "fresh",
+    "claim_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d:claim:658e2cff3976481744979ab9",
+    "episode_id": "episode-009",
+    "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d"
+  },
+  {
+    "case": "stale",
+    "claim_id": "31c70a92-4ce1-4ec2-a570-e8112bfcc5fc:claim:745dceb1b09adc59de73240a",
+    "episode_id": "episode-010",
+    "match_id": "31c70a92-4ce1-4ec2-a570-e8112bfcc5fc"
+  },
+  {
+    "case": "stale",
+    "claim_id": "31c70a92-4ce1-4ec2-a570-e8112bfcc5fc:claim:e5ab93e67eff0bfbac190799",
+    "episode_id": "episode-011",
+    "match_id": "31c70a92-4ce1-4ec2-a570-e8112bfcc5fc"
+  },
+  {
+    "case": "stale",
+    "claim_id": "31c70a92-4ce1-4ec2-a570-e8112bfcc5fc:claim:a5712031e7a6a88d36db4049",
+    "episode_id": "episode-012",
+    "match_id": "31c70a92-4ce1-4ec2-a570-e8112bfcc5fc"
+  },
+  {
+    "case": "stale",
+    "claim_id": "31c70a92-4ce1-4ec2-a570-e8112bfcc5fc:claim:dd0867022dfa8ef0848d21a8",
+    "episode_id": "episode-013",
+    "match_id": "31c70a92-4ce1-4ec2-a570-e8112bfcc5fc"
+  },
+  {
+    "case": "stale",
+    "claim_id": "31c70a92-4ce1-4ec2-a570-e8112bfcc5fc:claim:8057c6a938491f3771ac7dca",
+    "episode_id": "episode-014",
+    "match_id": "31c70a92-4ce1-4ec2-a570-e8112bfcc5fc"
+  },
+  {
+    "case": "stale",
+    "episode_id": "episode-015",
+    "match_id": "31c70a92-4ce1-4ec2-a570-e8112bfcc5fc"
+  },
+  {
+    "case": "goal",
+    "claim_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77",
+    "episode_id": "episode-016",
+    "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d"
+  },
+  {
+    "case": "goal",
+    "claim_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:1af75b83ba089575ae6f6581",
+    "episode_id": "episode-017",
+    "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d"
+  },
+  {
+    "case": "goal",
+    "claim_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:5611d082b8254e43cafd1e6e",
+    "episode_id": "episode-018",
+    "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d"
+  },
+  {
+    "case": "goal",
+    "claim_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:4fae425ff9090f6c35d7e547",
+    "episode_id": "episode-019",
+    "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d"
+  },
+  {
+    "case": "goal",
+    "claim_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:d46c6be62df970ece891a55f",
+    "episode_id": "episode-020",
+    "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d"
+  }
+]

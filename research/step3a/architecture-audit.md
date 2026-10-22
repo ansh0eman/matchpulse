@@ -1,0 +1,13 @@
+# Step 3A architecture audit and implementation plan
+
+Starting checkout: clean `feat/presentation-quality-gate`, e229456. Supplied merged commit efd741d8b47b5e7bc7137c5b34f069ed2cfe6a5c confirmed through GitHub read API but not present locally. Work continues on reviewed local implementation without changing Git history or publishing.
+
+Reuse canonical StrictModel, CanonicalEvent, MatchIdentity and load_match/validate_stream; TrackingFrame/load_frames, comparisons_from_frames/detect/make_pack and review_episode. Existing SignalState is a research recovery-counter engine, not a genuine turnover tracker; keep it unchanged. Existing tracking windows condition geometry on observed context and the selected detector is frozen fused7m. Presentation separately verifies geometry, event confirmation, freshness and support. Existing evidence and research CLI remain intact.
+
+Missing: match-story contracts, typed claims, registry/verifier, event state, possession transition logic, scheduler, chronological exports and agent envelopes. Add these only under stories/; add tests/stories, scripts/step3a_review.py, research/step3a documents/artifacts; update README and AGENTS. No dependency changes.
+
+Data limitations: events have no match field (identity is the UUID file namespace), explicit shot ID, pass endpoint, calibrated xG, reliable possession-time denominator or active roster. Possession changes on registerTouch, including some loose-ball/shot-block touches. Require explicit gain actions and adjacent opposing possession evidence for turnovers. Restrict outcome linkage to one outstanding shot with matching shooter identity and period; do not infer assists. Goals use immediate score transition; penalties may have no shot. Period changes follow actual events, not 2700 seconds.
+
+Boundaries: inference reads no manifest/evaluation/hidden controls; raw research packs never enter narration. New positional claims require a fresh review_episode on original pack/observations. Keep all original detector sources, configs, holdout results and fingerprints unchanged. Runtime full source indexes are linear in observations for evidence resolution; rolling state is bounded by time, exports are append-only and necessarily grow.
+
+Verified initial local HEAD tree equals supplied merged tree da17755c179c69aca9f69610b2bd6a94eb112e2a via GitHub commit metadata and git rev-parse HEAD^{tree}; source contents therefore match the merge despite different commit history. Added poc/src/stories-demo.ts as an isolated reproducible date-seed demo driver; existing simulator/adapter remain unchanged. .gitignore adds only new full story exports.

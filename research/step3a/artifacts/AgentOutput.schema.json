@@ -1,0 +1,40 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "insight_id": {
+      "title": "Insight Id",
+      "type": "string"
+    },
+    "match_id": {
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+      "title": "Match Id",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "selected_claim_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Selected Claim Ids",
+      "type": "array"
+    },
+    "template": {
+      "const": "deterministic_fallback",
+      "default": "deterministic_fallback",
+      "title": "Template",
+      "type": "string"
+    }
+  },
+  "required": [
+    "match_id",
+    "insight_id",
+    "selected_claim_ids"
+  ],
+  "title": "AgentOutput",
+  "type": "object"
+}
