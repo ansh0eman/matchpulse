@@ -1,0 +1,14 @@
+{
+  "split": "development",
+  "counts": {
+    "primary_alerts": 299,
+    "alerts_within_120s_of_goal": 5,
+    "alerts_within_300s_of_halftime": 25,
+    "within_300s_before_halftime": 25,
+    "within_300s_after_halftime": 0,
+    "wrong_team": 106,
+    "early": 112,
+    "null_alerts": 59
+  },
+  "warning": "Categories overlap; proximity to goals is not a causal explanation; old period support can structurally exclude near-half alerts."
+}

@@ -4,3 +4,7 @@ upstream/
 backend/.venv/
 **/__pycache__/
 .pytest_cache/
+data/step25/
+backend/output/step25/
+research/step25/artifacts/*.log
+research/step25/artifacts/*-detail.json

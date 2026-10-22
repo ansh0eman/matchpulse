@@ -1,0 +1,14 @@
+{
+  "python": "3.12.13 (main, Mar 25 2026, 03:16:06) [Clang 22.1.1 ]",
+  "platform": "macOS-26.6.1-arm64-arm-64bit",
+  "libraries": {
+    "pydantic": "2.12.3",
+    "river": "0.22.0",
+    "pytest": "8.4.2",
+    "matplotlib": "3.10.7",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  },
+  "uv_lock_sha256": "7638eae5e1a6469e46d02256d100f3e219f90a3ab59a5000d6d54eec10203003",
+  "node": "24.19.0 (explicit absolute runtime; default Node26 was not used for successful tests/generation)"
+}

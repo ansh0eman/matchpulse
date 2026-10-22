@@ -1,0 +1,212 @@
+{
+  "selected": {
+    "method": "fused",
+    "reference_seconds": 1200,
+    "recent_seconds": 180,
+    "cadence_seconds": 30,
+    "min_recent": 6,
+    "min_reference": 12,
+    "line_threshold_m": 7.0,
+    "persistence": 2,
+    "cooldown_seconds": 900,
+    "cusum_threshold": 12.0,
+    "model_threshold": 0.5,
+    "model_id": null
+  },
+  "finalists": {
+    "event_baseline": {
+      "method": "event_baseline"
+    },
+    "unconditioned": {
+      "method": "unconditioned",
+      "reference_seconds": 1200,
+      "recent_seconds": 180,
+      "cadence_seconds": 30,
+      "min_recent": 6,
+      "min_reference": 12,
+      "line_threshold_m": 7.0,
+      "persistence": 2,
+      "cooldown_seconds": 900,
+      "cusum_threshold": 12.0,
+      "model_threshold": 0.5,
+      "model_id": null
+    },
+    "conditioned": {
+      "method": "conditioned",
+      "reference_seconds": 1200,
+      "recent_seconds": 180,
+      "cadence_seconds": 30,
+      "min_recent": 6,
+      "min_reference": 12,
+      "line_threshold_m": 7.0,
+      "persistence": 2,
+      "cooldown_seconds": 900,
+      "cusum_threshold": 12.0,
+      "model_threshold": 0.5,
+      "model_id": null
+    },
+    "fused": {
+      "method": "fused",
+      "reference_seconds": 1200,
+      "recent_seconds": 180,
+      "cadence_seconds": 30,
+      "min_recent": 6,
+      "min_reference": 12,
+      "line_threshold_m": 7.0,
+      "persistence": 2,
+      "cooldown_seconds": 900,
+      "cusum_threshold": 12.0,
+      "model_threshold": 0.5,
+      "model_id": null
+    },
+    "cusum": {
+      "method": "cusum",
+      "reference_seconds": 1200,
+      "recent_seconds": 180,
+      "cadence_seconds": 30,
+      "min_recent": 6,
+      "min_reference": 12,
+      "line_threshold_m": 2.5,
+      "persistence": 2,
+      "cooldown_seconds": 900,
+      "cusum_threshold": 12.0,
+      "model_threshold": 0.5,
+      "model_id": null
+    },
+    "logistic": {
+      "method": "logistic",
+      "reference_seconds": 1200,
+      "recent_seconds": 180,
+      "cadence_seconds": 30,
+      "min_recent": 6,
+      "min_reference": 12,
+      "line_threshold_m": 2.5,
+      "persistence": 2,
+      "cooldown_seconds": 900,
+      "cusum_threshold": 12.0,
+      "model_threshold": 0.75,
+      "model_id": "logistic_l2_10"
+    }
+  },
+  "models": {
+    "logistic_l2_1": {
+      "mean": [
+        2.9746853808836162,
+        0.2597414359882301,
+        0.25288615461829034
+      ],
+      "scale": [
+        3.960482236552103,
+        1.739187093094441,
+        0.8498458877984038
+      ],
+      "weights": [
+        2.073455010222449,
+        0.3223689745430718,
+        -0.14953695974484543
+      ],
+      "intercept": -0.13202196629575702,
+      "features": [
+        "absolute_line3_delta",
+        "direction_aligned_carrier_closing",
+        "direction_aligned_density10_delta"
+      ],
+      "score_semantics": "uncalibrated sigmoid score, not validated probability"
+    },
+    "logistic_l2_10": {
+      "mean": [
+        2.9746853808836162,
+        0.2597414359882301,
+        0.25288615461829034
+      ],
+      "scale": [
+        3.960482236552103,
+        1.739187093094441,
+        0.8498458877984038
+      ],
+      "weights": [
+        1.3056848801813035,
+        0.19276275467635243,
+        -0.04411275840904343
+      ],
+      "intercept": -0.315129988563141,
+      "features": [
+        "absolute_line3_delta",
+        "direction_aligned_carrier_closing",
+        "direction_aligned_density10_delta"
+      ],
+      "score_semantics": "uncalibrated sigmoid score, not validated probability"
+    }
+  },
+  "source_hashes": {
+    "backend/src/matchpulse/tracking/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "backend/src/matchpulse/tracking/cli.py": "a6ced73323672313d59378e81895169e3680dbc8e40e8530b995e6d16b60b22f",
+    "backend/src/matchpulse/tracking/detector.py": "61f693a52a5975247226de64b78a9f22a3dd45375a5544a2e9937ecb4a4cb6da",
+    "backend/src/matchpulse/tracking/evidence.py": "4e9cd74315139f6ddc07c5ac4a80be9621f19f543d5b1ca37e227235df3092e4",
+    "backend/src/matchpulse/tracking/features.py": "2dae693388c717096797616902b231d4f59547c3b486e1ebf5cffd0a6cde9d3b",
+    "backend/src/matchpulse/tracking/ingestion.py": "70d8eea36882f9cc595e4e4a73c843cc6d0f7928860053697fe4b2bfbb65fc55",
+    "backend/src/matchpulse/tracking/replay.py": "9584e4f87061d1d45ab95b0786395d47be3492152f926eceaebced43d751a929",
+    "backend/src/matchpulse/tracking/schemas.py": "135dea249d09163be89080986127b663431e40cc2c1bc0700311944c25148786",
+    "backend/src/matchpulse/tracking/windows.py": "23d2526560b3ededef0f24a84940e56adef59cce04b28bc532bb83027e077fa9",
+    "backend/scripts/step25/compare.py": "ef922f671f4bf0f0a5917a5051854c30cdf5e71dca745792dabbbbe9da03da47",
+    "backend/scripts/step25/common.py": "3c06151f971a5def1abb2013a38fb33500879434dbf7e663124685e4a81e7e30",
+    "backend/uv.lock": "7638eae5e1a6469e46d02256d100f3e219f90a3ab59a5000d6d54eec10203003",
+    "backend/src/matchpulse/evaluation.py": "23c05a8617cc4bc1d01757ae4473db2b8f9ac243d28a3cb39b8420e8d9f87757",
+    "backend/src/matchpulse/replay.py": "62416db8c7abdfcf0268408e9436a8f576192459de30ab7acd821a8ffe18fd96",
+    "backend/src/matchpulse/signals.py": "62322fb8540a834f40d757c58848d52a57298e1f5ee8c6e2fae73a2068ae1d21",
+    "backend/src/matchpulse/schemas.py": "bf4467728bc9859aa4d325cf52fb4f7eeb3d6b865c22cd5a5bc35da5416bd7ef",
+    "backend/src/matchpulse/ingestion.py": "3a1d49510ac8022043b620ad5f3c36dacf01ee8cf43403fde13d704e913cb7d3",
+    "backend/src/matchpulse/detectors/rolling.py": "0465589285e11fd8f4fb3fcf1caec90eb39f3517c532c1a6cf311e7a90ccca51",
+    "backend/config/selected.json": "a731dc463c8b524cf772d2bed9bab8b2d3bb19ee1b5de297732693265f4edbe4",
+    "poc/src/simulation.ts": "7307fbe83823345445ca27a153a1bb917f9fb80484f35beb8f08b05600e0f2d8",
+    "poc/src/tracking/schema.ts": "640bea2c5b332ca0327d411824eddddc350f1ba665aac01b4d02d3050a29b5dc",
+    "poc/src/tracking/generate.ts": "81a7f8d23103ade032e0c2108886404974ab0b57a92aa287d41de3b879567736"
+  },
+  "protocol_sha256": "777eda0db627869da444f2b59538f97f14b1e7d2affa8c700d8901ecef014932",
+  "training_manifest_sha256": "0a68c50aa1a9692340253bd90af690a0777daef60c69af2c784c123c0db932f0",
+  "validation_manifest_sha256": "1f8dfcb17282c4397d3ea901fd4bfc14d25cec083f571b5920f2f02a8367c33f",
+  "development_seeds": [
+    700001,
+    804730,
+    909459,
+    1014188,
+    1118917,
+    1223646,
+    1328375,
+    1433104,
+    1537833,
+    1642562,
+    1747291,
+    1852020,
+    1956749,
+    2061478,
+    2166207,
+    2270936,
+    2375665,
+    2480394,
+    2585123,
+    2689852,
+    2794581,
+    2899310,
+    3004039,
+    3108768
+  ],
+  "validation_seeds": [
+    3213497,
+    3318226,
+    3422955,
+    3527684,
+    3632413,
+    3737142,
+    3841871,
+    3946600,
+    4051329,
+    4156058,
+    4260787,
+    4365516,
+    4470245,
+    4574974,
+    4679703,
+    4784432
+  ]
+}

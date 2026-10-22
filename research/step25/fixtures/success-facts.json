@@ -1,0 +1,141 @@
+{
+  "schema_version": 2,
+  "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+  "detection_id": "pos_37f092a17bccf2579bc6",
+  "detected_at_seconds": 3360.0,
+  "team_id": "NORTH",
+  "observed_pattern": "defensive_line_shift",
+  "direction": "advance",
+  "statement": "The observed defensive line advanced during comparable opponent build-up.",
+  "detector": {
+    "method": "fused",
+    "reference_seconds": 1200,
+    "recent_seconds": 180,
+    "cadence_seconds": 30,
+    "min_recent": 6,
+    "min_reference": 12,
+    "line_threshold_m": 7.0,
+    "persistence": 2,
+    "cooldown_seconds": 900,
+    "cusum_threshold": 12.0,
+    "model_threshold": 0.5,
+    "model_id": null
+  },
+  "detection_score": 1.430369725125823,
+  "score_semantics": "Absolute line-height difference divided by metre threshold; not a probability.",
+  "reference_window": [
+    2710.0,
+    3180.0
+  ],
+  "recent_window": [
+    3180.0,
+    3360.0
+  ],
+  "boundary_rule": "(start,end]",
+  "before": {
+    "line3_m": 21.951300813008128,
+    "line4_m": 22.451158536585364,
+    "line_q20_m": 21.95541463414634,
+    "nearest_m": 4.9095622804145975,
+    "density5": 1.4390243902439024,
+    "density10": 2.8048780487804876,
+    "density15": 3.682926829268293,
+    "length_m": 64.42334146341463,
+    "width_m": 30.055487804878048,
+    "centroid_x_m": 57.29485365853658,
+    "dispersion_m": 31.854132860546386,
+    "advanced_players": 5.926829268292683,
+    "interline_gap_m": 55.79419512195122
+  },
+  "after": {
+    "line3_m": 31.96388888888889,
+    "line4_m": 31.968194444444446,
+    "line_q20_m": 31.97088888888889,
+    "nearest_m": 4.645444563192995,
+    "density5": 1.5555555555555556,
+    "density10": 2.388888888888889,
+    "density15": 3.0555555555555554,
+    "length_m": 57.21938888888889,
+    "width_m": 30.55527777777777,
+    "centroid_x_m": 59.49444444444444,
+    "dispersion_m": 27.064112991404308,
+    "advanced_players": 5.944444444444445,
+    "interline_gap_m": 39.165
+  },
+  "deltas": {
+    "line3_m": 10.01258807588076,
+    "line4_m": 9.517035907859082,
+    "line_q20_m": 10.01547425474255,
+    "nearest_m": -0.2641177172216027,
+    "density5": 0.1165311653116532,
+    "density10": -0.4159891598915988,
+    "density15": -0.6273712737127375,
+    "length_m": -7.2039525745257365,
+    "width_m": 0.49978997289972327,
+    "centroid_x_m": 2.1995907859078585,
+    "dispersion_m": -4.790019869142078,
+    "advanced_players": 0.01761517615176178,
+    "interline_gap_m": -16.62919512195122
+  },
+  "support": {
+    "reference_frames": 41,
+    "recent_frames": 18,
+    "common_contexts": 1
+  },
+  "contexts": [
+    [
+      0,
+      0,
+      10,
+      10
+    ]
+  ],
+  "representative_frames": [
+    "frame_002732",
+    "frame_003114",
+    "frame_003296",
+    "frame_003360"
+  ],
+  "event_facts": {
+    "location_delta_m": 13.713076923076926,
+    "share_delta": 0.3076923076923077,
+    "location_z": 1.039749431869931,
+    "share_z": 1.52453832787697,
+    "supported": true,
+    "before": {
+      "exposure_seconds": 180.0,
+      "recovery_count": 13,
+      "high_recovery_count": 4,
+      "recovery_rate_per_minute": 4.333333333333333,
+      "high_recovery_rate_per_minute": 1.3333333333333333,
+      "high_recovery_share": 0.3076923076923077,
+      "mean_recovery_x_m": 43.817692307692305,
+      "recovery_x_variance": 849.4605358974359,
+      "defensive_episodes": 18,
+      "advanced_defensive_episodes": 5,
+      "final_third_entries": 5,
+      "attacking_actions": 64,
+      "shots": 1
+    },
+    "after": {
+      "exposure_seconds": 180.0,
+      "recovery_count": 13,
+      "high_recovery_count": 8,
+      "recovery_rate_per_minute": 4.333333333333333,
+      "high_recovery_rate_per_minute": 2.6666666666666665,
+      "high_recovery_share": 0.6153846153846154,
+      "mean_recovery_x_m": 57.53076923076923,
+      "recovery_x_variance": 778.0079410256409,
+      "defensive_episodes": 18,
+      "advanced_defensive_episodes": 7,
+      "final_third_entries": 6,
+      "attacking_actions": 69,
+      "shots": 0
+    }
+  },
+  "warnings": [
+    "Synthetic uncalibrated football; an observed line change does not establish coaching intent, effective pressing or causation.",
+    "Comparable opponent-build-up observations only; samples are autocorrelated, not independent match trials.",
+    "Higher line position does not imply reduced carrier distance or successful possession recovery."
+  ]
+}

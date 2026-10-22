@@ -1,0 +1,31 @@
+{
+  "frozen_sha256": "6b8f4682ec3e8c4b966c8821fd006a89b14746dca49667cbbafbf296d7c8ec24",
+  "matches": 280,
+  "packs": 180,
+  "geometry_verified": 180,
+  "event_facts_verified": 180,
+  "independent_spatial_verified": 180,
+  "exact_raw_cache_replay": 280,
+  "deterministic_replays": 280,
+  "prefix_checks": 280,
+  "prefix_passed": 280,
+  "quality": {
+    "frames": 1566370,
+    "invalid_owner_frames": 507,
+    "gaps": 0,
+    "substitutions": 1780,
+    "red_cards": 54,
+    "active_counts": {
+      "22": 1449777,
+      "21": 115372,
+      "20": 1221
+    }
+  },
+  "seconds": 295.3851657919877,
+  "peak_rss_bytes": 643481600,
+  "per_match_verification_seconds_median": 1.0506413960029022,
+  "per_match_verification_seconds_p95": 1.1569262437413272,
+  "pack_bytes_median": 12242.0,
+  "agent_facts_bytes_median": 3718.5,
+  "note": "Runtime includes loading, repeated inference, raw evidence and prefix checks. Numerical verification is not Objective B classification accuracy."
+}

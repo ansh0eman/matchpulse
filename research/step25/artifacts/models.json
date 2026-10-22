@@ -1,0 +1,50 @@
+{
+  "logistic_l2_1": {
+    "mean": [
+      2.9746853808836162,
+      0.2597414359882301,
+      0.25288615461829034
+    ],
+    "scale": [
+      3.960482236552103,
+      1.739187093094441,
+      0.8498458877984038
+    ],
+    "weights": [
+      2.073455010222449,
+      0.3223689745430718,
+      -0.14953695974484543
+    ],
+    "intercept": -0.13202196629575702,
+    "features": [
+      "absolute_line3_delta",
+      "direction_aligned_carrier_closing",
+      "direction_aligned_density10_delta"
+    ],
+    "score_semantics": "uncalibrated sigmoid score, not validated probability"
+  },
+  "logistic_l2_10": {
+    "mean": [
+      2.9746853808836162,
+      0.2597414359882301,
+      0.25288615461829034
+    ],
+    "scale": [
+      3.960482236552103,
+      1.739187093094441,
+      0.8498458877984038
+    ],
+    "weights": [
+      1.3056848801813035,
+      0.19276275467635243,
+      -0.04411275840904343
+    ],
+    "intercept": -0.315129988563141,
+    "features": [
+      "absolute_line3_delta",
+      "direction_aligned_carrier_closing",
+      "direction_aligned_density10_delta"
+    ],
+    "score_semantics": "uncalibrated sigmoid score, not validated probability"
+  }
+}

@@ -1,0 +1,353 @@
+[
+  {
+    "repository": "VishalKJ-ai/matchsense",
+    "inspected_at": "2026-10-22",
+    "license": {
+      "blob_sha": "1b9bc4449813a4dae4d73d16aefbd4314bad9624",
+      "url": "https://github.com/VishalKJ-ai/matchsense/blob/main/LICENSE",
+      "declared_text": "MIT License\n\nCopyright (c) 2026 Vishal Joshi\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+    },
+    "root_inventory": [
+      {
+        "path": ".dockerignore",
+        "sha": "c0cf434dbf416a4cccd4fb0a4df8d5b4d95d70d0"
+      },
+      {
+        "path": ".env.example",
+        "sha": "a9d72ce707c7ef60e5a0158d716a1bc79bf6476d"
+      },
+      {
+        "path": ".github",
+        "sha": "d632dc7b28ef4b0c9c68beb68e8db38298550887"
+      },
+      {
+        "path": ".gitignore",
+        "sha": "4220b9d06e08043630a8d91e355b7a6f1d32af72"
+      },
+      {
+        "path": "Dockerfile",
+        "sha": "813c57519cfc9552414cd4e3508bbd419e9d960d"
+      },
+      {
+        "path": "LICENSE",
+        "sha": "1b9bc4449813a4dae4d73d16aefbd4314bad9624"
+      },
+      {
+        "path": "README.md",
+        "sha": "494b888b8adebdaeab187897172a469fd2512c40"
+      },
+      {
+        "path": "azure.yaml",
+        "sha": "8cc032fe50b6059e007a2bd927e5327c393a04a2"
+      },
+      {
+        "path": "data",
+        "sha": "5e64b049c603781dd360829e5b564c902967efc0"
+      },
+      {
+        "path": "infra",
+        "sha": "6dd3a7020288fdc4993387898f0808b8a949025b"
+      },
+      {
+        "path": "pyproject.toml",
+        "sha": "fd0ef134449a5fa058f30dfc8c910c6878ca9fa9"
+      },
+      {
+        "path": "scripts",
+        "sha": "dc2f0efda5438fa59c8ec23725b7aacf7b61a49c"
+      },
+      {
+        "path": "src",
+        "sha": "4e6b3537f50d4987c247bbd495d9f2603b59017c"
+      },
+      {
+        "path": "tests",
+        "sha": "52d0c7cff09f121f88e590eab00735ac63c0c218"
+      }
+    ],
+    "inspected_files": [
+      {
+        "path": "src/matchsense/analytics/tactical.py",
+        "blob_sha": "0dbbdb33e924b978bf1561c7191a6f46144381a1",
+        "url": "https://github.com/VishalKJ-ai/matchsense/blob/main/src/matchsense/analytics/tactical.py"
+      },
+      {
+        "path": "scripts/evaluate_shifts.py",
+        "blob_sha": "8b71957ed76cd270c05ef93714c76eb3b8c0d631",
+        "url": "https://github.com/VishalKJ-ai/matchsense/blob/main/scripts/evaluate_shifts.py"
+      },
+      {
+        "path": "src/matchsense/analytics/engine.py",
+        "blob_sha": "d9c78205c21cb1541e53ab9d5be46edf1476336b"
+      },
+      {
+        "path": "src/matchsense/live/feed.py",
+        "blob_sha": "49e7a50b01f17c83fe43421bb4224d8d4e50f075"
+      }
+    ]
+  },
+  {
+    "repository": "timsheldon1/matchday-crew",
+    "inspected_at": "2026-10-22",
+    "license": null,
+    "root_inventory": [
+      {
+        "path": ".dockerignore",
+        "sha": "87f0aabf74d300e6304f2414c4561e78c0e65404"
+      },
+      {
+        "path": ".env.example",
+        "sha": "a60a388b8107431549c462617e1aeb3e37940411"
+      },
+      {
+        "path": ".github",
+        "sha": "880b752266fadc2fb36cdedbcd4191fcfd72e594"
+      },
+      {
+        "path": ".gitignore",
+        "sha": "ff83cf7afc913054fc92ab5bae70f261b97fa2db"
+      },
+      {
+        "path": "Dockerfile",
+        "sha": "ed8df61b853d982086402f1c7ce84b9619d17b18"
+      },
+      {
+        "path": "README.md",
+        "sha": "cd040ca240df38775b3b4e1b07cfd8e579373da5"
+      },
+      {
+        "path": "SCHEMA.md",
+        "sha": "ac05c7a629213fca4b1c628ccb40157eeb6ea238"
+      },
+      {
+        "path": "data",
+        "sha": "6cd5b95144207eac9b13d6c0b317e7d32909ec5b"
+      },
+      {
+        "path": "deploy",
+        "sha": "3ca8b70af655512b2b2a10a457fe5a4298958db9"
+      },
+      {
+        "path": "package-lock.json",
+        "sha": "51be48976e36abab1d068f4eb92368cad978a01a"
+      },
+      {
+        "path": "package.json",
+        "sha": "ada8be302278451472a601912ddda24a744ea008"
+      },
+      {
+        "path": "src",
+        "sha": "fa7d0e0faced6eac5374a9c4c8c4a15025a80e27"
+      },
+      {
+        "path": "test",
+        "sha": "cd8444f15021974c2d1af4ab69abff6df10623b2"
+      },
+      {
+        "path": "web",
+        "sha": "4b8e550b5ad1bd045c4c2044cee53d8bd6eb6018"
+      }
+    ],
+    "inspected_files": [
+      {
+        "path": "src/analyst.js",
+        "blob_sha": "5b8caac1969e32ee547f30e7d2e626adf4fd7454",
+        "url": "https://github.com/timsheldon1/matchday-crew/blob/main/src/analyst.js"
+      },
+      {
+        "path": "README.md",
+        "blob_sha": "cd040ca240df38775b3b4e1b07cfd8e579373da5",
+        "url": "https://github.com/timsheldon1/matchday-crew/blob/main/README.md"
+      }
+    ]
+  },
+  {
+    "repository": "lauramiro/the-dugout",
+    "inspected_at": "2026-10-22",
+    "license": {
+      "blob_sha": "b9075711e05c73eeda93260c747dbeb0ce0fe45c",
+      "url": "https://github.com/lauramiro/the-dugout/blob/main/LICENSE",
+      "declared_text": "MIT License\n\nCopyright (c) 2026 lauramiro\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+    },
+    "root_inventory": [
+      {
+        "path": ".dockerignore",
+        "sha": "0ca62ec4467ce0fed6c6e04a9921c4bce53c9eda"
+      },
+      {
+        "path": ".gitignore",
+        "sha": "6ce7d347236e8872e9cd4fd3232ac78bb8615b4c"
+      },
+      {
+        "path": "CODE_OF_CONDUCT.md",
+        "sha": "7f7a62d21484eb7d86ff23afe2d860d2940364d9"
+      },
+      {
+        "path": "Dockerfile",
+        "sha": "cb1768dc789085325e251c747b4c27cffaacd809"
+      },
+      {
+        "path": "LICENSE",
+        "sha": "b9075711e05c73eeda93260c747dbeb0ce0fe45c"
+      },
+      {
+        "path": "README.md",
+        "sha": "ec63a8b7a273d890161da1faf62e55b7fe8991ce"
+      },
+      {
+        "path": "data",
+        "sha": "38fde8ceb36a41b2ab0fa5a1a06d34aff6632ad6"
+      },
+      {
+        "path": "docs",
+        "sha": "ffbc112bb6390042f9b6e16af76e5bf4e5f79285"
+      },
+      {
+        "path": "dugout",
+        "sha": "77c7628d116fce87af2e9cced6ca13fc77511f89"
+      },
+      {
+        "path": "env.example",
+        "sha": "2e813a6b404f72fff55d9d4f548cef0513dc2a0c"
+      },
+      {
+        "path": "eval",
+        "sha": "7ed8d14226ac9666d977d4a4c2bf0ca3db75e439"
+      },
+      {
+        "path": "infra",
+        "sha": "ce05321a5baca08afdd80def4977bf0e19a6b67e"
+      },
+      {
+        "path": "pyproject.toml",
+        "sha": "584d2cbed6eb79d850d168083ffee48bb116251b"
+      },
+      {
+        "path": "scenarios",
+        "sha": "320352956a75f6ba80fcb9e438a8b62fd2150ae0"
+      },
+      {
+        "path": "tests",
+        "sha": "e683362a83c1ff64e0021f3230cd2db705b2806b"
+      },
+      {
+        "path": "uv.lock",
+        "sha": "411d7d6b7dc8b46ee86168679cdcecdd3b5986bf"
+      },
+      {
+        "path": "web",
+        "sha": "44f8ca087c7b4732cf00c7c2a27d4a00ffdd6aee"
+      }
+    ],
+    "inspected_files": [
+      {
+        "path": "docs/evaluation.md",
+        "blob_sha": null,
+        "url": "https://github.com/lauramiro/the-dugout/blob/main/docs/evaluation.md"
+      },
+      {
+        "path": "README.md",
+        "blob_sha": "ec63a8b7a273d890161da1faf62e55b7fe8991ce",
+        "url": "https://github.com/lauramiro/the-dugout/blob/main/README.md"
+      }
+    ]
+  },
+  {
+    "repository": "mateotoniolo/beyond-the-scoreline",
+    "inspected_at": "2026-10-22",
+    "license": {
+      "blob_sha": "17b75a0e472041fc4ad6b40ffb234536fd08214b",
+      "url": "https://github.com/mateotoniolo/beyond-the-scoreline/blob/main/LICENSE",
+      "declared_text": "MIT License\n\nCopyright (c) 2026 Mateo Toniolo\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+    },
+    "root_inventory": [
+      {
+        "path": ".claude",
+        "sha": "09e3203fd20ca25cfd2d68e0bc5469f3a0b5215f"
+      },
+      {
+        "path": ".dockerignore",
+        "sha": "3f50ab096945520560dab709a1f51c5350646bcc"
+      },
+      {
+        "path": ".env.example",
+        "sha": "9e64fb4e9610a0207807cec4e30d7a7600517cb1"
+      },
+      {
+        "path": ".github",
+        "sha": "558ef4a89925f42af85cdcbff564429659b3221a"
+      },
+      {
+        "path": ".gitignore",
+        "sha": "927bf6dbeddcebd69bbaefef4ea69d68aadc9e48"
+      },
+      {
+        "path": ".python-version",
+        "sha": "e4fba2183587225f216eeada4c78dfab6b2e65f5"
+      },
+      {
+        "path": ".vscode",
+        "sha": "0ae4d432c7f320e0eed1b3122370225b483a1a72"
+      },
+      {
+        "path": "AGENTS.md",
+        "sha": "089c16bb1d81a4b26d6687824301f0b2ebffd648"
+      },
+      {
+        "path": "Dockerfile",
+        "sha": "d29caa1e71827a78e9ea52b7d4496ca68f959799"
+      },
+      {
+        "path": "LICENSE",
+        "sha": "17b75a0e472041fc4ad6b40ffb234536fd08214b"
+      },
+      {
+        "path": "README.md",
+        "sha": "e528a2a35b871c6b1d90296a3bc987100ecfda56"
+      },
+      {
+        "path": "docs",
+        "sha": "867ed59bdbe176d88a6a2348ba3711b89165d6d2"
+      },
+      {
+        "path": "infra",
+        "sha": "b415d2c36dda01f7509e531f252fc0a446ff9ced"
+      },
+      {
+        "path": "pyproject.toml",
+        "sha": "957b8d8e079729233c623c3276e48120b8e0e8c8"
+      },
+      {
+        "path": "scripts",
+        "sha": "8a4431a1f7d32a692d79e544757ff522e205af0c"
+      },
+      {
+        "path": "src",
+        "sha": "6a9932a13e4a21965773cbe7a15044e749e987a9"
+      },
+      {
+        "path": "tests",
+        "sha": "a0e44d09f88303bc6739bc3993fdc31abe2ad845"
+      },
+      {
+        "path": "uv.lock",
+        "sha": "0f03315c47366a7db05661551b57bbb98ffabe4a"
+      },
+      {
+        "path": "web",
+        "sha": "b8c33a525bbd2fc105cb8be41135a228293a115d"
+      }
+    ],
+    "inspected_files": [
+      {
+        "path": "README.md",
+        "blob_sha": "e528a2a35b871c6b1d90296a3bc987100ecfda56",
+        "url": "https://github.com/mateotoniolo/beyond-the-scoreline/blob/main/README.md"
+      },
+      {
+        "path": "docs/AGENTS_CREW.md",
+        "blob_sha": "215b3802eb468ae8e49c812f00970596e96e4f0f"
+      }
+    ]
+  }
+]

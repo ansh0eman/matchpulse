@@ -1,0 +1,288 @@
+{
+  "$defs": {
+    "TrackingConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "method": {
+          "default": "conditioned",
+          "enum": [
+            "unconditioned",
+            "conditioned",
+            "fused",
+            "cusum",
+            "logistic"
+          ],
+          "title": "Method",
+          "type": "string"
+        },
+        "reference_seconds": {
+          "default": 1200,
+          "minimum": 240,
+          "title": "Reference Seconds",
+          "type": "integer"
+        },
+        "recent_seconds": {
+          "default": 180,
+          "minimum": 30,
+          "title": "Recent Seconds",
+          "type": "integer"
+        },
+        "cadence_seconds": {
+          "default": 30,
+          "minimum": 1,
+          "title": "Cadence Seconds",
+          "type": "integer"
+        },
+        "min_recent": {
+          "default": 6,
+          "minimum": 1,
+          "title": "Min Recent",
+          "type": "integer"
+        },
+        "min_reference": {
+          "default": 12,
+          "minimum": 1,
+          "title": "Min Reference",
+          "type": "integer"
+        },
+        "line_threshold_m": {
+          "default": 5.0,
+          "exclusiveMinimum": 0,
+          "title": "Line Threshold M",
+          "type": "number"
+        },
+        "persistence": {
+          "default": 2,
+          "minimum": 1,
+          "title": "Persistence",
+          "type": "integer"
+        },
+        "cooldown_seconds": {
+          "default": 900,
+          "minimum": 0,
+          "title": "Cooldown Seconds",
+          "type": "integer"
+        },
+        "cusum_threshold": {
+          "default": 12.0,
+          "exclusiveMinimum": 0,
+          "title": "Cusum Threshold",
+          "type": "number"
+        },
+        "model_threshold": {
+          "default": 0.5,
+          "exclusiveMaximum": 1,
+          "exclusiveMinimum": 0,
+          "title": "Model Threshold",
+          "type": "number"
+        },
+        "model_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Model Id"
+        }
+      },
+      "title": "TrackingConfig",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 2,
+      "default": 2,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "match_id": {
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+      "title": "Match Id",
+      "type": "string"
+    },
+    "detection_id": {
+      "title": "Detection Id",
+      "type": "string"
+    },
+    "detected_at_seconds": {
+      "minimum": 0,
+      "title": "Detected At Seconds",
+      "type": "number"
+    },
+    "team_id": {
+      "enum": [
+        "NORTH",
+        "SOUTH"
+      ],
+      "title": "Team Id",
+      "type": "string"
+    },
+    "observed_pattern": {
+      "const": "defensive_line_shift",
+      "default": "defensive_line_shift",
+      "title": "Observed Pattern",
+      "type": "string"
+    },
+    "direction": {
+      "enum": [
+        "advance",
+        "retreat"
+      ],
+      "title": "Direction",
+      "type": "string"
+    },
+    "statement": {
+      "title": "Statement",
+      "type": "string"
+    },
+    "detector": {
+      "$ref": "#/$defs/TrackingConfig"
+    },
+    "detection_score": {
+      "title": "Detection Score",
+      "type": "number"
+    },
+    "score_semantics": {
+      "title": "Score Semantics",
+      "type": "string"
+    },
+    "reference_window": {
+      "items": {
+        "type": "number"
+      },
+      "title": "Reference Window",
+      "type": "array"
+    },
+    "recent_window": {
+      "items": {
+        "type": "number"
+      },
+      "title": "Recent Window",
+      "type": "array"
+    },
+    "boundary_rule": {
+      "const": "(start,end]",
+      "default": "(start,end]",
+      "title": "Boundary Rule",
+      "type": "string"
+    },
+    "before": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "title": "Before",
+      "type": "object"
+    },
+    "after": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "title": "After",
+      "type": "object"
+    },
+    "deltas": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "title": "Deltas",
+      "type": "object"
+    },
+    "support": {
+      "additionalProperties": {
+        "type": "integer"
+      },
+      "title": "Support",
+      "type": "object"
+    },
+    "contexts": {
+      "items": {
+        "items": {
+          "type": "integer"
+        },
+        "type": "array"
+      },
+      "title": "Contexts",
+      "type": "array"
+    },
+    "tracking_references": {
+      "additionalProperties": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "title": "Tracking References",
+      "type": "object"
+    },
+    "representative_frames": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Representative Frames",
+      "type": "array"
+    },
+    "event_facts": {
+      "anyOf": [
+        {
+          "additionalProperties": true,
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Event Facts"
+    },
+    "raw_evidence": {
+      "additionalProperties": true,
+      "title": "Raw Evidence",
+      "type": "object"
+    },
+    "definitions": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Definitions",
+      "type": "object"
+    },
+    "warnings": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Warnings",
+      "type": "array"
+    }
+  },
+  "required": [
+    "match_id",
+    "detection_id",
+    "detected_at_seconds",
+    "team_id",
+    "direction",
+    "statement",
+    "detector",
+    "detection_score",
+    "score_semantics",
+    "reference_window",
+    "recent_window",
+    "before",
+    "after",
+    "deltas",
+    "support",
+    "contexts",
+    "tracking_references",
+    "representative_frames",
+    "event_facts",
+    "raw_evidence",
+    "definitions",
+    "warnings"
+  ],
+  "title": "PositionalEvidencePack",
+  "type": "object"
+}

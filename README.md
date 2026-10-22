@@ -1,19 +1,25 @@
 # MatchPulse AI — Why the Game Changed
 
-A synthetic-football research implementation of **Detect -> Prove -> Explain -> Explore**. Step 2 implements strict Python event ingestion, causal rolling analytics, rolling/River detector comparisons, auditable EvidencePacks, deterministic replay and a CLI.
+A synthetic-football research implementation of **Detect -> Prove -> Explain -> Explore**. Step 2.5 adds strict observable tracking, context-conditioned geometry, a frozen detector comparison and independently recomputable positional EvidencePacks while preserving the event-only Step 2 system.
 
-**Current verdict: NO-GO for Microsoft Foundry integration.** The pipeline works, but held-out alert quality is insufficient: **13.3% precision, 48.4% recall, F1 0.209**, and **2.625 alerts per unchanged match**. Correct evidence does not make every alert a meaningful tactical intervention.
+**Current verdict: CONDITIONAL GO for verified defensive-line explanations; broad tactical-intervention detection remains below target.** On 40 fresh held-out families the selected fused detector achieves **47.5% precision, 36.25% recall, F1 0.411**, and **0.35 alerts per unchanged match**. It detects 33/40 strong changes, 5/40 moderate changes, 0/40 press-only changes and 20/40 low-block changes within ten minutes. All 180 selected-detector packs verify numerically. Correct facts do not establish a coach's intent.
 
-No Foundry agents, frontend, Azure deployment or real-world prediction exists. Nothing was committed, pushed, merged or deployed during Step 2.
+The underlying line signal replicates: strong interventions shift the line by +11.91m relative to paired nulls (95% family-bootstrap interval +11.01 to +12.68m). Carrier-closing and local pressing density do not show consistent high-press separation. No Foundry agents, frontend, Azure deployment or real-world calibration exists.
 
-## Review these first
+## Review Step 2.5 first
 
-- [Detector comparison](research/step2-detector-comparison.md): 20 development configurations, frozen selection, River alternatives and feature ablations.
-- [Evaluation results](research/step2-evaluation-results.md): independent held-out denominators, uncertainty, null/stress behavior, charts and evidence checks.
-- [Final verdict](research/step2-final-verdict.md): NO-GO reasoning and exact repair milestone.
-- [Failure analysis](research/step2-failure-analysis.md): missed interventions, unmatched alerts, onset/score strata and synthetic-target limitations.
-- [Execution walkthrough](research/step2-execution-walkthrough.md): a real event and matched detection, actual arithmetic and function calls.
-- [Architecture](research/step2-architecture.md), [method research](research/step2-detection-methods.md), [football signal definitions](research/step2-football-signals.md).
+- [Final verdict](research/step25/final-verdict.md): actual quality gates and claim restrictions.
+- [Feature separation](research/step25/feature-separation.md): the signal-existence experiment and negative pressure findings.
+- [Detector comparison](research/step25/detector-comparison.md) and [held-out results](research/step25/evaluation-results.md): selection, denominators, uncertainty and failures.
+- [Execution walkthrough](research/step25/execution-walkthrough.md): real success/false/missed examples, arithmetic and debug CLI.
+- [Protocol](research/step25/evaluation-protocol.md), [validation](research/step25/validation-and-leakage.md), [reproduction commands](research/step25/execution-commands.md), [product boundary](research/step25/product-decision.md).
+- [Tracking audit](research/step25/tracking-audit.md), [schemas](research/step25/tracking-schema.md), [feature definitions](research/step25/feature-engineering.md), [root causes](research/step25/root-cause-analysis.md), [literature](research/step25/literature-review.md), [competitor source comparison](research/step25/competitive-comparison.md).
+
+Step 2.5 uses 24 development, 16 validation and 40 holdout families (seven scenarios each). Configuration/source hashes were frozen before final generation. This holdout is now consumed: new tuning requires a new untouched set. New bulk datasets/cache/exports stay local under the Step 2.5 brief; existing tracked Step 1/2 artifacts are preserved.
+
+## Preserved Step 2 research
+
+The original event-only result remains **NO-GO** for its target: 13.3% precision, 48.4% recall, F1 0.209, 2.625 alerts/unchanged match. See its [comparison](research/step2-detector-comparison.md), [results](research/step2-evaluation-results.md), [verdict](research/step2-final-verdict.md), [failure analysis](research/step2-failure-analysis.md), [walkthrough](research/step2-execution-walkthrough.md) and [architecture](research/step2-architecture.md). Different scenario denominators mean the old/new figures are not a single unchanged benchmark.
 
 ## Actual Step 2 results
 

@@ -1,0 +1,141 @@
+{
+  "schema_version": 2,
+  "match_id": "31c70a92-4ce1-4ec2-a570-e8112bfcc5fc",
+  "detection_id": "pos_5ea68083df2dfcd6f59a",
+  "detected_at_seconds": 1350.0,
+  "team_id": "SOUTH",
+  "observed_pattern": "defensive_line_shift",
+  "direction": "advance",
+  "statement": "The observed defensive line advanced during comparable opponent build-up.",
+  "detector": {
+    "method": "fused",
+    "reference_seconds": 1200,
+    "recent_seconds": 180,
+    "cadence_seconds": 30,
+    "min_recent": 6,
+    "min_reference": 12,
+    "line_threshold_m": 7.0,
+    "persistence": 2,
+    "cooldown_seconds": 900,
+    "cusum_threshold": 12.0,
+    "model_threshold": 0.5,
+    "model_id": null
+  },
+  "detection_score": 1.511811224489796,
+  "score_semantics": "Absolute line-height difference divided by metre threshold; not a probability.",
+  "reference_window": [
+    150.0,
+    1170.0
+  ],
+  "recent_window": [
+    1170.0,
+    1350.0
+  ],
+  "boundary_rule": "(start,end]",
+  "before": {
+    "line3_m": 22.165238095238095,
+    "line4_m": 26.644571428571428,
+    "line_q20_m": 22.165790476190477,
+    "nearest_m": 3.93489354014318,
+    "density5": 2.5238095238095237,
+    "density10": 4.123809523809523,
+    "density15": 4.866666666666666,
+    "length_m": 63.50931428571428,
+    "width_m": 23.497304761904758,
+    "centroid_x_m": 59.91834285714286,
+    "dispersion_m": 30.995781233788286,
+    "advanced_players": 6.304761904761905,
+    "interline_gap_m": 57.93940952380952
+  },
+  "after": {
+    "line3_m": 32.74791666666667,
+    "line4_m": 43.8,
+    "line_q20_m": 47.87375,
+    "nearest_m": 2.4887656945357985,
+    "density5": 3.25,
+    "density10": 5.5,
+    "density15": 6.5,
+    "length_m": 66.240125,
+    "width_m": 15.816124999999998,
+    "centroid_x_m": 68.439875,
+    "dispersion_m": 26.676235612713914,
+    "advanced_players": 7.5,
+    "interline_gap_m": 35.122749999999996
+  },
+  "deltas": {
+    "line3_m": 10.582678571428573,
+    "line4_m": 17.15542857142857,
+    "line_q20_m": 25.707959523809524,
+    "nearest_m": -1.4461278456073816,
+    "density5": 0.7261904761904763,
+    "density10": 1.3761904761904766,
+    "density15": 1.6333333333333337,
+    "length_m": 2.730810714285724,
+    "width_m": -7.68117976190476,
+    "centroid_x_m": 8.52153214285714,
+    "dispersion_m": -4.319545621074372,
+    "advanced_players": 1.1952380952380954,
+    "interline_gap_m": -22.816659523809527
+  },
+  "support": {
+    "reference_frames": 105,
+    "recent_frames": 8,
+    "common_contexts": 1
+  },
+  "contexts": [
+    [
+      0,
+      0,
+      10,
+      10
+    ]
+  ],
+  "representative_frames": [
+    "frame_000151",
+    "frame_001043",
+    "frame_001205",
+    "frame_001218"
+  ],
+  "event_facts": {
+    "location_delta_m": 2.2396666666666647,
+    "share_delta": 0.08333333333333333,
+    "location_z": 0.2049208818024434,
+    "share_z": 0.617940817189613,
+    "supported": true,
+    "before": {
+      "exposure_seconds": 180.0,
+      "recovery_count": 5,
+      "high_recovery_count": 0,
+      "recovery_rate_per_minute": 1.6666666666666667,
+      "high_recovery_rate_per_minute": 0.0,
+      "high_recovery_share": 0.0,
+      "mean_recovery_x_m": 33.082,
+      "recovery_x_variance": 142.07312000000002,
+      "defensive_episodes": 16,
+      "advanced_defensive_episodes": 2,
+      "final_third_entries": 3,
+      "attacking_actions": 100,
+      "shots": 0
+    },
+    "after": {
+      "exposure_seconds": 180.0,
+      "recovery_count": 12,
+      "high_recovery_count": 1,
+      "recovery_rate_per_minute": 4.0,
+      "high_recovery_rate_per_minute": 0.3333333333333333,
+      "high_recovery_share": 0.08333333333333333,
+      "mean_recovery_x_m": 35.321666666666665,
+      "recovery_x_variance": 615.8393060606061,
+      "defensive_episodes": 17,
+      "advanced_defensive_episodes": 7,
+      "final_third_entries": 6,
+      "attacking_actions": 103,
+      "shots": 0
+    }
+  },
+  "warnings": [
+    "Synthetic uncalibrated football; an observed line change does not establish coaching intent, effective pressing or causation.",
+    "Comparable opponent-build-up observations only; samples are autocorrelated, not independent match trials.",
+    "Higher line position does not imply reduced carrier distance or successful possession recovery."
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "version": "step25-v1",
+  "stage": "pre-generation registration",
+  "upstream_commit": "39529b19c40868d66aa47db084ebc9ea29c86e70",
+  "seeds": {
+    "formula": "700001 + 104729*i",
+    "development_indices": [
+      0,
+      23
+    ],
+    "validation_indices": [
+      24,
+      39
+    ],
+    "holdout_indices": [
+      40,
+      79
+    ]
+  },
+  "scenarios": [
+    "null",
+    "strong",
+    "moderate",
+    "press_only",
+    "tempo",
+    "pulse",
+    "low_block"
+  ],
+  "target_team": "NORTH for even family index; SOUTH for odd",
+  "attribute_offsets": "home cycles [-1,0,1]; away opposite",
+  "onsets_seconds": [
+    3300,
+    3600,
+    3900,
+    4200
+  ],
+  "pulse_seconds": 180,
+  "tracking_hz": 1,
+  "sampling_diagnostic_hz": 2,
+  "sampling_diagnostic_development_families": 4,
+  "feature_separation": {
+    "pre_seconds": 300,
+    "post_seconds": 300,
+    "secondary_post_seconds": 600,
+    "unit": "seed family; paired differences and null-matched change distributions",
+    "context": "opponent possession, open play, opponent own half; compare ball-zone and score strata"
+  },
+  "primary_objective_A_scenarios": [
+    "null",
+    "strong",
+    "moderate",
+    "press_only",
+    "low_block"
+  ],
+  "stress_scenarios": [
+    "tempo",
+    "pulse"
+  ],
+  "matching_horizons_seconds": [
+    600,
+    1200
+  ],
+  "primary_horizon_seconds": 600,
+  "target_direction": {
+    "strong": "advance",
+    "moderate": "advance",
+    "press_only": "advance",
+    "low_block": "retreat"
+  },
+  "selection": "development feature screen; bounded candidate grid; validation selects among active candidates prioritizing null<=0.25, then primary F1, precision, latency and simplicity; freeze before holdout scoring",
+  "aspirational_targets": {
+    "precision": 0.75,
+    "recall": 0.7,
+    "median_delay_seconds": 480,
+    "null_alerts_per_match": 0.25,
+    "evidence_validity": 1.0
+  },
+  "objective_B": "Numerical positioning facts plus complementary observable checks. No pattern-classification precision/recall without independently labeled episodes; do not recycle detector thresholds as labels.",
+  "holdout_rules": [
+    "do not inspect holdout features or scores before final freeze",
+    "all related scenarios stay grouped",
+    "no exclusions for bad outcomes",
+    "do not retune on final holdout"
+  ],
+  "exclusions": "All Step 1 and all Step 2 seeds; verify exact sets in scripts/tests",
+  "data_policy": "New large generated data remains local and ignored per Step 2.5 brief. Preserve existing tracked data and history.",
+  "reasoning_settings": "Current chat tools cannot change the active reasoning setting; no model switch is claimed. Design, freezes and decisions are persisted here."
+}

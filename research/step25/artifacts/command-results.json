@@ -1,0 +1,138 @@
+[
+  {
+    "name": "pytest",
+    "argv": [
+      "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/.venv/bin/python",
+      "-m",
+      "pytest",
+      "backend/tests",
+      "-q"
+    ],
+    "cwd": "/Users/ansh0eman/Documents/Projects/inside the game - microsoft",
+    "exit_code": 0,
+    "seconds": 1.9709864169999491
+  },
+  {
+    "name": "typecheck",
+    "argv": [
+      "/Users/ansh0eman/.nvm/versions/node/v24.19.0/bin/node",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit"
+    ],
+    "cwd": "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/poc",
+    "exit_code": 0,
+    "seconds": 0.6327614580077352
+  },
+  {
+    "name": "typescript-tests",
+    "argv": [
+      "/Users/ansh0eman/.nvm/versions/node/v24.19.0/bin/node",
+      "--import",
+      "tsx",
+      "--test",
+      "tests/artifacts.test.ts",
+      "tests/simulation.test.ts",
+      "tests/tracking.test.ts"
+    ],
+    "cwd": "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/poc",
+    "exit_code": 0,
+    "seconds": 9.99453920799715
+  },
+  {
+    "name": "cli-success",
+    "argv": [
+      "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/.venv/bin/python",
+      "-m",
+      "matchpulse.tracking.cli",
+      "data/step25/inference/f2a3e267-d3e5-4c90-ae07-b5a39607ab2d.tracking.jsonl.gz",
+      "--events",
+      "data/step25/inference/f2a3e267-d3e5-4c90-ae07-b5a39607ab2d.jsonl",
+      "--config",
+      "research/step25/artifacts/selected.json",
+      "--debug",
+      "--output",
+      "backend/output/step25/success-demo.json"
+    ],
+    "cwd": "/Users/ansh0eman/Documents/Projects/inside the game - microsoft",
+    "exit_code": 0,
+    "seconds": 0.657302665989846
+  },
+  {
+    "name": "cli-false_alert",
+    "argv": [
+      "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/.venv/bin/python",
+      "-m",
+      "matchpulse.tracking.cli",
+      "data/step25/inference/31c70a92-4ce1-4ec2-a570-e8112bfcc5fc.tracking.jsonl.gz",
+      "--events",
+      "data/step25/inference/31c70a92-4ce1-4ec2-a570-e8112bfcc5fc.jsonl",
+      "--config",
+      "research/step25/artifacts/selected.json",
+      "--debug",
+      "--output",
+      "backend/output/step25/false_alert-demo.json"
+    ],
+    "cwd": "/Users/ansh0eman/Documents/Projects/inside the game - microsoft",
+    "exit_code": 0,
+    "seconds": 0.6604570000054082
+  },
+  {
+    "name": "candidate-development",
+    "exit_code": 0,
+    "evidence": "completed development-summary.json; original superseded comparison interrupted with exit130 before selection"
+  },
+  {
+    "name": "validation-freeze",
+    "exit_code": null,
+    "evidence": "Completed final JSON log and frozen artifacts; original session handle was not retained, so shell exit is not asserted or rerun after holdout."
+  },
+  {
+    "name": "holdout-score-and-raw-verification",
+    "exit_code": 0,
+    "evidence": "observed chained command exit0; holdout-summary.json + verification.json"
+  },
+  {
+    "name": "old-incomplete-comparison",
+    "exit_code": 130,
+    "evidence": "interrupted intentionally for equivalent shared-comparison implementation; not a completed experiment"
+  },
+  {
+    "name": "checks-and-cli-peak-child-rss-bytes",
+    "value": 563494912
+  },
+  {
+    "name": "generation-holdout",
+    "exit_code": 0,
+    "evidence": "Observed command/session completion in tool result"
+  },
+  {
+    "name": "generation-validation",
+    "exit_code": 0,
+    "evidence": "Observed command/session completion in tool result"
+  },
+  {
+    "name": "generation-2hz",
+    "exit_code": 0,
+    "evidence": "Observed command/session completion in tool result"
+  },
+  {
+    "name": "figures",
+    "exit_code": 0,
+    "evidence": "Observed command/session completion in tool result"
+  },
+  {
+    "name": "replication",
+    "exit_code": 0,
+    "evidence": "Observed command/session completion in tool result"
+  },
+  {
+    "name": "ml-diagnostic",
+    "exit_code": 0,
+    "evidence": "Observed command/session completion in tool result"
+  },
+  {
+    "name": "halftime-audit",
+    "exit_code": 0,
+    "evidence": "Observed command/session completion in tool result"
+  }
+]

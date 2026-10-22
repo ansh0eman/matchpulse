@@ -1,0 +1,4298 @@
+{
+  "training": {
+    "examples": 205,
+    "positive_examples": 84,
+    "independent_families": 24,
+    "selection": "one pre and one +300s window per primary scenario; unsupported windows excluded from training, not evaluation"
+  },
+  "results": [
+    {
+      "config": {
+        "method": "event_baseline"
+      },
+      "seconds": 30.29387029305508,
+      "metrics": {
+        "600": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 22,
+          "false_positives": 277,
+          "missed_interventions": 74,
+          "precision": 0.07357859531772576,
+          "recall": 0.22916666666666666,
+          "f1": 0.11139240506329114,
+          "null_matches": 24,
+          "null_alerts": 59,
+          "false_alerts_per_null_match": 2.4583333333333335,
+          "false_alerts_per_null_90_minutes": 2.3734495474354675,
+          "median_delay_seconds": 360.0,
+          "delay_seconds": [
+            240.0,
+            360.0,
+            360.0,
+            480.0,
+            480.0,
+            480.0,
+            240.0,
+            300.0,
+            600.0,
+            540.0,
+            120.0,
+            180.0,
+            240.0,
+            240.0,
+            540.0,
+            480.0,
+            480.0,
+            360.0,
+            540.0,
+            300.0,
+            360.0,
+            240.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 106,
+          "early_alerts": 112,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 59
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 11,
+              "alerts": 53
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 8,
+              "alerts": 53
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 3,
+              "alerts": 64
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 0,
+              "alerts": 70
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 54
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 57
+            }
+          }
+        },
+        "1200": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 38,
+          "false_positives": 261,
+          "missed_interventions": 58,
+          "precision": 0.12709030100334448,
+          "recall": 0.3958333333333333,
+          "f1": 0.19240506329113924,
+          "null_matches": 24,
+          "null_alerts": 59,
+          "false_alerts_per_null_match": 2.4583333333333335,
+          "false_alerts_per_null_90_minutes": 2.3734495474354675,
+          "median_delay_seconds": 540.0,
+          "delay_seconds": [
+            660.0,
+            1200.0,
+            240.0,
+            960.0,
+            360.0,
+            360.0,
+            480.0,
+            480.0,
+            480.0,
+            240.0,
+            300.0,
+            1200.0,
+            600.0,
+            540.0,
+            120.0,
+            180.0,
+            660.0,
+            840.0,
+            720.0,
+            240.0,
+            240.0,
+            1200.0,
+            1080.0,
+            540.0,
+            780.0,
+            480.0,
+            720.0,
+            480.0,
+            840.0,
+            660.0,
+            360.0,
+            900.0,
+            540.0,
+            660.0,
+            300.0,
+            360.0,
+            960.0,
+            240.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 106,
+          "early_alerts": 112,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 59
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 13,
+              "alerts": 53
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 15,
+              "alerts": 53
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 10,
+              "alerts": 64
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 0,
+              "alerts": 70
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 54
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 57
+            }
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "method": "unconditioned",
+        "reference_seconds": 1200,
+        "recent_seconds": 180,
+        "cadence_seconds": 30,
+        "min_recent": 6,
+        "min_reference": 12,
+        "line_threshold_m": 3.0,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "cusum_threshold": 12.0,
+        "model_threshold": 0.5,
+        "model_id": null
+      },
+      "seconds": 27.98750708006264,
+      "metrics": {
+        "600": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 63,
+          "false_positives": 238,
+          "missed_interventions": 33,
+          "precision": 0.20930232558139536,
+          "recall": 0.65625,
+          "f1": 0.31738035264483627,
+          "null_matches": 24,
+          "null_alerts": 52,
+          "false_alerts_per_null_match": 2.1666666666666665,
+          "false_alerts_per_null_90_minutes": 2.0918538384177,
+          "median_delay_seconds": 120.0,
+          "delay_seconds": [
+            90.0,
+            120.0,
+            120.0,
+            150.0,
+            420.0,
+            180.0,
+            60.0,
+            120.0,
+            60.0,
+            120.0,
+            270.0,
+            60.0,
+            180.0,
+            60.0,
+            90.0,
+            180.0,
+            120.0,
+            150.0,
+            60.0,
+            60.0,
+            90.0,
+            60.0,
+            90.0,
+            150.0,
+            120.0,
+            90.0,
+            90.0,
+            120.0,
+            90.0,
+            120.0,
+            210.0,
+            90.0,
+            180.0,
+            180.0,
+            90.0,
+            180.0,
+            90.0,
+            90.0,
+            210.0,
+            90.0,
+            180.0,
+            120.0,
+            150.0,
+            210.0,
+            120.0,
+            90.0,
+            90.0,
+            330.0,
+            60.0,
+            150.0,
+            90.0,
+            150.0,
+            150.0,
+            270.0,
+            90.0,
+            180.0,
+            360.0,
+            90.0,
+            180.0,
+            60.0,
+            60.0,
+            150.0,
+            60.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 122,
+          "early_alerts": 108,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 52
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 21,
+              "alerts": 66
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 20,
+              "alerts": 62
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 5,
+              "alerts": 57
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 17,
+              "alerts": 64
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 43
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 71
+            }
+          }
+        },
+        "1200": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 65,
+          "false_positives": 236,
+          "missed_interventions": 31,
+          "precision": 0.2159468438538206,
+          "recall": 0.6770833333333334,
+          "f1": 0.327455919395466,
+          "null_matches": 24,
+          "null_alerts": 52,
+          "false_alerts_per_null_match": 2.1666666666666665,
+          "false_alerts_per_null_90_minutes": 2.0918538384177,
+          "median_delay_seconds": 120.0,
+          "delay_seconds": [
+            90.0,
+            120.0,
+            660.0,
+            120.0,
+            150.0,
+            420.0,
+            180.0,
+            60.0,
+            120.0,
+            60.0,
+            120.0,
+            270.0,
+            60.0,
+            180.0,
+            60.0,
+            90.0,
+            180.0,
+            120.0,
+            150.0,
+            60.0,
+            60.0,
+            90.0,
+            60.0,
+            90.0,
+            150.0,
+            120.0,
+            90.0,
+            90.0,
+            120.0,
+            90.0,
+            120.0,
+            210.0,
+            90.0,
+            180.0,
+            180.0,
+            90.0,
+            180.0,
+            90.0,
+            90.0,
+            210.0,
+            90.0,
+            180.0,
+            120.0,
+            150.0,
+            210.0,
+            120.0,
+            90.0,
+            90.0,
+            330.0,
+            60.0,
+            150.0,
+            90.0,
+            150.0,
+            150.0,
+            270.0,
+            90.0,
+            180.0,
+            360.0,
+            90.0,
+            180.0,
+            60.0,
+            60.0,
+            150.0,
+            60.0,
+            1140.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 122,
+          "early_alerts": 108,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 52
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 21,
+              "alerts": 66
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 20,
+              "alerts": 62
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 5,
+              "alerts": 57
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 19,
+              "alerts": 64
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 43
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 71
+            }
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "method": "unconditioned",
+        "reference_seconds": 1200,
+        "recent_seconds": 180,
+        "cadence_seconds": 30,
+        "min_recent": 6,
+        "min_reference": 12,
+        "line_threshold_m": 5.0,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "cusum_threshold": 12.0,
+        "model_threshold": 0.5,
+        "model_id": null
+      },
+      "seconds": 0.914678376095253,
+      "metrics": {
+        "600": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 48,
+          "false_positives": 144,
+          "missed_interventions": 48,
+          "precision": 0.25,
+          "recall": 0.5,
+          "f1": 0.3333333333333333,
+          "null_matches": 24,
+          "null_alerts": 31,
+          "false_alerts_per_null_match": 1.2916666666666667,
+          "false_alerts_per_null_90_minutes": 1.2470667113643983,
+          "median_delay_seconds": 120.0,
+          "delay_seconds": [
+            120.0,
+            150.0,
+            120.0,
+            210.0,
+            60.0,
+            150.0,
+            120.0,
+            120.0,
+            180.0,
+            90.0,
+            150.0,
+            210.0,
+            150.0,
+            570.0,
+            90.0,
+            180.0,
+            60.0,
+            90.0,
+            120.0,
+            90.0,
+            120.0,
+            120.0,
+            90.0,
+            210.0,
+            120.0,
+            180.0,
+            150.0,
+            180.0,
+            90.0,
+            90.0,
+            210.0,
+            90.0,
+            120.0,
+            150.0,
+            150.0,
+            90.0,
+            330.0,
+            90.0,
+            120.0,
+            150.0,
+            270.0,
+            150.0,
+            390.0,
+            420.0,
+            120.0,
+            120.0,
+            60.0,
+            90.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 76,
+          "early_alerts": 48,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 31
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 21,
+              "alerts": 47
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 6,
+              "alerts": 31
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 4,
+              "alerts": 38
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 17,
+              "alerts": 45
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 29
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 53
+            }
+          }
+        },
+        "1200": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 49,
+          "false_positives": 143,
+          "missed_interventions": 47,
+          "precision": 0.2552083333333333,
+          "recall": 0.5104166666666666,
+          "f1": 0.3402777777777778,
+          "null_matches": 24,
+          "null_alerts": 31,
+          "false_alerts_per_null_match": 1.2916666666666667,
+          "false_alerts_per_null_90_minutes": 1.2470667113643983,
+          "median_delay_seconds": 120.0,
+          "delay_seconds": [
+            120.0,
+            150.0,
+            660.0,
+            120.0,
+            210.0,
+            60.0,
+            150.0,
+            120.0,
+            120.0,
+            180.0,
+            90.0,
+            150.0,
+            210.0,
+            150.0,
+            570.0,
+            90.0,
+            180.0,
+            60.0,
+            90.0,
+            120.0,
+            90.0,
+            120.0,
+            120.0,
+            90.0,
+            210.0,
+            120.0,
+            180.0,
+            150.0,
+            180.0,
+            90.0,
+            90.0,
+            210.0,
+            90.0,
+            120.0,
+            150.0,
+            150.0,
+            90.0,
+            330.0,
+            90.0,
+            120.0,
+            150.0,
+            270.0,
+            150.0,
+            390.0,
+            420.0,
+            120.0,
+            120.0,
+            60.0,
+            90.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 76,
+          "early_alerts": 48,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 31
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 21,
+              "alerts": 47
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 6,
+              "alerts": 31
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 4,
+              "alerts": 38
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 18,
+              "alerts": 45
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 29
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 53
+            }
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "method": "unconditioned",
+        "reference_seconds": 1200,
+        "recent_seconds": 180,
+        "cadence_seconds": 30,
+        "min_recent": 6,
+        "min_reference": 12,
+        "line_threshold_m": 7.0,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "cusum_threshold": 12.0,
+        "model_threshold": 0.5,
+        "model_id": null
+      },
+      "seconds": 0.6672949600033462,
+      "metrics": {
+        "600": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 46,
+          "false_positives": 39,
+          "missed_interventions": 50,
+          "precision": 0.5411764705882353,
+          "recall": 0.4791666666666667,
+          "f1": 0.5082872928176796,
+          "null_matches": 24,
+          "null_alerts": 9,
+          "false_alerts_per_null_match": 0.375,
+          "false_alerts_per_null_90_minutes": 0.36205162587998657,
+          "median_delay_seconds": 150.0,
+          "delay_seconds": [
+            120.0,
+            120.0,
+            210.0,
+            90.0,
+            180.0,
+            150.0,
+            150.0,
+            300.0,
+            180.0,
+            90.0,
+            180.0,
+            150.0,
+            570.0,
+            150.0,
+            90.0,
+            120.0,
+            120.0,
+            120.0,
+            120.0,
+            120.0,
+            210.0,
+            150.0,
+            210.0,
+            180.0,
+            210.0,
+            90.0,
+            90.0,
+            90.0,
+            120.0,
+            180.0,
+            150.0,
+            90.0,
+            90.0,
+            150.0,
+            180.0,
+            210.0,
+            150.0,
+            270.0,
+            150.0,
+            420.0,
+            480.0,
+            150.0,
+            180.0,
+            120.0,
+            120.0,
+            120.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 18,
+          "early_alerts": 16,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 9
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 23,
+              "alerts": 34
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 5,
+              "alerts": 10
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 2,
+              "alerts": 7
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 16,
+              "alerts": 25
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 7
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 31
+            }
+          }
+        },
+        "1200": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 47,
+          "false_positives": 38,
+          "missed_interventions": 49,
+          "precision": 0.5529411764705883,
+          "recall": 0.4895833333333333,
+          "f1": 0.5193370165745856,
+          "null_matches": 24,
+          "null_alerts": 9,
+          "false_alerts_per_null_match": 0.375,
+          "false_alerts_per_null_90_minutes": 0.36205162587998657,
+          "median_delay_seconds": 150.0,
+          "delay_seconds": [
+            120.0,
+            660.0,
+            120.0,
+            210.0,
+            90.0,
+            180.0,
+            150.0,
+            150.0,
+            300.0,
+            180.0,
+            90.0,
+            180.0,
+            150.0,
+            570.0,
+            150.0,
+            90.0,
+            120.0,
+            120.0,
+            120.0,
+            120.0,
+            120.0,
+            210.0,
+            150.0,
+            210.0,
+            180.0,
+            210.0,
+            90.0,
+            90.0,
+            90.0,
+            120.0,
+            180.0,
+            150.0,
+            90.0,
+            90.0,
+            150.0,
+            180.0,
+            210.0,
+            150.0,
+            270.0,
+            150.0,
+            420.0,
+            480.0,
+            150.0,
+            180.0,
+            120.0,
+            120.0,
+            120.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 18,
+          "early_alerts": 16,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 9
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 23,
+              "alerts": 34
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 5,
+              "alerts": 10
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 2,
+              "alerts": 7
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 17,
+              "alerts": 25
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 7
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 31
+            }
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "method": "conditioned",
+        "reference_seconds": 1200,
+        "recent_seconds": 180,
+        "cadence_seconds": 30,
+        "min_recent": 6,
+        "min_reference": 12,
+        "line_threshold_m": 3.0,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "cusum_threshold": 12.0,
+        "model_threshold": 0.5,
+        "model_id": null
+      },
+      "seconds": 25.36602386998129,
+      "metrics": {
+        "600": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 62,
+          "false_positives": 168,
+          "missed_interventions": 34,
+          "precision": 0.26956521739130435,
+          "recall": 0.6458333333333334,
+          "f1": 0.3803680981595092,
+          "null_matches": 24,
+          "null_alerts": 36,
+          "false_alerts_per_null_match": 1.5,
+          "false_alerts_per_null_90_minutes": 1.4482065035199463,
+          "median_delay_seconds": 120.0,
+          "delay_seconds": [
+            90.0,
+            120.0,
+            120.0,
+            150.0,
+            270.0,
+            60.0,
+            120.0,
+            60.0,
+            120.0,
+            210.0,
+            60.0,
+            480.0,
+            60.0,
+            120.0,
+            450.0,
+            120.0,
+            150.0,
+            570.0,
+            60.0,
+            90.0,
+            60.0,
+            120.0,
+            150.0,
+            150.0,
+            90.0,
+            90.0,
+            120.0,
+            90.0,
+            120.0,
+            240.0,
+            90.0,
+            180.0,
+            240.0,
+            150.0,
+            210.0,
+            570.0,
+            120.0,
+            150.0,
+            210.0,
+            90.0,
+            120.0,
+            120.0,
+            150.0,
+            210.0,
+            150.0,
+            150.0,
+            90.0,
+            60.0,
+            180.0,
+            60.0,
+            150.0,
+            150.0,
+            270.0,
+            90.0,
+            210.0,
+            360.0,
+            60.0,
+            180.0,
+            90.0,
+            60.0,
+            210.0,
+            60.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 95,
+          "early_alerts": 76,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 36
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 21,
+              "alerts": 51
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 21,
+              "alerts": 52
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 5,
+              "alerts": 39
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 15,
+              "alerts": 52
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 36
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 55
+            }
+          }
+        },
+        "1200": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 65,
+          "false_positives": 165,
+          "missed_interventions": 31,
+          "precision": 0.2826086956521739,
+          "recall": 0.6770833333333334,
+          "f1": 0.3987730061349693,
+          "null_matches": 24,
+          "null_alerts": 36,
+          "false_alerts_per_null_match": 1.5,
+          "false_alerts_per_null_90_minutes": 1.4482065035199463,
+          "median_delay_seconds": 120.0,
+          "delay_seconds": [
+            90.0,
+            120.0,
+            660.0,
+            120.0,
+            150.0,
+            270.0,
+            60.0,
+            120.0,
+            60.0,
+            120.0,
+            210.0,
+            60.0,
+            480.0,
+            60.0,
+            120.0,
+            450.0,
+            120.0,
+            150.0,
+            570.0,
+            60.0,
+            90.0,
+            60.0,
+            120.0,
+            150.0,
+            150.0,
+            90.0,
+            90.0,
+            120.0,
+            90.0,
+            120.0,
+            240.0,
+            90.0,
+            180.0,
+            240.0,
+            150.0,
+            210.0,
+            570.0,
+            120.0,
+            150.0,
+            210.0,
+            90.0,
+            120.0,
+            120.0,
+            150.0,
+            210.0,
+            150.0,
+            150.0,
+            90.0,
+            60.0,
+            180.0,
+            60.0,
+            150.0,
+            150.0,
+            270.0,
+            90.0,
+            210.0,
+            360.0,
+            60.0,
+            180.0,
+            720.0,
+            90.0,
+            60.0,
+            210.0,
+            60.0,
+            1140.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 95,
+          "early_alerts": 76,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 36
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 21,
+              "alerts": 51
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 21,
+              "alerts": 52
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 6,
+              "alerts": 39
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 17,
+              "alerts": 52
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 36
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 55
+            }
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "method": "conditioned",
+        "reference_seconds": 1200,
+        "recent_seconds": 180,
+        "cadence_seconds": 30,
+        "min_recent": 6,
+        "min_reference": 12,
+        "line_threshold_m": 5.0,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "cusum_threshold": 12.0,
+        "model_threshold": 0.5,
+        "model_id": null
+      },
+      "seconds": 1.0105375011335127,
+      "metrics": {
+        "600": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 46,
+          "false_positives": 127,
+          "missed_interventions": 50,
+          "precision": 0.2658959537572254,
+          "recall": 0.4791666666666667,
+          "f1": 0.3420074349442379,
+          "null_matches": 24,
+          "null_alerts": 29,
+          "false_alerts_per_null_match": 1.2083333333333333,
+          "false_alerts_per_null_90_minutes": 1.1666107945021789,
+          "median_delay_seconds": 120.0,
+          "delay_seconds": [
+            120.0,
+            120.0,
+            270.0,
+            60.0,
+            180.0,
+            120.0,
+            120.0,
+            480.0,
+            90.0,
+            180.0,
+            450.0,
+            120.0,
+            570.0,
+            90.0,
+            180.0,
+            60.0,
+            120.0,
+            150.0,
+            90.0,
+            120.0,
+            120.0,
+            90.0,
+            240.0,
+            120.0,
+            240.0,
+            180.0,
+            570.0,
+            120.0,
+            150.0,
+            210.0,
+            90.0,
+            120.0,
+            150.0,
+            150.0,
+            150.0,
+            90.0,
+            90.0,
+            150.0,
+            270.0,
+            120.0,
+            390.0,
+            390.0,
+            90.0,
+            180.0,
+            60.0,
+            90.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 67,
+          "early_alerts": 52,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 29
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 21,
+              "alerts": 45
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 5,
+              "alerts": 28
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 5,
+              "alerts": 28
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 15,
+              "alerts": 43
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 28
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 45
+            }
+          }
+        },
+        "1200": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 48,
+          "false_positives": 125,
+          "missed_interventions": 48,
+          "precision": 0.2774566473988439,
+          "recall": 0.5,
+          "f1": 0.35687732342007433,
+          "null_matches": 24,
+          "null_alerts": 29,
+          "false_alerts_per_null_match": 1.2083333333333333,
+          "false_alerts_per_null_90_minutes": 1.1666107945021789,
+          "median_delay_seconds": 135.0,
+          "delay_seconds": [
+            120.0,
+            660.0,
+            120.0,
+            270.0,
+            60.0,
+            180.0,
+            120.0,
+            120.0,
+            480.0,
+            90.0,
+            180.0,
+            450.0,
+            120.0,
+            570.0,
+            90.0,
+            180.0,
+            60.0,
+            120.0,
+            150.0,
+            90.0,
+            120.0,
+            120.0,
+            90.0,
+            240.0,
+            120.0,
+            240.0,
+            180.0,
+            570.0,
+            120.0,
+            150.0,
+            210.0,
+            90.0,
+            120.0,
+            150.0,
+            150.0,
+            150.0,
+            90.0,
+            90.0,
+            150.0,
+            270.0,
+            120.0,
+            390.0,
+            390.0,
+            90.0,
+            180.0,
+            60.0,
+            90.0,
+            1140.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 67,
+          "early_alerts": 52,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 29
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 21,
+              "alerts": 45
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 5,
+              "alerts": 28
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 5,
+              "alerts": 28
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 17,
+              "alerts": 43
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 28
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 45
+            }
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "method": "conditioned",
+        "reference_seconds": 1200,
+        "recent_seconds": 180,
+        "cadence_seconds": 30,
+        "min_recent": 6,
+        "min_reference": 12,
+        "line_threshold_m": 7.0,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "cusum_threshold": 12.0,
+        "model_threshold": 0.5,
+        "model_id": null
+      },
+      "seconds": 1.4393213369330624,
+      "metrics": {
+        "600": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 44,
+          "false_positives": 46,
+          "missed_interventions": 52,
+          "precision": 0.4888888888888889,
+          "recall": 0.4583333333333333,
+          "f1": 0.4731182795698925,
+          "null_matches": 24,
+          "null_alerts": 9,
+          "false_alerts_per_null_match": 0.375,
+          "false_alerts_per_null_90_minutes": 0.36205162587998657,
+          "median_delay_seconds": 150.0,
+          "delay_seconds": [
+            120.0,
+            150.0,
+            270.0,
+            90.0,
+            180.0,
+            150.0,
+            150.0,
+            480.0,
+            90.0,
+            180.0,
+            150.0,
+            570.0,
+            150.0,
+            90.0,
+            120.0,
+            150.0,
+            120.0,
+            120.0,
+            120.0,
+            240.0,
+            150.0,
+            240.0,
+            180.0,
+            570.0,
+            120.0,
+            150.0,
+            90.0,
+            120.0,
+            150.0,
+            150.0,
+            150.0,
+            90.0,
+            150.0,
+            120.0,
+            210.0,
+            150.0,
+            270.0,
+            150.0,
+            420.0,
+            120.0,
+            180.0,
+            120.0,
+            120.0,
+            120.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 21,
+          "early_alerts": 24,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 9
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 23,
+              "alerts": 36
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 5,
+              "alerts": 11
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 1,
+              "alerts": 8
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 15,
+              "alerts": 26
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 7
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 32
+            }
+          }
+        },
+        "1200": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 45,
+          "false_positives": 45,
+          "missed_interventions": 51,
+          "precision": 0.5,
+          "recall": 0.46875,
+          "f1": 0.4838709677419355,
+          "null_matches": 24,
+          "null_alerts": 9,
+          "false_alerts_per_null_match": 0.375,
+          "false_alerts_per_null_90_minutes": 0.36205162587998657,
+          "median_delay_seconds": 150.0,
+          "delay_seconds": [
+            120.0,
+            660.0,
+            150.0,
+            270.0,
+            90.0,
+            180.0,
+            150.0,
+            150.0,
+            480.0,
+            90.0,
+            180.0,
+            150.0,
+            570.0,
+            150.0,
+            90.0,
+            120.0,
+            150.0,
+            120.0,
+            120.0,
+            120.0,
+            240.0,
+            150.0,
+            240.0,
+            180.0,
+            570.0,
+            120.0,
+            150.0,
+            90.0,
+            120.0,
+            150.0,
+            150.0,
+            150.0,
+            90.0,
+            150.0,
+            120.0,
+            210.0,
+            150.0,
+            270.0,
+            150.0,
+            420.0,
+            120.0,
+            180.0,
+            120.0,
+            120.0,
+            120.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 21,
+          "early_alerts": 24,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 9
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 23,
+              "alerts": 36
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 5,
+              "alerts": 11
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 1,
+              "alerts": 8
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 16,
+              "alerts": 26
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 7
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 32
+            }
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "method": "fused",
+        "reference_seconds": 1200,
+        "recent_seconds": 180,
+        "cadence_seconds": 30,
+        "min_recent": 6,
+        "min_reference": 12,
+        "line_threshold_m": 5.0,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "cusum_threshold": 12.0,
+        "model_threshold": 0.5,
+        "model_id": null
+      },
+      "seconds": 7.285211625057855,
+      "metrics": {
+        "600": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 45,
+          "false_positives": 81,
+          "missed_interventions": 51,
+          "precision": 0.35714285714285715,
+          "recall": 0.46875,
+          "f1": 0.40540540540540543,
+          "null_matches": 24,
+          "null_alerts": 18,
+          "false_alerts_per_null_match": 0.75,
+          "false_alerts_per_null_90_minutes": 0.7241032517599731,
+          "median_delay_seconds": 210.0,
+          "delay_seconds": [
+            270.0,
+            120.0,
+            390.0,
+            60.0,
+            330.0,
+            120.0,
+            360.0,
+            480.0,
+            90.0,
+            300.0,
+            450.0,
+            120.0,
+            570.0,
+            90.0,
+            180.0,
+            180.0,
+            120.0,
+            390.0,
+            150.0,
+            300.0,
+            210.0,
+            210.0,
+            450.0,
+            120.0,
+            240.0,
+            540.0,
+            150.0,
+            150.0,
+            210.0,
+            90.0,
+            120.0,
+            270.0,
+            270.0,
+            150.0,
+            90.0,
+            180.0,
+            240.0,
+            270.0,
+            180.0,
+            390.0,
+            480.0,
+            90.0,
+            450.0,
+            60.0,
+            150.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 38,
+          "early_alerts": 32,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 18
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 21,
+              "alerts": 38
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 5,
+              "alerts": 19
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 5,
+              "alerts": 19
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 14,
+              "alerts": 32
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 17
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 33
+            }
+          }
+        },
+        "1200": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 48,
+          "false_positives": 78,
+          "missed_interventions": 48,
+          "precision": 0.38095238095238093,
+          "recall": 0.5,
+          "f1": 0.43243243243243246,
+          "null_matches": 24,
+          "null_alerts": 18,
+          "false_alerts_per_null_match": 0.75,
+          "false_alerts_per_null_90_minutes": 0.7241032517599731,
+          "median_delay_seconds": 210.0,
+          "delay_seconds": [
+            270.0,
+            840.0,
+            120.0,
+            390.0,
+            60.0,
+            330.0,
+            120.0,
+            360.0,
+            480.0,
+            90.0,
+            300.0,
+            450.0,
+            120.0,
+            570.0,
+            90.0,
+            180.0,
+            180.0,
+            120.0,
+            390.0,
+            150.0,
+            300.0,
+            210.0,
+            210.0,
+            450.0,
+            120.0,
+            240.0,
+            540.0,
+            780.0,
+            150.0,
+            150.0,
+            210.0,
+            90.0,
+            120.0,
+            270.0,
+            270.0,
+            150.0,
+            90.0,
+            180.0,
+            240.0,
+            270.0,
+            180.0,
+            390.0,
+            480.0,
+            90.0,
+            450.0,
+            60.0,
+            150.0,
+            1140.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 38,
+          "early_alerts": 32,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 18
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 21,
+              "alerts": 38
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 5,
+              "alerts": 19
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 5,
+              "alerts": 19
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 17,
+              "alerts": 32
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 17
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 33
+            }
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "method": "fused",
+        "reference_seconds": 1200,
+        "recent_seconds": 180,
+        "cadence_seconds": 30,
+        "min_recent": 6,
+        "min_reference": 12,
+        "line_threshold_m": 7.0,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "cusum_threshold": 12.0,
+        "model_threshold": 0.5,
+        "model_id": null
+      },
+      "seconds": 7.268572956920252,
+      "metrics": {
+        "600": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 42,
+          "false_positives": 31,
+          "missed_interventions": 54,
+          "precision": 0.5753424657534246,
+          "recall": 0.4375,
+          "f1": 0.4970414201183432,
+          "null_matches": 24,
+          "null_alerts": 5,
+          "false_alerts_per_null_match": 0.20833333333333334,
+          "false_alerts_per_null_90_minutes": 0.20113979215554809,
+          "median_delay_seconds": 210.0,
+          "delay_seconds": [
+            270.0,
+            150.0,
+            390.0,
+            90.0,
+            330.0,
+            150.0,
+            360.0,
+            480.0,
+            90.0,
+            300.0,
+            150.0,
+            570.0,
+            360.0,
+            180.0,
+            120.0,
+            390.0,
+            150.0,
+            300.0,
+            210.0,
+            450.0,
+            150.0,
+            240.0,
+            540.0,
+            150.0,
+            150.0,
+            90.0,
+            120.0,
+            270.0,
+            270.0,
+            150.0,
+            90.0,
+            180.0,
+            330.0,
+            240.0,
+            270.0,
+            180.0,
+            420.0,
+            120.0,
+            450.0,
+            120.0,
+            150.0,
+            210.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 14,
+          "early_alerts": 16,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 5
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 23,
+              "alerts": 33
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 4,
+              "alerts": 8
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 1,
+              "alerts": 6
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 14,
+              "alerts": 21
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 5
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 23
+            }
+          }
+        },
+        "1200": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 43,
+          "false_positives": 30,
+          "missed_interventions": 53,
+          "precision": 0.589041095890411,
+          "recall": 0.4479166666666667,
+          "f1": 0.5088757396449705,
+          "null_matches": 24,
+          "null_alerts": 5,
+          "false_alerts_per_null_match": 0.20833333333333334,
+          "false_alerts_per_null_90_minutes": 0.20113979215554809,
+          "median_delay_seconds": 210.0,
+          "delay_seconds": [
+            270.0,
+            840.0,
+            150.0,
+            390.0,
+            90.0,
+            330.0,
+            150.0,
+            360.0,
+            480.0,
+            90.0,
+            300.0,
+            150.0,
+            570.0,
+            360.0,
+            180.0,
+            120.0,
+            390.0,
+            150.0,
+            300.0,
+            210.0,
+            450.0,
+            150.0,
+            240.0,
+            540.0,
+            150.0,
+            150.0,
+            90.0,
+            120.0,
+            270.0,
+            270.0,
+            150.0,
+            90.0,
+            180.0,
+            330.0,
+            240.0,
+            270.0,
+            180.0,
+            420.0,
+            120.0,
+            450.0,
+            120.0,
+            150.0,
+            210.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 14,
+          "early_alerts": 16,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 5
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 23,
+              "alerts": 33
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 4,
+              "alerts": 8
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 1,
+              "alerts": 6
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 15,
+              "alerts": 21
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 5
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 23
+            }
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "method": "cusum",
+        "reference_seconds": 1200,
+        "recent_seconds": 180,
+        "cadence_seconds": 30,
+        "min_recent": 6,
+        "min_reference": 12,
+        "line_threshold_m": 2.5,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "cusum_threshold": 12.0,
+        "model_threshold": 0.5,
+        "model_id": null
+      },
+      "seconds": 1.2440191190544283,
+      "metrics": {
+        "600": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 60,
+          "false_positives": 127,
+          "missed_interventions": 36,
+          "precision": 0.32085561497326204,
+          "recall": 0.625,
+          "f1": 0.42402826855123676,
+          "null_matches": 24,
+          "null_alerts": 29,
+          "false_alerts_per_null_match": 1.2083333333333333,
+          "false_alerts_per_null_90_minutes": 1.1666107945021789,
+          "median_delay_seconds": 180.0,
+          "delay_seconds": [
+            150.0,
+            210.0,
+            150.0,
+            270.0,
+            300.0,
+            120.0,
+            270.0,
+            180.0,
+            150.0,
+            330.0,
+            150.0,
+            510.0,
+            120.0,
+            180.0,
+            510.0,
+            150.0,
+            270.0,
+            600.0,
+            150.0,
+            180.0,
+            90.0,
+            150.0,
+            300.0,
+            180.0,
+            120.0,
+            150.0,
+            180.0,
+            120.0,
+            270.0,
+            270.0,
+            150.0,
+            300.0,
+            240.0,
+            180.0,
+            600.0,
+            150.0,
+            180.0,
+            270.0,
+            120.0,
+            150.0,
+            180.0,
+            330.0,
+            180.0,
+            150.0,
+            210.0,
+            120.0,
+            330.0,
+            150.0,
+            180.0,
+            270.0,
+            300.0,
+            150.0,
+            330.0,
+            420.0,
+            150.0,
+            330.0,
+            180.0,
+            120.0,
+            270.0,
+            120.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 69,
+          "early_alerts": 52,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 29
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 21,
+              "alerts": 44
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 19,
+              "alerts": 43
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 5,
+              "alerts": 30
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 15,
+              "alerts": 41
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 28
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 45
+            }
+          }
+        },
+        "1200": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 61,
+          "false_positives": 126,
+          "missed_interventions": 35,
+          "precision": 0.32620320855614976,
+          "recall": 0.6354166666666666,
+          "f1": 0.43109540636042404,
+          "null_matches": 24,
+          "null_alerts": 29,
+          "false_alerts_per_null_match": 1.2083333333333333,
+          "false_alerts_per_null_90_minutes": 1.1666107945021789,
+          "median_delay_seconds": 180.0,
+          "delay_seconds": [
+            150.0,
+            210.0,
+            690.0,
+            150.0,
+            270.0,
+            300.0,
+            120.0,
+            270.0,
+            180.0,
+            150.0,
+            330.0,
+            150.0,
+            510.0,
+            120.0,
+            180.0,
+            510.0,
+            150.0,
+            270.0,
+            600.0,
+            150.0,
+            180.0,
+            90.0,
+            150.0,
+            300.0,
+            180.0,
+            120.0,
+            150.0,
+            180.0,
+            120.0,
+            270.0,
+            270.0,
+            150.0,
+            300.0,
+            240.0,
+            180.0,
+            600.0,
+            150.0,
+            180.0,
+            270.0,
+            120.0,
+            150.0,
+            180.0,
+            330.0,
+            180.0,
+            150.0,
+            210.0,
+            120.0,
+            330.0,
+            150.0,
+            180.0,
+            270.0,
+            300.0,
+            150.0,
+            330.0,
+            420.0,
+            150.0,
+            330.0,
+            180.0,
+            120.0,
+            270.0,
+            120.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 69,
+          "early_alerts": 52,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 29
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 21,
+              "alerts": 44
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 19,
+              "alerts": 43
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 5,
+              "alerts": 30
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 16,
+              "alerts": 41
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 28
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 45
+            }
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "method": "cusum",
+        "reference_seconds": 1200,
+        "recent_seconds": 180,
+        "cadence_seconds": 30,
+        "min_recent": 6,
+        "min_reference": 12,
+        "line_threshold_m": 2.5,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "cusum_threshold": 24.0,
+        "model_threshold": 0.5,
+        "model_id": null
+      },
+      "seconds": 0.8933662062190706,
+      "metrics": {
+        "600": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 46,
+          "false_positives": 88,
+          "missed_interventions": 50,
+          "precision": 0.34328358208955223,
+          "recall": 0.4791666666666667,
+          "f1": 0.4,
+          "null_matches": 24,
+          "null_alerts": 21,
+          "false_alerts_per_null_match": 0.875,
+          "false_alerts_per_null_90_minutes": 0.8447871270533021,
+          "median_delay_seconds": 210.0,
+          "delay_seconds": [
+            180.0,
+            180.0,
+            330.0,
+            180.0,
+            510.0,
+            210.0,
+            210.0,
+            180.0,
+            150.0,
+            240.0,
+            600.0,
+            180.0,
+            180.0,
+            150.0,
+            180.0,
+            210.0,
+            150.0,
+            180.0,
+            270.0,
+            150.0,
+            300.0,
+            210.0,
+            300.0,
+            240.0,
+            180.0,
+            240.0,
+            420.0,
+            150.0,
+            180.0,
+            210.0,
+            210.0,
+            210.0,
+            180.0,
+            180.0,
+            0.0,
+            0.0,
+            0.0,
+            240.0,
+            330.0,
+            210.0,
+            450.0,
+            510.0,
+            180.0,
+            210.0,
+            180.0,
+            330.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 44,
+          "early_alerts": 24,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 21
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 22,
+              "alerts": 35
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 6,
+              "alerts": 21
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 5,
+              "alerts": 24
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 13,
+              "alerts": 33
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 21
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 39
+            }
+          }
+        },
+        "1200": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 49,
+          "false_positives": 85,
+          "missed_interventions": 47,
+          "precision": 0.3656716417910448,
+          "recall": 0.5104166666666666,
+          "f1": 0.4260869565217391,
+          "null_matches": 24,
+          "null_alerts": 21,
+          "false_alerts_per_null_match": 0.875,
+          "false_alerts_per_null_90_minutes": 0.8447871270533021,
+          "median_delay_seconds": 210.0,
+          "delay_seconds": [
+            180.0,
+            720.0,
+            180.0,
+            330.0,
+            180.0,
+            510.0,
+            210.0,
+            210.0,
+            180.0,
+            150.0,
+            240.0,
+            600.0,
+            180.0,
+            630.0,
+            180.0,
+            150.0,
+            180.0,
+            210.0,
+            150.0,
+            180.0,
+            270.0,
+            150.0,
+            300.0,
+            210.0,
+            300.0,
+            240.0,
+            630.0,
+            180.0,
+            240.0,
+            420.0,
+            150.0,
+            180.0,
+            210.0,
+            210.0,
+            210.0,
+            180.0,
+            180.0,
+            0.0,
+            0.0,
+            0.0,
+            240.0,
+            330.0,
+            210.0,
+            450.0,
+            510.0,
+            180.0,
+            210.0,
+            180.0,
+            330.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 44,
+          "early_alerts": 24,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 21
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 22,
+              "alerts": 35
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 6,
+              "alerts": 21
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 5,
+              "alerts": 24
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 16,
+              "alerts": 33
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 21
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 39
+            }
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "method": "logistic",
+        "reference_seconds": 1200,
+        "recent_seconds": 180,
+        "cadence_seconds": 30,
+        "min_recent": 6,
+        "min_reference": 12,
+        "line_threshold_m": 2.5,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "cusum_threshold": 12.0,
+        "model_threshold": 0.5,
+        "model_id": "logistic_l2_1"
+      },
+      "seconds": 1.0513832029973855,
+      "metrics": {
+        "600": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 61,
+          "false_positives": 174,
+          "missed_interventions": 35,
+          "precision": 0.25957446808510637,
+          "recall": 0.6354166666666666,
+          "f1": 0.3685800604229607,
+          "null_matches": 24,
+          "null_alerts": 38,
+          "false_alerts_per_null_match": 1.5833333333333333,
+          "false_alerts_per_null_90_minutes": 1.5286624203821655,
+          "median_delay_seconds": 120.0,
+          "delay_seconds": [
+            90.0,
+            120.0,
+            120.0,
+            210.0,
+            270.0,
+            60.0,
+            150.0,
+            60.0,
+            120.0,
+            180.0,
+            60.0,
+            480.0,
+            60.0,
+            180.0,
+            450.0,
+            120.0,
+            150.0,
+            570.0,
+            60.0,
+            90.0,
+            60.0,
+            120.0,
+            300.0,
+            150.0,
+            90.0,
+            90.0,
+            120.0,
+            90.0,
+            120.0,
+            240.0,
+            120.0,
+            180.0,
+            240.0,
+            150.0,
+            570.0,
+            120.0,
+            150.0,
+            210.0,
+            90.0,
+            120.0,
+            120.0,
+            150.0,
+            210.0,
+            150.0,
+            150.0,
+            120.0,
+            60.0,
+            300.0,
+            60.0,
+            150.0,
+            150.0,
+            270.0,
+            90.0,
+            210.0,
+            360.0,
+            60.0,
+            210.0,
+            120.0,
+            60.0,
+            270.0,
+            60.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 101,
+          "early_alerts": 76,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 38
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 21,
+              "alerts": 52
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 20,
+              "alerts": 52
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 5,
+              "alerts": 39
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 15,
+              "alerts": 54
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 35
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 54
+            }
+          }
+        },
+        "1200": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 64,
+          "false_positives": 171,
+          "missed_interventions": 32,
+          "precision": 0.2723404255319149,
+          "recall": 0.6666666666666666,
+          "f1": 0.3867069486404834,
+          "null_matches": 24,
+          "null_alerts": 38,
+          "false_alerts_per_null_match": 1.5833333333333333,
+          "false_alerts_per_null_90_minutes": 1.5286624203821655,
+          "median_delay_seconds": 150.0,
+          "delay_seconds": [
+            90.0,
+            120.0,
+            660.0,
+            120.0,
+            210.0,
+            270.0,
+            60.0,
+            150.0,
+            60.0,
+            120.0,
+            180.0,
+            60.0,
+            480.0,
+            60.0,
+            180.0,
+            450.0,
+            120.0,
+            150.0,
+            570.0,
+            60.0,
+            90.0,
+            60.0,
+            120.0,
+            300.0,
+            150.0,
+            90.0,
+            90.0,
+            120.0,
+            90.0,
+            120.0,
+            240.0,
+            120.0,
+            180.0,
+            240.0,
+            150.0,
+            570.0,
+            120.0,
+            150.0,
+            210.0,
+            90.0,
+            120.0,
+            120.0,
+            150.0,
+            210.0,
+            150.0,
+            150.0,
+            120.0,
+            60.0,
+            300.0,
+            60.0,
+            150.0,
+            150.0,
+            270.0,
+            90.0,
+            210.0,
+            360.0,
+            60.0,
+            210.0,
+            720.0,
+            120.0,
+            60.0,
+            270.0,
+            60.0,
+            1140.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 101,
+          "early_alerts": 76,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 38
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 21,
+              "alerts": 52
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 20,
+              "alerts": 52
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 6,
+              "alerts": 39
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 17,
+              "alerts": 54
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 35
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 54
+            }
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "method": "logistic",
+        "reference_seconds": 1200,
+        "recent_seconds": 180,
+        "cadence_seconds": 30,
+        "min_recent": 6,
+        "min_reference": 12,
+        "line_threshold_m": 2.5,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "cusum_threshold": 12.0,
+        "model_threshold": 0.75,
+        "model_id": "logistic_l2_1"
+      },
+      "seconds": 0.6907646169565851,
+      "metrics": {
+        "600": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 46,
+          "false_positives": 110,
+          "missed_interventions": 50,
+          "precision": 0.2948717948717949,
+          "recall": 0.4791666666666667,
+          "f1": 0.36507936507936506,
+          "null_matches": 24,
+          "null_alerts": 23,
+          "false_alerts_per_null_match": 0.9583333333333334,
+          "false_alerts_per_null_90_minutes": 0.9252430439155213,
+          "median_delay_seconds": 120.0,
+          "delay_seconds": [
+            120.0,
+            120.0,
+            270.0,
+            60.0,
+            150.0,
+            120.0,
+            120.0,
+            480.0,
+            90.0,
+            180.0,
+            450.0,
+            120.0,
+            570.0,
+            90.0,
+            180.0,
+            60.0,
+            120.0,
+            150.0,
+            90.0,
+            120.0,
+            120.0,
+            90.0,
+            240.0,
+            120.0,
+            240.0,
+            150.0,
+            570.0,
+            120.0,
+            150.0,
+            210.0,
+            90.0,
+            120.0,
+            150.0,
+            150.0,
+            150.0,
+            90.0,
+            90.0,
+            150.0,
+            270.0,
+            120.0,
+            390.0,
+            390.0,
+            120.0,
+            180.0,
+            90.0,
+            90.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 59,
+          "early_alerts": 52,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 23
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 21,
+              "alerts": 43
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 5,
+              "alerts": 26
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 5,
+              "alerts": 24
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 15,
+              "alerts": 40
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 26
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 39
+            }
+          }
+        },
+        "1200": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 48,
+          "false_positives": 108,
+          "missed_interventions": 48,
+          "precision": 0.3076923076923077,
+          "recall": 0.5,
+          "f1": 0.38095238095238093,
+          "null_matches": 24,
+          "null_alerts": 23,
+          "false_alerts_per_null_match": 0.9583333333333334,
+          "false_alerts_per_null_90_minutes": 0.9252430439155213,
+          "median_delay_seconds": 135.0,
+          "delay_seconds": [
+            120.0,
+            660.0,
+            120.0,
+            270.0,
+            60.0,
+            150.0,
+            120.0,
+            120.0,
+            480.0,
+            90.0,
+            180.0,
+            450.0,
+            120.0,
+            570.0,
+            90.0,
+            180.0,
+            60.0,
+            120.0,
+            150.0,
+            90.0,
+            120.0,
+            120.0,
+            90.0,
+            240.0,
+            120.0,
+            240.0,
+            150.0,
+            570.0,
+            120.0,
+            150.0,
+            210.0,
+            90.0,
+            120.0,
+            150.0,
+            150.0,
+            150.0,
+            90.0,
+            90.0,
+            150.0,
+            270.0,
+            120.0,
+            390.0,
+            390.0,
+            120.0,
+            180.0,
+            90.0,
+            90.0,
+            1140.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 59,
+          "early_alerts": 52,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 23
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 21,
+              "alerts": 43
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 5,
+              "alerts": 26
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 5,
+              "alerts": 24
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 17,
+              "alerts": 40
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 26
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 39
+            }
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "method": "logistic",
+        "reference_seconds": 1200,
+        "recent_seconds": 180,
+        "cadence_seconds": 30,
+        "min_recent": 6,
+        "min_reference": 12,
+        "line_threshold_m": 2.5,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "cusum_threshold": 12.0,
+        "model_threshold": 0.5,
+        "model_id": "logistic_l2_10"
+      },
+      "seconds": 0.6957183740305481,
+      "metrics": {
+        "600": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 55,
+          "false_positives": 143,
+          "missed_interventions": 41,
+          "precision": 0.2777777777777778,
+          "recall": 0.5729166666666666,
+          "f1": 0.3741496598639456,
+          "null_matches": 24,
+          "null_alerts": 31,
+          "false_alerts_per_null_match": 1.2916666666666667,
+          "false_alerts_per_null_90_minutes": 1.2470667113643983,
+          "median_delay_seconds": 150.0,
+          "delay_seconds": [
+            90.0,
+            150.0,
+            120.0,
+            210.0,
+            270.0,
+            60.0,
+            180.0,
+            60.0,
+            120.0,
+            210.0,
+            90.0,
+            480.0,
+            60.0,
+            180.0,
+            450.0,
+            120.0,
+            150.0,
+            570.0,
+            90.0,
+            150.0,
+            60.0,
+            120.0,
+            150.0,
+            90.0,
+            90.0,
+            120.0,
+            90.0,
+            240.0,
+            120.0,
+            210.0,
+            240.0,
+            150.0,
+            570.0,
+            120.0,
+            150.0,
+            210.0,
+            90.0,
+            120.0,
+            150.0,
+            150.0,
+            150.0,
+            120.0,
+            90.0,
+            90.0,
+            150.0,
+            180.0,
+            270.0,
+            90.0,
+            390.0,
+            360.0,
+            90.0,
+            210.0,
+            120.0,
+            60.0,
+            60.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 79,
+          "early_alerts": 60,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 31
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 21,
+              "alerts": 47
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 14,
+              "alerts": 39
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 5,
+              "alerts": 34
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 15,
+              "alerts": 47
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 30
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 48
+            }
+          }
+        },
+        "1200": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 58,
+          "false_positives": 140,
+          "missed_interventions": 38,
+          "precision": 0.29292929292929293,
+          "recall": 0.6041666666666666,
+          "f1": 0.3945578231292517,
+          "null_matches": 24,
+          "null_alerts": 31,
+          "false_alerts_per_null_match": 1.2916666666666667,
+          "false_alerts_per_null_90_minutes": 1.2470667113643983,
+          "median_delay_seconds": 150.0,
+          "delay_seconds": [
+            90.0,
+            150.0,
+            660.0,
+            120.0,
+            210.0,
+            270.0,
+            60.0,
+            180.0,
+            60.0,
+            120.0,
+            210.0,
+            90.0,
+            480.0,
+            60.0,
+            180.0,
+            450.0,
+            120.0,
+            150.0,
+            570.0,
+            90.0,
+            150.0,
+            60.0,
+            120.0,
+            150.0,
+            90.0,
+            90.0,
+            120.0,
+            90.0,
+            240.0,
+            120.0,
+            210.0,
+            240.0,
+            150.0,
+            570.0,
+            120.0,
+            150.0,
+            210.0,
+            90.0,
+            120.0,
+            150.0,
+            150.0,
+            150.0,
+            120.0,
+            90.0,
+            90.0,
+            150.0,
+            180.0,
+            270.0,
+            90.0,
+            390.0,
+            360.0,
+            90.0,
+            210.0,
+            720.0,
+            120.0,
+            60.0,
+            60.0,
+            1140.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 79,
+          "early_alerts": 60,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 31
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 21,
+              "alerts": 47
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 14,
+              "alerts": 39
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 6,
+              "alerts": 34
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 17,
+              "alerts": 47
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 30
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 48
+            }
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "method": "logistic",
+        "reference_seconds": 1200,
+        "recent_seconds": 180,
+        "cadence_seconds": 30,
+        "min_recent": 6,
+        "min_reference": 12,
+        "line_threshold_m": 2.5,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "cusum_threshold": 12.0,
+        "model_threshold": 0.75,
+        "model_id": "logistic_l2_10"
+      },
+      "seconds": 0.686238712121849,
+      "metrics": {
+        "600": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 45,
+          "false_positives": 39,
+          "missed_interventions": 51,
+          "precision": 0.5357142857142857,
+          "recall": 0.46875,
+          "f1": 0.5,
+          "null_matches": 24,
+          "null_alerts": 8,
+          "false_alerts_per_null_match": 0.3333333333333333,
+          "false_alerts_per_null_90_minutes": 0.32182366744887697,
+          "median_delay_seconds": 150.0,
+          "delay_seconds": [
+            120.0,
+            150.0,
+            270.0,
+            150.0,
+            180.0,
+            150.0,
+            150.0,
+            480.0,
+            120.0,
+            210.0,
+            150.0,
+            570.0,
+            150.0,
+            90.0,
+            120.0,
+            150.0,
+            120.0,
+            120.0,
+            120.0,
+            240.0,
+            150.0,
+            240.0,
+            180.0,
+            570.0,
+            120.0,
+            150.0,
+            90.0,
+            120.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            210.0,
+            180.0,
+            270.0,
+            150.0,
+            420.0,
+            150.0,
+            180.0,
+            120.0,
+            330.0,
+            90.0,
+            150.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 17,
+          "early_alerts": 20,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 8
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 23,
+              "alerts": 32
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 6,
+              "alerts": 12
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 1,
+              "alerts": 6
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 15,
+              "alerts": 26
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 6
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 30
+            }
+          }
+        },
+        "1200": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 47,
+          "false_positives": 37,
+          "missed_interventions": 49,
+          "precision": 0.5595238095238095,
+          "recall": 0.4895833333333333,
+          "f1": 0.5222222222222223,
+          "null_matches": 24,
+          "null_alerts": 8,
+          "false_alerts_per_null_match": 0.3333333333333333,
+          "false_alerts_per_null_90_minutes": 0.32182366744887697,
+          "median_delay_seconds": 150.0,
+          "delay_seconds": [
+            120.0,
+            660.0,
+            150.0,
+            270.0,
+            150.0,
+            180.0,
+            150.0,
+            150.0,
+            480.0,
+            120.0,
+            210.0,
+            150.0,
+            570.0,
+            150.0,
+            90.0,
+            120.0,
+            150.0,
+            120.0,
+            120.0,
+            120.0,
+            240.0,
+            150.0,
+            240.0,
+            180.0,
+            570.0,
+            120.0,
+            150.0,
+            90.0,
+            120.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            150.0,
+            210.0,
+            180.0,
+            270.0,
+            150.0,
+            420.0,
+            150.0,
+            180.0,
+            120.0,
+            330.0,
+            90.0,
+            150.0,
+            1140.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 17,
+          "early_alerts": 20,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 8
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 23,
+              "alerts": 32
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 6,
+              "alerts": 12
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 1,
+              "alerts": 6
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 17,
+              "alerts": 26
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 6
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 30
+            }
+          }
+        }
+      }
+    },
+    {
+      "config": {
+        "method": "conditioned",
+        "reference_seconds": 1200,
+        "recent_seconds": 180,
+        "cadence_seconds": 60,
+        "min_recent": 6,
+        "min_reference": 12,
+        "line_threshold_m": 5.0,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "cusum_threshold": 12.0,
+        "model_threshold": 0.5,
+        "model_id": null
+      },
+      "seconds": 13.597417118959129,
+      "metrics": {
+        "600": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 44,
+          "false_positives": 103,
+          "missed_interventions": 52,
+          "precision": 0.29931972789115646,
+          "recall": 0.4583333333333333,
+          "f1": 0.36213991769547327,
+          "null_matches": 24,
+          "null_alerts": 22,
+          "false_alerts_per_null_match": 0.9166666666666666,
+          "false_alerts_per_null_90_minutes": 0.8850150854844117,
+          "median_delay_seconds": 180.0,
+          "delay_seconds": [
+            180.0,
+            180.0,
+            300.0,
+            120.0,
+            240.0,
+            180.0,
+            180.0,
+            120.0,
+            240.0,
+            480.0,
+            180.0,
+            600.0,
+            120.0,
+            120.0,
+            180.0,
+            180.0,
+            120.0,
+            180.0,
+            180.0,
+            120.0,
+            300.0,
+            180.0,
+            300.0,
+            240.0,
+            600.0,
+            180.0,
+            180.0,
+            240.0,
+            120.0,
+            180.0,
+            180.0,
+            180.0,
+            180.0,
+            120.0,
+            120.0,
+            180.0,
+            300.0,
+            180.0,
+            420.0,
+            420.0,
+            120.0,
+            240.0,
+            120.0,
+            120.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 57,
+          "early_alerts": 44,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 22
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 21,
+              "alerts": 39
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 4,
+              "alerts": 25
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 4,
+              "alerts": 25
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 15,
+              "alerts": 36
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 26
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 42
+            }
+          }
+        },
+        "1200": {
+          "independent_seed_families": 24,
+          "primary_matches": 120,
+          "eligible_interventions": 96,
+          "true_positives": 45,
+          "false_positives": 102,
+          "missed_interventions": 51,
+          "precision": 0.30612244897959184,
+          "recall": 0.46875,
+          "f1": 0.37037037037037035,
+          "null_matches": 24,
+          "null_alerts": 22,
+          "false_alerts_per_null_match": 0.9166666666666666,
+          "false_alerts_per_null_90_minutes": 0.8850150854844117,
+          "median_delay_seconds": 180.0,
+          "delay_seconds": [
+            180.0,
+            720.0,
+            180.0,
+            300.0,
+            120.0,
+            240.0,
+            180.0,
+            180.0,
+            120.0,
+            240.0,
+            480.0,
+            180.0,
+            600.0,
+            120.0,
+            120.0,
+            180.0,
+            180.0,
+            120.0,
+            180.0,
+            180.0,
+            120.0,
+            300.0,
+            180.0,
+            300.0,
+            240.0,
+            600.0,
+            180.0,
+            180.0,
+            240.0,
+            120.0,
+            180.0,
+            180.0,
+            180.0,
+            180.0,
+            120.0,
+            120.0,
+            180.0,
+            300.0,
+            180.0,
+            420.0,
+            420.0,
+            120.0,
+            240.0,
+            120.0,
+            120.0
+          ],
+          "duplicate_alerts": 0,
+          "stress": {
+            "tempo": {
+              "matches": 0,
+              "alerts": 0
+            },
+            "pulse": {
+              "matches": 0,
+              "alerts": 0
+            }
+          },
+          "wrong_team_alerts": 57,
+          "early_alerts": 44,
+          "per_scenario": {
+            "null": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 22
+            },
+            "strong": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 21,
+              "alerts": 39
+            },
+            "moderate": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 4,
+              "alerts": 25
+            },
+            "press_only": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 4,
+              "alerts": 25
+            },
+            "low_block": {
+              "matches": 24,
+              "eligible": 24,
+              "hits": 16,
+              "alerts": 36
+            },
+            "tempo": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 26
+            },
+            "pulse": {
+              "matches": 24,
+              "eligible": 0,
+              "hits": 0,
+              "alerts": 42
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "task": "Fixed pre/onset+300 windows, external intervention label; not full-match alert precision or a broadcast confidence",
+  "model_id": "logistic_l2_10",
+  "families": 40,
+  "eligible_examples": 400,
+  "supported_examples": 344,
+  "positives": 132,
+  "brier": 0.1637428445213593,
+  "five_bin_ece": 0.08049767573193084,
+  "bins": [
+    {
+      "lower": 0.0,
+      "upper": 0.2,
+      "count": 26,
+      "mean_score": 0.18390825923726142,
+      "positive_fraction": 0.038461538461538464
+    },
+    {
+      "lower": 0.2,
+      "upper": 0.4,
+      "count": 195,
+      "mean_score": 0.27066547585814704,
+      "positive_fraction": 0.21025641025641026
+    },
+    {
+      "lower": 0.4,
+      "upper": 0.6000000000000001,
+      "count": 43,
+      "mean_score": 0.48129037221764365,
+      "positive_fraction": 0.627906976744186
+    },
+    {
+      "lower": 0.6000000000000001,
+      "upper": 0.8,
+      "count": 21,
+      "mean_score": 0.6619886965564211,
+      "positive_fraction": 0.42857142857142855
+    },
+    {
+      "lower": 0.8,
+      "upper": 1.0,
+      "count": 59,
+      "mean_score": 0.8996009949669395,
+      "positive_fraction": 0.9152542372881356
+    }
+  ],
+  "no_calibration_or_threshold_fit_on_this_holdout": true
+}

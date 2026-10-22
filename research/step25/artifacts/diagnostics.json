@@ -1,0 +1,1251 @@
+{
+  "secondary_window": "(onset-300,onset] versus (onset,onset+600] context reweighted",
+  "secondary_separation": {
+    "strong": {
+      "line3_m": {
+        "pairs": 23,
+        "mean_paired_difference": 11.861880456059419,
+        "directional_auc": 1.0
+      },
+      "nearest_m": {
+        "pairs": 23,
+        "mean_paired_difference": -0.07470034493770003,
+        "directional_auc": 0.499054820415879
+      },
+      "density10": {
+        "pairs": 23,
+        "mean_paired_difference": 0.1387833386853758,
+        "directional_auc": 0.5500945179584121
+      }
+    },
+    "moderate": {
+      "line3_m": {
+        "pairs": 23,
+        "mean_paired_difference": 4.098335133430387,
+        "directional_auc": 0.8922495274102079
+      },
+      "nearest_m": {
+        "pairs": 23,
+        "mean_paired_difference": -0.24555846934899042,
+        "directional_auc": 0.5066162570888468
+      },
+      "density10": {
+        "pairs": 23,
+        "mean_paired_difference": 0.16043012271222395,
+        "directional_auc": 0.5595463137996219
+      }
+    },
+    "press_only": {
+      "line3_m": {
+        "pairs": 23,
+        "mean_paired_difference": 0.29627405174162447,
+        "directional_auc": 0.5803402646502835
+      },
+      "nearest_m": {
+        "pairs": 23,
+        "mean_paired_difference": -0.30951239191939733,
+        "directional_auc": 0.502835538752363
+      },
+      "density10": {
+        "pairs": 23,
+        "mean_paired_difference": 0.11071070305092583,
+        "directional_auc": 0.5255198487712666
+      }
+    },
+    "low_block": {
+      "line3_m": {
+        "pairs": 21,
+        "mean_paired_difference": -9.408958553161286,
+        "directional_auc": 0.8458049886621315
+      },
+      "nearest_m": {
+        "pairs": 21,
+        "mean_paired_difference": 1.8139817046995879,
+        "directional_auc": 0.7006802721088435
+      },
+      "density10": {
+        "pairs": 21,
+        "mean_paired_difference": -1.2870691375820973,
+        "directional_auc": 0.9002267573696145
+      }
+    },
+    "tempo": {
+      "line3_m": {
+        "pairs": 23,
+        "mean_paired_difference": -0.00649784062654375,
+        "directional_auc": 0.4877126654064272
+      },
+      "nearest_m": {
+        "pairs": 23,
+        "mean_paired_difference": -0.09694698184240436,
+        "directional_auc": 0.5198487712665406
+      },
+      "density10": {
+        "pairs": 23,
+        "mean_paired_difference": -0.044174043492101064,
+        "directional_auc": 0.4820415879017013
+      }
+    },
+    "pulse": {
+      "line3_m": {
+        "pairs": 23,
+        "mean_paired_difference": 4.720295676492476,
+        "directional_auc": 0.9073724007561437
+      },
+      "nearest_m": {
+        "pairs": 23,
+        "mean_paired_difference": -0.268073897445133,
+        "directional_auc": 0.5387523629489603
+      },
+      "density10": {
+        "pairs": 23,
+        "mean_paired_difference": 0.07197270149269971,
+        "directional_auc": 0.5330812854442344
+      }
+    }
+  },
+  "event_separation": {
+    "strong": {
+      "location_delta_m": {
+        "pairs": 24,
+        "mean_paired_difference": 13.404198963691385,
+        "directional_auc": 0.8090277777777778
+      },
+      "share_delta": {
+        "pairs": 24,
+        "mean_paired_difference": 0.21010547855322548,
+        "directional_auc": 0.7760416666666666
+      }
+    },
+    "moderate": {
+      "location_delta_m": {
+        "pairs": 24,
+        "mean_paired_difference": 8.847694983663061,
+        "directional_auc": 0.7204861111111112
+      },
+      "share_delta": {
+        "pairs": 24,
+        "mean_paired_difference": 0.10706560893020489,
+        "directional_auc": 0.6605902777777778
+      }
+    },
+    "press_only": {
+      "location_delta_m": {
+        "pairs": 24,
+        "mean_paired_difference": 0.4647808805159066,
+        "directional_auc": 0.5729166666666666
+      },
+      "share_delta": {
+        "pairs": 24,
+        "mean_paired_difference": 0.016470409657020593,
+        "directional_auc": 0.5451388888888888
+      }
+    },
+    "low_block": {
+      "location_delta_m": {
+        "pairs": 24,
+        "mean_paired_difference": -5.679857340270263,
+        "directional_auc": 0.578125
+      },
+      "share_delta": {
+        "pairs": 24,
+        "mean_paired_difference": -0.0763555081924535,
+        "directional_auc": 0.6111111111111112
+      }
+    },
+    "tempo": {
+      "location_delta_m": {
+        "pairs": 24,
+        "mean_paired_difference": -2.1409127384116418,
+        "directional_auc": 0.4583333333333333
+      },
+      "share_delta": {
+        "pairs": 24,
+        "mean_paired_difference": -0.02138289205290057,
+        "directional_auc": 0.4748263888888889
+      }
+    },
+    "pulse": {
+      "location_delta_m": {
+        "pairs": 24,
+        "mean_paired_difference": 8.0120825810338,
+        "directional_auc": 0.6822916666666666
+      },
+      "share_delta": {
+        "pairs": 24,
+        "mean_paired_difference": 0.13137497396992548,
+        "directional_auc": 0.6796875
+      }
+    }
+  },
+  "event_windows_supported": 168,
+  "event_windows_total": 168,
+  "frequency": [
+    {
+      "match_id": "e85d6f23-adcc-4949-a50f-f6e8c5a6b7c3",
+      "integer_second_frames_equal": true,
+      "raw_cache_exact": true,
+      "canonical_hash_equal": true,
+      "one_hz_alerts": [
+        [
+          300.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          2070.0,
+          "NORTH",
+          "advance"
+        ]
+      ],
+      "two_hz_alerts": [
+        [
+          330.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          2070.0,
+          "NORTH",
+          "advance"
+        ]
+      ],
+      "same_alert_schedule": false,
+      "two_hz_exposure_scaled_alerts": [
+        [
+          300.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          2070.0,
+          "NORTH",
+          "advance"
+        ]
+      ],
+      "same_alert_schedule_scaled": true
+    },
+    {
+      "match_id": "bcb2258f-bde1-4d08-a87c-bd42f569ae28",
+      "integer_second_frames_equal": true,
+      "raw_cache_exact": true,
+      "canonical_hash_equal": true,
+      "one_hz_alerts": [
+        [
+          300.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          2070.0,
+          "NORTH",
+          "advance"
+        ],
+        [
+          3420.0,
+          "NORTH",
+          "advance"
+        ],
+        [
+          4650.0,
+          "NORTH",
+          "retreat"
+        ]
+      ],
+      "two_hz_alerts": [
+        [
+          330.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          2070.0,
+          "NORTH",
+          "advance"
+        ],
+        [
+          3420.0,
+          "NORTH",
+          "advance"
+        ],
+        [
+          4650.0,
+          "NORTH",
+          "retreat"
+        ]
+      ],
+      "same_alert_schedule": false,
+      "two_hz_exposure_scaled_alerts": [
+        [
+          300.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          2070.0,
+          "NORTH",
+          "advance"
+        ],
+        [
+          3480.0,
+          "NORTH",
+          "advance"
+        ],
+        [
+          4650.0,
+          "NORTH",
+          "retreat"
+        ]
+      ],
+      "same_alert_schedule_scaled": false
+    },
+    {
+      "match_id": "357a7b1c-5784-4d43-a558-dcc45c3aefa1",
+      "integer_second_frames_equal": true,
+      "raw_cache_exact": true,
+      "canonical_hash_equal": true,
+      "one_hz_alerts": [
+        [
+          300.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          2070.0,
+          "NORTH",
+          "advance"
+        ]
+      ],
+      "two_hz_alerts": [
+        [
+          330.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          2070.0,
+          "NORTH",
+          "advance"
+        ],
+        [
+          3750.0,
+          "SOUTH",
+          "advance"
+        ]
+      ],
+      "same_alert_schedule": false,
+      "two_hz_exposure_scaled_alerts": [
+        [
+          300.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          2070.0,
+          "NORTH",
+          "advance"
+        ]
+      ],
+      "same_alert_schedule_scaled": true
+    },
+    {
+      "match_id": "bbef2de0-7fd3-4971-a27a-91db729bf2eb",
+      "integer_second_frames_equal": true,
+      "raw_cache_exact": true,
+      "canonical_hash_equal": true,
+      "one_hz_alerts": [
+        [
+          300.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          2070.0,
+          "NORTH",
+          "advance"
+        ]
+      ],
+      "two_hz_alerts": [
+        [
+          330.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          2070.0,
+          "NORTH",
+          "advance"
+        ]
+      ],
+      "same_alert_schedule": false,
+      "two_hz_exposure_scaled_alerts": [
+        [
+          300.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          2070.0,
+          "NORTH",
+          "advance"
+        ]
+      ],
+      "same_alert_schedule_scaled": true
+    },
+    {
+      "match_id": "ec7af8d6-6b16-4ae6-aacb-c1b60d322263",
+      "integer_second_frames_equal": true,
+      "raw_cache_exact": true,
+      "canonical_hash_equal": true,
+      "one_hz_alerts": [
+        [
+          300.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          2070.0,
+          "NORTH",
+          "advance"
+        ]
+      ],
+      "two_hz_alerts": [
+        [
+          330.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          2070.0,
+          "NORTH",
+          "advance"
+        ]
+      ],
+      "same_alert_schedule": false,
+      "two_hz_exposure_scaled_alerts": [
+        [
+          300.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          2070.0,
+          "NORTH",
+          "advance"
+        ]
+      ],
+      "same_alert_schedule_scaled": true
+    },
+    {
+      "match_id": "1400c9d3-46ca-4368-a5c1-83da46fd0c9a",
+      "integer_second_frames_equal": true,
+      "raw_cache_exact": true,
+      "canonical_hash_equal": true,
+      "one_hz_alerts": [
+        [
+          300.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          2070.0,
+          "NORTH",
+          "advance"
+        ],
+        [
+          3420.0,
+          "NORTH",
+          "advance"
+        ],
+        [
+          4710.0,
+          "SOUTH",
+          "retreat"
+        ]
+      ],
+      "two_hz_alerts": [
+        [
+          330.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          2070.0,
+          "NORTH",
+          "advance"
+        ],
+        [
+          3420.0,
+          "NORTH",
+          "advance"
+        ],
+        [
+          4710.0,
+          "SOUTH",
+          "retreat"
+        ]
+      ],
+      "same_alert_schedule": false,
+      "two_hz_exposure_scaled_alerts": [
+        [
+          300.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          2070.0,
+          "NORTH",
+          "advance"
+        ],
+        [
+          3480.0,
+          "NORTH",
+          "advance"
+        ],
+        [
+          4710.0,
+          "SOUTH",
+          "retreat"
+        ]
+      ],
+      "same_alert_schedule_scaled": false
+    },
+    {
+      "match_id": "83753871-d9a6-4949-ab29-5c257ea62d79",
+      "integer_second_frames_equal": true,
+      "raw_cache_exact": true,
+      "canonical_hash_equal": true,
+      "one_hz_alerts": [
+        [
+          300.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          2070.0,
+          "NORTH",
+          "advance"
+        ],
+        [
+          3960.0,
+          "NORTH",
+          "retreat"
+        ]
+      ],
+      "two_hz_alerts": [
+        [
+          330.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          2070.0,
+          "NORTH",
+          "advance"
+        ],
+        [
+          3960.0,
+          "NORTH",
+          "retreat"
+        ]
+      ],
+      "same_alert_schedule": false,
+      "two_hz_exposure_scaled_alerts": [
+        [
+          300.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          2070.0,
+          "NORTH",
+          "advance"
+        ],
+        [
+          3960.0,
+          "NORTH",
+          "retreat"
+        ]
+      ],
+      "same_alert_schedule_scaled": true
+    },
+    {
+      "match_id": "cefca9cc-74a5-4cd6-a90c-7e176dfbf3bf",
+      "integer_second_frames_equal": true,
+      "raw_cache_exact": true,
+      "canonical_hash_equal": true,
+      "one_hz_alerts": [],
+      "two_hz_alerts": [],
+      "same_alert_schedule": true,
+      "two_hz_exposure_scaled_alerts": [],
+      "same_alert_schedule_scaled": true
+    },
+    {
+      "match_id": "166643e1-9b4c-45c6-abf5-01a960a7e60d",
+      "integer_second_frames_equal": true,
+      "raw_cache_exact": true,
+      "canonical_hash_equal": true,
+      "one_hz_alerts": [
+        [
+          3720.0,
+          "SOUTH",
+          "advance"
+        ]
+      ],
+      "two_hz_alerts": [
+        [
+          3720.0,
+          "SOUTH",
+          "advance"
+        ]
+      ],
+      "same_alert_schedule": true,
+      "two_hz_exposure_scaled_alerts": [
+        [
+          3720.0,
+          "SOUTH",
+          "advance"
+        ]
+      ],
+      "same_alert_schedule_scaled": true
+    },
+    {
+      "match_id": "79dad881-9d15-42d5-acd1-3b6f55af9c74",
+      "integer_second_frames_equal": true,
+      "raw_cache_exact": true,
+      "canonical_hash_equal": true,
+      "one_hz_alerts": [],
+      "two_hz_alerts": [],
+      "same_alert_schedule": true,
+      "two_hz_exposure_scaled_alerts": [],
+      "same_alert_schedule_scaled": true
+    },
+    {
+      "match_id": "55dc557c-5b93-4f84-a301-6d818e238e96",
+      "integer_second_frames_equal": true,
+      "raw_cache_exact": true,
+      "canonical_hash_equal": true,
+      "one_hz_alerts": [],
+      "two_hz_alerts": [],
+      "same_alert_schedule": true,
+      "two_hz_exposure_scaled_alerts": [],
+      "same_alert_schedule_scaled": true
+    },
+    {
+      "match_id": "99db9db7-078a-4a59-a300-95c456bd3351",
+      "integer_second_frames_equal": true,
+      "raw_cache_exact": true,
+      "canonical_hash_equal": true,
+      "one_hz_alerts": [],
+      "two_hz_alerts": [],
+      "same_alert_schedule": true,
+      "two_hz_exposure_scaled_alerts": [],
+      "same_alert_schedule_scaled": true
+    },
+    {
+      "match_id": "61cccd78-7793-45a4-a82e-f09dcb32eb98",
+      "integer_second_frames_equal": true,
+      "raw_cache_exact": true,
+      "canonical_hash_equal": true,
+      "one_hz_alerts": [
+        [
+          3720.0,
+          "SOUTH",
+          "advance"
+        ]
+      ],
+      "two_hz_alerts": [
+        [
+          3720.0,
+          "SOUTH",
+          "advance"
+        ]
+      ],
+      "same_alert_schedule": true,
+      "two_hz_exposure_scaled_alerts": [
+        [
+          3720.0,
+          "SOUTH",
+          "advance"
+        ]
+      ],
+      "same_alert_schedule_scaled": true
+    },
+    {
+      "match_id": "c29572d5-e67b-4ab8-a4cb-3a8e5e4a0a2d",
+      "integer_second_frames_equal": true,
+      "raw_cache_exact": true,
+      "canonical_hash_equal": true,
+      "one_hz_alerts": [
+        [
+          3870.0,
+          "SOUTH",
+          "retreat"
+        ]
+      ],
+      "two_hz_alerts": [
+        [
+          3810.0,
+          "SOUTH",
+          "retreat"
+        ]
+      ],
+      "same_alert_schedule": false,
+      "two_hz_exposure_scaled_alerts": [
+        [
+          3870.0,
+          "SOUTH",
+          "retreat"
+        ]
+      ],
+      "same_alert_schedule_scaled": true
+    },
+    {
+      "match_id": "d8757d20-35a5-4f05-a691-1d5c2d86f81c",
+      "integer_second_frames_equal": true,
+      "raw_cache_exact": true,
+      "canonical_hash_equal": true,
+      "one_hz_alerts": [
+        [
+          1410.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          3750.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          4800.0,
+          "NORTH",
+          "retreat"
+        ]
+      ],
+      "two_hz_alerts": [
+        [
+          1380.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          3750.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          4770.0,
+          "NORTH",
+          "retreat"
+        ]
+      ],
+      "same_alert_schedule": false,
+      "two_hz_exposure_scaled_alerts": [
+        [
+          1410.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          3750.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          4800.0,
+          "NORTH",
+          "retreat"
+        ]
+      ],
+      "same_alert_schedule_scaled": true
+    },
+    {
+      "match_id": "7d55c69c-56dc-4234-a9dc-3ca3f5016c38",
+      "integer_second_frames_equal": true,
+      "raw_cache_exact": true,
+      "canonical_hash_equal": true,
+      "one_hz_alerts": [
+        [
+          1410.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          3750.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          3960.0,
+          "NORTH",
+          "advance"
+        ]
+      ],
+      "two_hz_alerts": [
+        [
+          1380.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          3750.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          3960.0,
+          "NORTH",
+          "advance"
+        ]
+      ],
+      "same_alert_schedule": false,
+      "two_hz_exposure_scaled_alerts": [
+        [
+          1410.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          3750.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          3960.0,
+          "NORTH",
+          "advance"
+        ]
+      ],
+      "same_alert_schedule_scaled": true
+    },
+    {
+      "match_id": "2c63fc42-a33f-42f3-a9db-bdd232fd8afd",
+      "integer_second_frames_equal": true,
+      "raw_cache_exact": true,
+      "canonical_hash_equal": true,
+      "one_hz_alerts": [
+        [
+          1410.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          3750.0,
+          "SOUTH",
+          "advance"
+        ]
+      ],
+      "two_hz_alerts": [
+        [
+          1380.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          3750.0,
+          "SOUTH",
+          "advance"
+        ]
+      ],
+      "same_alert_schedule": false,
+      "two_hz_exposure_scaled_alerts": [
+        [
+          1410.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          3750.0,
+          "SOUTH",
+          "advance"
+        ]
+      ],
+      "same_alert_schedule_scaled": true
+    },
+    {
+      "match_id": "6d91cd96-a80c-4f55-a6df-c94d446bce05",
+      "integer_second_frames_equal": true,
+      "raw_cache_exact": true,
+      "canonical_hash_equal": true,
+      "one_hz_alerts": [
+        [
+          1410.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          3750.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          4680.0,
+          "NORTH",
+          "retreat"
+        ]
+      ],
+      "two_hz_alerts": [
+        [
+          1380.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          3750.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          4680.0,
+          "NORTH",
+          "retreat"
+        ]
+      ],
+      "same_alert_schedule": false,
+      "two_hz_exposure_scaled_alerts": [
+        [
+          1410.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          3750.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          4680.0,
+          "NORTH",
+          "retreat"
+        ]
+      ],
+      "same_alert_schedule_scaled": true
+    },
+    {
+      "match_id": "dedd0e0a-2e81-4a12-ae44-d8b9f9a71f8c",
+      "integer_second_frames_equal": true,
+      "raw_cache_exact": true,
+      "canonical_hash_equal": true,
+      "one_hz_alerts": [
+        [
+          1410.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          3750.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          4620.0,
+          "NORTH",
+          "retreat"
+        ]
+      ],
+      "two_hz_alerts": [
+        [
+          1380.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          3750.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          4620.0,
+          "NORTH",
+          "retreat"
+        ]
+      ],
+      "same_alert_schedule": false,
+      "two_hz_exposure_scaled_alerts": [
+        [
+          1410.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          3750.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          4620.0,
+          "NORTH",
+          "retreat"
+        ]
+      ],
+      "same_alert_schedule_scaled": true
+    },
+    {
+      "match_id": "4eb1a75a-3043-4024-a750-18deebd1e39e",
+      "integer_second_frames_equal": true,
+      "raw_cache_exact": true,
+      "canonical_hash_equal": true,
+      "one_hz_alerts": [
+        [
+          1410.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          3750.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          3960.0,
+          "NORTH",
+          "advance"
+        ],
+        [
+          4860.0,
+          "NORTH",
+          "retreat"
+        ]
+      ],
+      "two_hz_alerts": [
+        [
+          1380.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          3750.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          3960.0,
+          "NORTH",
+          "advance"
+        ],
+        [
+          4860.0,
+          "NORTH",
+          "retreat"
+        ]
+      ],
+      "same_alert_schedule": false,
+      "two_hz_exposure_scaled_alerts": [
+        [
+          1410.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          3750.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          3960.0,
+          "NORTH",
+          "advance"
+        ],
+        [
+          4860.0,
+          "NORTH",
+          "retreat"
+        ]
+      ],
+      "same_alert_schedule_scaled": true
+    },
+    {
+      "match_id": "cd0a6385-a12a-4ff2-aaa1-b5c860b2dfcc",
+      "integer_second_frames_equal": true,
+      "raw_cache_exact": true,
+      "canonical_hash_equal": true,
+      "one_hz_alerts": [
+        [
+          1410.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          3750.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          4080.0,
+          "NORTH",
+          "retreat"
+        ]
+      ],
+      "two_hz_alerts": [
+        [
+          1380.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          3750.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          4050.0,
+          "NORTH",
+          "retreat"
+        ]
+      ],
+      "same_alert_schedule": false,
+      "two_hz_exposure_scaled_alerts": [
+        [
+          1410.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          3750.0,
+          "SOUTH",
+          "advance"
+        ],
+        [
+          4050.0,
+          "NORTH",
+          "retreat"
+        ]
+      ],
+      "same_alert_schedule_scaled": false
+    },
+    {
+      "match_id": "eb43956d-74b7-46cf-a856-64709f7774a1",
+      "integer_second_frames_equal": true,
+      "raw_cache_exact": true,
+      "canonical_hash_equal": true,
+      "one_hz_alerts": [],
+      "two_hz_alerts": [],
+      "same_alert_schedule": true,
+      "two_hz_exposure_scaled_alerts": [],
+      "same_alert_schedule_scaled": true
+    },
+    {
+      "match_id": "a902476b-1961-40bb-a648-4636796ae361",
+      "integer_second_frames_equal": true,
+      "raw_cache_exact": true,
+      "canonical_hash_equal": true,
+      "one_hz_alerts": [
+        [
+          4320.0,
+          "SOUTH",
+          "advance"
+        ]
+      ],
+      "two_hz_alerts": [
+        [
+          4350.0,
+          "SOUTH",
+          "advance"
+        ]
+      ],
+      "same_alert_schedule": false,
+      "two_hz_exposure_scaled_alerts": [
+        [
+          4320.0,
+          "SOUTH",
+          "advance"
+        ]
+      ],
+      "same_alert_schedule_scaled": true
+    },
+    {
+      "match_id": "d40cacda-8a47-42be-a34a-d3b87318a972",
+      "integer_second_frames_equal": true,
+      "raw_cache_exact": true,
+      "canonical_hash_equal": true,
+      "one_hz_alerts": [],
+      "two_hz_alerts": [],
+      "same_alert_schedule": true,
+      "two_hz_exposure_scaled_alerts": [],
+      "same_alert_schedule_scaled": true
+    },
+    {
+      "match_id": "c23ed15d-860a-4c07-a49d-5626a1b69c2c",
+      "integer_second_frames_equal": true,
+      "raw_cache_exact": true,
+      "canonical_hash_equal": true,
+      "one_hz_alerts": [],
+      "two_hz_alerts": [],
+      "same_alert_schedule": true,
+      "two_hz_exposure_scaled_alerts": [],
+      "same_alert_schedule_scaled": true
+    },
+    {
+      "match_id": "3ab86b0e-86a4-43b5-a957-aab4bd836adc",
+      "integer_second_frames_equal": true,
+      "raw_cache_exact": true,
+      "canonical_hash_equal": true,
+      "one_hz_alerts": [],
+      "two_hz_alerts": [],
+      "same_alert_schedule": true,
+      "two_hz_exposure_scaled_alerts": [],
+      "same_alert_schedule_scaled": true
+    },
+    {
+      "match_id": "7358a4e9-b7b6-4723-a68b-caab827746b9",
+      "integer_second_frames_equal": true,
+      "raw_cache_exact": true,
+      "canonical_hash_equal": true,
+      "one_hz_alerts": [
+        [
+          4320.0,
+          "SOUTH",
+          "advance"
+        ]
+      ],
+      "two_hz_alerts": [
+        [
+          4350.0,
+          "SOUTH",
+          "advance"
+        ]
+      ],
+      "same_alert_schedule": false,
+      "two_hz_exposure_scaled_alerts": [
+        [
+          4320.0,
+          "SOUTH",
+          "advance"
+        ]
+      ],
+      "same_alert_schedule_scaled": true
+    },
+    {
+      "match_id": "826223e7-f4e0-4558-ab08-31a92facf6c2",
+      "integer_second_frames_equal": true,
+      "raw_cache_exact": true,
+      "canonical_hash_equal": true,
+      "one_hz_alerts": [
+        [
+          4320.0,
+          "SOUTH",
+          "retreat"
+        ]
+      ],
+      "two_hz_alerts": [
+        [
+          4320.0,
+          "SOUTH",
+          "retreat"
+        ]
+      ],
+      "same_alert_schedule": true,
+      "two_hz_exposure_scaled_alerts": [
+        [
+          4320.0,
+          "SOUTH",
+          "retreat"
+        ]
+      ],
+      "same_alert_schedule_scaled": true
+    }
+  ],
+  "frequency_equal_alert_schedules": 11,
+  "seconds": 75.34552833299676,
+  "peak_rss_bytes": 902529024
+}

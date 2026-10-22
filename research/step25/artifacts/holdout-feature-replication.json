@@ -1,0 +1,163 @@
+{
+  "note": "Fixed development definitions, reported after freeze; no retuning",
+  "supported_windows": 263,
+  "all_windows": 280,
+  "results": {
+    "strong": {
+      "line3_m": {
+        "supported_pairs": 37,
+        "mean_paired_difference": 11.9061030378419,
+        "family_bootstrap95": [
+          11.007052867071378,
+          12.68088553451088
+        ]
+      },
+      "nearest_m": {
+        "supported_pairs": 37,
+        "mean_paired_difference": 0.4039277002313073,
+        "family_bootstrap95": [
+          -0.027660636500388858,
+          0.8234767850161502
+        ]
+      },
+      "density10": {
+        "supported_pairs": 37,
+        "mean_paired_difference": 0.12529201744575916,
+        "family_bootstrap95": [
+          -0.13577033425538662,
+          0.3818458231845476
+        ]
+      }
+    },
+    "moderate": {
+      "line3_m": {
+        "supported_pairs": 37,
+        "mean_paired_difference": 3.9623814218007207,
+        "family_bootstrap95": [
+          3.732918063476854,
+          4.171911598435322
+        ]
+      },
+      "nearest_m": {
+        "supported_pairs": 37,
+        "mean_paired_difference": 0.3076581522181142,
+        "family_bootstrap95": [
+          -0.21001014115637134,
+          0.8026501189830333
+        ]
+      },
+      "density10": {
+        "supported_pairs": 37,
+        "mean_paired_difference": -0.09610675880887945,
+        "family_bootstrap95": [
+          -0.4085410984527061,
+          0.2136947593571314
+        ]
+      }
+    },
+    "press_only": {
+      "line3_m": {
+        "supported_pairs": 37,
+        "mean_paired_difference": 0.1377862600722093,
+        "family_bootstrap95": [
+          -0.09851488194856364,
+          0.3673325792892559
+        ]
+      },
+      "nearest_m": {
+        "supported_pairs": 37,
+        "mean_paired_difference": 0.3186201773707727,
+        "family_bootstrap95": [
+          -0.17946294100265378,
+          0.8201322568902426
+        ]
+      },
+      "density10": {
+        "supported_pairs": 37,
+        "mean_paired_difference": -0.020233177496337466,
+        "family_bootstrap95": [
+          -0.27791881335538415,
+          0.2592322897171681
+        ]
+      }
+    },
+    "low_block": {
+      "line3_m": {
+        "supported_pairs": 32,
+        "mean_paired_difference": -9.785984154627261,
+        "family_bootstrap95": [
+          -10.647765294086001,
+          -8.835019605169435
+        ]
+      },
+      "nearest_m": {
+        "supported_pairs": 32,
+        "mean_paired_difference": 1.6602148506455137,
+        "family_bootstrap95": [
+          0.6968507230118679,
+          2.6471020056729335
+        ]
+      },
+      "density10": {
+        "supported_pairs": 32,
+        "mean_paired_difference": -1.1159308588913657,
+        "family_bootstrap95": [
+          -1.4574705614450778,
+          -0.7606737594538633
+        ]
+      }
+    },
+    "tempo": {
+      "line3_m": {
+        "supported_pairs": 36,
+        "mean_paired_difference": -0.3041907776159239,
+        "family_bootstrap95": [
+          -0.5291441226688822,
+          -0.10381745501294781
+        ]
+      },
+      "nearest_m": {
+        "supported_pairs": 36,
+        "mean_paired_difference": -0.09113922997412882,
+        "family_bootstrap95": [
+          -0.6281024420844753,
+          0.43248164449399207
+        ]
+      },
+      "density10": {
+        "supported_pairs": 36,
+        "mean_paired_difference": -0.2354321941112684,
+        "family_bootstrap95": [
+          -0.5260644523814788,
+          0.05857535077655291
+        ]
+      }
+    },
+    "pulse": {
+      "line3_m": {
+        "supported_pairs": 37,
+        "mean_paired_difference": 8.279886592468216,
+        "family_bootstrap95": [
+          7.118088733900461,
+          9.362542848288982
+        ]
+      },
+      "nearest_m": {
+        "supported_pairs": 37,
+        "mean_paired_difference": 0.18924675701754964,
+        "family_bootstrap95": [
+          -0.23340093531611353,
+          0.6684033575689458
+        ]
+      },
+      "density10": {
+        "supported_pairs": 37,
+        "mean_paired_difference": 0.24052753412929628,
+        "family_bootstrap95": [
+          0.00933448741282228,
+          0.4791055772309256
+        ]
+      }
+    }
+  }
+}

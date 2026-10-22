@@ -2,7 +2,7 @@ import RealTimeEngine from '../../upstream/football-simulator/RealTimeEngine';
 import Player, { type PlayerAttributes } from '../../upstream/football-simulator/Player';
 import Team from '../../upstream/football-simulator/Team';
 import { Position } from '../../upstream/football-simulator/enums/Position';
-import type { Tactics, TeamSide } from '../../upstream/football-simulator/RealTimeEngine';
+import type { Tactics, TeamSide, MatchSnapshot } from '../../upstream/football-simulator/RealTimeEngine';
 import { eventSchema, type CanonicalEvent } from './schema';
 
 // Park-Miller: explicit valid seed range; no global Math.random patch.
@@ -20,8 +20,8 @@ function createTeam(home: boolean, attributeOffset = 0): Team {
   }));
 }
 export type ScheduledChange = {at: number; side: TeamSide; changes: Partial<Tactics>};
-export type RunOptions = { seed: number; intervention?: boolean; retainSnapshots?: boolean; length?: number; changeAt?: number; policy?: 'press-only' | 'high-press-bundle'; schedule?: ScheduledChange[]; homeAttributeOffset?: number; awayAttributeOffset?: number; instrumentSnapshots?: boolean };
-export function runMatch({ seed, intervention = false, retainSnapshots = false, length = 5400, changeAt = 3600, policy = 'press-only', schedule = [], homeAttributeOffset = 0, awayAttributeOffset = 0, instrumentSnapshots = true }: RunOptions) {
+export type RunOptions = { seed: number; intervention?: boolean; retainSnapshots?: boolean; length?: number; changeAt?: number; policy?: 'press-only' | 'high-press-bundle'; schedule?: ScheduledChange[]; homeAttributeOffset?: number; awayAttributeOffset?: number; instrumentSnapshots?: boolean; onSnapshot?: (snapshot: MatchSnapshot) => void };
+export function runMatch({ seed, intervention = false, retainSnapshots = false, length = 5400, changeAt = 3600, policy = 'press-only', schedule = [], homeAttributeOffset = 0, awayAttributeOffset = 0, instrumentSnapshots = true, onSnapshot }: RunOptions) {
   const started = performance.now();
   const engine = new RealTimeEngine(createTeam(true, homeAttributeOffset), createTeam(false, awayAttributeOffset), {
     random: seededRandom(seed), tickSeconds: 0.25, matchLengthSeconds: length,
@@ -37,6 +37,7 @@ export function runMatch({ seed, intervention = false, retainSnapshots = false, 
   let applied = false, sourceCursor = 0, snapshotCount = 0, snapshotBytes = 0, maxHeap = 0;
   function drain() {
     for (const snapshot of engine.snapshots) {
+      onSnapshot?.(snapshot);
       snapshotCount++;
       if (instrumentSnapshots) snapshotBytes += Buffer.byteLength(JSON.stringify(snapshot));
     }
