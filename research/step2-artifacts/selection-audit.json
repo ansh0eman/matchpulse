@@ -1,0 +1,48 @@
+{
+  "stage": "development only; holdout not generated or scored",
+  "original_rule": "null alerts <=0.25 first, then F1, precision, lower median delay; stable grid order breaks ties",
+  "original_selected_config": {
+    "method": "adwin",
+    "version": "1",
+    "window_seconds": 480,
+    "threshold": 1.0,
+    "min_recoveries": 8,
+    "location_floor_m": 6.0,
+    "share_floor": 0.08,
+    "persistence": 2,
+    "cooldown_seconds": 900,
+    "features": "both",
+    "stream_threshold": 0.4,
+    "adwin_delta": 0.01
+  },
+  "original_summary": {
+    "independent_seed_families": 24,
+    "primary_matches": 72,
+    "eligible_interventions": 48,
+    "true_positives": 0,
+    "false_positives": 0,
+    "missed_interventions": 48,
+    "precision": null,
+    "recall": 0.0,
+    "f1": 0.0,
+    "null_matches": 24,
+    "null_alerts": 0,
+    "false_alerts_per_null_match": 0.0,
+    "false_alerts_per_null_90_minutes": 0.0,
+    "median_delay_seconds": null,
+    "delay_seconds": [],
+    "duplicate_alerts": 0,
+    "stress": {
+      "tempo": {
+        "matches": 24,
+        "alerts": 0
+      },
+      "pulse": {
+        "matches": 24,
+        "alerts": 0
+      }
+    }
+  },
+  "correction": "Exclude configurations with no true detections from active-method selection. Preserve all results. No parameter changes. If no active method meets the false-alarm target, report failure and select best active development F1 as research comparator.",
+  "final_freeze": "Selected detector unchanged; added inference source hashes before holdout scoring. No holdout outcomes inspected."
+}

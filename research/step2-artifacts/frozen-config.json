@@ -1,0 +1,141 @@
+{
+  "selected": {
+    "method": "rolling",
+    "version": "1",
+    "window_seconds": 480,
+    "threshold": 2.0,
+    "min_recoveries": 8,
+    "location_floor_m": 6.0,
+    "share_floor": 0.08,
+    "persistence": 2,
+    "cooldown_seconds": 900,
+    "features": "both",
+    "stream_threshold": 0.4,
+    "adwin_delta": 0.05
+  },
+  "finalists": {
+    "rolling": {
+      "method": "rolling",
+      "version": "1",
+      "window_seconds": 480,
+      "threshold": 2.0,
+      "min_recoveries": 8,
+      "location_floor_m": 6.0,
+      "share_floor": 0.08,
+      "persistence": 2,
+      "cooldown_seconds": 900,
+      "features": "both",
+      "stream_threshold": 0.4,
+      "adwin_delta": 0.05
+    },
+    "page_hinkley": {
+      "method": "page_hinkley",
+      "version": "1",
+      "window_seconds": 480,
+      "threshold": 1.5,
+      "min_recoveries": 8,
+      "location_floor_m": 6.0,
+      "share_floor": 0.08,
+      "persistence": 2,
+      "cooldown_seconds": 900,
+      "features": "both",
+      "stream_threshold": 0.8,
+      "adwin_delta": 0.05
+    },
+    "adwin": {
+      "method": "adwin",
+      "version": "1",
+      "window_seconds": 480,
+      "threshold": 1.0,
+      "min_recoveries": 8,
+      "location_floor_m": 6.0,
+      "share_floor": 0.08,
+      "persistence": 2,
+      "cooldown_seconds": 900,
+      "features": "both",
+      "stream_threshold": 0.4,
+      "adwin_delta": 0.01
+    }
+  },
+  "protocol": {
+    "development_families": 24,
+    "holdout_families": 32,
+    "seeds": "1009 + 7919*i; i=0..55",
+    "old_seeds_excluded": [
+      11,
+      29,
+      47,
+      83,
+      101,
+      137,
+      173,
+      211,
+      257,
+      307,
+      353,
+      401
+    ],
+    "scenarios": [
+      "null",
+      "bundle",
+      "moderate",
+      "tempo",
+      "pulse"
+    ],
+    "change_times": [
+      3300,
+      3600,
+      3900,
+      4200
+    ],
+    "pulse_duration_seconds": 180,
+    "matching_horizon_seconds": 600,
+    "false_positive_target_per_null_match": 0.25,
+    "targets": {
+      "precision": 0.75,
+      "recall": 0.7,
+      "median_delay_seconds": 480
+    }
+  },
+  "development_manifest_sha256": "32b93f9b8ce7f774f7986e571e1a245982f90e8eb51e393099071a08a7aa5a24",
+  "development_seeds": [
+    1009,
+    8928,
+    16847,
+    24766,
+    32685,
+    40604,
+    48523,
+    56442,
+    64361,
+    72280,
+    80199,
+    88118,
+    96037,
+    103956,
+    111875,
+    119794,
+    127713,
+    135632,
+    143551,
+    151470,
+    159389,
+    167308,
+    175227,
+    183146
+  ],
+  "selection_completed_before_holdout": true,
+  "inference_source_sha256": {
+    "backend/src/matchpulse/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "backend/src/matchpulse/cli.py": "498753a34eafe4cd5c6564a3feebed0ff542c6a6e7aee8c1eda0fd5525cf677e",
+    "backend/src/matchpulse/detectors/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "backend/src/matchpulse/detectors/rolling.py": "0465589285e11fd8f4fb3fcf1caec90eb39f3517c532c1a6cf311e7a90ccca51",
+    "backend/src/matchpulse/detectors/streaming.py": "54f005c8afa42e4519e7694d096458f934545278a3cfcf2354fb07a8e974e8ae",
+    "backend/src/matchpulse/evaluation.py": "23c05a8617cc4bc1d01757ae4473db2b8f9ac243d28a3cb39b8420e8d9f87757",
+    "backend/src/matchpulse/evidence.py": "d31236cc671e65a0b37fe38013d84bc7034e099c4cc43d43c3961488175601d8",
+    "backend/src/matchpulse/ingestion.py": "3a1d49510ac8022043b620ad5f3c36dacf01ee8cf43403fde13d704e913cb7d3",
+    "backend/src/matchpulse/replay.py": "62416db8c7abdfcf0268408e9436a8f576192459de30ab7acd821a8ffe18fd96",
+    "backend/src/matchpulse/schemas.py": "bf4467728bc9859aa4d325cf52fb4f7eeb3d6b865c22cd5a5bc35da5416bd7ef",
+    "backend/src/matchpulse/signals.py": "62322fb8540a834f40d757c58848d52a57298e1f5ee8c6e2fae73a2068ae1d21"
+  }
+}

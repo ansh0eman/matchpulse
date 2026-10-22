@@ -1,0 +1,45 @@
+(min_instances: 'int' = 30, delta: 'float' = 0.005, threshold: 'float' = 50.0, alpha: 'float' = 0.9999, mode: 'str' = 'both')
+(delta=0.002, clock=32, max_buckets=5, min_window_length=5, grace_period=10)
+    def update(self, x):
+        if self.drift_detected:
+            self._reset()
+
+        self._x_mean.update(x)
+        dev = x - self._x_mean.get()
+
+        self._sum_increase = self.alpha * self._sum_increase + dev - self.delta
+        self._sum_decrease = self.alpha * self._sum_decrease + dev + self.delta
+
+        if self._sum_increase < self._min_increase:
+            self._min_increase = self._sum_increase
+
+        if self._sum_decrease > self._max_decrease:
+            self._max_decrease = self._sum_decrease
+
+        if self._x_mean.n >= self.min_instances:
+            test_increase = self._sum_increase - self._min_increase
+            test_decrease = self._max_decrease - self._sum_decrease
+            self._drift_detected = self._test_drift(test_increase, test_decrease)
+
+    def update(self, x):
+        """Update the change detector with a single data point.
+
+        Apart from adding the element value to the window, by inserting it in
+        the correct bucket, it will also update the relevant statistics, in
+        this case the total sum of all values, the window width and the total
+        variance.
+
+        Parameters
+        ----------
+        x
+            Input value
+
+        Returns
+        -------
+        self
+
+        """
+        if self.drift_detected:
+            self._reset()
+
+        self._drift_detected = self._helper.update(x)

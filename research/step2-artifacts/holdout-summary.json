@@ -1,0 +1,336 @@
+{
+  "frozen_config_sha256": "cb8848b5bfca606b88abe27b8b42e35650cc6f0acafbe5719e49741e16ea9812",
+  "feature_seconds": 22.38185908300511,
+  "evidence": {
+    "valid": 417,
+    "total": 417,
+    "deterministic_replay": true,
+    "prefix_invariant": true,
+    "prefix_checks": 160
+  },
+  "performance": {
+    "validation_seconds": 15.921167837062967,
+    "replay_seconds": 10.86646584099799,
+    "matches": 160
+  },
+  "holdout_manifest_sha256": "8bae38bbc127599fccc4f7e64add8bc3207653f4334dff33269b1f241012e31c",
+  "comparisons": [
+    {
+      "config": {
+        "method": "rolling",
+        "version": "1",
+        "window_seconds": 480,
+        "threshold": 2.0,
+        "min_recoveries": 8,
+        "location_floor_m": 6.0,
+        "share_floor": 0.08,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "features": "both",
+        "stream_threshold": 0.4,
+        "adwin_delta": 0.05
+      },
+      "summary": {
+        "independent_seed_families": 32,
+        "primary_matches": 96,
+        "eligible_interventions": 64,
+        "true_positives": 31,
+        "false_positives": 202,
+        "missed_interventions": 33,
+        "precision": 0.13304721030042918,
+        "recall": 0.484375,
+        "f1": 0.20875420875420875,
+        "null_matches": 32,
+        "null_alerts": 84,
+        "false_alerts_per_null_match": 2.625,
+        "false_alerts_per_null_90_minutes": 2.532592613271545,
+        "median_delay_seconds": 420.0,
+        "delay_seconds": [
+          480.0,
+          480.0,
+          540.0,
+          540.0,
+          420.0,
+          420.0,
+          420.0,
+          180.0,
+          180.0,
+          60.0,
+          60.0,
+          360.0,
+          540.0,
+          600.0,
+          300.0,
+          300.0,
+          420.0,
+          540.0,
+          60.0,
+          60.0,
+          240.0,
+          180.0,
+          480.0,
+          600.0,
+          540.0,
+          480.0,
+          480.0,
+          420.0,
+          480.0,
+          420.0,
+          480.0
+        ],
+        "duplicate_alerts": 0,
+        "stress": {
+          "tempo": {
+            "matches": 32,
+            "alerts": 89
+          },
+          "pulse": {
+            "matches": 32,
+            "alerts": 95
+          }
+        }
+      },
+      "detector_seconds": 0.017736542009515688,
+      "cluster_bootstrap_95_intervals": {
+        "precision": {
+          "lower": 0.09433962264150944,
+          "upper": 0.17647058823529413,
+          "valid_bootstrap_samples": 1000
+        },
+        "recall": {
+          "lower": 0.328125,
+          "upper": 0.640625,
+          "valid_bootstrap_samples": 1000
+        },
+        "f1": {
+          "lower": 0.1476510067114094,
+          "upper": 0.275092936802974,
+          "valid_bootstrap_samples": 1000
+        },
+        "false_alerts_per_null_match": {
+          "lower": 2.21875,
+          "upper": 3.09375,
+          "valid_bootstrap_samples": 1000
+        },
+        "median_delay_seconds": {
+          "lower": 300.0,
+          "upper": 480.0,
+          "valid_bootstrap_samples": 1000
+        }
+      }
+    },
+    {
+      "config": {
+        "method": "page_hinkley",
+        "version": "1",
+        "window_seconds": 480,
+        "threshold": 1.5,
+        "min_recoveries": 8,
+        "location_floor_m": 6.0,
+        "share_floor": 0.08,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "features": "both",
+        "stream_threshold": 0.8,
+        "adwin_delta": 0.05
+      },
+      "summary": {
+        "independent_seed_families": 32,
+        "primary_matches": 96,
+        "eligible_interventions": 64,
+        "true_positives": 17,
+        "false_positives": 165,
+        "missed_interventions": 47,
+        "precision": 0.09340659340659341,
+        "recall": 0.265625,
+        "f1": 0.13821138211382114,
+        "null_matches": 32,
+        "null_alerts": 71,
+        "false_alerts_per_null_match": 2.21875,
+        "false_alerts_per_null_90_minutes": 2.1406437564557104,
+        "median_delay_seconds": 480.0,
+        "delay_seconds": [
+          480.0,
+          480.0,
+          540.0,
+          360.0,
+          600.0,
+          300.0,
+          480.0,
+          300.0,
+          240.0,
+          240.0,
+          480.0,
+          300.0,
+          180.0,
+          480.0,
+          480.0,
+          360.0,
+          480.0
+        ],
+        "duplicate_alerts": 0,
+        "stress": {
+          "tempo": {
+            "matches": 32,
+            "alerts": 70
+          },
+          "pulse": {
+            "matches": 32,
+            "alerts": 72
+          }
+        }
+      },
+      "detector_seconds": 0.028646125007071532
+    },
+    {
+      "config": {
+        "method": "adwin",
+        "version": "1",
+        "window_seconds": 480,
+        "threshold": 1.0,
+        "min_recoveries": 8,
+        "location_floor_m": 6.0,
+        "share_floor": 0.08,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "features": "both",
+        "stream_threshold": 0.4,
+        "adwin_delta": 0.01
+      },
+      "summary": {
+        "independent_seed_families": 32,
+        "primary_matches": 96,
+        "eligible_interventions": 64,
+        "true_positives": 0,
+        "false_positives": 0,
+        "missed_interventions": 64,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0,
+        "null_matches": 32,
+        "null_alerts": 0,
+        "false_alerts_per_null_match": 0.0,
+        "false_alerts_per_null_90_minutes": 0.0,
+        "median_delay_seconds": null,
+        "delay_seconds": [],
+        "duplicate_alerts": 0,
+        "stress": {
+          "tempo": {
+            "matches": 32,
+            "alerts": 0
+          },
+          "pulse": {
+            "matches": 32,
+            "alerts": 0
+          }
+        }
+      },
+      "detector_seconds": 0.11660154200217221
+    }
+  ],
+  "selected_result": {
+    "config": {
+      "method": "rolling",
+      "version": "1",
+      "window_seconds": 480,
+      "threshold": 2.0,
+      "min_recoveries": 8,
+      "location_floor_m": 6.0,
+      "share_floor": 0.08,
+      "persistence": 2,
+      "cooldown_seconds": 900,
+      "features": "both",
+      "stream_threshold": 0.4,
+      "adwin_delta": 0.05
+    },
+    "summary": {
+      "independent_seed_families": 32,
+      "primary_matches": 96,
+      "eligible_interventions": 64,
+      "true_positives": 31,
+      "false_positives": 202,
+      "missed_interventions": 33,
+      "precision": 0.13304721030042918,
+      "recall": 0.484375,
+      "f1": 0.20875420875420875,
+      "null_matches": 32,
+      "null_alerts": 84,
+      "false_alerts_per_null_match": 2.625,
+      "false_alerts_per_null_90_minutes": 2.532592613271545,
+      "median_delay_seconds": 420.0,
+      "delay_seconds": [
+        480.0,
+        480.0,
+        540.0,
+        540.0,
+        420.0,
+        420.0,
+        420.0,
+        180.0,
+        180.0,
+        60.0,
+        60.0,
+        360.0,
+        540.0,
+        600.0,
+        300.0,
+        300.0,
+        420.0,
+        540.0,
+        60.0,
+        60.0,
+        240.0,
+        180.0,
+        480.0,
+        600.0,
+        540.0,
+        480.0,
+        480.0,
+        420.0,
+        480.0,
+        420.0,
+        480.0
+      ],
+      "duplicate_alerts": 0,
+      "stress": {
+        "tempo": {
+          "matches": 32,
+          "alerts": 89
+        },
+        "pulse": {
+          "matches": 32,
+          "alerts": 95
+        }
+      }
+    },
+    "detector_seconds": 0.017736542009515688,
+    "cluster_bootstrap_95_intervals": {
+      "precision": {
+        "lower": 0.09433962264150944,
+        "upper": 0.17647058823529413,
+        "valid_bootstrap_samples": 1000
+      },
+      "recall": {
+        "lower": 0.328125,
+        "upper": 0.640625,
+        "valid_bootstrap_samples": 1000
+      },
+      "f1": {
+        "lower": 0.1476510067114094,
+        "upper": 0.275092936802974,
+        "valid_bootstrap_samples": 1000
+      },
+      "false_alerts_per_null_match": {
+        "lower": 2.21875,
+        "upper": 3.09375,
+        "valid_bootstrap_samples": 1000
+      },
+      "median_delay_seconds": {
+        "lower": 300.0,
+        "upper": 480.0,
+        "valid_bootstrap_samples": 1000
+      }
+    }
+  },
+  "raw_result_sha256": "365b285195480573bffe530ca2352a8e6738e36efc3092e056dcaba24784e846"
+}

@@ -1,0 +1,14 @@
+{
+  "method": "rolling",
+  "version": "1",
+  "window_seconds": 480,
+  "threshold": 2.0,
+  "min_recoveries": 8,
+  "location_floor_m": 6.0,
+  "share_floor": 0.08,
+  "persistence": 2,
+  "cooldown_seconds": 900,
+  "features": "both",
+  "stream_threshold": 0.4,
+  "adwin_delta": 0.05
+}

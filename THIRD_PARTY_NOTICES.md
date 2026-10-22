@@ -35,3 +35,11 @@ Zod 4.1.12 is MIT; its installed full license is in poc/node_modules/zod/LICENSE
 Runtime source imports use the upstream source's MIT grant above. The upstream package's declared events dependency is MIT. Development dependencies and transitive declared licenses are inventoried in research/dependency-licenses.json; their installed notice files are retained in their respective node_modules directories. If packaging this research for redistribution, include those applicable license/notice files, rather than relying only on this inventory.
 
 No third-party media or football datasets are used in generated matches. Other candidates were inspected as references only.
+
+## Step 2 Python analytical dependencies
+
+River 0.22.0 (the River developers) is used as an installed BSD-3-Clause dependency for Page-Hinkley and ADWIN comparison. Retain its copyright, conditions and disclaimer; do not imply endorsement. The full installed license is retained in research/step2-artifacts/river-LICENSE.txt. No River implementation is copied into MatchPulse source.
+
+Pydantic 2.12.3 is MIT; pytest 8.4.2 is MIT (development); Matplotlib 3.10.7 uses its bundled Matplotlib/PSF-based license terms (evaluation charts). Full installed notices and the complete locked dependency inventory are in research/step2-artifacts/ and backend/uv.lock. NumPy/SciPy and their distributed numerical libraries carry additional bundled notices; retain the installed distribution notices if redistributing their wheels or a Python environment. This project does not relicense those components.
+
+Ruptures was researched (BSD-2-Clause); it is not installed, imported or copied. The original rolling detector, signal definitions, adapter, EvidencePack engine and evaluation are MatchPulse implementation work.

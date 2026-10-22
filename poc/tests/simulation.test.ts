@@ -61,3 +61,14 @@ test('bundled policy saved results have identical prefixes and a broad spatial s
   // This is a fixture regression check, not a claim about unseen seeds.
   assert.equal(data.effects.high_recovery_actions.positive_pairs,11);
 });
+
+test('Step 2 schedule preserves default prefix, records actual times and filters controls',()=>{
+  const baseline=runMatch({seed:5003,length:1200,instrumentSnapshots:false});
+  const changed=runMatch({seed:5003,length:1200,instrumentSnapshots:false,
+    schedule:[{at:700,side:'home',changes:{press:90}},{at:900,side:'home',changes:{press:50}}]});
+  assert.equal(serialize(baseline.events.filter(e=>e.time_seconds<=700)),serialize(changed.events.filter(e=>e.time_seconds<=700)));
+  assert.deepEqual(changed.appliedChanges.map(c=>c.time_seconds),[700,900]);
+  assert.equal(changed.performance.snapshot_json_bytes,0);
+  assert.ok(!serialize(changed.events).includes('scheduled_research_change'));
+  changed.events.forEach((e,i)=>assert.equal(e.evidence.source_index,i));
+});

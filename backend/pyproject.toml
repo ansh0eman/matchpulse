@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "matchpulse"
+version = "0.2.0"
+description = "Causal synthetic football analytics and auditable evidence"
+requires-python = ">=3.12,<3.13"
+dependencies = ["pydantic==2.12.3", "river==0.22.0"]
+
+[project.optional-dependencies]
+dev = ["pytest==8.4.2", "matplotlib==3.10.7"]
+
+[project.scripts]
+matchpulse = "matchpulse.cli:main"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/matchpulse"]

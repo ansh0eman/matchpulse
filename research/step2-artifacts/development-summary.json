@@ -1,0 +1,1254 @@
+{
+  "selection_rule": "Active candidates first (at least one true detection), then null alerts <=0.25, F1, precision, lower median delay; stable grid order breaks ties. No target-satisfying active method means failure, not GO.",
+  "feature_seconds": 26.96055395899748,
+  "selected": {
+    "method": "rolling",
+    "version": "1",
+    "window_seconds": 480,
+    "threshold": 2.0,
+    "min_recoveries": 8,
+    "location_floor_m": 6.0,
+    "share_floor": 0.08,
+    "persistence": 2,
+    "cooldown_seconds": 900,
+    "features": "both",
+    "stream_threshold": 0.4,
+    "adwin_delta": 0.05
+  },
+  "candidates": [
+    {
+      "config": {
+        "method": "rolling",
+        "version": "1",
+        "window_seconds": 300,
+        "threshold": 1.0,
+        "min_recoveries": 8,
+        "location_floor_m": 6.0,
+        "share_floor": 0.08,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "features": "both",
+        "stream_threshold": 0.4,
+        "adwin_delta": 0.05
+      },
+      "summary": {
+        "independent_seed_families": 24,
+        "primary_matches": 72,
+        "eligible_interventions": 48,
+        "true_positives": 30,
+        "false_positives": 440,
+        "missed_interventions": 18,
+        "precision": 0.06382978723404255,
+        "recall": 0.625,
+        "f1": 0.11583011583011583,
+        "null_matches": 24,
+        "null_alerts": 163,
+        "false_alerts_per_null_match": 6.791666666666667,
+        "false_alerts_per_null_90_minutes": 6.5637583892617455,
+        "median_delay_seconds": 240.0,
+        "delay_seconds": [
+          360.0,
+          540.0,
+          60.0,
+          60.0,
+          60.0,
+          60.0,
+          0.0,
+          0.0,
+          360.0,
+          360.0,
+          420.0,
+          420.0,
+          600.0,
+          480.0,
+          480.0,
+          540.0,
+          180.0,
+          600.0,
+          120.0,
+          120.0,
+          600.0,
+          300.0,
+          240.0,
+          240.0,
+          180.0,
+          180.0,
+          180.0,
+          240.0,
+          240.0,
+          300.0
+        ],
+        "duplicate_alerts": 0,
+        "stress": {
+          "tempo": {
+            "matches": 24,
+            "alerts": 168
+          },
+          "pulse": {
+            "matches": 24,
+            "alerts": 164
+          }
+        }
+      },
+      "detector_seconds": 0.015019874990684912
+    },
+    {
+      "config": {
+        "method": "rolling",
+        "version": "1",
+        "window_seconds": 300,
+        "threshold": 1.5,
+        "min_recoveries": 8,
+        "location_floor_m": 6.0,
+        "share_floor": 0.08,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "features": "both",
+        "stream_threshold": 0.4,
+        "adwin_delta": 0.05
+      },
+      "summary": {
+        "independent_seed_families": 24,
+        "primary_matches": 72,
+        "eligible_interventions": 48,
+        "true_positives": 27,
+        "false_positives": 313,
+        "missed_interventions": 21,
+        "precision": 0.07941176470588235,
+        "recall": 0.5625,
+        "f1": 0.13917525773195877,
+        "null_matches": 24,
+        "null_alerts": 125,
+        "false_alerts_per_null_match": 5.208333333333333,
+        "false_alerts_per_null_90_minutes": 5.033557046979866,
+        "median_delay_seconds": 300.0,
+        "delay_seconds": [
+          360.0,
+          600.0,
+          180.0,
+          240.0,
+          480.0,
+          360.0,
+          540.0,
+          60.0,
+          60.0,
+          360.0,
+          360.0,
+          240.0,
+          360.0,
+          300.0,
+          300.0,
+          480.0,
+          540.0,
+          120.0,
+          120.0,
+          240.0,
+          240.0,
+          180.0,
+          180.0,
+          360.0,
+          360.0,
+          300.0,
+          300.0
+        ],
+        "duplicate_alerts": 0,
+        "stress": {
+          "tempo": {
+            "matches": 24,
+            "alerts": 134
+          },
+          "pulse": {
+            "matches": 24,
+            "alerts": 125
+          }
+        }
+      },
+      "detector_seconds": 0.011484875009045936
+    },
+    {
+      "config": {
+        "method": "rolling",
+        "version": "1",
+        "window_seconds": 300,
+        "threshold": 2.0,
+        "min_recoveries": 8,
+        "location_floor_m": 6.0,
+        "share_floor": 0.08,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "features": "both",
+        "stream_threshold": 0.4,
+        "adwin_delta": 0.05
+      },
+      "summary": {
+        "independent_seed_families": 24,
+        "primary_matches": 72,
+        "eligible_interventions": 48,
+        "true_positives": 23,
+        "false_positives": 193,
+        "missed_interventions": 25,
+        "precision": 0.10648148148148148,
+        "recall": 0.4791666666666667,
+        "f1": 0.17424242424242425,
+        "null_matches": 24,
+        "null_alerts": 85,
+        "false_alerts_per_null_match": 3.5416666666666665,
+        "false_alerts_per_null_90_minutes": 3.422818791946309,
+        "median_delay_seconds": 300.0,
+        "delay_seconds": [
+          420.0,
+          240.0,
+          480.0,
+          360.0,
+          540.0,
+          60.0,
+          60.0,
+          360.0,
+          360.0,
+          300.0,
+          360.0,
+          300.0,
+          300.0,
+          120.0,
+          120.0,
+          180.0,
+          120.0,
+          180.0,
+          180.0,
+          360.0,
+          360.0,
+          300.0,
+          360.0
+        ],
+        "duplicate_alerts": 0,
+        "stress": {
+          "tempo": {
+            "matches": 24,
+            "alerts": 90
+          },
+          "pulse": {
+            "matches": 24,
+            "alerts": 81
+          }
+        }
+      },
+      "detector_seconds": 0.01093258400214836
+    },
+    {
+      "config": {
+        "method": "rolling",
+        "version": "1",
+        "window_seconds": 480,
+        "threshold": 1.0,
+        "min_recoveries": 8,
+        "location_floor_m": 6.0,
+        "share_floor": 0.08,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "features": "both",
+        "stream_threshold": 0.4,
+        "adwin_delta": 0.05
+      },
+      "summary": {
+        "independent_seed_families": 24,
+        "primary_matches": 72,
+        "eligible_interventions": 48,
+        "true_positives": 30,
+        "false_positives": 296,
+        "missed_interventions": 18,
+        "precision": 0.09202453987730061,
+        "recall": 0.625,
+        "f1": 0.16042780748663102,
+        "null_matches": 24,
+        "null_alerts": 120,
+        "false_alerts_per_null_match": 5.0,
+        "false_alerts_per_null_90_minutes": 4.832214765100671,
+        "median_delay_seconds": 390.0,
+        "delay_seconds": [
+          420.0,
+          360.0,
+          540.0,
+          420.0,
+          420.0,
+          420.0,
+          540.0,
+          180.0,
+          180.0,
+          480.0,
+          540.0,
+          300.0,
+          360.0,
+          480.0,
+          300.0,
+          0.0,
+          0.0,
+          240.0,
+          300.0,
+          480.0,
+          60.0,
+          60.0,
+          300.0,
+          180.0,
+          540.0,
+          540.0,
+          360.0,
+          420.0,
+          420.0,
+          480.0
+        ],
+        "duplicate_alerts": 0,
+        "stress": {
+          "tempo": {
+            "matches": 24,
+            "alerts": 120
+          },
+          "pulse": {
+            "matches": 24,
+            "alerts": 107
+          }
+        }
+      },
+      "detector_seconds": 0.012733790994388983
+    },
+    {
+      "config": {
+        "method": "rolling",
+        "version": "1",
+        "window_seconds": 480,
+        "threshold": 1.5,
+        "min_recoveries": 8,
+        "location_floor_m": 6.0,
+        "share_floor": 0.08,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "features": "both",
+        "stream_threshold": 0.4,
+        "adwin_delta": 0.05
+      },
+      "summary": {
+        "independent_seed_families": 24,
+        "primary_matches": 72,
+        "eligible_interventions": 48,
+        "true_positives": 22,
+        "false_positives": 191,
+        "missed_interventions": 26,
+        "precision": 0.10328638497652583,
+        "recall": 0.4583333333333333,
+        "f1": 0.1685823754789272,
+        "null_matches": 24,
+        "null_alerts": 76,
+        "false_alerts_per_null_match": 3.1666666666666665,
+        "false_alerts_per_null_90_minutes": 3.0604026845637584,
+        "median_delay_seconds": 480.0,
+        "delay_seconds": [
+          420.0,
+          420.0,
+          600.0,
+          480.0,
+          420.0,
+          540.0,
+          540.0,
+          480.0,
+          540.0,
+          360.0,
+          360.0,
+          360.0,
+          300.0,
+          480.0,
+          300.0,
+          300.0,
+          540.0,
+          540.0,
+          420.0,
+          480.0,
+          480.0,
+          480.0
+        ],
+        "duplicate_alerts": 0,
+        "stress": {
+          "tempo": {
+            "matches": 24,
+            "alerts": 93
+          },
+          "pulse": {
+            "matches": 24,
+            "alerts": 80
+          }
+        }
+      },
+      "detector_seconds": 0.010665082998457365
+    },
+    {
+      "config": {
+        "method": "rolling",
+        "version": "1",
+        "window_seconds": 480,
+        "threshold": 2.0,
+        "min_recoveries": 8,
+        "location_floor_m": 6.0,
+        "share_floor": 0.08,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "features": "both",
+        "stream_threshold": 0.4,
+        "adwin_delta": 0.05
+      },
+      "summary": {
+        "independent_seed_families": 24,
+        "primary_matches": 72,
+        "eligible_interventions": 48,
+        "true_positives": 20,
+        "false_positives": 121,
+        "missed_interventions": 28,
+        "precision": 0.14184397163120568,
+        "recall": 0.4166666666666667,
+        "f1": 0.21164021164021163,
+        "null_matches": 24,
+        "null_alerts": 50,
+        "false_alerts_per_null_match": 2.0833333333333335,
+        "false_alerts_per_null_90_minutes": 2.0134228187919465,
+        "median_delay_seconds": 480.0,
+        "delay_seconds": [
+          420.0,
+          420.0,
+          480.0,
+          480.0,
+          540.0,
+          480.0,
+          600.0,
+          540.0,
+          540.0,
+          360.0,
+          480.0,
+          540.0,
+          360.0,
+          300.0,
+          540.0,
+          540.0,
+          420.0,
+          480.0,
+          480.0,
+          480.0
+        ],
+        "duplicate_alerts": 0,
+        "stress": {
+          "tempo": {
+            "matches": 24,
+            "alerts": 61
+          },
+          "pulse": {
+            "matches": 24,
+            "alerts": 57
+          }
+        }
+      },
+      "detector_seconds": 0.010299458997906186
+    },
+    {
+      "config": {
+        "method": "rolling",
+        "version": "1",
+        "window_seconds": 600,
+        "threshold": 1.0,
+        "min_recoveries": 8,
+        "location_floor_m": 6.0,
+        "share_floor": 0.08,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "features": "both",
+        "stream_threshold": 0.4,
+        "adwin_delta": 0.05
+      },
+      "summary": {
+        "independent_seed_families": 24,
+        "primary_matches": 72,
+        "eligible_interventions": 48,
+        "true_positives": 18,
+        "false_positives": 232,
+        "missed_interventions": 30,
+        "precision": 0.072,
+        "recall": 0.375,
+        "f1": 0.12080536912751678,
+        "null_matches": 24,
+        "null_alerts": 90,
+        "false_alerts_per_null_match": 3.75,
+        "false_alerts_per_null_90_minutes": 3.6241610738255035,
+        "median_delay_seconds": 420.0,
+        "delay_seconds": [
+          420.0,
+          540.0,
+          480.0,
+          540.0,
+          360.0,
+          420.0,
+          480.0,
+          240.0,
+          240.0,
+          480.0,
+          120.0,
+          420.0,
+          420.0,
+          300.0,
+          420.0,
+          540.0,
+          540.0,
+          540.0
+        ],
+        "duplicate_alerts": 0,
+        "stress": {
+          "tempo": {
+            "matches": 24,
+            "alerts": 94
+          },
+          "pulse": {
+            "matches": 24,
+            "alerts": 87
+          }
+        }
+      },
+      "detector_seconds": 0.011582708000787534
+    },
+    {
+      "config": {
+        "method": "rolling",
+        "version": "1",
+        "window_seconds": 600,
+        "threshold": 1.5,
+        "min_recoveries": 8,
+        "location_floor_m": 6.0,
+        "share_floor": 0.08,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "features": "both",
+        "stream_threshold": 0.4,
+        "adwin_delta": 0.05
+      },
+      "summary": {
+        "independent_seed_families": 24,
+        "primary_matches": 72,
+        "eligible_interventions": 48,
+        "true_positives": 14,
+        "false_positives": 162,
+        "missed_interventions": 34,
+        "precision": 0.07954545454545454,
+        "recall": 0.2916666666666667,
+        "f1": 0.125,
+        "null_matches": 24,
+        "null_alerts": 62,
+        "false_alerts_per_null_match": 2.5833333333333335,
+        "false_alerts_per_null_90_minutes": 2.4966442953020134,
+        "median_delay_seconds": 510.0,
+        "delay_seconds": [
+          420.0,
+          540.0,
+          540.0,
+          600.0,
+          360.0,
+          420.0,
+          480.0,
+          420.0,
+          480.0,
+          420.0,
+          540.0,
+          600.0,
+          540.0,
+          540.0
+        ],
+        "duplicate_alerts": 0,
+        "stress": {
+          "tempo": {
+            "matches": 24,
+            "alerts": 72
+          },
+          "pulse": {
+            "matches": 24,
+            "alerts": 60
+          }
+        }
+      },
+      "detector_seconds": 0.010263292002491653
+    },
+    {
+      "config": {
+        "method": "rolling",
+        "version": "1",
+        "window_seconds": 600,
+        "threshold": 2.0,
+        "min_recoveries": 8,
+        "location_floor_m": 6.0,
+        "share_floor": 0.08,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "features": "both",
+        "stream_threshold": 0.4,
+        "adwin_delta": 0.05
+      },
+      "summary": {
+        "independent_seed_families": 24,
+        "primary_matches": 72,
+        "eligible_interventions": 48,
+        "true_positives": 10,
+        "false_positives": 99,
+        "missed_interventions": 38,
+        "precision": 0.09174311926605505,
+        "recall": 0.20833333333333334,
+        "f1": 0.12738853503184713,
+        "null_matches": 24,
+        "null_alerts": 39,
+        "false_alerts_per_null_match": 1.625,
+        "false_alerts_per_null_90_minutes": 1.5704697986577183,
+        "median_delay_seconds": 540.0,
+        "delay_seconds": [
+          480.0,
+          600.0,
+          540.0,
+          420.0,
+          540.0,
+          480.0,
+          420.0,
+          540.0,
+          600.0,
+          600.0
+        ],
+        "duplicate_alerts": 0,
+        "stress": {
+          "tempo": {
+            "matches": 24,
+            "alerts": 40
+          },
+          "pulse": {
+            "matches": 24,
+            "alerts": 37
+          }
+        }
+      },
+      "detector_seconds": 0.010074334000819363
+    },
+    {
+      "config": {
+        "method": "page_hinkley",
+        "version": "1",
+        "window_seconds": 480,
+        "threshold": 1.0,
+        "min_recoveries": 8,
+        "location_floor_m": 6.0,
+        "share_floor": 0.08,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "features": "both",
+        "stream_threshold": 0.2,
+        "adwin_delta": 0.05
+      },
+      "summary": {
+        "independent_seed_families": 24,
+        "primary_matches": 72,
+        "eligible_interventions": 48,
+        "true_positives": 16,
+        "false_positives": 172,
+        "missed_interventions": 32,
+        "precision": 0.0851063829787234,
+        "recall": 0.3333333333333333,
+        "f1": 0.13559322033898305,
+        "null_matches": 24,
+        "null_alerts": 69,
+        "false_alerts_per_null_match": 2.875,
+        "false_alerts_per_null_90_minutes": 2.778523489932886,
+        "median_delay_seconds": 570.0,
+        "delay_seconds": [
+          420.0,
+          600.0,
+          600.0,
+          600.0,
+          420.0,
+          180.0,
+          600.0,
+          600.0,
+          300.0,
+          240.0,
+          300.0,
+          540.0,
+          180.0,
+          600.0,
+          600.0,
+          600.0
+        ],
+        "duplicate_alerts": 0,
+        "stress": {
+          "tempo": {
+            "matches": 24,
+            "alerts": 69
+          },
+          "pulse": {
+            "matches": 24,
+            "alerts": 62
+          }
+        }
+      },
+      "detector_seconds": 0.020445000001927838
+    },
+    {
+      "config": {
+        "method": "page_hinkley",
+        "version": "1",
+        "window_seconds": 480,
+        "threshold": 1.5,
+        "min_recoveries": 8,
+        "location_floor_m": 6.0,
+        "share_floor": 0.08,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "features": "both",
+        "stream_threshold": 0.2,
+        "adwin_delta": 0.05
+      },
+      "summary": {
+        "independent_seed_families": 24,
+        "primary_matches": 72,
+        "eligible_interventions": 48,
+        "true_positives": 8,
+        "false_positives": 104,
+        "missed_interventions": 40,
+        "precision": 0.07142857142857142,
+        "recall": 0.16666666666666666,
+        "f1": 0.1,
+        "null_matches": 24,
+        "null_alerts": 40,
+        "false_alerts_per_null_match": 1.6666666666666667,
+        "false_alerts_per_null_90_minutes": 1.6107382550335572,
+        "median_delay_seconds": 600.0,
+        "delay_seconds": [
+          420.0,
+          600.0,
+          600.0,
+          600.0,
+          300.0,
+          540.0,
+          600.0,
+          600.0
+        ],
+        "duplicate_alerts": 0,
+        "stress": {
+          "tempo": {
+            "matches": 24,
+            "alerts": 44
+          },
+          "pulse": {
+            "matches": 24,
+            "alerts": 41
+          }
+        }
+      },
+      "detector_seconds": 0.020099458008189686
+    },
+    {
+      "config": {
+        "method": "page_hinkley",
+        "version": "1",
+        "window_seconds": 480,
+        "threshold": 1.0,
+        "min_recoveries": 8,
+        "location_floor_m": 6.0,
+        "share_floor": 0.08,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "features": "both",
+        "stream_threshold": 0.4,
+        "adwin_delta": 0.05
+      },
+      "summary": {
+        "independent_seed_families": 24,
+        "primary_matches": 72,
+        "eligible_interventions": 48,
+        "true_positives": 13,
+        "false_positives": 147,
+        "missed_interventions": 35,
+        "precision": 0.08125,
+        "recall": 0.2708333333333333,
+        "f1": 0.125,
+        "null_matches": 24,
+        "null_alerts": 55,
+        "false_alerts_per_null_match": 2.2916666666666665,
+        "false_alerts_per_null_90_minutes": 2.214765100671141,
+        "median_delay_seconds": 420.0,
+        "delay_seconds": [
+          600.0,
+          600.0,
+          600.0,
+          480.0,
+          420.0,
+          480.0,
+          600.0,
+          300.0,
+          300.0,
+          240.0,
+          300.0,
+          300.0,
+          180.0
+        ],
+        "duplicate_alerts": 0,
+        "stress": {
+          "tempo": {
+            "matches": 24,
+            "alerts": 64
+          },
+          "pulse": {
+            "matches": 24,
+            "alerts": 56
+          }
+        }
+      },
+      "detector_seconds": 0.019947291002608836
+    },
+    {
+      "config": {
+        "method": "page_hinkley",
+        "version": "1",
+        "window_seconds": 480,
+        "threshold": 1.5,
+        "min_recoveries": 8,
+        "location_floor_m": 6.0,
+        "share_floor": 0.08,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "features": "both",
+        "stream_threshold": 0.4,
+        "adwin_delta": 0.05
+      },
+      "summary": {
+        "independent_seed_families": 24,
+        "primary_matches": 72,
+        "eligible_interventions": 48,
+        "true_positives": 7,
+        "false_positives": 79,
+        "missed_interventions": 41,
+        "precision": 0.08139534883720931,
+        "recall": 0.14583333333333334,
+        "f1": 0.1044776119402985,
+        "null_matches": 24,
+        "null_alerts": 29,
+        "false_alerts_per_null_match": 1.2083333333333333,
+        "false_alerts_per_null_90_minutes": 1.167785234899329,
+        "median_delay_seconds": 480.0,
+        "delay_seconds": [
+          600.0,
+          600.0,
+          600.0,
+          480.0,
+          480.0,
+          300.0,
+          300.0
+        ],
+        "duplicate_alerts": 0,
+        "stress": {
+          "tempo": {
+            "matches": 24,
+            "alerts": 35
+          },
+          "pulse": {
+            "matches": 24,
+            "alerts": 34
+          }
+        }
+      },
+      "detector_seconds": 0.01980970799922943
+    },
+    {
+      "config": {
+        "method": "page_hinkley",
+        "version": "1",
+        "window_seconds": 480,
+        "threshold": 1.0,
+        "min_recoveries": 8,
+        "location_floor_m": 6.0,
+        "share_floor": 0.08,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "features": "both",
+        "stream_threshold": 0.8,
+        "adwin_delta": 0.05
+      },
+      "summary": {
+        "independent_seed_families": 24,
+        "primary_matches": 72,
+        "eligible_interventions": 48,
+        "true_positives": 17,
+        "false_positives": 148,
+        "missed_interventions": 31,
+        "precision": 0.10303030303030303,
+        "recall": 0.3541666666666667,
+        "f1": 0.1596244131455399,
+        "null_matches": 24,
+        "null_alerts": 60,
+        "false_alerts_per_null_match": 2.5,
+        "false_alerts_per_null_90_minutes": 2.4161073825503356,
+        "median_delay_seconds": 420.0,
+        "delay_seconds": [
+          420.0,
+          360.0,
+          540.0,
+          540.0,
+          480.0,
+          480.0,
+          540.0,
+          420.0,
+          480.0,
+          300.0,
+          360.0,
+          540.0,
+          300.0,
+          180.0,
+          360.0,
+          420.0,
+          480.0
+        ],
+        "duplicate_alerts": 0,
+        "stress": {
+          "tempo": {
+            "matches": 24,
+            "alerts": 71
+          },
+          "pulse": {
+            "matches": 24,
+            "alerts": 59
+          }
+        }
+      },
+      "detector_seconds": 0.019967416999861598
+    },
+    {
+      "config": {
+        "method": "page_hinkley",
+        "version": "1",
+        "window_seconds": 480,
+        "threshold": 1.5,
+        "min_recoveries": 8,
+        "location_floor_m": 6.0,
+        "share_floor": 0.08,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "features": "both",
+        "stream_threshold": 0.8,
+        "adwin_delta": 0.05
+      },
+      "summary": {
+        "independent_seed_families": 24,
+        "primary_matches": 72,
+        "eligible_interventions": 48,
+        "true_positives": 15,
+        "false_positives": 93,
+        "missed_interventions": 33,
+        "precision": 0.1388888888888889,
+        "recall": 0.3125,
+        "f1": 0.19230769230769232,
+        "null_matches": 24,
+        "null_alerts": 41,
+        "false_alerts_per_null_match": 1.7083333333333333,
+        "false_alerts_per_null_90_minutes": 1.651006711409396,
+        "median_delay_seconds": 480.0,
+        "delay_seconds": [
+          420.0,
+          420.0,
+          600.0,
+          540.0,
+          480.0,
+          540.0,
+          540.0,
+          480.0,
+          360.0,
+          360.0,
+          300.0,
+          300.0,
+          420.0,
+          480.0,
+          480.0
+        ],
+        "duplicate_alerts": 0,
+        "stress": {
+          "tempo": {
+            "matches": 24,
+            "alerts": 47
+          },
+          "pulse": {
+            "matches": 24,
+            "alerts": 42
+          }
+        }
+      },
+      "detector_seconds": 0.019800583002506755
+    },
+    {
+      "config": {
+        "method": "adwin",
+        "version": "1",
+        "window_seconds": 480,
+        "threshold": 1.0,
+        "min_recoveries": 8,
+        "location_floor_m": 6.0,
+        "share_floor": 0.08,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "features": "both",
+        "stream_threshold": 0.4,
+        "adwin_delta": 0.01
+      },
+      "summary": {
+        "independent_seed_families": 24,
+        "primary_matches": 72,
+        "eligible_interventions": 48,
+        "true_positives": 0,
+        "false_positives": 0,
+        "missed_interventions": 48,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0,
+        "null_matches": 24,
+        "null_alerts": 0,
+        "false_alerts_per_null_match": 0.0,
+        "false_alerts_per_null_90_minutes": 0.0,
+        "median_delay_seconds": null,
+        "delay_seconds": [],
+        "duplicate_alerts": 0,
+        "stress": {
+          "tempo": {
+            "matches": 24,
+            "alerts": 0
+          },
+          "pulse": {
+            "matches": 24,
+            "alerts": 0
+          }
+        }
+      },
+      "detector_seconds": 0.08567654200305697
+    },
+    {
+      "config": {
+        "method": "adwin",
+        "version": "1",
+        "window_seconds": 480,
+        "threshold": 1.0,
+        "min_recoveries": 8,
+        "location_floor_m": 6.0,
+        "share_floor": 0.08,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "features": "both",
+        "stream_threshold": 0.4,
+        "adwin_delta": 0.05
+      },
+      "summary": {
+        "independent_seed_families": 24,
+        "primary_matches": 72,
+        "eligible_interventions": 48,
+        "true_positives": 0,
+        "false_positives": 0,
+        "missed_interventions": 48,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0,
+        "null_matches": 24,
+        "null_alerts": 0,
+        "false_alerts_per_null_match": 0.0,
+        "false_alerts_per_null_90_minutes": 0.0,
+        "median_delay_seconds": null,
+        "delay_seconds": [],
+        "duplicate_alerts": 0,
+        "stress": {
+          "tempo": {
+            "matches": 24,
+            "alerts": 0
+          },
+          "pulse": {
+            "matches": 24,
+            "alerts": 0
+          }
+        }
+      },
+      "detector_seconds": 0.08645987500494812
+    },
+    {
+      "config": {
+        "method": "adwin",
+        "version": "1",
+        "window_seconds": 480,
+        "threshold": 1.0,
+        "min_recoveries": 8,
+        "location_floor_m": 6.0,
+        "share_floor": 0.08,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "features": "both",
+        "stream_threshold": 0.4,
+        "adwin_delta": 0.2
+      },
+      "summary": {
+        "independent_seed_families": 24,
+        "primary_matches": 72,
+        "eligible_interventions": 48,
+        "true_positives": 0,
+        "false_positives": 0,
+        "missed_interventions": 48,
+        "precision": null,
+        "recall": 0.0,
+        "f1": 0.0,
+        "null_matches": 24,
+        "null_alerts": 0,
+        "false_alerts_per_null_match": 0.0,
+        "false_alerts_per_null_90_minutes": 0.0,
+        "median_delay_seconds": null,
+        "delay_seconds": [],
+        "duplicate_alerts": 0,
+        "stress": {
+          "tempo": {
+            "matches": 24,
+            "alerts": 0
+          },
+          "pulse": {
+            "matches": 24,
+            "alerts": 0
+          }
+        }
+      },
+      "detector_seconds": 0.08663654199335724
+    },
+    {
+      "config": {
+        "method": "rolling",
+        "version": "1",
+        "window_seconds": 480,
+        "threshold": 1.5,
+        "min_recoveries": 8,
+        "location_floor_m": 6.0,
+        "share_floor": 0.08,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "features": "location",
+        "stream_threshold": 0.4,
+        "adwin_delta": 0.05
+      },
+      "summary": {
+        "independent_seed_families": 24,
+        "primary_matches": 72,
+        "eligible_interventions": 48,
+        "true_positives": 25,
+        "false_positives": 195,
+        "missed_interventions": 23,
+        "precision": 0.11363636363636363,
+        "recall": 0.5208333333333334,
+        "f1": 0.1865671641791045,
+        "null_matches": 24,
+        "null_alerts": 77,
+        "false_alerts_per_null_match": 3.2083333333333335,
+        "false_alerts_per_null_90_minutes": 3.1006711409395975,
+        "median_delay_seconds": 480.0,
+        "delay_seconds": [
+          420.0,
+          300.0,
+          540.0,
+          480.0,
+          420.0,
+          540.0,
+          540.0,
+          480.0,
+          480.0,
+          540.0,
+          540.0,
+          360.0,
+          360.0,
+          360.0,
+          240.0,
+          480.0,
+          540.0,
+          300.0,
+          300.0,
+          540.0,
+          540.0,
+          420.0,
+          480.0,
+          480.0,
+          480.0
+        ],
+        "duplicate_alerts": 0,
+        "stress": {
+          "tempo": {
+            "matches": 24,
+            "alerts": 94
+          },
+          "pulse": {
+            "matches": 24,
+            "alerts": 82
+          }
+        }
+      },
+      "detector_seconds": 0.010216791997663677
+    },
+    {
+      "config": {
+        "method": "rolling",
+        "version": "1",
+        "window_seconds": 480,
+        "threshold": 1.5,
+        "min_recoveries": 8,
+        "location_floor_m": 6.0,
+        "share_floor": 0.08,
+        "persistence": 2,
+        "cooldown_seconds": 900,
+        "features": "share",
+        "stream_threshold": 0.4,
+        "adwin_delta": 0.05
+      },
+      "summary": {
+        "independent_seed_families": 24,
+        "primary_matches": 72,
+        "eligible_interventions": 48,
+        "true_positives": 21,
+        "false_positives": 217,
+        "missed_interventions": 27,
+        "precision": 0.08823529411764706,
+        "recall": 0.4375,
+        "f1": 0.14685314685314685,
+        "null_matches": 24,
+        "null_alerts": 88,
+        "false_alerts_per_null_match": 3.6666666666666665,
+        "false_alerts_per_null_90_minutes": 3.5436241610738257,
+        "median_delay_seconds": 420.0,
+        "delay_seconds": [
+          420.0,
+          420.0,
+          480.0,
+          420.0,
+          600.0,
+          600.0,
+          360.0,
+          540.0,
+          360.0,
+          360.0,
+          360.0,
+          600.0,
+          480.0,
+          360.0,
+          300.0,
+          540.0,
+          540.0,
+          360.0,
+          420.0,
+          300.0,
+          480.0
+        ],
+        "duplicate_alerts": 0,
+        "stress": {
+          "tempo": {
+            "matches": 24,
+            "alerts": 91
+          },
+          "pulse": {
+            "matches": 24,
+            "alerts": 84
+          }
+        }
+      },
+      "detector_seconds": 0.01024824999331031
+    }
+  ],
+  "raw_result_sha256": "d6bf0ea8b237c7b96be7822b619a8ecfb9cfc9cff3c22e2d53c9f4b17042a98c"
+}

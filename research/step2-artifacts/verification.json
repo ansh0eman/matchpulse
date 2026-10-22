@@ -1,0 +1,82 @@
+[
+  {
+    "cwd": ".",
+    "argv": [
+      "uv",
+      "sync",
+      "--project",
+      "backend",
+      "--frozen",
+      "--extra",
+      "dev"
+    ],
+    "exit_code": 0,
+    "log": "sync-final.log"
+  },
+  {
+    "cwd": ".",
+    "argv": [
+      "uv",
+      "run",
+      "--project",
+      "backend",
+      "pytest",
+      "backend/tests",
+      "-q"
+    ],
+    "exit_code": 0,
+    "log": "pytest.log"
+  },
+  {
+    "cwd": "poc",
+    "argv": [
+      "npm",
+      "run",
+      "typecheck"
+    ],
+    "exit_code": 0,
+    "log": "typescript-typecheck.log"
+  },
+  {
+    "cwd": "poc",
+    "argv": [
+      "npm",
+      "test"
+    ],
+    "exit_code": 0,
+    "log": "typescript-tests.log"
+  },
+  {
+    "cwd": ".",
+    "argv": [
+      "uv",
+      "run",
+      "--project",
+      "backend",
+      "python",
+      "-m",
+      "compileall",
+      "-q",
+      "backend/src",
+      "backend/scripts"
+    ],
+    "exit_code": 0,
+    "log": "python-compile.log"
+  },
+  {
+    "cwd": ".",
+    "argv": [
+      "uv",
+      "run",
+      "--project",
+      "backend",
+      "matchpulse",
+      "data/step2/inference/dc053576-202b-4d5c-ace7-2b5659f68e70.jsonl",
+      "--debug",
+      "--output",
+      "backend/output/cli-demo.json"
+    ],
+    "exit_code": 0,
+    "log": "cli-demo.log"
+  }
+]
