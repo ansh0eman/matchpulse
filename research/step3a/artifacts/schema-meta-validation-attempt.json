@@ -1,0 +1,20 @@
+{
+  "exit_status": 2,
+  "result": "unavailable",
+  "reason": "PyPI DNS failed after retries; jsonschema is not installed",
+  "argv": [
+    "uv",
+    "run",
+    "--python",
+    "backend/.venv/bin/python",
+    "--with",
+    "jsonschema",
+    "--no-project",
+    "python",
+    "-c",
+    "import json,jsonschema;from pathlib import Path;root=Path(\"research/step3a/artifacts\");schemas=list(root.glob(\"*.schema.json\"));[jsonschema.Draft202012Validator.check_schema(json.loads(p.read_text())) for p in schemas];print(f\"Validated {len(schemas)} JSON Schemas\")"
+  ],
+  "environment": {
+    "UV_CACHE_DIR": "/tmp/matchpulse-uv-cache"
+  }
+}

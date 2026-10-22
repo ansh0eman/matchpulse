@@ -1,0 +1,257 @@
+{
+  "$defs": {
+    "Fallback": {
+      "additionalProperties": false,
+      "properties": {
+        "explanation": {
+          "title": "Explanation",
+          "type": "string"
+        },
+        "headline": {
+          "title": "Headline",
+          "type": "string"
+        }
+      },
+      "required": [
+        "headline",
+        "explanation"
+      ],
+      "title": "Fallback",
+      "type": "object"
+    },
+    "MatchInsight": {
+      "additionalProperties": false,
+      "properties": {
+        "as_of_seconds": {
+          "minimum": 0,
+          "title": "As Of Seconds",
+          "type": "number"
+        },
+        "claim_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Claim Ids",
+          "type": "array"
+        },
+        "event_time_seconds": {
+          "minimum": 0,
+          "title": "Event Time Seconds",
+          "type": "number"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Reference"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "fallback": {
+          "$ref": "#/$defs/Fallback"
+        },
+        "insight_id": {
+          "title": "Insight Id",
+          "type": "string"
+        },
+        "limitations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Limitations",
+          "type": "array"
+        },
+        "match_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+          "title": "Match Id",
+          "type": "string"
+        },
+        "observed_score": {
+          "$ref": "#/$defs/Score"
+        },
+        "period": {
+          "enum": [
+            1,
+            2
+          ],
+          "title": "Period",
+          "type": "integer"
+        },
+        "player_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Player Ids",
+          "type": "array"
+        },
+        "priority": {
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Priority",
+          "type": "integer"
+        },
+        "priority_semantics": {
+          "const": "editorial ordering, not probability",
+          "default": "editorial ordering, not probability",
+          "title": "Priority Semantics",
+          "type": "string"
+        },
+        "provenance": {
+          "const": "pinned synthetic simulator canonical observations",
+          "default": "pinned synthetic simulator canonical observations",
+          "title": "Provenance",
+          "type": "string"
+        },
+        "quality": {
+          "const": "verified_observation",
+          "default": "verified_observation",
+          "title": "Quality",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": 1,
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "team_id": {
+          "anyOf": [
+            {
+              "enum": [
+                "NORTH",
+                "SOUTH"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Team Id"
+        },
+        "type": {
+          "enum": [
+            "goal_context",
+            "observed_shot",
+            "shot_outcome",
+            "high_turnover",
+            "turnover_to_shot",
+            "recent_attacking_activity",
+            "player_dismissal",
+            "match_boundary",
+            "observed_line_height_change"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "verified": {
+          "const": true,
+          "default": true,
+          "title": "Verified",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "insight_id",
+        "match_id",
+        "type",
+        "event_time_seconds",
+        "as_of_seconds",
+        "team_id",
+        "player_ids",
+        "period",
+        "priority",
+        "claim_ids",
+        "evidence",
+        "observed_score",
+        "fallback",
+        "limitations"
+      ],
+      "title": "MatchInsight",
+      "type": "object"
+    },
+    "Reference": {
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "enum": [
+            "event",
+            "tracking"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "match_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+          "title": "Match Id",
+          "type": "string"
+        },
+        "source_id": {
+          "title": "Source Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "match_id",
+        "category",
+        "source_id"
+      ],
+      "title": "Reference",
+      "type": "object"
+    },
+    "Score": {
+      "additionalProperties": false,
+      "properties": {
+        "away": {
+          "minimum": 0,
+          "title": "Away",
+          "type": "integer"
+        },
+        "home": {
+          "minimum": 0,
+          "title": "Home",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "home",
+        "away"
+      ],
+      "title": "Score",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "insight": {
+      "$ref": "#/$defs/MatchInsight"
+    },
+    "presented_at_seconds": {
+      "minimum": 0,
+      "title": "Presented At Seconds",
+      "type": "number"
+    },
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "visualization": {
+      "enum": [
+        "event_location",
+        "scoreline",
+        "window_comparison",
+        "tracking_comparison"
+      ],
+      "title": "Visualization",
+      "type": "string"
+    }
+  },
+  "required": [
+    "insight",
+    "presented_at_seconds",
+    "visualization"
+  ],
+  "title": "TimelineItem",
+  "type": "object"
+}

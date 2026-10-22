@@ -1,0 +1,9 @@
+# Version 1 contracts
+
+Source: stories/schemas.py. Exported JSON Schemas: artifacts/{Claim,MatchInsight,TimelineItem,AgentInput,AgentOutput}.schema.json. Pydantic JSON roundtrips validate every exported instance. Models forbid unknown fields, reject nonfinite numbers, freeze attributes; tuple references avoid mutable registry lists. Existing nested VerifiedLineClaim retains its original list fields; reverify before accepting it, and do not mutate it after registration.
+
+MatchInsight carries opaque match UUID, stable namespace/hash ID, controlled type, source clock, availability clock, period/team/verified player IDs, editorial priority0..100 explicitly not probability, claim IDs, match-scoped event/frame references, observed score, deterministic fallback, limitations, provenance and verified-observation quality. TimelineItem embeds it, adds presentation clock and derived visualization kind. Source time is not presentation time. Hash IDs derive from type, ordered references and window; match namespace prevents same-event-ID cross-match substitution.
+
+Claim is a discriminated union: GoalValue, ActionValue, TurnoverValue, ActivityValue, LineValue. It carries units, exact window, as-of clock, display rule, verification method and limitations. Event units mean one observed event, shots are integer attempts, metres use one decimal only at display. All full precision values remain exported. Line values include the original verified three-deepest-outfield measurement, windows and support. Registry is authoritative; unconstrained prose is not.
+
+AgentOutput is deliberately a selection plus deterministic template, not free-form factual text. Invalid IDs, namespace, extra fields or empty selection fall back. Free prose with semantic grounding is future work and is NOT implemented by checking model agreement.

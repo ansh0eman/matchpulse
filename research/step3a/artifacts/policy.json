@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "high_regain_min_attack_x_m": 70,
+  "prior_control_max_gap_seconds": 15,
+  "same_possession_shot_max_gap_seconds": 20,
+  "activity_window_seconds": 480,
+  "activity_min_shots": 3,
+  "gain_activity_cooldown_seconds": 120,
+  "routine_slot_seconds": 4,
+  "max_editorial_delay_seconds": 15,
+  "selection": "engineering definitions; no holdout tuning; not football-calibrated",
+  "source": "backend/src/matchpulse/stories"
+}

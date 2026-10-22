@@ -128,3 +128,19 @@ The selected Step 2.5 detector is **frozen**, and its published accuracy numbers
 When you run the tracking CLI with `--output backend/output/step25/demo.json`, it additionally writes `demo.presentation.json` (all quality decisions/reasons) and `demo.broadcast.json` (only eligible, verified observed-line claims). Treat `demo.json` and legacy `demo.facts.json` as **research-only**, not agent-ready claims. The approved statement describes the three deepest outfielders' sampled positions; it does not infer a coach's instruction or successful pressing.
 
 See [presentation quality gate and frozen scope](research/step25/presentation-quality-gate.md). The [completed PR reliability review](research/step25/presentation-pr1-review.md) passes 71 Python tests, 10 TypeScript tests, type checking and both real CLI fixtures, with unchanged research exports. A new published accuracy estimate still requires an untouched cohort; these checks establish reliability, not improved detector accuracy.
+
+## Step 3A — Verified match stories (local)
+
+Implemented a deterministic match-story engine under `backend/src/matchpulse/stories/`: observed goals/score context, shots and linked outcomes, conservative high gains and same-possession attacks, rolling shot counts, red cards, match boundaries and presentation-approved line measurements. Every public fact passes a namespaced claim registry and evidence recomputation before scheduling. No LLM or Azure service is deployed.
+
+[Actual verdict](research/step3a/final-verdict.md): **CONDITIONAL GO**.104 Python tests,10 TypeScript tests and typecheck pass;4 actual full replay examples,664 verified claims,294 emitted timeline items. Human editorial review is pending; external schema meta-validation could not install due network DNS. Frozen7m research and its negative accuracy conclusions remain intact.
+
+[Generate and run the demo](research/step3a/execution-commands.md), [complete real-match timeline](research/step3a/demo-match-walkthrough.md), [learn the execution flow](research/step3a/execution-walkthrough.md), [measurements](research/step3a/evaluation-results.md), [verification](research/step3a/verification-results.md).
+
+```sh
+backend/.venv/bin/python -m matchpulse.stories.cli --events <UUID>.jsonl --output backend/output/stories/demo --debug
+```
+
+Optional: `--tracking <UUID>.tracking.jsonl.gz --positional-config research/step25/artifacts/selected.json`. Outputs include timeline.json, insights.json, claims.json, evidence-index.json, suppressed.json, summary.json, presentation.json and compact agent-inputs.json. Full new exports stay local; compact review artifacts and compressed canonical fixtures are under research/step3a/artifacts. This remains synthetic, uncalibrated football; a regain is not proof of pressing effectiveness, an observed line is not a coach instruction, and chance_quality is not xG.
+
+Next: [one authenticated Foundry call with a verified envelope and strict response validation](research/step3a/foundry-handoff.md), then audience narration within a reviewed grounding contract. [Frontend handoff](research/step3a/frontend-handoff.md) specifies exact timeline/evidence data; no React implementation is included yet.

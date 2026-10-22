@@ -1,0 +1,16 @@
+# Step3B interface and current official research (2026-10-23)
+
+Actual local interfaces: stories/export.py::agent_input(insight,registry,audience), AgentInput and AgentOutput JSON Schemas. Export agent-inputs.json contains one compact verified envelope per insight, not full raw histories. Each has exact values/units/windows, approved IDs, resolver identifiers, audience fan/analyst, limitations, context and deterministic fallback. Frontend can retrieve larger evidence separately.
+
+First genuine call: provision a Foundry project and suitable deployed model in the user's subscription, authenticate explicitly, submit ONE saved AgentInput to a Tactical Analyst prompt agent asking for AgentOutput selection/template only. Validate returned JSON with grounded_response. Reject unregistered IDs/namespaces/extra facts and return fallback. Record actual latency/tokens/error without secrets. Then add a separate Narrator operating on approved selections. This version's only permitted template is deterministic_fallback; adding audience prose requires a new restricted template vocabulary or a reviewed grounding contract. Do not silently relax it into arbitrary factual prose.
+
+Evidence tool specification for Step3B (not deployed): resolve_evidence(match_id UUID, category event|tracking, source_id string, as_of_seconds number) -> only source object in that match at or before as_of, else error. resolve_claim(match_id,claim_id,as_of_seconds) -> registered verified claim, else error. Bind authorization/session to match scope, validate every argument and cap results. No labels/manifests/raw full histories. Tool implementation can wrap current EvidenceIndex; no new schema needed. Reverify on retrieval and enforce scope server-side.
+
+Official sources checked:
+- [Foundry Agent Service overview](https://learn.microsoft.com/en-us/azure/foundry/agents/overview?view=foundry): prompt agents, hosted agents, or Responses API; choose prompt agent initially to avoid hosting premature infrastructure.
+- [Agent Framework structured outputs](https://learn.microsoft.com/en-us/agent-framework/agents/structured-outputs): typed/schema-constrained results depend on agent/client support. JSON syntax is not factual grounding. Confirm the selected Python provider/model supports the exported subset before selecting an SDK version.
+- [Function calling](https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/tools/function-calling): application executes requested functions and returns results. Expose only the two scoped resolvers above.
+- [Agent identity](https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/agent-identity): Entra/RBAC and downstream identity, avoid credentials in prompts. Separate local developer auth from production identity.
+- [Container Apps managed identity](https://learn.microsoft.com/en-us/azure/container-apps/managed-identity): possible later Python replay/API host with scoped resource access. Static React viewer can consume exports initially; no hosting required for this milestone.
+
+No Azure resources, Foundry agents, real model calls or deployment exist in Step3A. SDK/API versions must be pinned and provider response-schema compatibility checked during Step3B; current docs are not evidence of working subscription access.
