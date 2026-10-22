@@ -1,7 +1,7 @@
 # PR #1 review and verification
 
-PR: https://github.com/ansh0eman/matchpulse/pull/1  
-Branch: `feat/presentation-quality-gate`  
+PR: https://github.com/ansh0eman/matchpulse/pull/1
+Branch: `feat/presentation-quality-gate`
 Frozen experiment base: `759aa226b508df2a69bbe7c5522b3743d812bd4c`
 
 The checkout was clean before switching from main to the PR branch. The six-file PR diff was inspected. The review preserves the frozen detector, experiment configuration, old fixtures, source fingerprints and evaluation results. No new accuracy selection, scoring or calibration was run.
