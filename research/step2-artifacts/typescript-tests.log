@@ -1,0 +1,19 @@
+
+> test
+> tsx --test tests/*.test.ts
+
+✔ every exported match validates, hashes match, source evidence joins and prefixes match (1989.697125ms)
+✔ seed constraints and known Park-Miller first value (0.375417ms)
+✔ full matches: reproducibility, seed divergence, ordering, validation and roster integrity (4452.829958ms)
+✔ intervention has identical prefix, no truth markers, valid effects and snapshot policy equivalence (4324.294208ms)
+✔ saved experiment covers 12 seed pairs with equal pre-window statistics (1.237209ms)
+✔ bundled policy saved results have identical prefixes and a broad spatial shift (283.312958ms)
+✔ Step 2 schedule preserves default prefix, records actual times and filters controls (368.667791ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9620.479125

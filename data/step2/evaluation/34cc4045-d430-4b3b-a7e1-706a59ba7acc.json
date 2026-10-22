@@ -1,0 +1,36 @@
+{
+  "match_id": "34cc4045-d430-4b3b-a7e1-706a59ba7acc",
+  "split": "development",
+  "seed": 16847,
+  "scenario": "bundle",
+  "planned_change_seconds": 3900,
+  "changes": [
+    {
+      "time_seconds": 3900,
+      "side": "home",
+      "changes": {
+        "style": "high_press",
+        "press": 90,
+        "defensiveLine": 85,
+        "tempo": 65,
+        "compactness": 45,
+        "mentality": "attacking"
+      },
+      "score": {
+        "home": 0,
+        "away": 0
+      }
+    }
+  ],
+  "target_team": "NORTH",
+  "eligible": true,
+  "home_attribute_offset": 1,
+  "end_time_seconds": 5585,
+  "event_count": 7004,
+  "score": {
+    "home": 1,
+    "away": 0
+  },
+  "sha256": "4889041ec8e1368da92c1f12927a389a26d871adaf4cf2acc5f3af292ec53d1f",
+  "generation_ms": 817.3259579999994
+}

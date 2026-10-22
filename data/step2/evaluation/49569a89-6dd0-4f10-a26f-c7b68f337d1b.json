@@ -1,0 +1,19 @@
+{
+  "match_id": "49569a89-6dd0-4f10-a26f-c7b68f337d1b",
+  "split": "holdout",
+  "seed": 198984,
+  "scenario": "null",
+  "planned_change_seconds": null,
+  "changes": [],
+  "target_team": "NORTH",
+  "eligible": false,
+  "home_attribute_offset": 0,
+  "end_time_seconds": 5645,
+  "event_count": 6941,
+  "score": {
+    "home": 1,
+    "away": 0
+  },
+  "sha256": "2baa8cf852c92e2cd3776b6c48e3ca6e515f4d8e0812825054cbda94e5be9a94",
+  "generation_ms": 852.0005000000001
+}

@@ -1,0 +1,36 @@
+{
+  "match_id": "33362f60-a91d-4152-aad0-889bf35395fc",
+  "split": "holdout",
+  "seed": 381121,
+  "scenario": "moderate",
+  "planned_change_seconds": 3300,
+  "changes": [
+    {
+      "time_seconds": 3300,
+      "side": "home",
+      "changes": {
+        "style": "high_press",
+        "press": 75,
+        "defensiveLine": 70,
+        "tempo": 58,
+        "compactness": 48,
+        "mentality": "balanced"
+      },
+      "score": {
+        "home": 0,
+        "away": 0
+      }
+    }
+  ],
+  "target_team": "NORTH",
+  "eligible": true,
+  "home_attribute_offset": -1,
+  "end_time_seconds": 5555,
+  "event_count": 6793,
+  "score": {
+    "home": 0,
+    "away": 0
+  },
+  "sha256": "cc7187535904b8688c49741d4a68fecc0a973eab27c558b0261fea8be322e64a",
+  "generation_ms": 820.1756250000035
+}

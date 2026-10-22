@@ -1,0 +1,162 @@
+[
+  {
+    "id": "home-starter-0-1",
+    "team_id": "NORTH",
+    "name": "North Player 1"
+  },
+  {
+    "id": "home-starter-1-2",
+    "team_id": "NORTH",
+    "name": "North Player 2"
+  },
+  {
+    "id": "home-starter-2-3",
+    "team_id": "NORTH",
+    "name": "North Player 3"
+  },
+  {
+    "id": "home-starter-3-4",
+    "team_id": "NORTH",
+    "name": "North Player 4"
+  },
+  {
+    "id": "home-starter-4-5",
+    "team_id": "NORTH",
+    "name": "North Player 5"
+  },
+  {
+    "id": "home-starter-5-6",
+    "team_id": "NORTH",
+    "name": "North Player 6"
+  },
+  {
+    "id": "home-starter-6-7",
+    "team_id": "NORTH",
+    "name": "North Player 7"
+  },
+  {
+    "id": "home-starter-7-8",
+    "team_id": "NORTH",
+    "name": "North Player 8"
+  },
+  {
+    "id": "home-starter-8-9",
+    "team_id": "NORTH",
+    "name": "North Player 9"
+  },
+  {
+    "id": "home-starter-9-10",
+    "team_id": "NORTH",
+    "name": "North Player 10"
+  },
+  {
+    "id": "home-starter-10-11",
+    "team_id": "NORTH",
+    "name": "North Player 11"
+  },
+  {
+    "id": "away-starter-0-1",
+    "team_id": "SOUTH",
+    "name": "South Player 1"
+  },
+  {
+    "id": "away-starter-1-2",
+    "team_id": "SOUTH",
+    "name": "South Player 2"
+  },
+  {
+    "id": "away-starter-2-3",
+    "team_id": "SOUTH",
+    "name": "South Player 3"
+  },
+  {
+    "id": "away-starter-3-4",
+    "team_id": "SOUTH",
+    "name": "South Player 4"
+  },
+  {
+    "id": "away-starter-4-5",
+    "team_id": "SOUTH",
+    "name": "South Player 5"
+  },
+  {
+    "id": "away-starter-5-6",
+    "team_id": "SOUTH",
+    "name": "South Player 6"
+  },
+  {
+    "id": "away-starter-6-7",
+    "team_id": "SOUTH",
+    "name": "South Player 7"
+  },
+  {
+    "id": "away-starter-7-8",
+    "team_id": "SOUTH",
+    "name": "South Player 8"
+  },
+  {
+    "id": "away-starter-8-9",
+    "team_id": "SOUTH",
+    "name": "South Player 9"
+  },
+  {
+    "id": "away-starter-9-10",
+    "team_id": "SOUTH",
+    "name": "South Player 10"
+  },
+  {
+    "id": "away-starter-10-11",
+    "team_id": "SOUTH",
+    "name": "South Player 11"
+  },
+  {
+    "id": "home-bench-0-90",
+    "team_id": "NORTH",
+    "name": "Northbridge Aurora Bench GK"
+  },
+  {
+    "id": "home-bench-1-91",
+    "team_id": "NORTH",
+    "name": "Northbridge Aurora Bench CB"
+  },
+  {
+    "id": "home-bench-2-92",
+    "team_id": "NORTH",
+    "name": "Northbridge Aurora Bench CM"
+  },
+  {
+    "id": "home-bench-3-93",
+    "team_id": "NORTH",
+    "name": "Northbridge Aurora Bench RM"
+  },
+  {
+    "id": "home-bench-4-94",
+    "team_id": "NORTH",
+    "name": "Northbridge Aurora Bench ST"
+  },
+  {
+    "id": "away-bench-0-90",
+    "team_id": "SOUTH",
+    "name": "Southmere Comets Bench GK"
+  },
+  {
+    "id": "away-bench-1-91",
+    "team_id": "SOUTH",
+    "name": "Southmere Comets Bench CB"
+  },
+  {
+    "id": "away-bench-2-92",
+    "team_id": "SOUTH",
+    "name": "Southmere Comets Bench CM"
+  },
+  {
+    "id": "away-bench-3-93",
+    "team_id": "SOUTH",
+    "name": "Southmere Comets Bench RM"
+  },
+  {
+    "id": "away-bench-4-94",
+    "team_id": "SOUTH",
+    "name": "Southmere Comets Bench ST"
+  }
+]

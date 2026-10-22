@@ -1,0 +1,22 @@
+
+> test
+> tsx --test tests/*.test.ts
+
+(node:60917) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+✔ every exported match validates, hashes match, source evidence joins and prefixes match (2230.224917ms)
+(node:60918) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+✔ seed constraints and known Park-Miller first value (0.46475ms)
+✔ full matches: reproducibility, seed divergence, ordering, validation and roster integrity (4359.261709ms)
+✔ intervention has identical prefix, no truth markers, valid effects and snapshot policy equivalence (4141.833291ms)
+✔ saved experiment covers 12 seed pairs with equal pre-window statistics (1.3025ms)
+✔ bundled policy saved results have identical prefixes and a broad spatial shift (327.121875ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9025.373833

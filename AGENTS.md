@@ -18,6 +18,6 @@ Commands from repository root:
 - `uv run --project backend python backend/scripts/evaluate.py development` then `holdout` only after freezing
 - `uv run --project backend matchpulse data/step2/inference/<UUID>.jsonl --debug --output backend/output/demo.json`
 
-Large generated data is ignored. Research summaries, configuration hashes, code, tests, protocol, charts and uv.lock are reviewable artifacts. Never fabricate metrics, remove meaningful failing assertions or call an arbitrary score a probability.
+The user explicitly requested that generated datasets, experiment outputs, EvidencePack exports and logs be versioned in this private repository. Keep installed dependencies, virtual environments, credentials and the separate upstream checkout excluded. Research summaries, configuration hashes, code, tests, protocol, charts and uv.lock are reviewable artifacts. Never fabricate metrics, remove meaningful failing assertions or call an arbitrary score a probability.
 
 For verbose noninteractive test/build/search/log output use `set -o pipefail` and pipe through distill with a precise question and required output fields; wait for completion. Skip for small output or bounded exact evidence. If Distill omits requested fields or fails open, inspect bounded deterministic slices. Never rely on lossy summaries alone for security, destructive or production decisions. This environment forbids permission escalation; use the permitted tool execution path.

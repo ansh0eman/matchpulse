@@ -1,0 +1,5615 @@
+{
+  "schema_version": 1,
+  "source_commit": "39529b19c40868d66aa47db084ebc9ea29c86e70",
+  "split": "holdout",
+  "protocol": {
+    "development_families": 24,
+    "holdout_families": 32,
+    "seeds": "1009 + 7919*i; i=0..55",
+    "old_seeds_excluded": [
+      11,
+      29,
+      47,
+      83,
+      101,
+      137,
+      173,
+      211,
+      257,
+      307,
+      353,
+      401
+    ],
+    "scenarios": [
+      "null",
+      "bundle",
+      "moderate",
+      "tempo",
+      "pulse"
+    ],
+    "change_times": [
+      3300,
+      3600,
+      3900,
+      4200
+    ],
+    "pulse_duration_seconds": 180,
+    "matching_horizon_seconds": 600,
+    "false_positive_target_per_null_match": 0.25,
+    "targets": {
+      "precision": 0.75,
+      "recall": 0.7,
+      "median_delay_seconds": 480
+    }
+  },
+  "records": [
+    {
+      "match_id": "2f270f79-c0c4-4d4d-a55a-c5e5cb7cb3f1",
+      "split": "holdout",
+      "seed": 191065,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5685,
+      "event_count": 7027,
+      "score": {
+        "home": 0,
+        "away": 2
+      },
+      "sha256": "e490502170a164c8df8b8ca307c5fe96249268ba921626b4bb28869feeed45ee",
+      "generation_ms": 1019.5820829999999
+    },
+    {
+      "match_id": "dc053576-202b-4d5c-ace7-2b5659f68e70",
+      "split": "holdout",
+      "seed": 191065,
+      "scenario": "bundle",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5595,
+      "event_count": 6903,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "sha256": "2ca360e14b18b3b5c1460917d3e17b3df8b4380d09ffe302f2d8a1dae44d5426",
+      "generation_ms": 938.5377500000002
+    },
+    {
+      "match_id": "e2c07bd8-0417-490c-a1eb-2b8a03968d5d",
+      "split": "holdout",
+      "seed": 191065,
+      "scenario": "moderate",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5645,
+      "event_count": 7117,
+      "score": {
+        "home": 0,
+        "away": 2
+      },
+      "sha256": "f40d8f08c2ea3cb97156737c27d9b6b614db27e6ff504705699268e801233d87",
+      "generation_ms": 946.063459
+    },
+    {
+      "match_id": "a9d7f1c4-c44c-404b-a116-f7f1fef5b7ef",
+      "split": "holdout",
+      "seed": 191065,
+      "scenario": "tempo",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5715,
+      "event_count": 7085,
+      "score": {
+        "home": 1,
+        "away": 1
+      },
+      "sha256": "8f9650db0f484c928f96032cc0ec2fc96594002f7c466dc1ecdac9d5f3d8804e",
+      "generation_ms": 941.1411250000001
+    },
+    {
+      "match_id": "9a84532a-7fc6-4efb-a264-1b970af28232",
+      "split": "holdout",
+      "seed": 191065,
+      "scenario": "pulse",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        },
+        {
+          "time_seconds": 3480,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5655,
+      "event_count": 6966,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "sha256": "d3805ca8ac10bc19ca4b849f339030a06aa61d15a1f33ef2627f677df5a84851",
+      "generation_ms": 874.5958329999994
+    },
+    {
+      "match_id": "49569a89-6dd0-4f10-a26f-c7b68f337d1b",
+      "split": "holdout",
+      "seed": 198984,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5645,
+      "event_count": 6941,
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "sha256": "2baa8cf852c92e2cd3776b6c48e3ca6e515f4d8e0812825054cbda94e5be9a94",
+      "generation_ms": 852.0005000000001
+    },
+    {
+      "match_id": "2e431871-ee5f-44bd-ab8f-98a1ca3f9352",
+      "split": "holdout",
+      "seed": 198984,
+      "scenario": "bundle",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5595,
+      "event_count": 6918,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "b6954d60f29f7eab3ba752cb38370b703b76963cf709f7bec5a468351a9fb1b7",
+      "generation_ms": 844.5070829999995
+    },
+    {
+      "match_id": "a7fc977f-ee96-4f17-a462-edff25ce3289",
+      "split": "holdout",
+      "seed": 198984,
+      "scenario": "moderate",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5575,
+      "event_count": 6874,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "2b83a11d01f8a191c92c07806b5953354b794983980528847bae38960dc4ec13",
+      "generation_ms": 859.6504169999998
+    },
+    {
+      "match_id": "ca5977b3-8150-443c-ac76-ad3dfbf77c43",
+      "split": "holdout",
+      "seed": 198984,
+      "scenario": "tempo",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5575,
+      "event_count": 6943,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "c5b87ea89857d7174ced83dc84f4fb4a77548266c02cbdf40e8073387651f07e",
+      "generation_ms": 844.6328330000006
+    },
+    {
+      "match_id": "32faeb1f-a434-4be0-a131-5e46aab2ad71",
+      "split": "holdout",
+      "seed": 198984,
+      "scenario": "pulse",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        },
+        {
+          "time_seconds": 3780,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5670,
+      "event_count": 7049,
+      "score": {
+        "home": 1,
+        "away": 1
+      },
+      "sha256": "808b34143844fe0111a6fbe8236b6ebf804578809b781a313d4268d86ffcfaca",
+      "generation_ms": 880.5169580000002
+    },
+    {
+      "match_id": "580ca59f-3f6f-4457-a7f9-05337e4b4b93",
+      "split": "holdout",
+      "seed": 206903,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5585,
+      "event_count": 6898,
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "sha256": "7980546eaba8bf7232d2283f3491466f48e4629998b3e5cdd1160eb090828da3",
+      "generation_ms": 870.2221249999984
+    },
+    {
+      "match_id": "ccb2225c-d612-42a0-a4c5-3c319cc94a6b",
+      "split": "holdout",
+      "seed": 206903,
+      "scenario": "bundle",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 1,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5595,
+      "event_count": 6942,
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "sha256": "5e7183c01b6e8c6a9d841c2284996c0901d045bcb71e1b730fdfd9f41c96a856",
+      "generation_ms": 855.9322499999998
+    },
+    {
+      "match_id": "c8fc5641-b518-4b24-ab10-c2a696377108",
+      "split": "holdout",
+      "seed": 206903,
+      "scenario": "moderate",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 1,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5595,
+      "event_count": 6914,
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "sha256": "9cdf2d9db28a137b6cfb335f592949a36b74fc4dba52e748c1f30ccb5bedc517",
+      "generation_ms": 869.2101669999993
+    },
+    {
+      "match_id": "b18702fb-fcad-473a-a71d-e01a5a3443dc",
+      "split": "holdout",
+      "seed": 206903,
+      "scenario": "tempo",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 1,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5620,
+      "event_count": 6988,
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "sha256": "189aae52343c61ee3b10a33f8c2c5c2230adc99ba22c841d963c0c8c7640a90c",
+      "generation_ms": 863.3948330000003
+    },
+    {
+      "match_id": "8185e4bb-a87d-40c7-a04f-d1c2375bdf90",
+      "split": "holdout",
+      "seed": 206903,
+      "scenario": "pulse",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 1,
+            "away": 0
+          }
+        },
+        {
+          "time_seconds": 4080,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 1,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5620,
+      "event_count": 6992,
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "sha256": "28ae058898368907e662cac2ddb6080cdb66f861d548d317ff80cb5fff0b460d",
+      "generation_ms": 825.0118330000005
+    },
+    {
+      "match_id": "59350225-0687-4842-af08-07512f423af9",
+      "split": "holdout",
+      "seed": 214822,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5550,
+      "event_count": 6763,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "c6849e31b19679917760f5ddc82cc8f70731fde9ef7a5d1505726860b382720b",
+      "generation_ms": 815.7561249999999
+    },
+    {
+      "match_id": "2f7e800e-3106-4fd0-a487-7d2c1ed54e61",
+      "split": "holdout",
+      "seed": 214822,
+      "scenario": "bundle",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5540,
+      "event_count": 6662,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "2ac71a435fe02a3dd108aad77bbfff22eb6f56b4e18f610678f43d3a7f3651c4",
+      "generation_ms": 833.2386659999993
+    },
+    {
+      "match_id": "34f9a2d0-c7f1-43b1-acff-4e416a319b83",
+      "split": "holdout",
+      "seed": 214822,
+      "scenario": "moderate",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5600,
+      "event_count": 6744,
+      "score": {
+        "home": 0,
+        "away": 2
+      },
+      "sha256": "3a5f0942c7be2a3b1e06495be87d190644c23de1ba3ee1a5c360ff418b57783c",
+      "generation_ms": 835.161583000001
+    },
+    {
+      "match_id": "b2a5794f-7f6c-4adb-ae8f-d735d48139da",
+      "split": "holdout",
+      "seed": 214822,
+      "scenario": "tempo",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5530,
+      "event_count": 6704,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "0b0be77d2f750cb85db0088e2de604599fa0f8e26814a1e759c4f69b43486179",
+      "generation_ms": 894.1129170000022
+    },
+    {
+      "match_id": "87082ad0-339b-4f31-af8b-5e487116aed2",
+      "split": "holdout",
+      "seed": 214822,
+      "scenario": "pulse",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        },
+        {
+          "time_seconds": 4380,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5540,
+      "event_count": 6730,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "5e24de9d09a9c92992d9f5fbe631b8b8adada053fa37fc335d067d941b1b207e",
+      "generation_ms": 833.0297920000012
+    },
+    {
+      "match_id": "f35dafe5-005f-40c0-a1f8-2d5301062702",
+      "split": "holdout",
+      "seed": 222741,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5530,
+      "event_count": 6654,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "a092669aa8beffed94930779e49e6f63b3c7268f979e9ea84d1f34f665bb021e",
+      "generation_ms": 812.184874999999
+    },
+    {
+      "match_id": "78cbe6d5-4136-4a2a-aeff-22691779c126",
+      "split": "holdout",
+      "seed": 222741,
+      "scenario": "bundle",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5575,
+      "event_count": 6772,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "f8683638df34fe3b05259201c8b4d5662418ac8cd4ce1ba52a8dba4990d4953a",
+      "generation_ms": 825.5470419999983
+    },
+    {
+      "match_id": "26a70d3b-f30a-454f-a684-5e178f503d66",
+      "split": "holdout",
+      "seed": 222741,
+      "scenario": "moderate",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5530,
+      "event_count": 6664,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "a8beaafceed8d07686b146d943193945a6eec7862df655b9e5c9b006db4d3a4e",
+      "generation_ms": 825.5850840000021
+    },
+    {
+      "match_id": "c0641a7d-b595-4ddc-a1c5-ae0122a6e3bc",
+      "split": "holdout",
+      "seed": 222741,
+      "scenario": "tempo",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5550,
+      "event_count": 6767,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "5467e809f7edb10b540cf318c03b483a7aa4c1000c3ecbfaab917e218de541b0",
+      "generation_ms": 815.179500000002
+    },
+    {
+      "match_id": "6e459f7b-c9b4-459e-a10d-de11aee04cc2",
+      "split": "holdout",
+      "seed": 222741,
+      "scenario": "pulse",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        },
+        {
+          "time_seconds": 3480,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5565,
+      "event_count": 6733,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "3ff96bf809fe68048b857ee8b2197b8050e5e0d4b9455e55b693f700665c3111",
+      "generation_ms": 818.5113330000022
+    },
+    {
+      "match_id": "7fc47695-a7f0-4151-a139-169936fbadd0",
+      "split": "holdout",
+      "seed": 230660,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5595,
+      "event_count": 6736,
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "sha256": "7cdcb2f3330a14bbb635f7e35a1528a0037d5e7d990233300270458cd209b06a",
+      "generation_ms": 822.8716249999998
+    },
+    {
+      "match_id": "6e76fbb5-1f95-4f55-a4c0-c8fe3bce469e",
+      "split": "holdout",
+      "seed": 230660,
+      "scenario": "bundle",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 1,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5615,
+      "event_count": 6728,
+      "score": {
+        "home": 2,
+        "away": 1
+      },
+      "sha256": "f5b5ffe4f31bb31b6b8b5912022a1df0977aba9ae828bbe38d1ab45bfe78408d",
+      "generation_ms": 825.8757079999996
+    },
+    {
+      "match_id": "2a8be11b-22d3-4c9e-a0ac-0f99667fa5e9",
+      "split": "holdout",
+      "seed": 230660,
+      "scenario": "moderate",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 1,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5625,
+      "event_count": 6814,
+      "score": {
+        "home": 2,
+        "away": 0
+      },
+      "sha256": "fb8c1c06689b4c0615bf7802c056ecd6498a81e65ee7e5e1ffe4ccdac5e78832",
+      "generation_ms": 826.1167910000004
+    },
+    {
+      "match_id": "cbd76b9d-1564-48dc-a55b-526d94e80062",
+      "split": "holdout",
+      "seed": 230660,
+      "scenario": "tempo",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 1,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5575,
+      "event_count": 6733,
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "sha256": "ecdfad35bc45ab54b9231af9151db21e0bddd55909291a1b6dd8ee13543ed737",
+      "generation_ms": 827.4544999999998
+    },
+    {
+      "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+      "split": "holdout",
+      "seed": 230660,
+      "scenario": "pulse",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 1,
+            "away": 0
+          }
+        },
+        {
+          "time_seconds": 3780,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 1,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5575,
+      "event_count": 6738,
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "sha256": "debaa05d3aaaed3b4b01e0621c818ed8a9d8bd3e6aa75f6fec008c1437643291",
+      "generation_ms": 812.3964169999999
+    },
+    {
+      "match_id": "3c74cf32-27a6-4f46-ae23-7bf7edd8465a",
+      "split": "holdout",
+      "seed": 238579,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5630,
+      "event_count": 6685,
+      "score": {
+        "home": 0,
+        "away": 2
+      },
+      "sha256": "c4637a6c93dd9f4260a0b74c8a40b5fa2c5a109408d02af0f698da6766c21325",
+      "generation_ms": 825.4257500000022
+    },
+    {
+      "match_id": "2dc0b713-3814-44f8-a087-17ce90c4e973",
+      "split": "holdout",
+      "seed": 238579,
+      "scenario": "bundle",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 2
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5655,
+      "event_count": 6707,
+      "score": {
+        "home": 0,
+        "away": 2
+      },
+      "sha256": "5f4ab3b9f33c340b4c39052f3920e7c9a1c4488395df7c68257ae1bb5e0b6794",
+      "generation_ms": 833.586000000003
+    },
+    {
+      "match_id": "0bfbf5a7-9f75-4278-a457-148ba7ae7b13",
+      "split": "holdout",
+      "seed": 238579,
+      "scenario": "moderate",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 2
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5665,
+      "event_count": 6772,
+      "score": {
+        "home": 0,
+        "away": 2
+      },
+      "sha256": "a32ab9e3bdfc422c93ba1b0b3ba4bf3733fdb85d5aefa66ca4d389d219621131",
+      "generation_ms": 832.0257500000007
+    },
+    {
+      "match_id": "e33a5113-7bfd-4751-a1a4-2e5de55aa423",
+      "split": "holdout",
+      "seed": 238579,
+      "scenario": "tempo",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 0,
+            "away": 2
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5620,
+      "event_count": 6772,
+      "score": {
+        "home": 0,
+        "away": 2
+      },
+      "sha256": "880a636ae235f5755e1a27770eff420d5b0b56b6a4b1e678cc3fe51aaeae9eab",
+      "generation_ms": 824.9030830000011
+    },
+    {
+      "match_id": "f9cdd181-3c40-4cd6-a5be-c6fe6d0aa6ed",
+      "split": "holdout",
+      "seed": 238579,
+      "scenario": "pulse",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 2
+          }
+        },
+        {
+          "time_seconds": 4080,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 2
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5620,
+      "event_count": 6726,
+      "score": {
+        "home": 0,
+        "away": 2
+      },
+      "sha256": "706432d636fb68d29570163c536aaf493bedb74cde7dc0f40ddf07ce3d252d43",
+      "generation_ms": 850.4354170000006
+    },
+    {
+      "match_id": "937495be-dbd0-4ed6-ade4-1f5964227a8b",
+      "split": "holdout",
+      "seed": 246498,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5630,
+      "event_count": 6732,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "sha256": "99600ff49eee4c470748d4ee61670c1ccf0c481c8760e772a5efad5b726675ef",
+      "generation_ms": 829.7380840000005
+    },
+    {
+      "match_id": "d9a0b385-0423-4a74-a859-d4b888c4cc5d",
+      "split": "holdout",
+      "seed": 246498,
+      "scenario": "bundle",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5640,
+      "event_count": 6839,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "sha256": "b691429a8aba536727b703fea7be5431f4b1de4c7b318d983a4eb6358a41d90a",
+      "generation_ms": 828.4210000000021
+    },
+    {
+      "match_id": "857ae5af-fb0d-470a-a75d-f339c65b0fca",
+      "split": "holdout",
+      "seed": 246498,
+      "scenario": "moderate",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5605,
+      "event_count": 6837,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "sha256": "bbd1a3e10012c8b689744e13196eab3ee62c62fa1762c44485ef872403cbb412",
+      "generation_ms": 839.085834000005
+    },
+    {
+      "match_id": "d2c429ff-476e-4869-a8f6-3f845f54d53c",
+      "split": "holdout",
+      "seed": 246498,
+      "scenario": "tempo",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5595,
+      "event_count": 6769,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "sha256": "73479faf4b36d5333699c231e7bb740cc4f150ca7c6bcf76bf482ffd173cd066",
+      "generation_ms": 822.4312500000015
+    },
+    {
+      "match_id": "4e678ce8-73fc-4024-ab42-cd1f7ffcd665",
+      "split": "holdout",
+      "seed": 246498,
+      "scenario": "pulse",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        },
+        {
+          "time_seconds": 4380,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5630,
+      "event_count": 6785,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "sha256": "151ee42c9fe34a91417afc7c12b0ad8187f2b60bcc1044c0f26a7d655eca7092",
+      "generation_ms": 827.463582999997
+    },
+    {
+      "match_id": "e3653bf6-d3e2-4d2a-a4ca-264ecaa2a1c3",
+      "split": "holdout",
+      "seed": 254417,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5580,
+      "event_count": 6849,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "4fcbdfb9b11ae3f9eeb5f5b1c3a5a78deda9a7f0479669f053ede0f9145bf311",
+      "generation_ms": 817.0727499999994
+    },
+    {
+      "match_id": "5e8b0630-f97b-4b8a-a365-eafe0b8d06e6",
+      "split": "holdout",
+      "seed": 254417,
+      "scenario": "bundle",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5570,
+      "event_count": 6943,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "c76dab8ba5dd8b18898705002da2203906d1df3ee573dcd9d23335626339cbab",
+      "generation_ms": 817.930124999999
+    },
+    {
+      "match_id": "7e869999-6f9f-43d8-a186-9b7e950f9a9e",
+      "split": "holdout",
+      "seed": 254417,
+      "scenario": "moderate",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5590,
+      "event_count": 6789,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "c38e0876f4987a0fd6b748ecc2e66209c81455412d4d90983c89ecaaf7609c99",
+      "generation_ms": 815.5266249999986
+    },
+    {
+      "match_id": "fd5ce508-0484-48bf-a561-e4602e4484b0",
+      "split": "holdout",
+      "seed": 254417,
+      "scenario": "tempo",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5605,
+      "event_count": 6860,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "d36b7f038308e3d7dd8477326d02e70613c6ec818c5bd0da929e48679c4ebe0a",
+      "generation_ms": 836.5184579999986
+    },
+    {
+      "match_id": "1a72c375-8f75-4b0e-af04-5af708dd6e9d",
+      "split": "holdout",
+      "seed": 254417,
+      "scenario": "pulse",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        },
+        {
+          "time_seconds": 3480,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5570,
+      "event_count": 6777,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "adb5764c03fbdf4969c536099a2f8accb6a99b82101d83e2fe8fcc546cdbd791",
+      "generation_ms": 847.4404170000053
+    },
+    {
+      "match_id": "63564bc1-43a5-471f-a163-b3b6829b153c",
+      "split": "holdout",
+      "seed": 262336,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5580,
+      "event_count": 6790,
+      "score": {
+        "home": 1,
+        "away": 1
+      },
+      "sha256": "84e171ca5c7c3b1f8692c628dddd249cdc3d062ddaa882b4060b648ebcca0901",
+      "generation_ms": 923.9169580000016
+    },
+    {
+      "match_id": "02e69378-995e-4784-acca-6c9f9595f98b",
+      "split": "holdout",
+      "seed": 262336,
+      "scenario": "bundle",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5645,
+      "event_count": 6948,
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "sha256": "1abdf2a2af59856b472e75cbd11464b94dda5271a4043b2e59044837d84aa597",
+      "generation_ms": 896.4901249999966
+    },
+    {
+      "match_id": "47a7976d-9edd-44d6-a051-0f70bd0eb795",
+      "split": "holdout",
+      "seed": 262336,
+      "scenario": "moderate",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5560,
+      "event_count": 6814,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "30f64bf568e6c0a68ecf3b1d2c49f051e58629f307e6c2d737beca1c69251dcd",
+      "generation_ms": 840.6396249999962
+    },
+    {
+      "match_id": "788f8171-f53f-4629-a740-7ed197bfeec9",
+      "split": "holdout",
+      "seed": 262336,
+      "scenario": "tempo",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5595,
+      "event_count": 6829,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "2ed0f87cae18080e95d82fe0d8cf866daaee1db8ae071f6fa334a6bb0e68e2e8",
+      "generation_ms": 813.0880419999958
+    },
+    {
+      "match_id": "503c821f-d521-4e05-a5a4-6bd47da9b4ca",
+      "split": "holdout",
+      "seed": 262336,
+      "scenario": "pulse",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        },
+        {
+          "time_seconds": 3780,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5540,
+      "event_count": 6805,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "ebe16a58ba50019ccc18c703593988d6cd0659bcb4578cbd61186503cf45a79b",
+      "generation_ms": 812.7600409999941
+    },
+    {
+      "match_id": "e36ceff9-b7a7-4f14-a7e1-de04d5cbe1de",
+      "split": "holdout",
+      "seed": 270255,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5530,
+      "event_count": 6813,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "8efff976e1d0b0386ed24b4c25106f1717d49f55e48e0408e44741e9a1db7972",
+      "generation_ms": 812.408583000004
+    },
+    {
+      "match_id": "30191460-e65d-43f4-a90a-2400df4ad015",
+      "split": "holdout",
+      "seed": 270255,
+      "scenario": "bundle",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5540,
+      "event_count": 6809,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "f75ed7c45be5d03e5a934a43d80a562b8b1f7f1d4be4afec6ace2f27b0c08a92",
+      "generation_ms": 817.6877499999973
+    },
+    {
+      "match_id": "30955ec1-925f-46b5-a7a4-8100439f1107",
+      "split": "holdout",
+      "seed": 270255,
+      "scenario": "moderate",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5540,
+      "event_count": 6861,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "e34b330cd847156aecbb4a18bca0161301debfd2ef0a93b447383bbbcf1def2e",
+      "generation_ms": 827.9396660000057
+    },
+    {
+      "match_id": "94740fa5-1d63-49d8-a72f-902d3037814d",
+      "split": "holdout",
+      "seed": 270255,
+      "scenario": "tempo",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5560,
+      "event_count": 6814,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "db744df801f475d2b855a54f7e9e3ccf2ca4bc821c1852ba5adbee4ead7209db",
+      "generation_ms": 812.3168340000047
+    },
+    {
+      "match_id": "44b5e0fd-1871-4812-a8bb-779cb5920ab3",
+      "split": "holdout",
+      "seed": 270255,
+      "scenario": "pulse",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        },
+        {
+          "time_seconds": 4080,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5625,
+      "event_count": 6957,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "b0542a6df7c7767ceb37c1fdaf9be26ff6b85b546581a511b81fefe2bd2c981a",
+      "generation_ms": 827.6451250000027
+    },
+    {
+      "match_id": "360094c1-0c29-453a-a901-36e67af79657",
+      "split": "holdout",
+      "seed": 278174,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5560,
+      "event_count": 6802,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "3d21a077e0ba3ba4115951a7c45e1cd0c58dd71f5ec0bd2d07f7825027128f7d",
+      "generation_ms": 817.4084579999981
+    },
+    {
+      "match_id": "09fc1020-4e4d-42a8-a4c3-23c0183476e7",
+      "split": "holdout",
+      "seed": 278174,
+      "scenario": "bundle",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5565,
+      "event_count": 6792,
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "sha256": "8c70a757bd0d147b6174c99a497fbefab75a46cbc5305f83bcbc6757ce6a83ca",
+      "generation_ms": 834.5404580000031
+    },
+    {
+      "match_id": "3fe542a7-6af0-4e44-ac87-f0b91a2c0238",
+      "split": "holdout",
+      "seed": 278174,
+      "scenario": "moderate",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5540,
+      "event_count": 6700,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "9b66ef837f3c737fe1294ba23e337a436d188f034f80d5222a1ae69663c31464",
+      "generation_ms": 812.1363339999953
+    },
+    {
+      "match_id": "ea872b9e-7d71-4e75-a0a3-a09e3f5753ca",
+      "split": "holdout",
+      "seed": 278174,
+      "scenario": "tempo",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5585,
+      "event_count": 6875,
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "sha256": "9775604d793942b4f3015e3c66ed6e25ae3bf81bfd259a69511f70e38864f923",
+      "generation_ms": 823.351290999999
+    },
+    {
+      "match_id": "2fd37415-3cef-4d3c-a22c-4cbeabf49d4a",
+      "split": "holdout",
+      "seed": 278174,
+      "scenario": "pulse",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        },
+        {
+          "time_seconds": 4380,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5565,
+      "event_count": 6734,
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "sha256": "364ab5cd63930949ddaa82603c13a248e173321a5a0ea0b2334960ebf7965dc3",
+      "generation_ms": 815.1311250000072
+    },
+    {
+      "match_id": "f57a6b3f-c7cc-4824-a395-1c93ef9f66ac",
+      "split": "holdout",
+      "seed": 286093,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5670,
+      "event_count": 7114,
+      "score": {
+        "home": 1,
+        "away": 1
+      },
+      "sha256": "5eca944584665d0c6bd1cff04689a0691776ec0942ac3daac2dd3340d7e367c2",
+      "generation_ms": 824.7860409999994
+    },
+    {
+      "match_id": "1e386544-5123-49e1-aef4-231a6e1e1519",
+      "split": "holdout",
+      "seed": 286093,
+      "scenario": "bundle",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5610,
+      "event_count": 7048,
+      "score": {
+        "home": 0,
+        "away": 2
+      },
+      "sha256": "05639c96a6cefb376d494d869f52dbfa1425852673bef05292acd98acce25243",
+      "generation_ms": 836.8319999999949
+    },
+    {
+      "match_id": "3cbdc186-a725-4b43-ae2a-b7fb7472d515",
+      "split": "holdout",
+      "seed": 286093,
+      "scenario": "moderate",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5610,
+      "event_count": 6983,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "sha256": "1eb30ee99cdb2a5848e805805f735119e92988664321fa85a3da65df75f67efb",
+      "generation_ms": 822.6959590000042
+    },
+    {
+      "match_id": "158e83bf-5138-4f2e-afa6-5dd07daefa13",
+      "split": "holdout",
+      "seed": 286093,
+      "scenario": "tempo",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5650,
+      "event_count": 7087,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "sha256": "91a129938320dbc397313104a588b6b01c78e9fd85ccd340f6b381ae35fe8c7b",
+      "generation_ms": 823.0957090000011
+    },
+    {
+      "match_id": "249acccc-204e-4e66-a7a8-9e993e8d5312",
+      "split": "holdout",
+      "seed": 286093,
+      "scenario": "pulse",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        },
+        {
+          "time_seconds": 3480,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5585,
+      "event_count": 6956,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "sha256": "8af94f4e44a8a6ca04a5134dfa444c0a271a8df6c4581b5777be352da7eff1aa",
+      "generation_ms": 836.8329159999994
+    },
+    {
+      "match_id": "2d151f04-6809-44a7-a897-7523bb79f208",
+      "split": "holdout",
+      "seed": 294012,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5625,
+      "event_count": 6778,
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "sha256": "4062e905ecb0ff846e98747ae8c8772744edecac63cd6c60e6ca0485bf004eac",
+      "generation_ms": 818.1480410000004
+    },
+    {
+      "match_id": "498283db-46bf-4bf2-acf0-d15047ae324d",
+      "split": "holdout",
+      "seed": 294012,
+      "scenario": "bundle",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 1,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5615,
+      "event_count": 6782,
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "sha256": "31c7346b6a3305da2a2d11124107460b818d53777da80c6c05967e6e850adea0",
+      "generation_ms": 822.8228339999987
+    },
+    {
+      "match_id": "0b6fe73b-e6e5-4a46-a224-e5ecc620bbb5",
+      "split": "holdout",
+      "seed": 294012,
+      "scenario": "moderate",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 1,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5605,
+      "event_count": 6739,
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "sha256": "abb161914abac3b7208fd6767c969aacddb9fa15855b676afadb72aceaced259",
+      "generation_ms": 835.0189590000009
+    },
+    {
+      "match_id": "a359cd48-1b66-4a45-acb0-ec3d37f71830",
+      "split": "holdout",
+      "seed": 294012,
+      "scenario": "tempo",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 1,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5605,
+      "event_count": 6763,
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "sha256": "7f45402743d69fc449b29182310d7d5f974b76c2113fe0ad077ea33a51c337e7",
+      "generation_ms": 827.0740420000002
+    },
+    {
+      "match_id": "b2a67298-05c2-4498-adbf-1c5ccaf8b6dd",
+      "split": "holdout",
+      "seed": 294012,
+      "scenario": "pulse",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 1,
+            "away": 0
+          }
+        },
+        {
+          "time_seconds": 3780,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 1,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5605,
+      "event_count": 6804,
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "sha256": "8091e250197c5f0007d873a3c83ce3a8ed8d47b56d71ee00acb7e22d845c78dc",
+      "generation_ms": 825.187334000002
+    },
+    {
+      "match_id": "5acf42a9-7e3f-4cd1-a68f-47a0bf42e0f9",
+      "split": "holdout",
+      "seed": 301931,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5600,
+      "event_count": 6840,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "857c310593d1b089dd709655c7df939dd47dc01a73edea709b102e6ae6944c69",
+      "generation_ms": 816.7432079999999
+    },
+    {
+      "match_id": "5b8b8484-3cb6-427b-a3c7-0ea3266cc5ff",
+      "split": "holdout",
+      "seed": 301931,
+      "scenario": "bundle",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5620,
+      "event_count": 6804,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "021ba43367b1fc79db77dae1749b71c952ea5a931e7fd9a3c3254f7bb278e3b9",
+      "generation_ms": 823.7595829999991
+    },
+    {
+      "match_id": "0ea12ddb-974c-42db-abea-ab645da5077b",
+      "split": "holdout",
+      "seed": 301931,
+      "scenario": "moderate",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5575,
+      "event_count": 6757,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "479e6a705710dd478bdab9d3cd4b211ee62d0d2173040a56dc6b815a3f2a9634",
+      "generation_ms": 815.8133749999979
+    },
+    {
+      "match_id": "77544fbd-ccde-4219-a229-00e342bdffe2",
+      "split": "holdout",
+      "seed": 301931,
+      "scenario": "tempo",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5575,
+      "event_count": 6809,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "fa25c3c84b195dfe9a84b2f466b53b25dcc3f272227597260402930a8f66520b",
+      "generation_ms": 811.2876249999972
+    },
+    {
+      "match_id": "d99c2559-cedb-4c13-a41c-91d152bbf0af",
+      "split": "holdout",
+      "seed": 301931,
+      "scenario": "pulse",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        },
+        {
+          "time_seconds": 4080,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5565,
+      "event_count": 6714,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "7231e8e06df51d494d4e1240f0233d422050ad5dff6fda4eea185d4df3d1d80d",
+      "generation_ms": 811.6560420000023
+    },
+    {
+      "match_id": "6e5a51bf-6615-43be-a110-d97ccd7881ac",
+      "split": "holdout",
+      "seed": 309850,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5630,
+      "event_count": 7078,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "71174738d34e6da8f358cd23a47a3b4d02debb0b461b9c5f0dd59fcf9806c590",
+      "generation_ms": 823.3602500000052
+    },
+    {
+      "match_id": "1e524f12-b9ef-4198-adf3-1384a74ba3a0",
+      "split": "holdout",
+      "seed": 309850,
+      "scenario": "bundle",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5630,
+      "event_count": 6953,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "09a7cac3c865a8b7213930c6de579a39791491dcbddab9dd95f1253152a333a7",
+      "generation_ms": 832.874625000004
+    },
+    {
+      "match_id": "f4ecaae0-dae5-4025-aea0-d13ab49c880d",
+      "split": "holdout",
+      "seed": 309850,
+      "scenario": "moderate",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5640,
+      "event_count": 6974,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "084716b4f2347f63a4f7c03182f71f71a7d79ca8c4d55882bf1a70835d656172",
+      "generation_ms": 825.6753750000062
+    },
+    {
+      "match_id": "f178d7a8-9ba9-463d-a828-bc56b3aed003",
+      "split": "holdout",
+      "seed": 309850,
+      "scenario": "tempo",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5630,
+      "event_count": 7075,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "a72d27c5e8d251c2fb6faad88220844cb9481617b4d53835a3a1ac8a27eaca27",
+      "generation_ms": 836.273291999998
+    },
+    {
+      "match_id": "dd17ed04-557b-42e8-af25-fa4910219b01",
+      "split": "holdout",
+      "seed": 309850,
+      "scenario": "pulse",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        },
+        {
+          "time_seconds": 4380,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5630,
+      "event_count": 6923,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "22e1f6b8b1837b57e9aec77a5c49d89528e4725a58f69b6a9c035071f6e6661c",
+      "generation_ms": 845.523125000007
+    },
+    {
+      "match_id": "d5cd7947-425c-4acd-afd8-2834389efeb5",
+      "split": "holdout",
+      "seed": 317769,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5575,
+      "event_count": 6906,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "sha256": "feaa9b6a6b03604d6c492d4c370ab630b4c908f8290493cc2c26ccf09c19fdc0",
+      "generation_ms": 956.9711250000109
+    },
+    {
+      "match_id": "9d63474e-8767-4bbc-adea-aa2fcfe427c0",
+      "split": "holdout",
+      "seed": 317769,
+      "scenario": "bundle",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5600,
+      "event_count": 6789,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "sha256": "90b8582bf8656e4c7c1d577d7927749554dbe6e84969afdde219a40bb73e9ceb",
+      "generation_ms": 955.9935829999886
+    },
+    {
+      "match_id": "030ff955-9622-4afe-a8af-5a8e5b0be772",
+      "split": "holdout",
+      "seed": 317769,
+      "scenario": "moderate",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5575,
+      "event_count": 6752,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "sha256": "a9ea73c605d9fd32e1ed87b333981e9d13aa1623cd4fe99ebb2cc2bacf898be1",
+      "generation_ms": 1185.0268750000105
+    },
+    {
+      "match_id": "dd3a5852-bd73-42d0-a554-e501d14d93f4",
+      "split": "holdout",
+      "seed": 317769,
+      "scenario": "tempo",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5655,
+      "event_count": 6913,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "sha256": "1d7c2d4de8e71d4b5ed2a2532faf126d7d59b7ee8e71e780ffae444d4b838fdc",
+      "generation_ms": 1015.0155410000007
+    },
+    {
+      "match_id": "506afd63-47b7-47d0-ab17-d10b06e5e46f",
+      "split": "holdout",
+      "seed": 317769,
+      "scenario": "pulse",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        },
+        {
+          "time_seconds": 3480,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5555,
+      "event_count": 6791,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "sha256": "170aaebb8171be14bc01012f6a93807a047831dc5e7a9197b1d7cc9ad4d30238",
+      "generation_ms": 880.4561669999966
+    },
+    {
+      "match_id": "6121c553-22a2-4dbf-ab63-119a75517f4c",
+      "split": "holdout",
+      "seed": 325688,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5615,
+      "event_count": 6833,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "sha256": "4afc4b9cb9c1c3996aac3bc87ca2b48f6a16996671b30135386af3365167139f",
+      "generation_ms": 965.5312080000003
+    },
+    {
+      "match_id": "2295b7bf-bdab-4d60-a40f-6ac62cce1853",
+      "split": "holdout",
+      "seed": 325688,
+      "scenario": "bundle",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5530,
+      "event_count": 6787,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "74d92b5d6d81c21d70eb195a50dae9441c63435db4de3169a8f4c19c80a2bce4",
+      "generation_ms": 849.6092500000086
+    },
+    {
+      "match_id": "6c69702b-85b8-4bf5-ad75-4dd595a8b6f4",
+      "split": "holdout",
+      "seed": 325688,
+      "scenario": "moderate",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5560,
+      "event_count": 6816,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "d0830b1ac003b5f6090305c271b79f8d7acbaf9c8cb54378553d0c4649f61f93",
+      "generation_ms": 1140.661208000005
+    },
+    {
+      "match_id": "1deb7fae-4d34-47ad-ab6e-11081d132b03",
+      "split": "holdout",
+      "seed": 325688,
+      "scenario": "tempo",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5520,
+      "event_count": 6875,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "141d3554a63bece7da82b5b479eb817ff8bb996de7697583f4867e8deffb5d02",
+      "generation_ms": 1025.450125000003
+    },
+    {
+      "match_id": "dc01c257-4b01-4ed9-a231-fb675979615e",
+      "split": "holdout",
+      "seed": 325688,
+      "scenario": "pulse",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        },
+        {
+          "time_seconds": 3780,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5565,
+      "event_count": 6815,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "6ae8f633d1ae17caf3abb1a12452f320d29c83805b03fe630640ab591e8b2866",
+      "generation_ms": 849.6312499999913
+    },
+    {
+      "match_id": "1f8bbfa1-a661-4d43-a7d8-1d87d612ac1e",
+      "split": "holdout",
+      "seed": 333607,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5585,
+      "event_count": 6855,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "f0dabde983e3d304644f4443ba2bbf4155df769e75139b0d23c17114465281e5",
+      "generation_ms": 850.5698330000014
+    },
+    {
+      "match_id": "47774144-192a-486c-a8bd-34b66cfe65a1",
+      "split": "holdout",
+      "seed": 333607,
+      "scenario": "bundle",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5540,
+      "event_count": 6701,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "6733fb05c885791c695bf8c5343c10af353145fe71819ac56f6743013c184c86",
+      "generation_ms": 836.4935830000031
+    },
+    {
+      "match_id": "57158a67-a724-4cd2-a0ff-c8eb6fa2cb59",
+      "split": "holdout",
+      "seed": 333607,
+      "scenario": "moderate",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5540,
+      "event_count": 6684,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "06255a8ae4ef4761ee1ceed717cf659e2581e5445784cc56548001e54fb0bca1",
+      "generation_ms": 826.489916999999
+    },
+    {
+      "match_id": "8f09b58d-b580-4aa4-a689-d9a77fafccc1",
+      "split": "holdout",
+      "seed": 333607,
+      "scenario": "tempo",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5550,
+      "event_count": 6822,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "45f0517606b864ec266cb94d8cdd211b992f47fa8386db16ab294dd049fb653b",
+      "generation_ms": 823.6246249999967
+    },
+    {
+      "match_id": "2413ee75-7747-43e5-a309-230239ba5f14",
+      "split": "holdout",
+      "seed": 333607,
+      "scenario": "pulse",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        },
+        {
+          "time_seconds": 4080,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5550,
+      "event_count": 6774,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "1cdba791c02ed22b3f47b627176b05e6427a8c50641ed4a856debae2f63d68dc",
+      "generation_ms": 845.5219580000121
+    },
+    {
+      "match_id": "3a6cdb87-0afb-42b9-a7b7-ac0ffc68196c",
+      "split": "holdout",
+      "seed": 341526,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5520,
+      "event_count": 6720,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "6e2d35870699952a808d6e73bc37216c75e54e095716ac3832298f1aa0742d33",
+      "generation_ms": 828.2447919999977
+    },
+    {
+      "match_id": "5018c3a1-d5bb-4e71-a5b4-18e2d656f014",
+      "split": "holdout",
+      "seed": 341526,
+      "scenario": "bundle",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5520,
+      "event_count": 6699,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "e34aee15344ff2213ea288a8f4506d63ac5074357b67b3df46aba13d703259ea",
+      "generation_ms": 1056.0380000000005
+    },
+    {
+      "match_id": "e0548824-0fe4-485f-aee9-29fe2a3231fd",
+      "split": "holdout",
+      "seed": 341526,
+      "scenario": "moderate",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5550,
+      "event_count": 6688,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "0584e1bbe31ff62bb69f886994c3cda216dcef8ac5765a17c7d1919239597665",
+      "generation_ms": 835.8864159999939
+    },
+    {
+      "match_id": "101b115d-1a5e-44d2-a704-a3c7a7e5af1e",
+      "split": "holdout",
+      "seed": 341526,
+      "scenario": "tempo",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5520,
+      "event_count": 6701,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "f74cc809e377f2110e54a4d764bcc6cf67e6586beb673e7b6e95fa8d40459024",
+      "generation_ms": 834.3587499999994
+    },
+    {
+      "match_id": "46d92b4f-d503-4011-af0a-34f62bb27243",
+      "split": "holdout",
+      "seed": 341526,
+      "scenario": "pulse",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        },
+        {
+          "time_seconds": 4380,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5520,
+      "event_count": 6718,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "2033d7e6cb9cfc07016c021a477761a1d697f91593b78c3c1106f49470e3a155",
+      "generation_ms": 822.4612080000079
+    },
+    {
+      "match_id": "2f696682-db89-42f8-af8a-488ca02fdbe3",
+      "split": "holdout",
+      "seed": 349445,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5575,
+      "event_count": 6853,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "78f2c2f8ad716098cb0b145f437cdf0fdb25ccb004717eeb039a66b6cb997e8b",
+      "generation_ms": 833.4736249999987
+    },
+    {
+      "match_id": "f05de2c6-c677-47ba-a369-f3639ec477e1",
+      "split": "holdout",
+      "seed": 349445,
+      "scenario": "bundle",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5575,
+      "event_count": 6873,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "c7e4d2b6ae958d38b55c6c358cd7b017e3ecc7eacf201d8dbe7b1e90afe25513",
+      "generation_ms": 843.3735000000015
+    },
+    {
+      "match_id": "b2f2891c-e2fe-4ee7-a431-cac49aefab75",
+      "split": "holdout",
+      "seed": 349445,
+      "scenario": "moderate",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5585,
+      "event_count": 6856,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "8aceb3fe24e8127bdfb89f1b38fc0ce5e0eac901e2b3f72bc251b4a712b70fa0",
+      "generation_ms": 840.514875000008
+    },
+    {
+      "match_id": "c17b0d8f-4b9a-46ba-a2d6-b9ed5c7e03ed",
+      "split": "holdout",
+      "seed": 349445,
+      "scenario": "tempo",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5585,
+      "event_count": 6916,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "3034666db9a774baea6afe9d0c9c4830af85d5294f88ff248116baa7ff6572f9",
+      "generation_ms": 830.8179999999993
+    },
+    {
+      "match_id": "9dcfa1be-d68c-48fe-a951-e0b972133b02",
+      "split": "holdout",
+      "seed": 349445,
+      "scenario": "pulse",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        },
+        {
+          "time_seconds": 3480,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5605,
+      "event_count": 6905,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "d61307f085b43e3fdbdb46f16ad1432f6789ee80ad2b02b3eb182c2c72b0d57a",
+      "generation_ms": 831.4568749999889
+    },
+    {
+      "match_id": "27aa6027-b3a2-4c2f-a208-7f48b5b4982d",
+      "split": "holdout",
+      "seed": 357364,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5625,
+      "event_count": 6998,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "d899cbe6149aeee46dc0ba9bba5d5e1a666b7dbb757778e3b20c4a395d65ebdf",
+      "generation_ms": 832.5736670000042
+    },
+    {
+      "match_id": "8390baaf-423e-440e-a595-88293879ee50",
+      "split": "holdout",
+      "seed": 357364,
+      "scenario": "bundle",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5595,
+      "event_count": 6917,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "f94e19cf0c49b4b026c614bf836eec0b8b71e4d92006b079c1ce04db091ec891",
+      "generation_ms": 836.7504580000095
+    },
+    {
+      "match_id": "ea2d3726-72f7-49f5-ad43-521a1537090b",
+      "split": "holdout",
+      "seed": 357364,
+      "scenario": "moderate",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5615,
+      "event_count": 6966,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "a1b0a667bfe2a153f4345b5101b344b46527ed15690bed58b1ac7954df67796b",
+      "generation_ms": 848.5986660000053
+    },
+    {
+      "match_id": "1861b41b-9172-4f5d-a1d3-ff66ee579543",
+      "split": "holdout",
+      "seed": 357364,
+      "scenario": "tempo",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5595,
+      "event_count": 6955,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "a56557abceb7028f3bfd5eb2cdf6e274bd4d7696f29848cdb75b3278f037e121",
+      "generation_ms": 833.347207999992
+    },
+    {
+      "match_id": "d8173fd8-8af2-4769-a7b6-74c66412b890",
+      "split": "holdout",
+      "seed": 357364,
+      "scenario": "pulse",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        },
+        {
+          "time_seconds": 3780,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5620,
+      "event_count": 6934,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "9f55a44a939550816dd1ce010fa806bf404ac105f01691c00d7396c051d6add3",
+      "generation_ms": 836.0477090000059
+    },
+    {
+      "match_id": "0b024897-399a-46dd-a43f-5d67568c0e74",
+      "split": "holdout",
+      "seed": 365283,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5555,
+      "event_count": 6651,
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "sha256": "e0273bd5b5ed30e1b8afa4344ea181e24f130cccd7f9dc23732bb865733b7d15",
+      "generation_ms": 819.7673340000038
+    },
+    {
+      "match_id": "b05e5692-4e0b-4712-ab71-701d23f502d2",
+      "split": "holdout",
+      "seed": 365283,
+      "scenario": "bundle",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5540,
+      "event_count": 6725,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "5b09e04e8eb3168002ac346d18658636f2dcf603f422b9b7d73c3d82ec4ae12c",
+      "generation_ms": 818.2107089999918
+    },
+    {
+      "match_id": "7f7ade4a-c645-4200-adbd-8a22aaa3d44d",
+      "split": "holdout",
+      "seed": 365283,
+      "scenario": "moderate",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5545,
+      "event_count": 6690,
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "sha256": "0bc2b0d3560c76a44c50bf9f686662c0d7a74dab3d1f1499dafd5d82736bc2e5",
+      "generation_ms": 823.2617920000048
+    },
+    {
+      "match_id": "95bb9d36-34d6-4302-a312-037bd6c01a1f",
+      "split": "holdout",
+      "seed": 365283,
+      "scenario": "tempo",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5555,
+      "event_count": 6697,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "0ae74f09b9e97be2bc9e4dae30eaf82a9619b1956088ae2d0c203391fbf4d85f",
+      "generation_ms": 845.6903329999914
+    },
+    {
+      "match_id": "127d56cb-a6fb-4b31-a474-aa4bc0a529e7",
+      "split": "holdout",
+      "seed": 365283,
+      "scenario": "pulse",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        },
+        {
+          "time_seconds": 4080,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5555,
+      "event_count": 6634,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "8f8d551a1b989e01001dec20f3a1018d7397fa4e7ef68860160f56a9950a6337",
+      "generation_ms": 816.7877909999952
+    },
+    {
+      "match_id": "85564be2-8a21-4c16-a0f3-c056858ec29d",
+      "split": "holdout",
+      "seed": 373202,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5675,
+      "event_count": 7052,
+      "score": {
+        "home": 2,
+        "away": 0
+      },
+      "sha256": "0e34d497807fd2cba0af8ee830492733bf7b53f71e3a43b0bf27bc8c5bf8b4b5",
+      "generation_ms": 838.6485419999954
+    },
+    {
+      "match_id": "cdcc1abc-8d33-43b5-a5f0-fc85639ffe1e",
+      "split": "holdout",
+      "seed": 373202,
+      "scenario": "bundle",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 2,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5655,
+      "event_count": 7084,
+      "score": {
+        "home": 2,
+        "away": 0
+      },
+      "sha256": "11713464cfaca0e19fdd5375d5ad5d1555f73ab73e7d288dc086b7aeb7690bed",
+      "generation_ms": 838.8037499999919
+    },
+    {
+      "match_id": "42b9458e-1387-4a29-a13f-c33ec6f752f3",
+      "split": "holdout",
+      "seed": 373202,
+      "scenario": "moderate",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 2,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5655,
+      "event_count": 7109,
+      "score": {
+        "home": 2,
+        "away": 0
+      },
+      "sha256": "a1f9f5ddd78d732ef5141845596fcacabb6ce3dbc6a6189c13141fbcad5a6d52",
+      "generation_ms": 833.5941670000029
+    },
+    {
+      "match_id": "5f631842-8f9b-444f-afed-eb7632d4ad7f",
+      "split": "holdout",
+      "seed": 373202,
+      "scenario": "tempo",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 2,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5710,
+      "event_count": 7165,
+      "score": {
+        "home": 3,
+        "away": 0
+      },
+      "sha256": "c0bb90c66a7a37ffb1801fad786a7628007e2769e0353b6037178441af0910c3",
+      "generation_ms": 842.6700830000045
+    },
+    {
+      "match_id": "385fe4af-4cf8-475c-ae15-cdea92411a7b",
+      "split": "holdout",
+      "seed": 373202,
+      "scenario": "pulse",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 2,
+            "away": 0
+          }
+        },
+        {
+          "time_seconds": 4380,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 2,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5675,
+      "event_count": 7112,
+      "score": {
+        "home": 2,
+        "away": 0
+      },
+      "sha256": "16e17a2c749ca29d9d9c9e39e0c08f704c1b735db3f2e6a26bb28465df1a377a",
+      "generation_ms": 836.5128750000003
+    },
+    {
+      "match_id": "a649f7a3-b01e-405c-a47d-7ad1b20df47b",
+      "split": "holdout",
+      "seed": 381121,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5590,
+      "event_count": 6971,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "8ef95ae805ad04a788002e007eaeb595af5ad8af86ae5e7904460e4e4f7dfcfa",
+      "generation_ms": 824.5840420000022
+    },
+    {
+      "match_id": "4391dc5d-0dde-4fbc-a535-dfa0622a34ca",
+      "split": "holdout",
+      "seed": 381121,
+      "scenario": "bundle",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5555,
+      "event_count": 6826,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "d0e1c97f703f5d3d24d4a236e54382e0dea28a46c5fa9a3951a3615d54ac7a6b",
+      "generation_ms": 846.2462920000107
+    },
+    {
+      "match_id": "33362f60-a91d-4152-aad0-889bf35395fc",
+      "split": "holdout",
+      "seed": 381121,
+      "scenario": "moderate",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5555,
+      "event_count": 6793,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "cc7187535904b8688c49741d4a68fecc0a973eab27c558b0261fea8be322e64a",
+      "generation_ms": 820.1756250000035
+    },
+    {
+      "match_id": "981cdc18-f4e6-4848-acdc-b1884d2074ee",
+      "split": "holdout",
+      "seed": 381121,
+      "scenario": "tempo",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5555,
+      "event_count": 6888,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "bb837c09ce3e9c8385ce146abf7fdc4a34a26e6668728ddd09b7970ba4cfecad",
+      "generation_ms": 821.5959169999987
+    },
+    {
+      "match_id": "977f3015-2cbc-429e-ab8d-3fd85429760e",
+      "split": "holdout",
+      "seed": 381121,
+      "scenario": "pulse",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        },
+        {
+          "time_seconds": 3480,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5565,
+      "event_count": 6813,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "a7ae57f2fa825fdfa3200600b3e9350da83988aace07d200daa1b5a402c0f127",
+      "generation_ms": 818.2033340000053
+    },
+    {
+      "match_id": "7e8c0934-5f1c-4a61-adb1-a3bf75bfc10e",
+      "split": "holdout",
+      "seed": 389040,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5540,
+      "event_count": 6917,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "1e00adbe2df9321cabeff24f79f00f5550ac4f86db295a38a32cecb10b331a18",
+      "generation_ms": 819.4735839999921
+    },
+    {
+      "match_id": "1d357392-88d4-46f4-a6f0-2e7369cfa266",
+      "split": "holdout",
+      "seed": 389040,
+      "scenario": "bundle",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5650,
+      "event_count": 6999,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "2aed320d9cbf1bb532498afd8db15917701d63bc208936df3ac787f00668e77c",
+      "generation_ms": 831.6108749999985
+    },
+    {
+      "match_id": "f047b48d-4c1b-4c33-a338-fde340e2772f",
+      "split": "holdout",
+      "seed": 389040,
+      "scenario": "moderate",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5540,
+      "event_count": 6755,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "97cf84ce4d7bb6045204802cc7bf0f75c43e72ab9bcd6e8c6c5dc00161ec490d",
+      "generation_ms": 815.8633750000008
+    },
+    {
+      "match_id": "1de0ebaf-887e-434d-ae3a-ce223e3f41a7",
+      "split": "holdout",
+      "seed": 389040,
+      "scenario": "tempo",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5615,
+      "event_count": 6886,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "sha256": "8c94a79d1ae19ab2e2caef5cd61d7749f6246ce1f2f836f247e810fb2be73bda",
+      "generation_ms": 839.215292000008
+    },
+    {
+      "match_id": "937e7ad4-6c50-4a2d-a369-30abdb69c587",
+      "split": "holdout",
+      "seed": 389040,
+      "scenario": "pulse",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        },
+        {
+          "time_seconds": 3780,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5540,
+      "event_count": 6673,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "12c60821a993cef7983afcbdde53cf52d37c891291066031c9f0c9eaef0fddea",
+      "generation_ms": 809.4379170000029
+    },
+    {
+      "match_id": "f36909ed-04e0-4b4a-a1b2-61c21710249c",
+      "split": "holdout",
+      "seed": 396959,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5640,
+      "event_count": 6849,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "32d10ff1dbeed5accb557fb83ec8dc7c056800c29b09091ea70c48f092ecedb8",
+      "generation_ms": 825.7834580000053
+    },
+    {
+      "match_id": "f63b14fc-907b-443f-a073-5a1eb2f0a255",
+      "split": "holdout",
+      "seed": 396959,
+      "scenario": "bundle",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5575,
+      "event_count": 6868,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "sha256": "38f9aaa85b09f42b3565927c9057a163c4ea441206448d557d5ac96e28718975",
+      "generation_ms": 823.0185829999973
+    },
+    {
+      "match_id": "36e62101-de27-47a8-a572-4c62df0d0e77",
+      "split": "holdout",
+      "seed": 396959,
+      "scenario": "moderate",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5595,
+      "event_count": 6857,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "sha256": "6d09e68ebd3632b80d2e03f2a5064623070fe7537f9b42b76554f60909bb5ece",
+      "generation_ms": 825.2416660000017
+    },
+    {
+      "match_id": "9e571102-9266-4e24-a853-171a06cf0b05",
+      "split": "holdout",
+      "seed": 396959,
+      "scenario": "tempo",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5560,
+      "event_count": 6871,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "c5faa7925d18507a5ef78f93f9b5683e225fa89e7aa479928310bea27f928cfb",
+      "generation_ms": 813.8560419999994
+    },
+    {
+      "match_id": "29f09fa3-4864-4c02-a943-7b256ce19d46",
+      "split": "holdout",
+      "seed": 396959,
+      "scenario": "pulse",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        },
+        {
+          "time_seconds": 4080,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5550,
+      "event_count": 6743,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "582bef6ab50e1db2f3f5a5be3c4e9043388e6ab6fd5bb66397e94390ea6f496f",
+      "generation_ms": 852.9907499999972
+    },
+    {
+      "match_id": "aea5841f-c881-4113-a9b3-6d86629ecffe",
+      "split": "holdout",
+      "seed": 404878,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5570,
+      "event_count": 6877,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "846d71842b3c085006ce30ec7e3936927df11f23d62dd2fbc9a09c89d0d23ffb",
+      "generation_ms": 1022.210791000005
+    },
+    {
+      "match_id": "7299c232-9635-44f9-a436-4a2cc54312bd",
+      "split": "holdout",
+      "seed": 404878,
+      "scenario": "bundle",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5550,
+      "event_count": 6810,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "3283935bdafeac600a1322f021cf4ccd92feea6a420668e9e271a4bcedb8b0c4",
+      "generation_ms": 933.4203339999949
+    },
+    {
+      "match_id": "a716d926-6c05-4b5f-a752-c852ee60f047",
+      "split": "holdout",
+      "seed": 404878,
+      "scenario": "moderate",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5560,
+      "event_count": 6853,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "83fe09e4a1c6364b763c1bc1ab7db82f59ae0de60fcc4d56dff95840b782c7da",
+      "generation_ms": 871.4955420000042
+    },
+    {
+      "match_id": "6cdf941d-3ba7-4eb6-a783-1ea28bf33b57",
+      "split": "holdout",
+      "seed": 404878,
+      "scenario": "tempo",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5560,
+      "event_count": 6870,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "d890679a343a78394b75452ffeac34567e8ff256b49a71fa53ea4bc2dacf57e3",
+      "generation_ms": 817.0148749999935
+    },
+    {
+      "match_id": "4953940c-d0f9-4a0e-aca5-3e7a8e1f4b2f",
+      "split": "holdout",
+      "seed": 404878,
+      "scenario": "pulse",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        },
+        {
+          "time_seconds": 4380,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5560,
+      "event_count": 6849,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "f92c06ef3891db6538878fcfa8c510c072f50adf2f9a151010cd69a8a1dfc20c",
+      "generation_ms": 812.4711669999961
+    },
+    {
+      "match_id": "2c56cd43-4e7c-4d2a-ae96-2dcca2fb34ba",
+      "split": "holdout",
+      "seed": 412797,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5565,
+      "event_count": 6723,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "sha256": "1263b6c978190361c08722207fc7729cdd88df451202d5abf5a6b829eb5facbd",
+      "generation_ms": 819.6747080000059
+    },
+    {
+      "match_id": "031c8ca1-662c-4255-a615-eb29bd25c249",
+      "split": "holdout",
+      "seed": 412797,
+      "scenario": "bundle",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5570,
+      "event_count": 6770,
+      "score": {
+        "home": 1,
+        "away": 1
+      },
+      "sha256": "439496e132cd38a5b50e02441d5839612ee6b78290bb08ec61f8f4301ef3e15e",
+      "generation_ms": 815.377209000013
+    },
+    {
+      "match_id": "5be3cf65-de9e-4862-a7e4-756f1d4b213c",
+      "split": "holdout",
+      "seed": 412797,
+      "scenario": "moderate",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5565,
+      "event_count": 6643,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "sha256": "a144f09eb4c5e79ebb349136b398452c34b1dd15514679fdf108b21cd1872358",
+      "generation_ms": 817.4776249999995
+    },
+    {
+      "match_id": "5df6d754-b13e-4d26-acee-02612b7a7c33",
+      "split": "holdout",
+      "seed": 412797,
+      "scenario": "tempo",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5565,
+      "event_count": 6702,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "sha256": "30e9b084dcbc1178d86add26bf987f4da6a1db2f735a8d01237197349c5b1ae5",
+      "generation_ms": 826.5515000000014
+    },
+    {
+      "match_id": "56ac9e76-5685-4232-a656-cefc6c43b5d8",
+      "split": "holdout",
+      "seed": 412797,
+      "scenario": "pulse",
+      "planned_change_seconds": 3300,
+      "changes": [
+        {
+          "time_seconds": 3300,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        },
+        {
+          "time_seconds": 3480,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5600,
+      "event_count": 6765,
+      "score": {
+        "home": 1,
+        "away": 1
+      },
+      "sha256": "85bcbe212a5bf685e23454965baa247f60b74e4a59efd28d22c2101619727e33",
+      "generation_ms": 822.0498329999973
+    },
+    {
+      "match_id": "af844327-2ff8-4c74-aabc-8f1116f6429b",
+      "split": "holdout",
+      "seed": 420716,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5610,
+      "event_count": 6948,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "sha256": "dc9a5c29778af6f5fa00f8ab156768a5861e5800fd93337667d1afbe02b43f90",
+      "generation_ms": 844.4242499999964
+    },
+    {
+      "match_id": "dfab1021-cf6f-4b49-a2c3-930ce5292f81",
+      "split": "holdout",
+      "seed": 420716,
+      "scenario": "bundle",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5580,
+      "event_count": 7018,
+      "score": {
+        "home": 1,
+        "away": 1
+      },
+      "sha256": "a223a136db32d09772c00f3070f4f5277d0d78620e0889a54b48c4b503e9b590",
+      "generation_ms": 854.3249170000054
+    },
+    {
+      "match_id": "dd572a25-cc8d-4b3d-a1ca-0b9598b41718",
+      "split": "holdout",
+      "seed": 420716,
+      "scenario": "moderate",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5555,
+      "event_count": 6958,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "sha256": "b447af5e786cd5fdcbf3c2979513a01ea3d153ec02cf795b7e72e7ff954fb483",
+      "generation_ms": 876.1167089999944
+    },
+    {
+      "match_id": "aea14a5e-52de-4bd4-aaf9-0b2b69bcf79a",
+      "split": "holdout",
+      "seed": 420716,
+      "scenario": "tempo",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5555,
+      "event_count": 7006,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "sha256": "d607d6fd3d9edd9809da9e96203c53a495941fa9cd30d2c21c8d0c76f31fe78b",
+      "generation_ms": 814.9713749999937
+    },
+    {
+      "match_id": "6063309f-3407-45a1-ae8c-e7cc0a1d5fbe",
+      "split": "holdout",
+      "seed": 420716,
+      "scenario": "pulse",
+      "planned_change_seconds": 3600,
+      "changes": [
+        {
+          "time_seconds": 3600,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        },
+        {
+          "time_seconds": 3780,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 1
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 1,
+      "end_time_seconds": 5565,
+      "event_count": 6920,
+      "score": {
+        "home": 0,
+        "away": 1
+      },
+      "sha256": "f68844bd9e594c55b958e0a51c20beebced4395b751fff3fa06d2c1e400a3dee",
+      "generation_ms": 829.8580419999926
+    },
+    {
+      "match_id": "8bf9ea59-fe4b-4e26-a235-ec4b61231d69",
+      "split": "holdout",
+      "seed": 428635,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5660,
+      "event_count": 6780,
+      "score": {
+        "home": 1,
+        "away": 2
+      },
+      "sha256": "c71a3c0fd99fe39f77823c6a0723aa44b011adcf59dc877f9f7d981db9eff8c2",
+      "generation_ms": 826.3722500000003
+    },
+    {
+      "match_id": "5ce2f9bc-8966-44fe-a816-8239138a46e0",
+      "split": "holdout",
+      "seed": 428635,
+      "scenario": "bundle",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 1,
+            "away": 2
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5685,
+      "event_count": 7008,
+      "score": {
+        "home": 2,
+        "away": 2
+      },
+      "sha256": "6180e9c6cc9449d68fc75a09866a4e9344a9d7ab4c2dcd4a33eb7e201e7b3e17",
+      "generation_ms": 833.8945830000011
+    },
+    {
+      "match_id": "95107a71-98d3-4497-ac0e-4c6ef8b2e893",
+      "split": "holdout",
+      "seed": 428635,
+      "scenario": "moderate",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 1,
+            "away": 2
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5735,
+      "event_count": 7011,
+      "score": {
+        "home": 1,
+        "away": 2
+      },
+      "sha256": "c4edba904659bdf797f8a5503ae0a02847be69562ce2698210e7bc3a79b58134",
+      "generation_ms": 863.8037920000206
+    },
+    {
+      "match_id": "7179750d-f70b-4298-a309-986da2509181",
+      "split": "holdout",
+      "seed": 428635,
+      "scenario": "tempo",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 1,
+            "away": 2
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5670,
+      "event_count": 6942,
+      "score": {
+        "home": 1,
+        "away": 2
+      },
+      "sha256": "1ff3c1e256215eb72a9b3ec40f380fe6392850553ddc9d0f571e75b33000530c",
+      "generation_ms": 1025.8093749999825
+    },
+    {
+      "match_id": "970cbd62-1c5c-475d-acd5-efa500206e83",
+      "split": "holdout",
+      "seed": 428635,
+      "scenario": "pulse",
+      "planned_change_seconds": 3900,
+      "changes": [
+        {
+          "time_seconds": 3900,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 1,
+            "away": 2
+          }
+        },
+        {
+          "time_seconds": 4080,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 1,
+            "away": 2
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": -1,
+      "end_time_seconds": 5710,
+      "event_count": 6925,
+      "score": {
+        "home": 1,
+        "away": 2
+      },
+      "sha256": "45a1f5677642314802ecdc1bcdf4c6fb0f36bb8f087f4f9645f5e4ecf4e675a0",
+      "generation_ms": 865.9840409999888
+    },
+    {
+      "match_id": "58d0550c-e771-4c59-a88a-2b9d53cca083",
+      "split": "holdout",
+      "seed": 436554,
+      "scenario": "null",
+      "planned_change_seconds": null,
+      "changes": [],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5580,
+      "event_count": 6883,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "03089dea997ae26305193ab752d93b192fa3df55fbba0138c093672bfd22b482",
+      "generation_ms": 834.7090840000019
+    },
+    {
+      "match_id": "3ec6f229-a329-481a-a0d7-cb776aa6bf65",
+      "split": "holdout",
+      "seed": 436554,
+      "scenario": "bundle",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5590,
+      "event_count": 6961,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "c7218ccf5f803c42e1578fa8217abe43be860de83def9b2a0a3e390f4bdaaa4c",
+      "generation_ms": 830.0989169999957
+    },
+    {
+      "match_id": "453c2939-3d14-4d20-abc5-4e9204cf2293",
+      "split": "holdout",
+      "seed": 436554,
+      "scenario": "moderate",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 75,
+            "defensiveLine": 70,
+            "tempo": 58,
+            "compactness": 48,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": true,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5650,
+      "event_count": 7009,
+      "score": {
+        "home": 1,
+        "away": 0
+      },
+      "sha256": "0f0e3444cb2f26848a5bf0a549b2f5e647f9558dc63b24ce0691a83d8c0b44af",
+      "generation_ms": 924.1822920000122
+    },
+    {
+      "match_id": "b73812b5-e9ad-4afa-a86a-5e7aa4160f5c",
+      "split": "holdout",
+      "seed": 436554,
+      "scenario": "tempo",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "tempo": 70
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5670,
+      "event_count": 7100,
+      "score": {
+        "home": 1,
+        "away": 1
+      },
+      "sha256": "0f21617c43c7b493470b01e6d4259f733e79f6f0134e23ea2cba66fce69f63d3",
+      "generation_ms": 856.2159579999861
+    },
+    {
+      "match_id": "e83141a0-c6fe-4226-a1de-f017d1d19ba3",
+      "split": "holdout",
+      "seed": 436554,
+      "scenario": "pulse",
+      "planned_change_seconds": 4200,
+      "changes": [
+        {
+          "time_seconds": 4200,
+          "side": "home",
+          "changes": {
+            "style": "high_press",
+            "press": 90,
+            "defensiveLine": 85,
+            "tempo": 65,
+            "compactness": 45,
+            "mentality": "attacking"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        },
+        {
+          "time_seconds": 4380,
+          "side": "home",
+          "changes": {
+            "style": "balanced",
+            "press": 50,
+            "defensiveLine": 50,
+            "tempo": 50,
+            "compactness": 50,
+            "mentality": "balanced"
+          },
+          "score": {
+            "home": 0,
+            "away": 0
+          }
+        }
+      ],
+      "target_team": "NORTH",
+      "eligible": false,
+      "home_attribute_offset": 0,
+      "end_time_seconds": 5580,
+      "event_count": 6907,
+      "score": {
+        "home": 0,
+        "away": 0
+      },
+      "sha256": "31a5d98b8d4b96885827f5c0ee0ccd49f86e6fa3570db15687871e98d7fb5ab5",
+      "generation_ms": 830.390000000014
+    }
+  ]
+}

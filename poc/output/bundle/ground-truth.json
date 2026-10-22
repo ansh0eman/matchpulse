@@ -1,0 +1,242 @@
+[
+  {
+    "run": "seed-11-baseline",
+    "intervention": null
+  },
+  {
+    "run": "seed-11-press",
+    "intervention": {
+      "time_seconds": 3600,
+      "team_id": "NORTH",
+      "policy": "high-press-bundle",
+      "changes": {
+        "style": "high_press",
+        "press": 90,
+        "defensiveLine": 85,
+        "tempo": 65,
+        "compactness": 45,
+        "mentality": "attacking"
+      }
+    }
+  },
+  {
+    "run": "seed-29-baseline",
+    "intervention": null
+  },
+  {
+    "run": "seed-29-press",
+    "intervention": {
+      "time_seconds": 3600,
+      "team_id": "NORTH",
+      "policy": "high-press-bundle",
+      "changes": {
+        "style": "high_press",
+        "press": 90,
+        "defensiveLine": 85,
+        "tempo": 65,
+        "compactness": 45,
+        "mentality": "attacking"
+      }
+    }
+  },
+  {
+    "run": "seed-47-baseline",
+    "intervention": null
+  },
+  {
+    "run": "seed-47-press",
+    "intervention": {
+      "time_seconds": 3600,
+      "team_id": "NORTH",
+      "policy": "high-press-bundle",
+      "changes": {
+        "style": "high_press",
+        "press": 90,
+        "defensiveLine": 85,
+        "tempo": 65,
+        "compactness": 45,
+        "mentality": "attacking"
+      }
+    }
+  },
+  {
+    "run": "seed-83-baseline",
+    "intervention": null
+  },
+  {
+    "run": "seed-83-press",
+    "intervention": {
+      "time_seconds": 3600,
+      "team_id": "NORTH",
+      "policy": "high-press-bundle",
+      "changes": {
+        "style": "high_press",
+        "press": 90,
+        "defensiveLine": 85,
+        "tempo": 65,
+        "compactness": 45,
+        "mentality": "attacking"
+      }
+    }
+  },
+  {
+    "run": "seed-101-baseline",
+    "intervention": null
+  },
+  {
+    "run": "seed-101-press",
+    "intervention": {
+      "time_seconds": 3600,
+      "team_id": "NORTH",
+      "policy": "high-press-bundle",
+      "changes": {
+        "style": "high_press",
+        "press": 90,
+        "defensiveLine": 85,
+        "tempo": 65,
+        "compactness": 45,
+        "mentality": "attacking"
+      }
+    }
+  },
+  {
+    "run": "seed-137-baseline",
+    "intervention": null
+  },
+  {
+    "run": "seed-137-press",
+    "intervention": {
+      "time_seconds": 3600,
+      "team_id": "NORTH",
+      "policy": "high-press-bundle",
+      "changes": {
+        "style": "high_press",
+        "press": 90,
+        "defensiveLine": 85,
+        "tempo": 65,
+        "compactness": 45,
+        "mentality": "attacking"
+      }
+    }
+  },
+  {
+    "run": "seed-173-baseline",
+    "intervention": null
+  },
+  {
+    "run": "seed-173-press",
+    "intervention": {
+      "time_seconds": 3600,
+      "team_id": "NORTH",
+      "policy": "high-press-bundle",
+      "changes": {
+        "style": "high_press",
+        "press": 90,
+        "defensiveLine": 85,
+        "tempo": 65,
+        "compactness": 45,
+        "mentality": "attacking"
+      }
+    }
+  },
+  {
+    "run": "seed-211-baseline",
+    "intervention": null
+  },
+  {
+    "run": "seed-211-press",
+    "intervention": {
+      "time_seconds": 3600,
+      "team_id": "NORTH",
+      "policy": "high-press-bundle",
+      "changes": {
+        "style": "high_press",
+        "press": 90,
+        "defensiveLine": 85,
+        "tempo": 65,
+        "compactness": 45,
+        "mentality": "attacking"
+      }
+    }
+  },
+  {
+    "run": "seed-257-baseline",
+    "intervention": null
+  },
+  {
+    "run": "seed-257-press",
+    "intervention": {
+      "time_seconds": 3600,
+      "team_id": "NORTH",
+      "policy": "high-press-bundle",
+      "changes": {
+        "style": "high_press",
+        "press": 90,
+        "defensiveLine": 85,
+        "tempo": 65,
+        "compactness": 45,
+        "mentality": "attacking"
+      }
+    }
+  },
+  {
+    "run": "seed-307-baseline",
+    "intervention": null
+  },
+  {
+    "run": "seed-307-press",
+    "intervention": {
+      "time_seconds": 3600,
+      "team_id": "NORTH",
+      "policy": "high-press-bundle",
+      "changes": {
+        "style": "high_press",
+        "press": 90,
+        "defensiveLine": 85,
+        "tempo": 65,
+        "compactness": 45,
+        "mentality": "attacking"
+      }
+    }
+  },
+  {
+    "run": "seed-353-baseline",
+    "intervention": null
+  },
+  {
+    "run": "seed-353-press",
+    "intervention": {
+      "time_seconds": 3600,
+      "team_id": "NORTH",
+      "policy": "high-press-bundle",
+      "changes": {
+        "style": "high_press",
+        "press": 90,
+        "defensiveLine": 85,
+        "tempo": 65,
+        "compactness": 45,
+        "mentality": "attacking"
+      }
+    }
+  },
+  {
+    "run": "seed-401-baseline",
+    "intervention": null
+  },
+  {
+    "run": "seed-401-press",
+    "intervention": {
+      "time_seconds": 3600,
+      "team_id": "NORTH",
+      "policy": "high-press-bundle",
+      "changes": {
+        "style": "high_press",
+        "press": 90,
+        "defensiveLine": 85,
+        "tempo": 65,
+        "compactness": 45,
+        "mentality": "attacking"
+      }
+    }
+  }
+]

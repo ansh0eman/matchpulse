@@ -1,0 +1,76 @@
+Validated/features 20/160
+Validated/features 40/160
+Validated/features 60/160
+Validated/features 80/160
+Validated/features 100/160
+Validated/features 120/160
+Validated/features 140/160
+Validated/features 160/160
+Evidence verified 20/160
+Evidence verified 40/160
+Evidence verified 60/160
+Evidence verified 80/160
+Evidence verified 100/160
+Evidence verified 120/160
+Evidence verified 140/160
+Evidence verified 160/160
+{
+  "independent_seed_families": 32,
+  "primary_matches": 96,
+  "eligible_interventions": 64,
+  "true_positives": 31,
+  "false_positives": 202,
+  "missed_interventions": 33,
+  "precision": 0.13304721030042918,
+  "recall": 0.484375,
+  "f1": 0.20875420875420875,
+  "null_matches": 32,
+  "null_alerts": 84,
+  "false_alerts_per_null_match": 2.625,
+  "false_alerts_per_null_90_minutes": 2.532592613271545,
+  "median_delay_seconds": 420.0,
+  "delay_seconds": [
+    480.0,
+    480.0,
+    540.0,
+    540.0,
+    420.0,
+    420.0,
+    420.0,
+    180.0,
+    180.0,
+    60.0,
+    60.0,
+    360.0,
+    540.0,
+    600.0,
+    300.0,
+    300.0,
+    420.0,
+    540.0,
+    60.0,
+    60.0,
+    240.0,
+    180.0,
+    480.0,
+    600.0,
+    540.0,
+    480.0,
+    480.0,
+    420.0,
+    480.0,
+    420.0,
+    480.0
+  ],
+  "duplicate_alerts": 0,
+  "stress": {
+    "tempo": {
+      "matches": 32,
+      "alerts": 89
+    },
+    "pulse": {
+      "matches": 32,
+      "alerts": 95
+    }
+  }
+}

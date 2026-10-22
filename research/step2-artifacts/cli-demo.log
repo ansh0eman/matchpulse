@@ -1,0 +1,32 @@
+[replay -> signals -> rolling -> evidence] 1320s SOUTH: recoveries 28->28; x 36.5->63.1m; score 3.553
+[replay -> signals -> rolling -> evidence] 2220s NORTH: recoveries 34->41; x 39.4->63.7m; score 2.563
+[replay -> signals -> rolling -> evidence] 3780s NORTH: recoveries 35->32; x 35.1->61.4m; score 3.412
+MATCHPULSE — TACTICAL ANALYSIS
+Match: dc053576-202b-4d5c-ace7-2b5659f68e70
+Events processed: 6903
+Turning points detected: 3
+
+Time: 22.0 minutes | Team: SOUTH
+Signal: An increase in recovery location and/or advanced recovery share was detected.
+Recovery location: 36.49 -> 63.14 m
+High recovery actions: 0 -> 13; exposure 8 minutes each
+Detector: rolling v1; uncalibrated score 3.553
+Illustrative evidence: evt_000987, evt_001009, evt_001028, evt_001031, evt_001062
+Complete calculation references: 1570
+
+Time: 37.0 minutes | Team: NORTH
+Signal: An increase in recovery location and/or advanced recovery share was detected.
+Recovery location: 39.35 -> 63.73 m
+High recovery actions: 8 -> 20; exposure 8 minutes each
+Detector: rolling v1; uncalibrated score 2.563
+Illustrative evidence: evt_002066, evt_002087, evt_002096, evt_002109, evt_002125
+Complete calculation references: 2636
+
+Time: 63.0 minutes | Team: NORTH
+Signal: An increase in recovery location and/or advanced recovery share was detected.
+Recovery location: 35.08 -> 61.37 m
+High recovery actions: 4 -> 16; exposure 8 minutes each
+Detector: rolling v1; uncalibrated score 3.412
+Illustrative evidence: evt_004042, evt_004055, evt_004058, evt_004063, evt_004096
+Complete calculation references: 4600
+Evidence saved: backend/output/cli-demo.json

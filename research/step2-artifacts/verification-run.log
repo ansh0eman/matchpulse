@@ -1,0 +1,6 @@
+sync-final.log: exit 0
+pytest.log: exit 0
+typescript-typecheck.log: exit 0
+typescript-tests.log: exit 0
+python-compile.log: exit 0
+cli-demo.log: exit 0

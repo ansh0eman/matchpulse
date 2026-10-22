@@ -1,13 +1,6 @@
 **/node_modules/
 upstream/
-poc/output/
 .DS_Store
 backend/.venv/
 **/__pycache__/
 .pytest_cache/
-data/step2/
-backend/output/
-research/step2-artifacts/*.log
-research/step2-artifacts/development.json
-research/step2-artifacts/holdout.json
-research/step2-artifacts/example-evidence.json

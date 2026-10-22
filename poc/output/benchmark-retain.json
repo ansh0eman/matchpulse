@@ -1,0 +1,11 @@
+{
+  "retainSnapshots": true,
+  "runtime_ms": 1464.300375,
+  "snapshot_count": 22361,
+  "snapshot_json_bytes": 291138556,
+  "sampled_heap_max_bytes": 305175080,
+  "retained_snapshot_count": 22361,
+  "event_count": 6637,
+  "jsonl_bytes": 3765612,
+  "process_max_rss_bytes": 444071936
+}

@@ -41,7 +41,7 @@ If the upstream checkout already exists, inspect its commit/status and reuse it;
 
 ## Run the CLI
 
-Canonical data is ignored by Git. Generate the fixed holdout dataset first if absent (this generates observations; it does not tune or evaluate the detector):
+Canonical research data is versioned in this private repository. Generate the fixed holdout dataset if absent (this generates observations; it does not tune or evaluate the detector):
 
 ```sh
 cd poc
@@ -74,7 +74,7 @@ uv run --project backend python backend/scripts/write_reports.py
 
 The generator resumes existing canonical/record pairs; evaluation checks their hashes. Delete/regenerate only deliberately selected stale research data if changing the generation specification; do not silently reuse stale caches as new experiments. Winner selection/config/source freeze occurs before holdout scoring. Selection initially favored silent ADWIN; the development-only correction and all candidate results are recorded. No final holdout outcomes were used to choose new parameters. Any future tuning needs a **new untouched seed-family test set**.
 
-Complete Step 2 canonical data occupies about **1 GiB** and full local EvidencePack exports about **176 MiB**. Data, environment, logs and detailed large result files are ignored. Compact results, per-match CSV, source/config fingerprints, charts, dependency notices and a 100-event canonical test fixture remain reviewable. Performance measurements and exact denominators are in the evaluation report. No generated data is uploaded.
+Complete Step 2 canonical data occupies about **1 GiB** and full local EvidencePack exports about **176 MiB**. Generated data, logs and detailed result files are versioned at the user's request. Installed dependencies and environments remain ignored. Compact results, per-match CSV, source/config fingerprints, charts, dependency notices and a 100-event canonical test fixture remain reviewable. Performance measurements and exact denominators are in the evaluation report. Generated artifacts are stored in this private repository; its visibility has not changed.
 
 ## Tests and verification
 
@@ -87,7 +87,7 @@ npm test
 
 Actual final results: **36 pytest tests passed, zero failed; seven TypeScript tests passed, zero failed; TypeScript typecheck passed**. Python compile checks and the actual CLI demo also passed. No separate Python static type checker is configured. `verification.json` records the exact commands, exit codes and local logs.
 
-Step 1 TypeScript artifact tests additionally require the original ignored experiment outputs. From a clean checkout generate them before `npm test` or the full verify script:
+Step 1 TypeScript artifact tests additionally require the original experiment outputs. They are included in this private repository; regenerate them if absent or when explicitly reproducing Step 1:
 
 ```sh
 cd poc
