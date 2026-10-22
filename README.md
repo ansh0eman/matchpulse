@@ -120,3 +120,11 @@ Step 1 reports remain intact: [feasibility verdict](research/feasibility-verdict
 ## Next milestone
 
 Repair or narrow the analytical target using development data, then validate a newly frozen method on untouched families. Preserve the working ingestion, evidence, tests and CLI. Foundry integration is deferred until alert quality clears the agreed targets. After that gate, the planned flow is EvidencePack -> Tactical Analyst -> Broadcast Narrator -> deterministic Grounding Validator. Counterfactuals, tracking animation, real-world prediction, frontend and deployment remain outside this milestone.
+
+## Step 2.6 — reliable presentation of positional evidence
+
+The selected Step 2.5 detector is **frozen**, and its published accuracy numbers remain unchanged. A separate **fail-closed presentation gate** now independently verifies the geometry/event evidence and checks whether the latest contributing observation is fresh enough (within 60 simulated seconds), with minimum recent/reference observation spans (30s/60s). These initial display rules have **not** been independently evaluated as a new classifier. Suppressed alerts remain visible in the original research exports.
+
+When you run the tracking CLI with `--output backend/output/step25/demo.json`, it additionally writes `demo.presentation.json` (all quality decisions/reasons) and `demo.broadcast.json` (only eligible, verified observed-line claims). Treat `demo.json` and legacy `demo.facts.json` as **research-only**, not agent-ready claims. The approved statement describes the three deepest outfielders' sampled positions; it does not infer a coach's instruction or successful pressing.
+
+See [presentation quality gate and frozen scope](research/step25/presentation-quality-gate.md). Full suite verification and any new published accuracy estimate must be performed on an independent environment/cohort before treating this policy as validated.
