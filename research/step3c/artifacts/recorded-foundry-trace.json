@@ -1,0 +1,178 @@
+{
+  "label": "Recorded real Foundry run with independent narration fallback",
+  "origin": "foundry",
+  "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+  "insight_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:insight:e6e7fb2df33dccb5eecd1e77",
+  "source_seconds": 2370.5,
+  "narration_status": "fallback",
+  "overlay_status": "enriched",
+  "errors": [
+    "narrator:grounding_failed"
+  ],
+  "cloud_delivery": false,
+  "events": [
+    {
+      "role": "editorial",
+      "event": "accepted",
+      "reason": null,
+      "elapsed_ms": 0.10266699246130884,
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "role": "runtime",
+      "event": "microsoft_agent_framework",
+      "reason": null,
+      "elapsed_ms": 34.750791994156316,
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "role": "director",
+      "event": "request_started",
+      "reason": null,
+      "elapsed_ms": 35.765959008131176,
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "role": "director",
+      "event": "request_succeeded",
+      "reason": null,
+      "elapsed_ms": 3371.032833994832,
+      "usage_input": 1091,
+      "usage_output": 30
+    },
+    {
+      "role": "director",
+      "event": "route",
+      "reason": "match_analyst",
+      "elapsed_ms": 3371.095999988029,
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "role": "match_analyst",
+      "event": "request_started",
+      "reason": null,
+      "elapsed_ms": 3371.702834003372,
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "role": "match_analyst",
+      "event": "request_succeeded",
+      "reason": null,
+      "elapsed_ms": 10206.287709006574,
+      "usage_input": 3689,
+      "usage_output": 305
+    },
+    {
+      "role": "match_analyst",
+      "event": "verified_handoff",
+      "reason": null,
+      "elapsed_ms": 10206.371000007493,
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "role": "challenger",
+      "event": "request_started",
+      "reason": null,
+      "elapsed_ms": 10206.977249996271,
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "role": "challenger",
+      "event": "request_succeeded",
+      "reason": null,
+      "elapsed_ms": 17003.857917006826,
+      "usage_input": 3655,
+      "usage_output": 239
+    },
+    {
+      "role": "challenger",
+      "event": "review",
+      "reason": "narrow",
+      "elapsed_ms": 17004.11479198374,
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "role": "narrator",
+      "event": "request_started",
+      "reason": null,
+      "elapsed_ms": 17005.773334007245,
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "role": "replay_producer",
+      "event": "request_started",
+      "reason": null,
+      "elapsed_ms": 17012.53383400035,
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "role": "replay_producer",
+      "event": "request_succeeded",
+      "reason": null,
+      "elapsed_ms": 19714.26683399477,
+      "usage_input": 1295,
+      "usage_output": 64
+    },
+    {
+      "role": "narrator",
+      "event": "request_succeeded",
+      "reason": null,
+      "elapsed_ms": 22914.59204198327,
+      "usage_input": 1325,
+      "usage_output": 71
+    },
+    {
+      "role": "narrator",
+      "event": "challenge_revision",
+      "reason": "narrowed_to_evidence",
+      "elapsed_ms": 22914.87308399519,
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "role": "publisher",
+      "event": "artifact_verified",
+      "reason": null,
+      "elapsed_ms": 22917.614917008905,
+      "usage_input": null,
+      "usage_output": null
+    }
+  ],
+  "tools": [
+    {
+      "as_of_seconds": 2370.5,
+      "match_scope": "active",
+      "status": "success",
+      "tool": "resolve_claim"
+    },
+    {
+      "as_of_seconds": 2370.5,
+      "match_scope": "active",
+      "status": "success",
+      "tool": "resolve_evidence"
+    },
+    {
+      "as_of_seconds": 2370.5,
+      "match_scope": "active",
+      "status": "success",
+      "tool": "resolve_claim"
+    },
+    {
+      "as_of_seconds": 2370.5,
+      "match_scope": "active",
+      "status": "success",
+      "tool": "resolve_evidence"
+    }
+  ],
+  "source_sha256": "2a297b26c7850f62f3053f5f718f68abafe93259e440c1ad88c5d5a657b805bf"
+}

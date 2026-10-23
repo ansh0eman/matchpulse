@@ -1,0 +1,37 @@
+{
+  "date_local": "2026-10-24",
+  "base_commit": "f192981",
+  "mode": "local source-verified replay; no new model calls",
+  "python": {"passed": 178, "skipped": 2, "failed": 0, "live_opt_ins": false},
+  "simulator": {"passed": 10, "failed": 0, "typecheck": "passed"},
+  "web_build": "TypeScript and Vite passed",
+  "container_browser": {
+    "start_utc": "2026-10-23T18:49:43.232Z",
+    "passed": 6,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0,
+    "duration_ms": 11717.094,
+    "viewports": [[1366, 768], [390, 844]],
+    "base_url": "http://127.0.0.1:8012"
+  },
+  "container": {
+    "image": "matchpulse-viewer:step3c",
+    "digest": "sha256:7a911080ba582528c057f63dfb3ba9c05d798f63678091c6f32be6e20ee52af2",
+    "user": "studio",
+    "pip": "26.2.2",
+    "application_files": 77,
+    "forbidden_credential_paths": 0,
+    "all_six_viewer_source_hashes_match_working_tree": true
+  },
+  "audits": {
+    "npm_known_vulnerabilities": 0,
+    "viewer_python_lock_known_vulnerabilities": 0,
+    "gitleaks_history": {"commits": 17, "bytes_approximately": 1726163602, "findings": 0},
+    "new_viewer_file_scan": {"files": 34, "findings": 0},
+    "not_a_security_certification": true
+  },
+  "canonical_bundle": {"files": 8, "all_manifest_hashes_match": true},
+  "preserved": ["Step 2.5 frozen experiments and conclusions", "backend/uv.lock", "agents/provider.py", "stories/", "tracking/"],
+  "not_completed": ["public repository release", "Azure viewer hosting", "finished public video", "Innovation Studio final submission", "production load and OS image security validation"]
+}

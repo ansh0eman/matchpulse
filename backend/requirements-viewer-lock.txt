@@ -1,0 +1,22 @@
+# Separate viewer deployment lock, resolved/tested on Python 3.12 Linux.
+# Preserve backend/uv.lock and the original research environment.
+annotated-types==0.8.0
+anyio==4.15.1
+click==8.5.0
+h11==0.16.0
+idna==3.20
+numpy==2.5.4
+pandas==2.3.3
+pip==26.2.2
+pydantic==2.12.3
+pydantic_core==2.41.4
+python-dateutil==3.0.0
+pytz==2026.5
+river==0.22.0
+scipy==1.18.1
+six==1.17.0
+starlette==1.9.0
+typing-inspection==0.4.4
+typing_extensions==4.16.0
+tzdata==2026.5
+uvicorn==0.54.0

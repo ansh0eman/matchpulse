@@ -2,9 +2,27 @@
 
 A synthetic-football research implementation of **Detect -> Prove -> Explain -> Explore**. Step 2.5 adds strict observable tracking, context-conditioned geometry, a frozen detector comparison and independently recomputable positional EvidencePacks while preserving the event-only Step 2 system.
 
+## Broadcast studio — Step 3C
+
+The local React/TypeScript studio now connects to a source-verifying Python API: five isolated match scenarios, synchronized observed positions/clock/score, Fan/Analyst and favorite-team controls, restricted questions, recaps and an interactive Proof Lens. Proof Lens recomputes line geometry from original player coordinates and exposes all 59 contributing samples, source hashes, timing and limitations. It also shows when stale evidence must be withheld.
+
+Microsoft Agent Framework/Foundry integration is separately authenticated and tested. The studio exposes a genuine recorded recovery trace and one source-reverified partial Foundry goal artifact; other cards use deterministic compilation. Replay clicks make **no cloud model calls**. The historical partial capture is not the fully enriched workflow that passed integration testing. English only; synthetic data; no inferred coach intent or real-world accuracy claim. Azure hosting and public submission remain pending.
+
+Run from the repository root using the existing isolated SDK environment:
+
+```sh
+backend/.venv-foundry/bin/pip install -r backend/requirements-viewer.txt
+backend/.venv-foundry/bin/python -m matchpulse.viewer.api
+# In a second terminal:
+npm ci --prefix web
+npm run dev --prefix web
+```
+
+Open http://127.0.0.1:5173. A fresh checkout needs the canonical fixture preparation described in [deployment and reproduction](research/step3c/deployment.md); the full research dataset is not a public-host requirement. See [acceptance evidence](research/step3c/acceptance.md), [security review](research/step3c/security-readiness.md) and [submission/demo package](research/step3c/submission.md).
+
 **Current verdict: CONDITIONAL GO for verified defensive-line explanations; broad tactical-intervention detection remains below target.** On 40 fresh held-out families the selected fused detector achieves **47.5% precision, 36.25% recall, F1 0.411**, and **0.35 alerts per unchanged match**. It detects 33/40 strong changes, 5/40 moderate changes, 0/40 press-only changes and 20/40 low-block changes within ten minutes. All 180 selected-detector packs verify numerically. Correct facts do not establish a coach's intent.
 
-The underlying line signal replicates: strong interventions shift the line by +11.91m relative to paired nulls (95% family-bootstrap interval +11.01 to +12.68m). Carrier-closing and local pressing density do not show consistent high-press separation. No Foundry agents, frontend, Azure deployment or real-world calibration exists.
+The underlying line signal replicates: strong interventions shift the line by +11.91m relative to paired nulls (95% family-bootstrap interval +11.01 to +12.68m). Carrier-closing and local pressing density do not show consistent high-press separation. These research conclusions remain unchanged by the subsequent Foundry integration and frontend. Azure hosting and real-world calibration remain unverified.
 
 ## Review Step 2.5 first
 

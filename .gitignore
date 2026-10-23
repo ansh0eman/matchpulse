@@ -15,3 +15,8 @@ backend/.venv-foundry/
 .env
 .env.*
 !.env.example
+web/dist/
+web/test-results/
+web/playwright-report/
+output/playwright/
+backend/output/viewer-bundle/

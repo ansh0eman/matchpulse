@@ -1,5 +1,7 @@
 # MatchPulse AI agent instructions
 
+Step3C studio is implemented under web/ and backend/src/matchpulse/viewer/. Read research/step3c/acceptance.md, deployment.md and security-readiness.md before extending it. Keep the five declared fixtures isolated, source-prefix scores and presentation clocks authoritative, and Proof Lens recomputation independent of displayed prose. Recorded Foundry artifacts must be revalidated against source before display and retain partial/fallback labels. No cloud calls occur in viewer endpoints. Public hosting must not inherit developer CLI identity or expose model/MCP endpoints. New viewer dependencies remain separate from frozen backend/uv.lock. Do not overwrite concurrent edits, frozen research, source fixtures or conclusions.
+
 Build an original synthetic-football intelligence system: Detect -> Prove -> Explain -> Explore. Preserve Step 1 provenance and research. Current upstream source is pinned at 39529b19c40868d66aa47db084ebc9ea29c86e70 (MIT); retain THIRD_PARTY_NOTICES.md. Never change that source or substitute an arbitrary npm release silently.
 
 Step 2 is Python 3.12/Pydantic v2 with uv lockfile, causal event analytics, rolling/River comparisons and EvidencePacks. The verdict and actual measurements in research/step2-final-verdict.md and step2-evaluation-results.md outrank aspirations. Do not claim Foundry, UI, deployment, real-world calibration, coach intent or detector accuracy beyond actual evidence.
