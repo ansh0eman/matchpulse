@@ -1,39 +1,10 @@
-// Reviewable candidate only. Compile is local; deployment requires user approval.
+// Protected-trial release only: no registry, identity, paid plan or model resource.
 targetScope = 'resourceGroup'
 
 param location string = 'eastus'
 param appName string = 'matchpulse-studio'
-@description('Empty bootstraps registry/environment only. Supply a pushed sha256 digest for the app phase.')
-param imageDigest string = ''
-
-var registryName = 'matchpulse${uniqueString(resourceGroup().id)}'
-var pullRoleId = subscriptionResourceId('Microsoft.Authorization/roleDefinitions', '7f951dda-4ed3-4680-a7ca-43fe172d538d')
-
-resource registry 'Microsoft.ContainerRegistry/registries@2023-07-01' = {
-  name: registryName
-  location: location
-  sku: { name: 'Basic' }
-  properties: {
-    adminUserEnabled: false
-    anonymousPullEnabled: false
-    publicNetworkAccess: 'Enabled'
-  }
-}
-
-resource pullIdentity 'Microsoft.ManagedIdentity/userAssignedIdentities@2023-01-31' = {
-  name: '${appName}-pull'
-  location: location
-}
-
-resource pullRole 'Microsoft.Authorization/roleAssignments@2022-04-01' = {
-  name: guid(registry.id, pullIdentity.id, pullRoleId)
-  scope: registry
-  properties: {
-    roleDefinitionId: pullRoleId
-    principalId: pullIdentity.properties.principalId
-    principalType: 'ServicePrincipal'
-  }
-}
+@description('Audited public GHCR image pinned by its verified sha256 digest; never a mutable tag.')
+param image string
 
 resource environment 'Microsoft.App/managedEnvironments@2024-03-01' = {
   name: '${appName}-env'
@@ -46,13 +17,9 @@ resource environment 'Microsoft.App/managedEnvironments@2024-03-01' = {
   }
 }
 
-resource app 'Microsoft.App/containerApps@2024-03-01' = if (!empty(imageDigest)) {
+resource app 'Microsoft.App/containerApps@2024-03-01' = {
   name: appName
   location: location
-  identity: {
-    type: 'UserAssigned'
-    userAssignedIdentities: { '${pullIdentity.id}': {} }
-  }
   properties: {
     managedEnvironmentId: environment.id
     workloadProfileName: 'Consumption'
@@ -64,15 +31,12 @@ resource app 'Microsoft.App/containerApps@2024-03-01' = if (!empty(imageDigest))
         transport: 'auto'
         allowInsecure: false
       }
-      registries: [
-        { server: registry.properties.loginServer, identity: pullIdentity.id }
-      ]
     }
     template: {
       containers: [
         {
           name: 'viewer'
-          image: '${registry.properties.loginServer}/matchpulse/viewer@${imageDigest}'
+          image: image
           resources: { cpu: json('0.5'), memory: '1Gi' }
           env: [
             { name: 'MATCHPULSE_ALLOWED_HOSTS', value: '${appName}.${environment.properties.defaultDomain}' }
@@ -105,10 +69,7 @@ resource app 'Microsoft.App/containerApps@2024-03-01' = if (!empty(imageDigest))
       }
     }
   }
-  dependsOn: [pullRole]
 }
 
-output registryLoginServer string = registry.properties.loginServer
-output registryResourceName string = registry.name
 output containerAppName string = appName
 output prospectiveUrl string = 'https://${appName}.${environment.properties.defaultDomain}'

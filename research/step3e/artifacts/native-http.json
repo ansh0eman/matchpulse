@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "url": "http://127.0.0.1:8015",
+  "health_seconds": 0.06577316700713709,
+  "first_line_view_seconds": 2.5030575830023736,
+  "verified_samples": 59,
+  "change_m": 10.01258807588076,
+  "source_hashes": {
+    "events": "6f1672999abc21f38e59ad789aceef587f713cd0043a4ee1a3b5ad6b7dafe126",
+    "tracking": "d4e6aaaddacf084ba18470b7ba93bbf0cdc2d242f8707f3bc83f5a475c8cf559",
+    "config": "23671808753e918d1b7a42ed07fafa46bc371dc0686eded3bc53bf6b6a0b5458"
+  },
+  "model_calls": 0,
+  "scope": "HTTP release smoke check; not a scale-zero cold-start or load benchmark"
+}

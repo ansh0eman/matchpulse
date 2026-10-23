@@ -86,6 +86,21 @@ export function ProofSummary({
             </span>
             <span>Latest evidence: {c.age}s old</span>
           </div>
+          <details className="contributor-inspector">
+            <summary>Which players contributed to these snapshots?</summary>
+            <p>White rings identify the three deepest outfielders in each original frame. These snapshots illustrate the source; the means above use all {proof.samples.length} contributing samples.</p>
+            {proof.frames.map((frame, i) => {
+              const sample = proof.samples.find((s) => s.frame_id === frame.frame_id);
+              return sample ? <section key={frame.frame_id}>
+                <h4>{i ? "After" : "Before"} snapshot · {frame.time_seconds}s</h4>
+                <p>Snapshot proxy: {sample.line3_m.toFixed(2)}m. This is not the context-weighted aggregate.</p>
+                <table><caption>Original source contributors · {frame.frame_id}</caption>
+                  <thead><tr><th>Source player ID</th><th>x / y (m)</th><th>Attack-relative x (m)</th></tr></thead>
+                  <tbody>{sample.players.map((p) => <tr key={p.id}><th scope="row">{p.id}</th><td>{p.x.toFixed(2)} / {p.y.toFixed(2)}</td><td>{p.attack_x.toFixed(2)}</td></tr>)}</tbody>
+                </table>
+              </section> : null;
+            })}
+          </details>
         </>
       ) : c.before ? (
         <div className="summary-score measurement">

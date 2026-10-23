@@ -28,9 +28,9 @@ export function momentCopy(story: Story | undefined, audience: Audience) {
     metric("change") !== undefined
   ) {
     const change = metric("change")!;
-    title = `${club}'s line, ${number(Math.abs(change))}m ${change >= 0 ? "higher" : "deeper"}.`;
+    title = `${number(Math.abs(change))} metres ${change >= 0 ? "higher" : "deeper"}.`;
     detail =
-      "Comparable observed positions. Recomputed from the source, with limits.";
+      `${club}'s three deepest outfielders, compared in similar observed situations. Inspect the source behind the number.`;
   } else if (
     story.type === "goal_context" &&
     metric("NORTH_after") !== undefined &&

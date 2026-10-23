@@ -2,6 +2,8 @@
 
 Purpose: select useful editorial structure and replay plans over a verified incident, with independently checked final output. Models never become the authority for football facts.
 
+Platform boundary: these are app-owned Microsoft Agent Framework executors using Foundry model inference, not named/versioned Foundry Agent Service definitions (read-only audit found zero registered definitions). The original four-check module includes two live tests plus MCP/schema checks, not four model tests. MCP is tested privately in-memory; the live goal uses direct function tools. Cloud trace delivery remains unproven. [Detailed audit](research/step3e/microsoft-foundry-compliance.md).
+
 | Role | Responsibility | Boundary |
 |---|---|---|
 | Director | Select incident-relevant specialist route and bounded request budget | Unknown routes fail validation; routine moments can bypass enrichment |

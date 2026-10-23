@@ -50,6 +50,7 @@ export interface Story {
     limitations: string[];
   };
   overlay: {
+    references: { match_id: string; category: string; source_id: string }[];
     coordinates: [string, number, number][];
     metrics: { claim_id: string; name: string; value: number; unit: string }[];
   };

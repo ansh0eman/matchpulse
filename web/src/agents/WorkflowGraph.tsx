@@ -1,4 +1,5 @@
 import type { Capture } from "../contracts";
+import { DecisionEvidence } from "./DecisionEvidence";
 export function WorkflowGraph({
   capture,
   label = "Recorded Foundry workflow",
@@ -13,13 +14,30 @@ export function WorkflowGraph({
     ["narrator", "Narrator"],
     ["replay_producer", "Replay Producer"],
   ];
+  const verified = capture.events.some(
+    (event) => event.role === "publisher" && event.event === "artifact_verified",
+  );
+  const framework = capture.events.some(
+    (event) =>
+      event.role === "runtime" && event.event === "microsoft_agent_framework",
+  );
+  const successfulTools = capture.tools.filter((tool) => tool.status === "success");
+  const toolSummary = capture.tools
+    .map((tool) => `${tool.tool} (${tool.status}, as-of ${tool.as_of_seconds}s)`)
+    .join("; ");
+  const narrationLabel = capture.narration_status === "enriched"
+    ? "Source-verified narration"
+    : "Safe narration fallback";
+  const replayLabel = capture.overlay_status === "unavailable"
+    ? "replay unavailable"
+    : "source-verified replay";
   return (
     <section className="workflow-graph" aria-label={label}>
       <header>
         <h3>One incident. Distinct responsibilities.</h3>
         <p>
-          Actual recorded execution. Times measure each request, not simulated
-          progress.
+          Saved execution, not live activity. Times show recorded role-request
+          intervals. Narration and replay run as independent branches.
         </p>
       </header>
       <div className="workflow-nodes">
@@ -30,6 +48,9 @@ export function WorkflowGraph({
           const end = capture.events.find(
             (e) => e.role === role && e.event === "request_succeeded",
           );
+          const failed = capture.events.find(
+            (e) => e.role === role && e.event === "request_failed",
+          );
           const outcome =
             role === "narrator"
               ? capture.narration_status
@@ -38,8 +59,12 @@ export function WorkflowGraph({
                 : role === "challenger"
                   ? capture.events.find(
                       (e) => e.role === role && e.event === "review",
-                    )?.reason
-                  : "completed";
+                    )?.reason ?? (failed ? "request failed" : "Review not recorded")
+                  : end
+                    ? "completed"
+                    : failed
+                      ? "request failed"
+                      : "Not recorded";
           return (
             <article
               key={role}
@@ -52,7 +77,7 @@ export function WorkflowGraph({
                   : "Not recorded"}
               </strong>
               <small>{outcome ?? "Not recorded"}</small>
-              {end?.usage_input !== null && end && (
+              {end && end.usage_input !== null && (
                 <small>
                   {end.usage_input} in / {end.usage_output} out tokens
                 </small>
@@ -62,20 +87,37 @@ export function WorkflowGraph({
         })}
         <article className="workflow-node grounding">
           <span>Deterministic publication gate</span>
-          <strong>Verified artifact</strong>
+          <strong>
+            {verified ? "Verified artifact" : "Verification not recorded"}
+          </strong>
           <small>
-            {capture.narration_status === "enriched"
-              ? "Source-verified narration"
-              : "Safe narration fallback"}{" "}
-            + source-verified replay
+            {verified
+              ? `${narrationLabel} + ${replayLabel}`
+              : "Only an explicit saved verification event is shown as passed."}
           </small>
         </article>
       </div>
+      <DecisionEvidence capture={capture} />
       <p className="workflow-caption">
         Narrator and Replay Producer branch independently. A rejected narration
-        plan does not discard the verified replay. Recorded tool calls:{" "}
-        {capture.tools.map((t) => t.tool).join(", ")}.
+        plan does not discard the verified replay. {successfulTools.length}{" "}
+        successful evidence lookups are recorded for this run.
       </p>
+      <details className="workflow-platform-boundary">
+        <summary>Microsoft platform and tool evidence</summary>
+        <p>
+          {framework
+            ? capture.origin === "foundry"
+              ? "The recording used a local Microsoft Agent Framework graph with Foundry model inference. The application owns its role definitions; these are not server-managed, versioned Agent Service agents."
+              : `The recording used Microsoft Agent Framework with origin ${capture.origin}. This is not authenticated Foundry inference evidence.`
+            : "A Microsoft Agent Framework runtime event was not saved in this capture."}
+        </p>
+        <p>
+          Recorded tool rows: {toolSummary || "none"}.
+          The compact export omits per-tool role attribution and raw arguments.
+          These rows do not establish the number of model HTTP requests.
+        </p>
+      </details>
     </section>
   );
 }

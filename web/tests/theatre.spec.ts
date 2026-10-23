@@ -23,8 +23,11 @@ test("Theatre is source-synchronized and program output removes studio chrome", 
   ).toBeVisible();
   await expect(page.getByTestId("score")).toHaveText("0:0");
   await expect(page.locator(".moment-copy h1")).toHaveText(
-    "A regain. A shot. 3.5 seconds.",
+    "10.01 metres higher.",
   );
+  await expect(page.getByTestId("clock")).toHaveText("56:00");
+  await expect(page.getByLabel("Verified line comparison")).toContainText("21.95m");
+  await expect(page.getByLabel("Verified line comparison")).toContainText("31.96m");
   await expect(
     page.getByRole("img", { name: "Observed player and ball positions" }),
   ).toBeVisible();
@@ -143,6 +146,9 @@ test("Guided story visits distinct fixtures and the Agent Room shows actual reco
   await page.getByRole("button", { name: "Finish guided story" }).click();
   await expect(page.getByLabel("Guided judge story")).toHaveCount(0);
   await page.getByRole("button", { name: "Agent room", exact: true }).click();
+  const decisions = page.getByLabel("Recorded Foundry workflow", { exact: true }).getByLabel("Recorded agent decisions", { exact: true });
+  await expect(decisions).toContainText("Challenger narrowed the scope");
+  await expect(decisions).toContainText("Tactical Analyst · skipped, not failed.");
   const workflow = page.getByLabel("Recorded Foundry workflow", {
     exact: true,
   });
@@ -160,6 +166,8 @@ test("Guided story visits distinct fixtures and the Agent Room shows actual reco
     path: `../output/playwright/${info.project.name}-workflow-graph.png`,
     fullPage: false,
   });
+  await decisions.getByText("Challenger narrowed the scope", { exact: true }).scrollIntoViewIfNeeded();
+  await page.screenshot({ animations: "disabled", path: `../output/playwright/${info.project.name}-agent-decisions.png`, fullPage: false });
   await page
     .getByText("See the historical narration recovery", { exact: true })
     .click();

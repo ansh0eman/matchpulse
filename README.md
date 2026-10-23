@@ -4,11 +4,17 @@ An evidence-first AI broadcast studio for synthetic football. Follow the match, 
 
 **Detect → Prove → Explain → Explore**
 
-![Working Broadcast Theatre](research/step3d/artifacts/theatre-laptop.png)
+![Working Broadcast Theatre](research/step3e/artifacts/theatre-laptop.png)
 
-The default **Theatre** puts the pitch and moment first. **Broadcast studio** retains the detailed three-column workspace. Proof Lens opens with a visual Summary, then Method and Audit; all 59 positional samples remain available, with a downloadable JSON receipt. Guided demo offers a four-chapter 76-second story across clearly separate fixtures. `/?view=broadcast` provides clean program output. Fonts are bundled locally with their licences.
+The default **Theatre** opens on a genuine tracked line comparison: **21.95m →31.96m, +10.01m**, supported by 59 original frames. **Broadcast studio** retains the detailed workspace. Proof Lens has Summary, contributor inspection, Method and Audit, plus a verified JSON receipt. The roughly 80-second guided story uses clearly separate goal, tracking and stale-evidence fixtures. `/?view=broadcast` provides clean program output. Fonts and runtime notices are bundled locally.
 
-Start locally using the commands below. Public deployment/video are pending, and the repository remains private as instructed. [Data card](DATA_CARD.md) · [Agent card](AGENT_CARD.md) · [Evaluation](EVALUATION.md) · [Evidence map](RUBRIC_MAP.md) · [Release status](RELEASE.md).
+Start locally using the commands below. Public deployment/video remain pending until final acceptance; audited release is authorized only at ₹0 out of pocket. [Release evidence](research/step3e/final-submission-evidence.md) · [Data card](DATA_CARD.md) · [Agent card](AGENT_CARD.md) · [Evaluation](EVALUATION.md) · [Evidence map](research/step3e/rubric-gap-map.md).
+
+### Five stages, one inspectable result
+
+**Ingest** canonical synthetic events/tracking → **Interpret** independently verified claims → **Explain** bounded specialist plans and source-derived wording → **Render** clock-synchronized overlays → **Personalize** Fan/Analyst and favorite-team framing. Replay is progressive over recorded input; it does not trigger a new live model run on every click.
+
+Read the [actual request walkthrough](research/step3e/execution-walkthrough.md), [Foundry platform audit](research/step3e/microsoft-foundry-compliance.md), [Proof Lens review](research/step3e/proof-lens-review.md), [browser evidence](research/step3e/browser-acceptance.md), [design decisions](research/step3e/design-system.md), [product use case](research/step3e/real-world-product-case.md) and [zero-out-of-pocket hosting decision](research/step3e/zero-cost-hosting-decision.md). No real Premier League feed, tactical intent, broad reliability or real-model quality advantage is claimed.
 
 The research below preserves Step 2/2.5 outcomes, including failed broad detection targets. The UI redesign does not change those findings or establish real-match calibration.
 

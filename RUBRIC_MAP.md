@@ -12,4 +12,4 @@ The five dimensions have equal weight in [Microsoft's official rules, section 6]
 
 For the multi-agent category, demonstrate purposeful handoffs and a specific recovered failure. Agent count alone does not establish value. Architecture, observations and limitations are in AGENT_CARD.md, DATA_CARD.md and EVALUATION.md. New UI evidence is in research/step3d/acceptance.md.
 
-Release restrictions remain in force: the repository stays private until the user explicitly changes that instruction. Public hosting/video/submission are pending and must not be represented as complete.
+The updated authorization permits release after audits at ₹0 out of pocket. Current criterion-specific gaps and smallest improvements are in [Step 3E's evidence map](research/step3e/rubric-gap-map.md). Public hosting/video/submission remain pending until verified.

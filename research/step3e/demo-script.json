@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "target_seconds": 112,
+  "voice": "licensed local Kokoro stock voice; synthetic narrator, not the entrant's voice",
+  "scenes": [
+    {"id": "opening", "seconds": 14, "text": "Match Pulse doesn't just explain football. It lets you inspect and independently verify the evidence. These are separate synthetic scenarios. Here, North's observed line moves ten point zero one metres higher."},
+    {"id": "goal", "seconds": 19, "text": "First, a separate goal fixture. Before the source event, nil nil. After it, one nil. This fixture has event locations, not player tracking. Fan and Analyst views change the explanation's detail while preserving the score and original observations."},
+    {"id": "proof", "seconds": 30, "text": "Now return to the tracked fixture. Proof Lens recomputes twenty one point nine five metres before, and thirty one point nine six after, from fifty nine original samples. Inspect the highlighted contributors, then the context weighted method and raw source evidence. A representative frame is not the aggregate. Positioning alone cannot establish a coach's intent or pressing success."},
+    {"id": "restraint", "seconds": 13, "text": "In another fixture, the latest positional evidence is one hundred and thirty two seconds old. Match Pulse withholds the claim. Refusing an unsupported explanation is part of the product."},
+    {"id": "agents", "seconds": 27, "text": "Agent Room shows a genuine saved Microsoft Foundry run through Microsoft Agent Framework. The Director routes, the analyst hands off verified evidence, and the Challenger narrows the interpretation. Narration and replay complete independently, then code verifies publication. Five agent requests and five successful tool calls were recorded. This is recorded execution, not new live inference. The separate historical fallback remains inspectable."},
+    {"id": "close", "seconds": 9, "text": "A broadcast you can watch, question and verify. Match Pulse: proof, not just commentary. Synthetic evidence, with clear limits."}
+  ]
+}

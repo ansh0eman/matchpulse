@@ -42,8 +42,8 @@ export default function App() {
     [tourSeconds, setTourSeconds] = useState(0),
     [tourRunning, setTourRunning] = useState(false);
   const [scenarios, setScenarios] = useState<Scenario[]>([]),
-    [scenario, setScenario] = useState("open-play"),
-    [clock, setClock] = useState(356),
+    [scenario, setScenario] = useState(() => mode === "studio" ? "open-play" : "line-shift"),
+    [clock, setClock] = useState(() => mode === "studio" ? 356 : 3360),
     [audience, setAudience] = useState<Audience>("fan"),
     [favorite, setFavorite] = useState<Team | "">("");
   const [snapshot, setData] = useState<View | null>(null),
@@ -197,6 +197,7 @@ export default function App() {
     setSelected(null);
     setPlaying(false);
     setData(null);
+    setRetry((v) => v + 1);
     setScenario(s.id);
     setClock(s.start);
     setGuide(false);

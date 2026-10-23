@@ -1,28 +1,25 @@
-# Azure viewer candidate — not deployed
+# Protected-trial Container Apps release
 
-The local Bicep template prepares a concrete release for review. Do not run deployment commands until the user authorizes public hosting, metered trial-credit usage and the narrow managed-identity role assignment. The earlier Foundry capture approval does not authorize these resources.
+The updated user authorization permits an audited release at **₹0 out of pocket**. The actual Free Trial was rechecked Enabled / spendingLimit On; its reported credit expires November 22, beyond November 10 judging. Reporting can lag. See [verified policy, credit and alternatives](../research/step3e/zero-cost-hosting-decision.md). No PAYG conversion, payment change, Marketplace purchase or paid inference is authorized.
 
-## Exact candidate
+This template now creates only a Consumption environment and one HTTPS app: 0–1 replica, 0.5 vCPU/1 GiB, exact trusted hostname, local probes and no cloud logging sink. It pulls an audited anonymous-public GHCR image by immutable digest. **No Basic registry, pull identity, role assignment, database, dedicated profile or model resource.** The original ACR proposal is superseded.
 
-Use existing matchpulse-hackathon-rg in eastus. Create one Basic private Container Registry, a consumption-only Container Apps environment, a user-assigned identity with AcrPull scoped only to that registry, and one HTTPS Container App. Keep registry admin/anonymous access disabled. The app has no Foundry permissions or credentials. No Log Analytics workspace, database, custom network, dedicated profile or public image/source repository is created.
+## Release sequence
 
-Container: 0.5 vCPU / 1 GiB, minimum zero / maximum one replica, single active revision. The locally warmed viewer used approximately 638 MiB, so a 0.5 GiB limit is unsuitable. Exact public hostname is derived from the environment domain and added to TrustedHost; probes explicitly use localhost. Scale-to-zero can introduce cold starts. Use an amd64 build and verify it before publishing; the initial local ARM64 image is not interchangeable with an Azure-compatible image digest.
-
-## Costs checked October 24, 2026
-
-[Microsoft Retail Prices API](https://prices.azure.com/api/retail/prices) returned eastus USD consumption prices: Basic Registry Unit $0.1666/day; Container Apps Standard vCPU Active Usage $0.000024/vCPU-second; Standard Memory Active Usage $0.000003/GiB-second; Standard Requests $0.40/million. At this replica size, continuously active compute is approximately $1.296/day **before** free grants. Registry base charges continue while the registry exists. Extra storage/build, bandwidth, applicable taxes and other Azure services are separate; local Docker builds avoid paid ACR build tasks.
-
-[Container Apps billing](https://learn.microsoft.com/azure/container-apps/billing) documents subscription-wide monthly grants of 180,000 vCPU-seconds, 360,000 GiB-seconds and two million requests. They are not an assertion of zero cost for this account. Actual usage/availability and invoice currency can differ. Replica limits are not a monetary spending cap. Preserve the existing trial spending protection and never convert to PAYG. No billable resource has been created by this preparation.
-
-## Local validation and later authorized sequence
+1. Pass private product acceptance and final source/history/license/provenance audits.
+2. Commit source, build/accept the exact AMD64 image with its revision label, and save it as an ignored archive. Publish the reviewed eight-source bundle and exact image as release assets only after the audit gate.
+3. Make the audited repository public under the conditional authorization. The manual workflow refuses private repositories; it uses a standard no-charge public runner, validates archive SHA256/image ID/source label, smoke-tests the loaded image, and pushes that same image with a short-lived repository GITHUB_TOKEN. No rebuild, PAT, Azure credential or secret build argument.
+4. Verify GHCR package visibility and anonymous manifest/pull. Public repository visibility alone does not establish public package access. Match registry config/image identity to the locally accepted image.
+5. Recheck trial protection, register Microsoft.App if necessary, and deploy to the existing resource group with the immutable public image digest.
 
 ```sh
 az bicep build --file infra/viewer.bicep --outfile /tmp/matchpulse-viewer-arm.json
-docker build --platform linux/amd64 -f Dockerfile.viewer -t matchpulse-viewer:step3d-amd64 .
+# Only after all gates and protected-trial recheck:
+az deployment group create --resource-group matchpulse-hackathon-rg \
+  --name matchpulse-viewer-release --template-file infra/viewer.bicep \
+  --parameters image=ghcr.io/ansh0eman/matchpulse-viewer@sha256:VERIFIED_DIGEST
 ```
 
-After explicit approval, first inspect active subscription, trial protection, provider registration and existing conflicting names. Register required providers only within the approved scope. Deploy with empty imageDigest to bootstrap the registry/environment/identity. Sign into the private registry through existing Entra CLI authentication, push the **tested** amd64 image without exposing passwords, capture its registry digest, then deploy the same template with imageDigest=sha256:… . Do not substitute a mutable tag or public placeholder image. Compilation and local tests do not establish Azure deployment success or quota.
+Run backend/scripts/check_viewer_release.py against the actual HTTPS URL, then all browser checks. Verify startup, phone/keyboard/reduced-motion, source hashes, receipts, saved Foundry success and separate fallback. Compilation/upload alone is not deployment/submission proof. Do not delete the app/image before judging. Trial exhaustion can interrupt service; a replica limit is not a cash cap or uptime guarantee.
 
-After provisioning, verify actual HTTPS host equals the allowlist, source fingerprints and image digest; run all browser checks against that URL, confirm health/cold startup, and document the deployed resources/cost state. Keep the project available for judging. A later authorized cleanup should remove only the named viewer app/environment/registry/identity and its scoped role, preserving the original Foundry resources. No automatic cleanup or continued monitoring is promised here.
-
-References: [Container App ARM schema](https://learn.microsoft.com/en-us/azure/templates/microsoft.app/2024-03-01/containerapps), [managed-identity image pulls](https://learn.microsoft.com/azure/container-apps/managed-identity-image-pull), and [AcrPull role](https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles/containers#acrpull).
+References: [Azure protection](https://learn.microsoft.com/azure/cost-management-billing/manage/spending-limit), [Container Apps grants/billing](https://learn.microsoft.com/azure/container-apps/billing), [GHCR billing](https://docs.github.com/en/billing/concepts/product-billing/github-packages), [release asset limits](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases). Only eligible first-party Azure consumption may draw protected credit; no separate license/support/Marketplace charge is allowed.

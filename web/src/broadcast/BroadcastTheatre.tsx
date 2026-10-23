@@ -38,6 +38,12 @@ interface Props {
 }
 export function BroadcastTheatre(p: Props) {
   const copy = momentCopy(p.current, p.audience);
+  const metrics = p.current?.overlay.metrics ?? [];
+  const before = metrics.find((m) => m.name === "before")?.value;
+  const after = metrics.find((m) => m.name === "after")?.value;
+  const positional = p.current?.type === "observed_line_height_change";
+  const frameCount = new Set(p.current?.overlay.references
+    .filter((r) => r.category === "tracking").map((r) => r.source_id)).size;
   const withheld = p.data?.diagnostics.find((d) =>
     d.reasons.includes("stale_recent_evidence"),
   );
@@ -68,12 +74,12 @@ export function BroadcastTheatre(p: Props) {
       ) : (
         <>
           <section
-            className={`theatre-stage ${p.loading ? "is-loading" : ""}`}
+            className={`theatre-stage editorial-stage ${positional ? "positional-stage" : ""} ${p.loading ? "is-loading" : ""}`}
             aria-label="Observed match stage"
           >
             <div className="theatre-scorebug">
               <span className="score-club">NORTH</span>
-              <strong data-testid="score">
+              <strong data-testid="score" key={`${p.data?.score.home}:${p.data?.score.away}`}>
                 {p.data?.score.home ?? "–"}
                 <i>:</i>
                 {p.data?.score.away ?? "–"}
@@ -108,6 +114,7 @@ export function BroadcastTheatre(p: Props) {
                 <span className={`moment-label ${withheld ? "caution" : ""}`}>
                   {withheld
                     ? "EVIDENCE WITHHELD"
+                    : positional ? "OBSERVED LINE CHANGE"
                     : `${p.current?.team ?? "MATCH"} · ${p.current?.type.replaceAll("_", " ") ?? "SOURCE REPLAY"}`}
                 </span>
                 <h1>
@@ -129,7 +136,16 @@ export function BroadcastTheatre(p: Props) {
                 Open Proof Lens
                 <ArrowRightIcon size={20} />
               </button>
+              {positional && before !== undefined && after !== undefined && (
+                <div className="stage-measurements" aria-label="Verified line comparison">
+                  <div><strong>{before.toFixed(2)}<small>m</small></strong><span>BEFORE</span></div>
+                  <ArrowRightIcon size={24} aria-hidden="true" />
+                  <div><strong>{after.toFixed(2)}<small>m</small></strong><span>AFTER</span></div>
+                  <p>{frameCount} original source frames · context-weighted means</p>
+                </div>
+              )}
             </div>
+            <div className="stage-disclosure">{p.scenario?.tracking ? "Observed snapshots, no inferred trajectories" : "Event-only fixture, no player tracking"}</div>
           </section>
           {!p.clean && (
             <>
