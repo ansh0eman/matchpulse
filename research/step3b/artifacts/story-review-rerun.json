@@ -1,0 +1,513 @@
+{
+  "commands": [
+    {
+      "argv": [
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/.venv/bin/python",
+        "-m",
+        "pytest",
+        "backend/tests",
+        "-q"
+      ],
+      "cwd": "/Users/ansh0eman/Documents/Projects/inside the game - microsoft",
+      "exit_status": 0,
+      "name": "pytest",
+      "runtime_seconds": 3.70700479199877
+    },
+    {
+      "argv": [
+        "/Users/ansh0eman/.nvm/versions/node/v24.19.0/bin/node",
+        "--import",
+        "tsx",
+        "--test",
+        "tests/artifacts.test.ts",
+        "tests/simulation.test.ts",
+        "tests/tracking.test.ts"
+      ],
+      "cwd": "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/poc",
+      "exit_status": 0,
+      "name": "typescript-tests",
+      "runtime_seconds": 9.664588000014191
+    },
+    {
+      "argv": [
+        "/Users/ansh0eman/.nvm/versions/node/v24.19.0/bin/node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "cwd": "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/poc",
+      "exit_status": 0,
+      "name": "typecheck",
+      "runtime_seconds": 0.5003845419851132
+    },
+    {
+      "argv": [
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/.venv/bin/python",
+        "-m",
+        "matchpulse.stories.cli",
+        "--events",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/output/stories/source/5cc7f774-c215-4773-9318-3a01ad8b23af.jsonl",
+        "--output",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/output/stories/demo",
+        "--debug",
+        "--tracking",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/output/stories/source/5cc7f774-c215-4773-9318-3a01ad8b23af.tracking.jsonl.gz",
+        "--positional-config",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/research/step25/artifacts/selected.json"
+      ],
+      "cwd": "/Users/ansh0eman/Documents/Projects/inside the game - microsoft",
+      "exit_status": 0,
+      "name": "cli-demo",
+      "runtime_seconds": 1.2965856249793433
+    },
+    {
+      "argv": [
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/.venv/bin/python",
+        "-m",
+        "matchpulse.stories.cli",
+        "--events",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/output/stories/source/5cc7f774-c215-4773-9318-3a01ad8b23af.jsonl",
+        "--output",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/output/stories/demo",
+        "--debug",
+        "--tracking",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/output/stories/source/5cc7f774-c215-4773-9318-3a01ad8b23af.tracking.jsonl.gz",
+        "--positional-config",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/research/step25/artifacts/selected.json"
+      ],
+      "cwd": "/Users/ansh0eman/Documents/Projects/inside the game - microsoft",
+      "exit_status": 0,
+      "name": "cli-repeat-demo",
+      "runtime_seconds": 1.269238500011852
+    },
+    {
+      "argv": [
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/.venv/bin/python",
+        "-m",
+        "matchpulse.stories.cli",
+        "--events",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/data/step25/inference/f2a3e267-d3e5-4c90-ae07-b5a39607ab2d.jsonl",
+        "--output",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/output/stories/fresh",
+        "--debug",
+        "--tracking",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/data/step25/inference/f2a3e267-d3e5-4c90-ae07-b5a39607ab2d.tracking.jsonl.gz",
+        "--positional-config",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/research/step25/artifacts/selected.json"
+      ],
+      "cwd": "/Users/ansh0eman/Documents/Projects/inside the game - microsoft",
+      "exit_status": 0,
+      "name": "cli-fresh",
+      "runtime_seconds": 1.3171472919930238
+    },
+    {
+      "argv": [
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/.venv/bin/python",
+        "-m",
+        "matchpulse.stories.cli",
+        "--events",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/data/step25/inference/f2a3e267-d3e5-4c90-ae07-b5a39607ab2d.jsonl",
+        "--output",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/output/stories/fresh",
+        "--debug",
+        "--tracking",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/data/step25/inference/f2a3e267-d3e5-4c90-ae07-b5a39607ab2d.tracking.jsonl.gz",
+        "--positional-config",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/research/step25/artifacts/selected.json"
+      ],
+      "cwd": "/Users/ansh0eman/Documents/Projects/inside the game - microsoft",
+      "exit_status": 0,
+      "name": "cli-repeat-fresh",
+      "runtime_seconds": 1.2835896250035148
+    },
+    {
+      "argv": [
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/.venv/bin/python",
+        "-m",
+        "matchpulse.stories.cli",
+        "--events",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/data/step25/inference/31c70a92-4ce1-4ec2-a570-e8112bfcc5fc.jsonl",
+        "--output",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/output/stories/stale",
+        "--debug",
+        "--tracking",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/data/step25/inference/31c70a92-4ce1-4ec2-a570-e8112bfcc5fc.tracking.jsonl.gz",
+        "--positional-config",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/research/step25/artifacts/selected.json"
+      ],
+      "cwd": "/Users/ansh0eman/Documents/Projects/inside the game - microsoft",
+      "exit_status": 0,
+      "name": "cli-stale",
+      "runtime_seconds": 1.268011124979239
+    },
+    {
+      "argv": [
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/.venv/bin/python",
+        "-m",
+        "matchpulse.stories.cli",
+        "--events",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/data/step25/inference/31c70a92-4ce1-4ec2-a570-e8112bfcc5fc.jsonl",
+        "--output",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/output/stories/stale",
+        "--debug",
+        "--tracking",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/data/step25/inference/31c70a92-4ce1-4ec2-a570-e8112bfcc5fc.tracking.jsonl.gz",
+        "--positional-config",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/research/step25/artifacts/selected.json"
+      ],
+      "cwd": "/Users/ansh0eman/Documents/Projects/inside the game - microsoft",
+      "exit_status": 0,
+      "name": "cli-repeat-stale",
+      "runtime_seconds": 1.2570882909931242
+    },
+    {
+      "argv": [
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/.venv/bin/python",
+        "-m",
+        "matchpulse.stories.cli",
+        "--events",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/data/step2/inference/02840f35-cb05-4812-aa9d-1237e4ab1b9d.jsonl",
+        "--output",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/output/stories/goal",
+        "--debug"
+      ],
+      "cwd": "/Users/ansh0eman/Documents/Projects/inside the game - microsoft",
+      "exit_status": 0,
+      "name": "cli-goal",
+      "runtime_seconds": 0.296995958982734
+    },
+    {
+      "argv": [
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/.venv/bin/python",
+        "-m",
+        "matchpulse.stories.cli",
+        "--events",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/data/step2/inference/02840f35-cb05-4812-aa9d-1237e4ab1b9d.jsonl",
+        "--output",
+        "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/output/stories/goal",
+        "--debug"
+      ],
+      "cwd": "/Users/ansh0eman/Documents/Projects/inside the game - microsoft",
+      "exit_status": 0,
+      "name": "cli-repeat-goal",
+      "runtime_seconds": 0.2886115000001155
+    }
+  ],
+  "frozen_paths_unchanged": true,
+  "matches": [
+    {
+      "all_claims_verified": true,
+      "candidates": 147,
+      "case": "demo",
+      "dangling_references": 0,
+      "duplicate_insight_ids": 0,
+      "emitted": 63,
+      "emitted_distribution": {
+        "high_turnover": 45,
+        "match_boundary": 5,
+        "observed_shot": 5,
+        "recent_attacking_activity": 1,
+        "turnover_to_shot": 7
+      },
+      "events": 6650,
+      "frames": 5521,
+      "goals_emitted": 0,
+      "goals_source": 0,
+      "goals_verified": 0,
+      "latency_seconds_max": 4.0,
+      "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+      "minutes_without_priority_70_story": 83,
+      "positional_decisions": [],
+      "prefix_checks": 3,
+      "provenance": {
+        "events": {
+          "filename": "5cc7f774-c215-4773-9318-3a01ad8b23af.jsonl",
+          "sha256": "6ffe46aa3e27c5a7aecebeeb0212c482e26bd1e52c45cf2598f0674d6f132636"
+        },
+        "positional_config": {
+          "filename": "selected.json",
+          "sha256": "23671808753e918d1b7a42ed07fafa46bc371dc0686eded3bc53bf6b6a0b5458"
+        },
+        "tracking": {
+          "filename": "5cc7f774-c215-4773-9318-3a01ad8b23af.tracking.jsonl.gz",
+          "sha256": "00b59a03db73dd8c24155dcee42b482b17e1862046ab0bbaf13f6f51fae8c3da"
+        }
+      },
+      "recent_shot_state_high_water": 3,
+      "replay_deterministic": true,
+      "runtime_seconds": 1.3763340000004973,
+      "shot_incidents_emitted": 12,
+      "shot_incidents_source": 12,
+      "shots_emitted": 5,
+      "shots_source": 12,
+      "shots_verified": 12,
+      "suppressed": 84,
+      "suppression_reasons": {
+        "editorial_cooldown": 65,
+        "incident_already_narrated": 19
+      },
+      "tracemalloc_peak_bytes": 1555570,
+      "verified_candidates": 147,
+      "verified_distribution": {
+        "high_turnover": 110,
+        "match_boundary": 5,
+        "observed_shot": 12,
+        "recent_attacking_activity": 1,
+        "shot_outcome": 12,
+        "turnover_to_shot": 7
+      }
+    },
+    {
+      "all_claims_verified": true,
+      "candidates": 171,
+      "case": "fresh",
+      "dangling_references": 0,
+      "duplicate_insight_ids": 0,
+      "emitted": 76,
+      "emitted_distribution": {
+        "high_turnover": 46,
+        "match_boundary": 5,
+        "observed_line_height_change": 1,
+        "observed_shot": 11,
+        "recent_attacking_activity": 2,
+        "turnover_to_shot": 11
+      },
+      "events": 6796,
+      "frames": 5551,
+      "goals_emitted": 0,
+      "goals_source": 0,
+      "goals_verified": 0,
+      "latency_seconds_max": 4.0,
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "minutes_without_priority_70_story": 79,
+      "positional_decisions": [
+        {
+          "claim": {
+            "after_m": 31.96388888888889,
+            "as_of_seconds": 3360.0,
+            "before_m": 21.951300813008128,
+            "change_m": 10.01258807588076,
+            "claim_id": "pos_37f092a17bccf2579bc6:line3",
+            "detection_id": "pos_37f092a17bccf2579bc6",
+            "direction": "advance",
+            "latest_observation_seconds": 3360.0,
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "metric": "three_deepest_outfield_mean_x",
+            "qualification": "Observed synthetic positioning only; not evidence that the coach ordered a tactic or that pressure was effective.",
+            "recent_frames": 18,
+            "recent_window": [
+              3180.0,
+              3360.0
+            ],
+            "reference_frames": 41,
+            "reference_window": [
+              2710.0,
+              3180.0
+            ],
+            "statement": "During sampled opponent build-up, NORTH's three deepest outfield players averaged 22.0m and then 32.0m from their own goal: they advanced by 10.0m between the compared observations.",
+            "team_id": "NORTH",
+            "unit": "m"
+          },
+          "detected_at_seconds": 3360.0,
+          "detection_id": "pos_37f092a17bccf2579bc6",
+          "latest_recent_seconds": 3360.0,
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "reasons": [],
+          "recent_age_seconds": 0.0,
+          "recent_span_seconds": 64.0,
+          "reference_span_seconds": 382.0,
+          "status": "eligible"
+        }
+      ],
+      "prefix_checks": 3,
+      "provenance": {
+        "events": {
+          "filename": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d.jsonl",
+          "sha256": "6f1672999abc21f38e59ad789aceef587f713cd0043a4ee1a3b5ad6b7dafe126"
+        },
+        "positional_config": {
+          "filename": "selected.json",
+          "sha256": "23671808753e918d1b7a42ed07fafa46bc371dc0686eded3bc53bf6b6a0b5458"
+        },
+        "tracking": {
+          "filename": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d.tracking.jsonl.gz",
+          "sha256": "d4e6aaaddacf084ba18470b7ba93bbf0cdc2d242f8707f3bc83f5a475c8cf559"
+        }
+      },
+      "recent_shot_state_high_water": 5,
+      "replay_deterministic": true,
+      "runtime_seconds": 1.4481927499873564,
+      "shot_incidents_emitted": 22,
+      "shot_incidents_source": 22,
+      "shots_emitted": 11,
+      "shots_source": 22,
+      "shots_verified": 22,
+      "suppressed": 95,
+      "suppression_reasons": {
+        "editorial_cooldown": 62,
+        "incident_already_narrated": 33
+      },
+      "tracemalloc_peak_bytes": 2138244,
+      "verified_candidates": 171,
+      "verified_distribution": {
+        "high_turnover": 108,
+        "match_boundary": 5,
+        "observed_line_height_change": 1,
+        "observed_shot": 22,
+        "recent_attacking_activity": 2,
+        "shot_outcome": 22,
+        "turnover_to_shot": 11
+      }
+    },
+    {
+      "all_claims_verified": true,
+      "candidates": 136,
+      "case": "stale",
+      "dangling_references": 0,
+      "duplicate_insight_ids": 0,
+      "emitted": 69,
+      "emitted_distribution": {
+        "goal_context": 1,
+        "high_turnover": 43,
+        "match_boundary": 6,
+        "observed_shot": 13,
+        "recent_attacking_activity": 2,
+        "turnover_to_shot": 4
+      },
+      "events": 6723,
+      "frames": 5596,
+      "goals_emitted": 1,
+      "goals_source": 1,
+      "goals_verified": 1,
+      "latency_seconds_max": 4.0,
+      "match_id": "31c70a92-4ce1-4ec2-a570-e8112bfcc5fc",
+      "minutes_without_priority_70_story": 87,
+      "positional_decisions": [
+        {
+          "claim": null,
+          "detected_at_seconds": 1350.0,
+          "detection_id": "pos_5ea68083df2dfcd6f59a",
+          "latest_recent_seconds": 1218.0,
+          "match_id": "31c70a92-4ce1-4ec2-a570-e8112bfcc5fc",
+          "reasons": [
+            "stale_recent_evidence",
+            "insufficient_recent_time_coverage"
+          ],
+          "recent_age_seconds": 132.0,
+          "recent_span_seconds": 13.0,
+          "reference_span_seconds": 892.0,
+          "status": "suppressed"
+        }
+      ],
+      "prefix_checks": 3,
+      "provenance": {
+        "events": {
+          "filename": "31c70a92-4ce1-4ec2-a570-e8112bfcc5fc.jsonl",
+          "sha256": "cdc853df09149f96d41046a45ca4ad626d89961294ae278a51deeee205a22759"
+        },
+        "positional_config": {
+          "filename": "selected.json",
+          "sha256": "23671808753e918d1b7a42ed07fafa46bc371dc0686eded3bc53bf6b6a0b5458"
+        },
+        "tracking": {
+          "filename": "31c70a92-4ce1-4ec2-a570-e8112bfcc5fc.tracking.jsonl.gz",
+          "sha256": "8f58bed77dea045c2c7e13b594c67f3a072d73b231c2a52ba221427d6c24de15"
+        }
+      },
+      "recent_shot_state_high_water": 5,
+      "replay_deterministic": true,
+      "runtime_seconds": 1.2530352080066223,
+      "shot_incidents_emitted": 17,
+      "shot_incidents_source": 17,
+      "shots_emitted": 13,
+      "shots_source": 17,
+      "shots_verified": 17,
+      "suppressed": 68,
+      "suppression_reasons": {
+        "['stale_recent_evidence', 'insufficient_recent_time_coverage']": 1,
+        "editorial_cooldown": 47,
+        "incident_already_narrated": 20
+      },
+      "tracemalloc_peak_bytes": 1507706,
+      "verified_candidates": 136,
+      "verified_distribution": {
+        "goal_context": 1,
+        "high_turnover": 90,
+        "match_boundary": 6,
+        "observed_shot": 17,
+        "recent_attacking_activity": 2,
+        "shot_outcome": 16,
+        "turnover_to_shot": 4
+      }
+    },
+    {
+      "all_claims_verified": true,
+      "candidates": 210,
+      "case": "goal",
+      "dangling_references": 0,
+      "duplicate_insight_ids": 0,
+      "emitted": 86,
+      "emitted_distribution": {
+        "goal_context": 1,
+        "high_turnover": 53,
+        "match_boundary": 6,
+        "observed_shot": 13,
+        "recent_attacking_activity": 4,
+        "turnover_to_shot": 9
+      },
+      "events": 6738,
+      "frames": 0,
+      "goals_emitted": 1,
+      "goals_source": 1,
+      "goals_verified": 1,
+      "latency_seconds_max": 4.0,
+      "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+      "minutes_without_priority_70_story": 81,
+      "positional_decisions": [],
+      "prefix_checks": 3,
+      "provenance": {
+        "events": {
+          "filename": "02840f35-cb05-4812-aa9d-1237e4ab1b9d.jsonl",
+          "sha256": "debaa05d3aaaed3b4b01e0621c818ed8a9d8bd3e6aa75f6fec008c1437643291"
+        }
+      },
+      "recent_shot_state_high_water": 6,
+      "replay_deterministic": true,
+      "runtime_seconds": 0.1090413749916479,
+      "shot_incidents_emitted": 22,
+      "shot_incidents_source": 22,
+      "shots_emitted": 13,
+      "shots_source": 22,
+      "shots_verified": 22,
+      "suppressed": 124,
+      "suppression_reasons": {
+        "editorial_cooldown": 94,
+        "incident_already_narrated": 30
+      },
+      "tracemalloc_peak_bytes": 1611342,
+      "verified_candidates": 210,
+      "verified_distribution": {
+        "goal_context": 1,
+        "high_turnover": 146,
+        "match_boundary": 6,
+        "observed_shot": 22,
+        "recent_attacking_activity": 5,
+        "shot_outcome": 21,
+        "turnover_to_shot": 9
+      }
+    }
+  ],
+  "schema_validation": "Pydantic JSON roundtrip against exported model contracts; no external JSON Schema meta-validator installed",
+  "source_hashes": {
+    "backend/src/matchpulse/stories/__init__.py": "24d5344c54928c75d8eeba5dba86225926173101613c61d46d6c6bb56fb96cb3",
+    "backend/src/matchpulse/stories/claims.py": "628b77b09d1be7aead2bf198960a8c3bc79e50d77d6de902bfa627775215647a",
+    "backend/src/matchpulse/stories/cli.py": "107220e621ec961566ee3f507ffd09607120b7c2ae024e7f18354e3b2fe89e65",
+    "backend/src/matchpulse/stories/event_semantics.py": "b4bf7e223312197d505f5dae15e1f5538f337b82130544b9d8f0b35dba21476a",
+    "backend/src/matchpulse/stories/evidence.py": "93a3ab76513832f94718da89e5c2b3a6d1c7d59ffb1ecceaf9f2ec9b1fd6e3e3",
+    "backend/src/matchpulse/stories/export.py": "194cfb08d31d2513757418c738177365afe503ee4f965a4d00514c8c02f85fe0",
+    "backend/src/matchpulse/stories/registry.py": "ab286844c963d3f15bcd01e2a12822b22b2ceaf828aeba1cdcadef2b8cc66914",
+    "backend/src/matchpulse/stories/replay.py": "8e1ee9a0246c1e5934b9c5f40e53828ffc79d3c90af442b3779bb8fa233bf55e",
+    "backend/src/matchpulse/stories/scheduler.py": "ae897a7b4e00b537be268a2befa9b9d3ae5e576fda604ab06f5aa206e1700957",
+    "backend/src/matchpulse/stories/schemas.py": "d1f1092f822d189650980c70430d8619422d39438615d3b39ce2e5fc72020ffa",
+    "backend/src/matchpulse/stories/state.py": "139236aedf79d16fecdd4b8b09796a6059864b61141bc0ec2ee88eb4bb085ea9"
+  }
+}

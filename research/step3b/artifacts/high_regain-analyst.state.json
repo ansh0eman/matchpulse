@@ -1,0 +1,110 @@
+{
+  "analyses": [],
+  "challenge": null,
+  "director": null,
+  "envelope": {
+    "allowed_interpretations": [
+      "Describe the registered observations with their limitations."
+    ],
+    "audience": "analyst",
+    "claims": [
+      {
+        "as_of_seconds": 13.75,
+        "claim_id": "5cc7f774-c215-4773-9318-3a01ad8b23af:claim:d4a774adea6012f8ff4ad6b3",
+        "display_rule": "integers; metres one decimal; seconds exact",
+        "limitations": [
+          "Synthetic uncalibrated football; observations do not establish coach intent."
+        ],
+        "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+        "player_ids": [
+          "away-starter-6-7"
+        ],
+        "references": [
+          {
+            "category": "event",
+            "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+            "source_id": "evt_000017"
+          },
+          {
+            "category": "event",
+            "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+            "source_id": "evt_000018"
+          }
+        ],
+        "schema_version": 1,
+        "team_id": "SOUTH",
+        "type": "high_turnover",
+        "unit": "m_and_s",
+        "value": {
+          "elapsed_seconds": 0.0,
+          "from_team": "NORTH",
+          "kind": "high_turnover",
+          "possession_id": "pos_4",
+          "regain_x_m": 77.77
+        },
+        "verification_method": "canonical_prefix_v1",
+        "window": [
+          13.75,
+          13.75
+        ]
+      }
+    ],
+    "insight": {
+      "as_of_seconds": 13.75,
+      "claim_ids": [
+        "5cc7f774-c215-4773-9318-3a01ad8b23af:claim:d4a774adea6012f8ff4ad6b3"
+      ],
+      "event_time_seconds": 13.75,
+      "evidence": [
+        {
+          "category": "event",
+          "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+          "source_id": "evt_000017"
+        },
+        {
+          "category": "event",
+          "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+          "source_id": "evt_000018"
+        }
+      ],
+      "fallback": {
+        "explanation": "SOUTH gain possession at 77.8m along their attacking axis. Observed at 0.2 cumulative minutes. Synthetic uncalibrated football; observations do not establish coach intent.",
+        "headline": "SOUTH gain possession at 77.8m along their attacking axis."
+      },
+      "insight_id": "5cc7f774-c215-4773-9318-3a01ad8b23af:insight:d4a774adea6012f8ff4ad6b3",
+      "limitations": [
+        "Synthetic uncalibrated football; observations do not establish coach intent."
+      ],
+      "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+      "observed_score": {
+        "away": 0,
+        "home": 0
+      },
+      "period": 1,
+      "player_ids": [
+        "away-starter-6-7"
+      ],
+      "priority": 40,
+      "priority_semantics": "editorial ordering, not probability",
+      "provenance": "pinned synthetic simulator canonical observations",
+      "quality": "verified_observation",
+      "schema_version": 1,
+      "team_id": "SOUTH",
+      "type": "high_turnover",
+      "verified": true
+    },
+    "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+    "resolver": "match_id + reference category + source_id",
+    "schema_version": 1
+  },
+  "errors": [],
+  "narration_plan": null,
+  "overlay_plan": null,
+  "preferences": {
+    "audience": "analyst",
+    "favorite_team": "NORTH",
+    "language": "en"
+  },
+  "schema_version": 2,
+  "trace_id": "50ba0bd69d4c4a74bfaed0f25b1d9c71"
+}

@@ -10,3 +10,8 @@ research/step25/artifacts/*.log
 research/step25/artifacts/*-detail.json
 
 backend/output/stories/
+backend/output/agents/
+backend/.venv-foundry/
+.env
+.env.*
+!.env.example

@@ -1,0 +1,22 @@
+{
+  "source_hashes_match_executed_review": true,
+  "protected_paths_changed": [],
+  "git_diff_check_exit_status": 0,
+  "python_suite_output": "ssss.........................................s.......................... [ 44%]\n........................................................................ [ 89%]\n.................                                                        [100%]\n156 passed, 5 skipped in 3.47s",
+  "typescript_suite_summary": [
+    "\u2139 tests 10",
+    "\u2139 suites 0",
+    "\u2139 pass 10",
+    "\u2139 fail 0",
+    "\u2139 cancelled 0",
+    "\u2139 skipped 0",
+    "\u2139 todo 0",
+    "\u2139 duration_ms 9636.847042"
+  ],
+  "typescript_typecheck_exit_status": 0,
+  "review_records": 46,
+  "research_documents": 15,
+  "committed": false,
+  "pushed": false,
+  "deployed": false
+}

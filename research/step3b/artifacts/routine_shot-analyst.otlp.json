@@ -1,0 +1,128 @@
+{
+  "resourceSpans": [
+    {
+      "resource": {
+        "attributes": [
+          {
+            "key": "service.name",
+            "value": {
+              "stringValue": "matchpulse-studio"
+            }
+          }
+        ]
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "matchpulse.studio",
+            "version": "2"
+          },
+          "spans": [
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "editorial"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "accepted"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af:insight:740eb230803f34a1c1fe1e78"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372194710333",
+              "kind": 1,
+              "name": "editorial.accepted",
+              "spanId": "9a0d5ae2ecfc4ba6",
+              "startTimeUnixNano": "1792747372194710333",
+              "traceId": "d04f079fdffb4cdea948ac80106d8b85"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "editorial"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "deterministic_bypass"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af:insight:740eb230803f34a1c1fe1e78"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372194713708",
+              "kind": 1,
+              "name": "editorial.deterministic_bypass",
+              "spanId": "4987339ddb4a4853",
+              "startTimeUnixNano": "1792747372194713708",
+              "traceId": "d04f079fdffb4cdea948ac80106d8b85"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "publisher"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "artifact_verified"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af:insight:740eb230803f34a1c1fe1e78"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372194763250",
+              "kind": 1,
+              "name": "publisher.artifact_verified",
+              "spanId": "0ccbc57e17854ff0",
+              "startTimeUnixNano": "1792747372194763250",
+              "traceId": "d04f079fdffb4cdea948ac80106d8b85"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

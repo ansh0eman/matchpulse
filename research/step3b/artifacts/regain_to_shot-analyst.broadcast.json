@@ -1,0 +1,125 @@
+{
+  "angle": "sequence_first",
+  "available_seconds": 356.0,
+  "category": "regain_sequence",
+  "claim_ids": [
+    "5cc7f774-c215-4773-9318-3a01ad8b23af:claim:cdbee60d017684cbadcd070f"
+  ],
+  "errors": [],
+  "evidence": [
+    {
+      "category": "event",
+      "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+      "source_id": "evt_000422"
+    },
+    {
+      "category": "event",
+      "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+      "source_id": "evt_000423"
+    },
+    {
+      "category": "event",
+      "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+      "source_id": "evt_000426"
+    }
+  ],
+  "insight_id": "5cc7f774-c215-4773-9318-3a01ad8b23af:insight:cdbee60d017684cbadcd070f",
+  "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+  "narration": {
+    "headline": "Opposition context for NORTH \u2014 The recorded observations show: A shot followed SOUTH's high regain in the same possession, 3.5 seconds later.",
+    "limitations": [
+      "Synthetic uncalibrated football; observations do not establish coach intent."
+    ],
+    "schema_version": 2,
+    "sentences": [
+      {
+        "claim_ids": [
+          "5cc7f774-c215-4773-9318-3a01ad8b23af:claim:cdbee60d017684cbadcd070f"
+        ],
+        "text": "The recorded observations show: A shot followed SOUTH's high regain in the same possession, 3.5 seconds later."
+      },
+      {
+        "claim_ids": [
+          "5cc7f774-c215-4773-9318-3a01ad8b23af:claim:cdbee60d017684cbadcd070f"
+        ],
+        "text": "Source window (352.5, 356] seconds; units m_and_s; evidence evt_000422, evt_000423, evt_000426."
+      }
+    ]
+  },
+  "narration_status": "enriched",
+  "origin": "offline_fake",
+  "overlay": {
+    "coordinates": [
+      [
+        "evt_000422",
+        18.22,
+        52.23
+      ],
+      [
+        "evt_000423",
+        17.23,
+        49.93
+      ],
+      [
+        "evt_000426",
+        0.51,
+        42.11
+      ]
+    ],
+    "metrics": [
+      {
+        "claim_id": "5cc7f774-c215-4773-9318-3a01ad8b23af:claim:cdbee60d017684cbadcd070f",
+        "name": "regain_x",
+        "unit": "m",
+        "value": 87.77
+      },
+      {
+        "claim_id": "5cc7f774-c215-4773-9318-3a01ad8b23af:claim:cdbee60d017684cbadcd070f",
+        "name": "elapsed",
+        "unit": "s",
+        "value": 3.5
+      }
+    ],
+    "observation_semantics": "source ball/player coordinates only; interpolation is visualization",
+    "plan": {
+      "claim_ids": [
+        "5cc7f774-c215-4773-9318-3a01ad8b23af:claim:cdbee60d017684cbadcd070f"
+      ],
+      "emphasis": "sequence",
+      "family": "regain_to_shot",
+      "schema_version": 2
+    },
+    "references": [
+      {
+        "category": "event",
+        "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+        "source_id": "evt_000422"
+      },
+      {
+        "category": "event",
+        "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+        "source_id": "evt_000423"
+      },
+      {
+        "category": "event",
+        "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+        "source_id": "evt_000426"
+      }
+    ],
+    "replay_window": [
+      352.5,
+      356.0
+    ],
+    "schema_version": 2
+  },
+  "overlay_status": "enriched",
+  "preferences": {
+    "audience": "analyst",
+    "favorite_team": "NORTH",
+    "language": "en"
+  },
+  "presented_seconds": 356.0,
+  "schema_version": 2,
+  "source_seconds": 356.0,
+  "trace_id": "28cca0fe1b164e3b834ebeb3bf12d4b6"
+}

@@ -1,0 +1,21 @@
+{
+  "status": "BLOCKED",
+  "authenticated_foundry_calls_succeeded": 0,
+  "project_endpoint_configured": false,
+  "model_configured": false,
+  "azure_cli_available": false,
+  "installed_versions": {
+    "pydantic": "2.12.3",
+    "agent-framework-core": null,
+    "agent-framework-foundry": null,
+    "azure-identity": null,
+    "mcp": null,
+    "opentelemetry-sdk": null,
+    "jsonschema": null
+  },
+  "dependency_resolution": "PyPI DNS failed; no packages installed",
+  "sdk_graph_executed": false,
+  "mcp_wire_test_executed": false,
+  "cloud_telemetry_delivered": false,
+  "fake_provider_is_real_model": false
+}

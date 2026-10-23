@@ -1,0 +1,269 @@
+{
+  "claim_ids": [
+    "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77"
+  ],
+  "evidence": [
+    {
+      "category": "event",
+      "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+      "source_id": "evt_002782"
+    },
+    {
+      "category": "event",
+      "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+      "source_id": "evt_002783"
+    },
+    {
+      "category": "event",
+      "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+      "source_id": "evt_002778"
+    },
+    {
+      "category": "event",
+      "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+      "source_id": "evt_002779"
+    },
+    {
+      "category": "event",
+      "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+      "source_id": "evt_002780"
+    },
+    {
+      "category": "event",
+      "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+      "source_id": "evt_002781"
+    }
+  ],
+  "explanation": "NORTH: opening goal. Score 1\u20130 (NORTH\u2013SOUTH). Source window (2370, 2370.5] seconds; units score; evidence evt_002782, evt_002783. Bounded source observations: receive attributed to NORTH at 2368.25s [evt_002778]; pass attributed to NORTH at 2368.5s [evt_002779]; receive attributed to NORTH at 2369s [evt_002780]; challenge attributed to SOUTH at 2369.25s [evt_002781]; shot attributed to NORTH at 2370s [evt_002782]. No assist or causal link is inferred.",
+  "limitations": [
+    "Synthetic uncalibrated football; observations do not establish coach intent."
+  ],
+  "mode": "deterministic restricted question set; no conversational model called",
+  "schema_version": 1,
+  "source_observations": [
+    {
+      "attacking_position_m": {
+        "x": 78.63,
+        "y": 23.34
+      },
+      "evidence": {
+        "attack_pattern": "final_third_probe",
+        "chance_quality": null,
+        "field_zones": [
+          "attacking_third",
+          "final_third",
+          "half_space_left"
+        ],
+        "possession_final_third_entries": 1,
+        "source_index": 2778
+      },
+      "id": "evt_002778",
+      "outcome": "clean_receive",
+      "period": 1,
+      "player_id": "home-starter-5-6",
+      "position_m": {
+        "x": 78.63,
+        "y": 23.34
+      },
+      "possession_id": "pos_261",
+      "possession_team_id": "NORTH",
+      "schema_version": 1,
+      "score": {
+        "away": 0,
+        "home": 0
+      },
+      "secondary_player_id": "home-starter-6-7",
+      "sequence": 2778,
+      "team_id": "NORTH",
+      "time_seconds": 2368.25,
+      "type": "receive"
+    },
+    {
+      "attacking_position_m": {
+        "x": 78.63,
+        "y": 23.34
+      },
+      "evidence": {
+        "attack_pattern": "final_third_probe",
+        "chance_quality": null,
+        "field_zones": [
+          "attacking_third",
+          "final_third",
+          "half_space_left"
+        ],
+        "possession_final_third_entries": 1,
+        "source_index": 2779
+      },
+      "id": "evt_002779",
+      "outcome": "lateral_support",
+      "period": 1,
+      "player_id": "home-starter-5-6",
+      "position_m": {
+        "x": 78.63,
+        "y": 23.34
+      },
+      "possession_id": "pos_261",
+      "possession_team_id": "NORTH",
+      "schema_version": 1,
+      "score": {
+        "away": 0,
+        "home": 0
+      },
+      "secondary_player_id": "home-starter-8-9",
+      "sequence": 2779,
+      "team_id": "NORTH",
+      "time_seconds": 2368.5,
+      "type": "pass"
+    },
+    {
+      "attacking_position_m": {
+        "x": 85.17,
+        "y": 26.43
+      },
+      "evidence": {
+        "attack_pattern": "final_third_probe",
+        "chance_quality": null,
+        "field_zones": [
+          "attacking_third",
+          "final_third",
+          "half_space_left"
+        ],
+        "possession_final_third_entries": 1,
+        "source_index": 2780
+      },
+      "id": "evt_002780",
+      "outcome": "clean_receive",
+      "period": 1,
+      "player_id": "home-starter-8-9",
+      "position_m": {
+        "x": 85.17,
+        "y": 26.43
+      },
+      "possession_id": "pos_261",
+      "possession_team_id": "NORTH",
+      "schema_version": 1,
+      "score": {
+        "away": 0,
+        "home": 0
+      },
+      "secondary_player_id": "home-starter-5-6",
+      "sequence": 2780,
+      "team_id": "NORTH",
+      "time_seconds": 2369.0,
+      "type": "receive"
+    },
+    {
+      "attacking_position_m": {
+        "x": 18.790000000000006,
+        "y": 41.379999999999995
+      },
+      "evidence": {
+        "attack_pattern": "final_third_probe",
+        "chance_quality": null,
+        "field_zones": [
+          "defensive_third",
+          "half_space_right"
+        ],
+        "possession_final_third_entries": 1,
+        "source_index": 2781
+      },
+      "id": "evt_002781",
+      "outcome": "standing_tackle",
+      "period": 1,
+      "player_id": "away-starter-3-4",
+      "position_m": {
+        "x": 86.21,
+        "y": 26.62
+      },
+      "possession_id": "pos_261",
+      "possession_team_id": "NORTH",
+      "schema_version": 1,
+      "score": {
+        "away": 0,
+        "home": 0
+      },
+      "secondary_player_id": "home-starter-8-9",
+      "sequence": 2781,
+      "team_id": "SOUTH",
+      "time_seconds": 2369.25,
+      "type": "challenge"
+    },
+    {
+      "attacking_position_m": {
+        "x": 88.29,
+        "y": 27.0
+      },
+      "evidence": {
+        "attack_pattern": "second_ball",
+        "chance_quality": 0.21281833551735116,
+        "field_zones": [
+          "attacking_third",
+          "final_third",
+          "half_space_left",
+          "box"
+        ],
+        "possession_final_third_entries": 1,
+        "source_index": 2782
+      },
+      "id": "evt_002782",
+      "outcome": "second_ball",
+      "period": 1,
+      "player_id": "home-starter-8-9",
+      "position_m": {
+        "x": 88.29,
+        "y": 27.0
+      },
+      "possession_id": "pos_261",
+      "possession_team_id": "NORTH",
+      "schema_version": 1,
+      "score": {
+        "away": 0,
+        "home": 0
+      },
+      "secondary_player_id": null,
+      "sequence": 2782,
+      "team_id": "NORTH",
+      "time_seconds": 2370.0,
+      "type": "shot"
+    }
+  ],
+  "status": "verified",
+  "tool_calls": [
+    {
+      "as_of_seconds": 2370.5,
+      "match_scope": "active",
+      "status": "success",
+      "tool": "resolve_claim"
+    },
+    {
+      "as_of_seconds": 2370.5,
+      "match_scope": "active",
+      "status": "success",
+      "tool": "resolve_evidence"
+    },
+    {
+      "as_of_seconds": 2370.5,
+      "match_scope": "active",
+      "status": "success",
+      "tool": "resolve_evidence"
+    },
+    {
+      "as_of_seconds": 2370.5,
+      "match_scope": "active",
+      "status": "success",
+      "tool": "resolve_evidence"
+    },
+    {
+      "as_of_seconds": 2370.5,
+      "match_scope": "active",
+      "status": "success",
+      "tool": "resolve_evidence"
+    },
+    {
+      "as_of_seconds": 2370.5,
+      "match_scope": "active",
+      "status": "success",
+      "tool": "resolve_evidence"
+    }
+  ]
+}

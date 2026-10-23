@@ -1,0 +1,42 @@
+{
+  "cloud_delivery": false,
+  "events": [
+    {
+      "elapsed_ms": 0.024542008759453893,
+      "event": "accepted",
+      "reason": null,
+      "role": "editorial",
+      "schema_version": 1,
+      "span_id": "0dd6c7a79d954e84",
+      "trace_id": "50ba0bd69d4c4a74bfaed0f25b1d9c71",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.027667003450915217,
+      "event": "deterministic_bypass",
+      "reason": null,
+      "role": "editorial",
+      "schema_version": 1,
+      "span_id": "e5e87878e2f24092",
+      "trace_id": "50ba0bd69d4c4a74bfaed0f25b1d9c71",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.08725002408027649,
+      "event": "artifact_verified",
+      "reason": null,
+      "role": "publisher",
+      "schema_version": 1,
+      "span_id": "36fc5813f2504516",
+      "trace_id": "50ba0bd69d4c4a74bfaed0f25b1d9c71",
+      "usage_input": null,
+      "usage_output": null
+    }
+  ],
+  "insight_id": "5cc7f774-c215-4773-9318-3a01ad8b23af:insight:d4a774adea6012f8ff4ad6b3",
+  "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+  "schema_version": 1,
+  "trace_id": "50ba0bd69d4c4a74bfaed0f25b1d9c71"
+}

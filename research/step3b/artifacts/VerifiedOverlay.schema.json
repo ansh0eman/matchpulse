@@ -1,0 +1,193 @@
+{
+  "$defs": {
+    "Metric": {
+      "additionalProperties": false,
+      "properties": {
+        "claim_id": {
+          "title": "Claim Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "unit": {
+          "enum": [
+            "m",
+            "s",
+            "shots",
+            "goals"
+          ],
+          "title": "Unit",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        }
+      },
+      "required": [
+        "claim_id",
+        "name",
+        "value",
+        "unit"
+      ],
+      "title": "Metric",
+      "type": "object"
+    },
+    "OverlayPlan": {
+      "additionalProperties": false,
+      "properties": {
+        "claim_ids": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 8,
+          "minItems": 1,
+          "title": "Claim Ids",
+          "type": "array"
+        },
+        "emphasis": {
+          "enum": [
+            "incident",
+            "sequence",
+            "measurements"
+          ],
+          "title": "Emphasis",
+          "type": "string"
+        },
+        "family": {
+          "enum": [
+            "scoreline_change",
+            "event_location",
+            "shot_sequence",
+            "regain_to_shot",
+            "rolling_activity",
+            "positional_comparison"
+          ],
+          "title": "Family",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": 2,
+          "default": 2,
+          "title": "Schema Version",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "claim_ids",
+        "family",
+        "emphasis"
+      ],
+      "title": "OverlayPlan",
+      "type": "object"
+    },
+    "Reference": {
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "enum": [
+            "event",
+            "tracking"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "match_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+          "title": "Match Id",
+          "type": "string"
+        },
+        "source_id": {
+          "title": "Source Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "match_id",
+        "category",
+        "source_id"
+      ],
+      "title": "Reference",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "coordinates": {
+      "items": {
+        "maxItems": 3,
+        "minItems": 3,
+        "prefixItems": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "number"
+          }
+        ],
+        "type": "array"
+      },
+      "title": "Coordinates",
+      "type": "array"
+    },
+    "metrics": {
+      "items": {
+        "$ref": "#/$defs/Metric"
+      },
+      "title": "Metrics",
+      "type": "array"
+    },
+    "observation_semantics": {
+      "const": "source ball/player coordinates only; interpolation is visualization",
+      "default": "source ball/player coordinates only; interpolation is visualization",
+      "title": "Observation Semantics",
+      "type": "string"
+    },
+    "plan": {
+      "$ref": "#/$defs/OverlayPlan"
+    },
+    "references": {
+      "items": {
+        "$ref": "#/$defs/Reference"
+      },
+      "title": "References",
+      "type": "array"
+    },
+    "replay_window": {
+      "maxItems": 2,
+      "minItems": 2,
+      "prefixItems": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "minimum": 0,
+          "type": "number"
+        }
+      ],
+      "title": "Replay Window",
+      "type": "array"
+    },
+    "schema_version": {
+      "const": 2,
+      "default": 2,
+      "title": "Schema Version",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "plan",
+    "references",
+    "replay_window",
+    "metrics",
+    "coordinates"
+  ],
+  "title": "VerifiedOverlay",
+  "type": "object"
+}

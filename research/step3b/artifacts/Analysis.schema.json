@@ -1,0 +1,108 @@
+{
+  "$defs": {
+    "Reference": {
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "enum": [
+            "event",
+            "tracking"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "match_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+          "title": "Match Id",
+          "type": "string"
+        },
+        "source_id": {
+          "title": "Source Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "match_id",
+        "category",
+        "source_id"
+      ],
+      "title": "Reference",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "category": {
+      "enum": [
+        "score_context",
+        "shot_sequence",
+        "regain_sequence",
+        "attacking_activity",
+        "position_comparison",
+        "match_state",
+        "observed_event"
+      ],
+      "title": "Category",
+      "type": "string"
+    },
+    "claim_ids": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 8,
+      "minItems": 1,
+      "title": "Claim Ids",
+      "type": "array"
+    },
+    "limitation_codes": {
+      "items": {
+        "enum": [
+          "synthetic",
+          "sampled_position",
+          "association_only",
+          "incomplete_linkage"
+        ],
+        "type": "string"
+      },
+      "title": "Limitation Codes",
+      "type": "array"
+    },
+    "requested_evidence": {
+      "items": {
+        "$ref": "#/$defs/Reference"
+      },
+      "maxItems": 12,
+      "title": "Requested Evidence",
+      "type": "array"
+    },
+    "schema_version": {
+      "const": 2,
+      "default": 2,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "unsupported_possibilities": {
+      "items": {
+        "enum": [
+          "coach_intent",
+          "causal_press",
+          "xg",
+          "assist",
+          "possession_percentage"
+        ],
+        "type": "string"
+      },
+      "title": "Unsupported Possibilities",
+      "type": "array"
+    }
+  },
+  "required": [
+    "claim_ids",
+    "category",
+    "requested_evidence",
+    "limitation_codes",
+    "unsupported_possibilities"
+  ],
+  "title": "Analysis",
+  "type": "object"
+}

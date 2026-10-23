@@ -1,0 +1,1137 @@
+{
+  "$defs": {
+    "ActionValue": {
+      "additionalProperties": false,
+      "properties": {
+        "action": {
+          "enum": [
+            "shot",
+            "save",
+            "miss",
+            "blocked_shot",
+            "red_card",
+            "match_start",
+            "kickoff",
+            "half_time",
+            "full_time"
+          ],
+          "title": "Action",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "observed_shot",
+            "shot_outcome",
+            "player_dismissal",
+            "match_boundary"
+          ],
+          "title": "Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "action"
+      ],
+      "title": "ActionValue",
+      "type": "object"
+    },
+    "ActivityValue": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "recent_attacking_activity",
+          "default": "recent_attacking_activity",
+          "title": "Kind",
+          "type": "string"
+        },
+        "shots": {
+          "minimum": 3,
+          "title": "Shots",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "shots"
+      ],
+      "title": "ActivityValue",
+      "type": "object"
+    },
+    "AgentInput": {
+      "additionalProperties": false,
+      "properties": {
+        "allowed_interpretations": {
+          "default": [
+            "Describe the registered observations with their limitations."
+          ],
+          "items": {
+            "type": "string"
+          },
+          "title": "Allowed Interpretations",
+          "type": "array"
+        },
+        "audience": {
+          "enum": [
+            "fan",
+            "analyst"
+          ],
+          "title": "Audience",
+          "type": "string"
+        },
+        "claims": {
+          "items": {
+            "$ref": "#/$defs/Claim"
+          },
+          "title": "Claims",
+          "type": "array"
+        },
+        "insight": {
+          "$ref": "#/$defs/MatchInsight"
+        },
+        "match_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+          "title": "Match Id",
+          "type": "string"
+        },
+        "resolver": {
+          "const": "match_id + reference category + source_id",
+          "default": "match_id + reference category + source_id",
+          "title": "Resolver",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": 1,
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "match_id",
+        "insight",
+        "claims",
+        "audience"
+      ],
+      "title": "AgentInput",
+      "type": "object"
+    },
+    "Analysis": {
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "enum": [
+            "score_context",
+            "shot_sequence",
+            "regain_sequence",
+            "attacking_activity",
+            "position_comparison",
+            "match_state",
+            "observed_event"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "claim_ids": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 8,
+          "minItems": 1,
+          "title": "Claim Ids",
+          "type": "array"
+        },
+        "limitation_codes": {
+          "items": {
+            "enum": [
+              "synthetic",
+              "sampled_position",
+              "association_only",
+              "incomplete_linkage"
+            ],
+            "type": "string"
+          },
+          "title": "Limitation Codes",
+          "type": "array"
+        },
+        "requested_evidence": {
+          "items": {
+            "$ref": "#/$defs/Reference"
+          },
+          "maxItems": 12,
+          "title": "Requested Evidence",
+          "type": "array"
+        },
+        "schema_version": {
+          "const": 2,
+          "default": 2,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "unsupported_possibilities": {
+          "items": {
+            "enum": [
+              "coach_intent",
+              "causal_press",
+              "xg",
+              "assist",
+              "possession_percentage"
+            ],
+            "type": "string"
+          },
+          "title": "Unsupported Possibilities",
+          "type": "array"
+        }
+      },
+      "required": [
+        "claim_ids",
+        "category",
+        "requested_evidence",
+        "limitation_codes",
+        "unsupported_possibilities"
+      ],
+      "title": "Analysis",
+      "type": "object"
+    },
+    "Challenge": {
+      "additionalProperties": false,
+      "properties": {
+        "affected_claim_ids": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 8,
+          "title": "Affected Claim Ids",
+          "type": "array"
+        },
+        "disposition": {
+          "enum": [
+            "accept",
+            "narrow",
+            "fallback"
+          ],
+          "title": "Disposition",
+          "type": "string"
+        },
+        "objections": {
+          "items": {
+            "enum": [
+              "narrow_scope",
+              "insufficient_context",
+              "unsupported_causality",
+              "missing_evidence"
+            ],
+            "type": "string"
+          },
+          "title": "Objections",
+          "type": "array"
+        },
+        "schema_version": {
+          "const": 2,
+          "default": 2,
+          "title": "Schema Version",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "affected_claim_ids",
+        "objections",
+        "disposition"
+      ],
+      "title": "Challenge",
+      "type": "object"
+    },
+    "Claim": {
+      "additionalProperties": false,
+      "properties": {
+        "as_of_seconds": {
+          "minimum": 0,
+          "title": "As Of Seconds",
+          "type": "number"
+        },
+        "claim_id": {
+          "title": "Claim Id",
+          "type": "string"
+        },
+        "display_rule": {
+          "const": "integers; metres one decimal; seconds exact",
+          "default": "integers; metres one decimal; seconds exact",
+          "title": "Display Rule",
+          "type": "string"
+        },
+        "limitations": {
+          "default": [
+            "Synthetic uncalibrated football; observations do not establish coach intent."
+          ],
+          "items": {
+            "type": "string"
+          },
+          "title": "Limitations",
+          "type": "array"
+        },
+        "match_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+          "title": "Match Id",
+          "type": "string"
+        },
+        "player_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Player Ids",
+          "type": "array"
+        },
+        "references": {
+          "items": {
+            "$ref": "#/$defs/Reference"
+          },
+          "title": "References",
+          "type": "array"
+        },
+        "schema_version": {
+          "const": 1,
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "team_id": {
+          "anyOf": [
+            {
+              "enum": [
+                "NORTH",
+                "SOUTH"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Team Id"
+        },
+        "type": {
+          "enum": [
+            "goal_context",
+            "observed_shot",
+            "shot_outcome",
+            "high_turnover",
+            "turnover_to_shot",
+            "recent_attacking_activity",
+            "player_dismissal",
+            "match_boundary",
+            "observed_line_height_change"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "unit": {
+          "enum": [
+            "score",
+            "event",
+            "m_and_s",
+            "shots",
+            "m"
+          ],
+          "title": "Unit",
+          "type": "string"
+        },
+        "value": {
+          "discriminator": {
+            "mapping": {
+              "goal_context": "#/$defs/GoalValue",
+              "high_turnover": "#/$defs/TurnoverValue",
+              "match_boundary": "#/$defs/ActionValue",
+              "observed_line_height_change": "#/$defs/LineValue",
+              "observed_shot": "#/$defs/ActionValue",
+              "player_dismissal": "#/$defs/ActionValue",
+              "recent_attacking_activity": "#/$defs/ActivityValue",
+              "shot_outcome": "#/$defs/ActionValue",
+              "turnover_to_shot": "#/$defs/TurnoverValue"
+            },
+            "propertyName": "kind"
+          },
+          "oneOf": [
+            {
+              "$ref": "#/$defs/GoalValue"
+            },
+            {
+              "$ref": "#/$defs/ActionValue"
+            },
+            {
+              "$ref": "#/$defs/TurnoverValue"
+            },
+            {
+              "$ref": "#/$defs/ActivityValue"
+            },
+            {
+              "$ref": "#/$defs/LineValue"
+            }
+          ],
+          "title": "Value"
+        },
+        "verification_method": {
+          "enum": [
+            "canonical_prefix_v1",
+            "presentation_gate_v1"
+          ],
+          "title": "Verification Method",
+          "type": "string"
+        },
+        "window": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "minimum": 0,
+              "type": "number"
+            }
+          ],
+          "title": "Window",
+          "type": "array"
+        }
+      },
+      "required": [
+        "claim_id",
+        "match_id",
+        "type",
+        "team_id",
+        "player_ids",
+        "value",
+        "unit",
+        "window",
+        "as_of_seconds",
+        "references",
+        "verification_method"
+      ],
+      "title": "Claim",
+      "type": "object"
+    },
+    "DirectorDecision": {
+      "additionalProperties": false,
+      "properties": {
+        "angle": {
+          "enum": [
+            "score_first",
+            "sequence_first",
+            "measurement_first",
+            "evidence_first"
+          ],
+          "title": "Angle",
+          "type": "string"
+        },
+        "challenge": {
+          "title": "Challenge",
+          "type": "boolean"
+        },
+        "max_calls": {
+          "maximum": 6,
+          "minimum": 1,
+          "title": "Max Calls",
+          "type": "integer"
+        },
+        "schema_version": {
+          "const": 2,
+          "default": 2,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "specialists": {
+          "items": {
+            "enum": [
+              "match_analyst",
+              "tactical_analyst"
+            ],
+            "type": "string"
+          },
+          "title": "Specialists",
+          "type": "array"
+        }
+      },
+      "required": [
+        "specialists",
+        "angle",
+        "challenge",
+        "max_calls"
+      ],
+      "title": "DirectorDecision",
+      "type": "object"
+    },
+    "Fallback": {
+      "additionalProperties": false,
+      "properties": {
+        "explanation": {
+          "title": "Explanation",
+          "type": "string"
+        },
+        "headline": {
+          "title": "Headline",
+          "type": "string"
+        }
+      },
+      "required": [
+        "headline",
+        "explanation"
+      ],
+      "title": "Fallback",
+      "type": "object"
+    },
+    "GoalValue": {
+      "additionalProperties": false,
+      "properties": {
+        "after": {
+          "$ref": "#/$defs/Score"
+        },
+        "before": {
+          "$ref": "#/$defs/Score"
+        },
+        "context": {
+          "enum": [
+            "opening_goal",
+            "equalizer",
+            "go_ahead",
+            "extends_lead",
+            "reduces_deficit",
+            "score_already_updated"
+          ],
+          "title": "Context",
+          "type": "string"
+        },
+        "kind": {
+          "const": "goal_context",
+          "default": "goal_context",
+          "title": "Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "before",
+        "after",
+        "context"
+      ],
+      "title": "GoalValue",
+      "type": "object"
+    },
+    "LineValue": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "observed_line_height_change",
+          "default": "observed_line_height_change",
+          "title": "Kind",
+          "type": "string"
+        },
+        "line": {
+          "$ref": "#/$defs/VerifiedLineClaim"
+        }
+      },
+      "required": [
+        "line"
+      ],
+      "title": "LineValue",
+      "type": "object"
+    },
+    "MatchInsight": {
+      "additionalProperties": false,
+      "properties": {
+        "as_of_seconds": {
+          "minimum": 0,
+          "title": "As Of Seconds",
+          "type": "number"
+        },
+        "claim_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Claim Ids",
+          "type": "array"
+        },
+        "event_time_seconds": {
+          "minimum": 0,
+          "title": "Event Time Seconds",
+          "type": "number"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Reference"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "fallback": {
+          "$ref": "#/$defs/Fallback"
+        },
+        "insight_id": {
+          "title": "Insight Id",
+          "type": "string"
+        },
+        "limitations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Limitations",
+          "type": "array"
+        },
+        "match_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+          "title": "Match Id",
+          "type": "string"
+        },
+        "observed_score": {
+          "$ref": "#/$defs/Score"
+        },
+        "period": {
+          "enum": [
+            1,
+            2
+          ],
+          "title": "Period",
+          "type": "integer"
+        },
+        "player_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Player Ids",
+          "type": "array"
+        },
+        "priority": {
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Priority",
+          "type": "integer"
+        },
+        "priority_semantics": {
+          "const": "editorial ordering, not probability",
+          "default": "editorial ordering, not probability",
+          "title": "Priority Semantics",
+          "type": "string"
+        },
+        "provenance": {
+          "const": "pinned synthetic simulator canonical observations",
+          "default": "pinned synthetic simulator canonical observations",
+          "title": "Provenance",
+          "type": "string"
+        },
+        "quality": {
+          "const": "verified_observation",
+          "default": "verified_observation",
+          "title": "Quality",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": 1,
+          "default": 1,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "team_id": {
+          "anyOf": [
+            {
+              "enum": [
+                "NORTH",
+                "SOUTH"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Team Id"
+        },
+        "type": {
+          "enum": [
+            "goal_context",
+            "observed_shot",
+            "shot_outcome",
+            "high_turnover",
+            "turnover_to_shot",
+            "recent_attacking_activity",
+            "player_dismissal",
+            "match_boundary",
+            "observed_line_height_change"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "verified": {
+          "const": true,
+          "default": true,
+          "title": "Verified",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "insight_id",
+        "match_id",
+        "type",
+        "event_time_seconds",
+        "as_of_seconds",
+        "team_id",
+        "player_ids",
+        "period",
+        "priority",
+        "claim_ids",
+        "evidence",
+        "observed_score",
+        "fallback",
+        "limitations"
+      ],
+      "title": "MatchInsight",
+      "type": "object"
+    },
+    "NarrationPlan": {
+      "additionalProperties": false,
+      "properties": {
+        "angle": {
+          "enum": [
+            "score_first",
+            "sequence_first",
+            "measurement_first",
+            "evidence_first"
+          ],
+          "title": "Angle",
+          "type": "string"
+        },
+        "claim_ids": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 8,
+          "minItems": 1,
+          "title": "Claim Ids",
+          "type": "array"
+        },
+        "depth": {
+          "enum": [
+            "brief",
+            "detailed"
+          ],
+          "title": "Depth",
+          "type": "string"
+        },
+        "hook": {
+          "enum": [
+            "direct",
+            "replay",
+            "evidence"
+          ],
+          "title": "Hook",
+          "type": "string"
+        },
+        "qualification": {
+          "enum": [
+            "synthetic",
+            "sampled",
+            "association"
+          ],
+          "title": "Qualification",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": 2,
+          "default": 2,
+          "title": "Schema Version",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "claim_ids",
+        "angle",
+        "hook",
+        "depth",
+        "qualification"
+      ],
+      "title": "NarrationPlan",
+      "type": "object"
+    },
+    "OverlayPlan": {
+      "additionalProperties": false,
+      "properties": {
+        "claim_ids": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 8,
+          "minItems": 1,
+          "title": "Claim Ids",
+          "type": "array"
+        },
+        "emphasis": {
+          "enum": [
+            "incident",
+            "sequence",
+            "measurements"
+          ],
+          "title": "Emphasis",
+          "type": "string"
+        },
+        "family": {
+          "enum": [
+            "scoreline_change",
+            "event_location",
+            "shot_sequence",
+            "regain_to_shot",
+            "rolling_activity",
+            "positional_comparison"
+          ],
+          "title": "Family",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": 2,
+          "default": 2,
+          "title": "Schema Version",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "claim_ids",
+        "family",
+        "emphasis"
+      ],
+      "title": "OverlayPlan",
+      "type": "object"
+    },
+    "Preferences": {
+      "additionalProperties": false,
+      "properties": {
+        "audience": {
+          "default": "fan",
+          "enum": [
+            "fan",
+            "analyst"
+          ],
+          "title": "Audience",
+          "type": "string"
+        },
+        "favorite_team": {
+          "anyOf": [
+            {
+              "enum": [
+                "NORTH",
+                "SOUTH"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Favorite Team"
+        },
+        "language": {
+          "const": "en",
+          "default": "en",
+          "title": "Language",
+          "type": "string"
+        }
+      },
+      "title": "Preferences",
+      "type": "object"
+    },
+    "Reference": {
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "enum": [
+            "event",
+            "tracking"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "match_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+          "title": "Match Id",
+          "type": "string"
+        },
+        "source_id": {
+          "title": "Source Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "match_id",
+        "category",
+        "source_id"
+      ],
+      "title": "Reference",
+      "type": "object"
+    },
+    "Score": {
+      "additionalProperties": false,
+      "properties": {
+        "away": {
+          "minimum": 0,
+          "title": "Away",
+          "type": "integer"
+        },
+        "home": {
+          "minimum": 0,
+          "title": "Home",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "home",
+        "away"
+      ],
+      "title": "Score",
+      "type": "object"
+    },
+    "TurnoverValue": {
+      "additionalProperties": false,
+      "properties": {
+        "elapsed_seconds": {
+          "minimum": 0,
+          "title": "Elapsed Seconds",
+          "type": "number"
+        },
+        "from_team": {
+          "enum": [
+            "NORTH",
+            "SOUTH"
+          ],
+          "title": "From Team",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "high_turnover",
+            "turnover_to_shot"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "possession_id": {
+          "title": "Possession Id",
+          "type": "string"
+        },
+        "regain_x_m": {
+          "maximum": 105,
+          "minimum": 70,
+          "title": "Regain X M",
+          "type": "number"
+        }
+      },
+      "required": [
+        "kind",
+        "from_team",
+        "possession_id",
+        "regain_x_m",
+        "elapsed_seconds"
+      ],
+      "title": "TurnoverValue",
+      "type": "object"
+    },
+    "VerifiedLineClaim": {
+      "additionalProperties": false,
+      "properties": {
+        "after_m": {
+          "title": "After M",
+          "type": "number"
+        },
+        "as_of_seconds": {
+          "minimum": 0,
+          "title": "As Of Seconds",
+          "type": "number"
+        },
+        "before_m": {
+          "title": "Before M",
+          "type": "number"
+        },
+        "change_m": {
+          "title": "Change M",
+          "type": "number"
+        },
+        "claim_id": {
+          "title": "Claim Id",
+          "type": "string"
+        },
+        "detection_id": {
+          "title": "Detection Id",
+          "type": "string"
+        },
+        "direction": {
+          "enum": [
+            "advance",
+            "retreat"
+          ],
+          "title": "Direction",
+          "type": "string"
+        },
+        "latest_observation_seconds": {
+          "minimum": 0,
+          "title": "Latest Observation Seconds",
+          "type": "number"
+        },
+        "match_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+          "title": "Match Id",
+          "type": "string"
+        },
+        "metric": {
+          "const": "three_deepest_outfield_mean_x",
+          "default": "three_deepest_outfield_mean_x",
+          "title": "Metric",
+          "type": "string"
+        },
+        "qualification": {
+          "default": "Observed synthetic positioning only; not evidence that the coach ordered a tactic or that pressure was effective.",
+          "title": "Qualification",
+          "type": "string"
+        },
+        "recent_frames": {
+          "title": "Recent Frames",
+          "type": "integer"
+        },
+        "recent_window": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Recent Window",
+          "type": "array"
+        },
+        "reference_frames": {
+          "title": "Reference Frames",
+          "type": "integer"
+        },
+        "reference_window": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Reference Window",
+          "type": "array"
+        },
+        "statement": {
+          "title": "Statement",
+          "type": "string"
+        },
+        "team_id": {
+          "enum": [
+            "NORTH",
+            "SOUTH"
+          ],
+          "title": "Team Id",
+          "type": "string"
+        },
+        "unit": {
+          "const": "m",
+          "default": "m",
+          "title": "Unit",
+          "type": "string"
+        }
+      },
+      "required": [
+        "claim_id",
+        "match_id",
+        "detection_id",
+        "as_of_seconds",
+        "latest_observation_seconds",
+        "team_id",
+        "direction",
+        "before_m",
+        "after_m",
+        "change_m",
+        "reference_window",
+        "recent_window",
+        "reference_frames",
+        "recent_frames",
+        "statement"
+      ],
+      "title": "VerifiedLineClaim",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "analyses": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/Analysis"
+      },
+      "title": "Analyses",
+      "type": "array"
+    },
+    "challenge": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Challenge"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "director": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/DirectorDecision"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "envelope": {
+      "$ref": "#/$defs/AgentInput"
+    },
+    "errors": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Errors",
+      "type": "array"
+    },
+    "narration_plan": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/NarrationPlan"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "overlay_plan": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/OverlayPlan"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "preferences": {
+      "$ref": "#/$defs/Preferences"
+    },
+    "schema_version": {
+      "const": 2,
+      "default": 2,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "trace_id": {
+      "title": "Trace Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "envelope",
+    "preferences",
+    "trace_id"
+  ],
+  "title": "WorkflowState",
+  "type": "object"
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "as_of_seconds": 3360.0,
+    "match_scope": "active",
+    "status": "success",
+    "tool": "resolve_claim"
+  },
+  {
+    "as_of_seconds": 3360.0,
+    "match_scope": "active",
+    "status": "success",
+    "tool": "resolve_evidence"
+  }
+]

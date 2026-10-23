@@ -1,0 +1,35 @@
+{
+  "api_surface": "Foundry project Responses endpoint; SDK-managed API version, not independently observed",
+  "authenticated_call_succeeded": true,
+  "authentication": "AzureCliCredential",
+  "fallback": {
+    "explanation": "NORTH: opening goal. Score 1\u20130 (NORTH\u2013SOUTH). Observed at 39.5 cumulative minutes. Synthetic uncalibrated football; observations do not establish coach intent.",
+    "headline": "NORTH: opening goal. Score 1\u20130 (NORTH\u2013SOUTH)."
+  },
+  "latency_seconds": 4.687278958008392,
+  "model_deployment": "matchpulse-gpt41-mini",
+  "origin": "foundry",
+  "request_type": "FoundryChatClient Responses structured AgentOutput",
+  "response": {
+    "insight_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:insight:e6e7fb2df33dccb5eecd1e77",
+    "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+    "schema_version": 1,
+    "selected_claim_ids": [
+      "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77"
+    ],
+    "template": "deterministic_fallback"
+  },
+  "schema_version": 1,
+  "sdk_versions": {
+    "agent-framework-core": "1.23.0",
+    "agent-framework-foundry": "1.15.0",
+    "azure-ai-projects": "2.7.0",
+    "azure-identity": "1.26.0"
+  },
+  "structured_validation": true,
+  "tool_availability": "not requested for minimal proof",
+  "usage": {
+    "input_token_count": 878,
+    "output_token_count": 136
+  }
+}

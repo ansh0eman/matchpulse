@@ -1,0 +1,127 @@
+{
+  "date": "2026-10-23",
+  "status": "LIVE_PROOF_AND_GOAL_WORKFLOW_VALIDATED",
+  "evidence_origin": "coordination-run artifacts and existing raw test logs verified; no paid call/test rerun in documentation turn",
+  "proof": {
+    "model_deployment": "matchpulse-gpt41-mini",
+    "latency_seconds": 4.687278958008392,
+    "usage": {
+      "input_token_count": 878,
+      "output_token_count": 136
+    },
+    "sdk_versions": {
+      "agent-framework-core": "1.23.0",
+      "agent-framework-foundry": "1.15.0",
+      "azure-ai-projects": "2.7.0",
+      "azure-identity": "1.26.0"
+    },
+    "authentication": "AzureCliCredential",
+    "structured_validation": true,
+    "api_surface": "Foundry project Responses endpoint; SDK-managed API version, not independently observed"
+  },
+  "live_tests": {
+    "argv": [
+      "backend/.venv-foundry/bin/python",
+      "-m",
+      "pytest",
+      "backend/tests/agents/test_optional_integrations.py",
+      "-q"
+    ],
+    "environment": {
+      "MATCHPULSE_LIVE_TEST": "1",
+      "MATCHPULSE_LIVE_WORKFLOW_TEST": "1"
+    },
+    "exit_status": 0,
+    "passed": 4,
+    "seconds": 29.87,
+    "asserted_gates": [
+      "authenticated minimal structured/grounded proof",
+      "actual Microsoft Agent Framework goal workflow",
+      "enriched narration and overlay",
+      "model-requested resolve_claim and resolve_evidence",
+      "private MCP in-memory",
+      "external schema meta-validation"
+    ],
+    "argv_provenance": "Module and live flags are described in coordination status; raw log verifies result, not the full original shell command."
+  },
+  "local_regression": {
+    "passed": 159,
+    "skipped": 2,
+    "seconds": 3.88,
+    "live_flags": "disabled in this separate local regression run"
+  },
+  "provider_sha256": "53b9bbaa872575bf8ff9af84c22ed3afaa3c19e43c7b0f694c9155c8fb39e231",
+  "provider_repairs": [
+    "AIProjectClient async lifecycle; FoundryChatClient constructed normally",
+    "exact evidence clocks and route/review/qualifier constraints",
+    "max_tokens 1024 for studio plans"
+  ],
+  "historical_saved_workflow_statuses": [
+    {
+      "filename": "foundry-workflow-final.json",
+      "sha256": "1c2ad9bdbdd4afc64dfc20f4a7b4e98778e17dd418e83c5010873eb6cb0195f6",
+      "origin": "foundry",
+      "narration_status": "fallback",
+      "overlay_status": "enriched",
+      "errors": [
+        "narrator:grounding_failed"
+      ]
+    },
+    {
+      "filename": "foundry-workflow-success.json",
+      "sha256": "8df2a3269e52be61b473e5c70c715d994ea347749e3581628d717ee7e3acbe24",
+      "origin": "foundry",
+      "narration_status": "fallback",
+      "overlay_status": "enriched",
+      "errors": [
+        "challenger:invalid_challenge",
+        "narrator:challenge_fallback"
+      ]
+    },
+    {
+      "filename": "foundry-workflow-verified.json",
+      "sha256": "934300b4387fed3d690aa3f311db3d7fec89e5c448443f8e27ea6b8ce7205f03",
+      "origin": "foundry",
+      "narration_status": "fallback",
+      "overlay_status": "fallback",
+      "errors": [
+        "match_analyst:timeout",
+        "challenger:workflow_deadline",
+        "narrator:challenge_fallback",
+        "replay_producer:workflow_deadline"
+      ]
+    },
+    {
+      "filename": "foundry-workflow.json",
+      "sha256": "70c4e28309296d13f1529fbaee67fccb0c5f92c0e8af6c5cb2176293013c9434",
+      "origin": "foundry",
+      "narration_status": "fallback",
+      "overlay_status": "fallback",
+      "errors": [
+        "director:invalid_route",
+        "match_analyst:timeout",
+        "challenger:workflow_deadline",
+        "narrator:challenge_fallback",
+        "replay_producer:workflow_deadline"
+      ]
+    }
+  ],
+  "successful_enriched_broadcast_capture_available": false,
+  "scope_limit": "one complete live goal workflow observed through passing assertions; no live tactical branch or systematic reliability/quality benchmark claimed",
+  "new_provider_calls_this_update": 0,
+  "new_provisioning_this_update": false,
+  "evidence": [
+    {
+      "path": "/Users/ansh0eman/Documents/ChatGPT/Mictrosoft - inside the game/coordination/foundry-proof.json",
+      "sha256": "6c1ced0d0905f266bc42d0ead3a2b8340b06dbe30b439522e0cb9c2922745caa"
+    },
+    {
+      "path": "/Users/ansh0eman/Documents/ChatGPT/Mictrosoft - inside the game/coordination/live-integration-tests.log",
+      "sha256": "2f23c40e3d4dec09a581e19e9be7030b9de7af9a4f8b7f774df7279f5d12065e"
+    },
+    {
+      "path": "/Users/ansh0eman/Documents/ChatGPT/Mictrosoft - inside the game/coordination/provider-final-tests.log",
+      "sha256": "ce30bcc4b435d445334494fb0017c92bec343f83cbbc6043e97bb4855375ccd3"
+    }
+  ]
+}

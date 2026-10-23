@@ -1,0 +1,97 @@
+{
+  "analyses": [],
+  "challenge": null,
+  "director": null,
+  "envelope": {
+    "allowed_interpretations": [
+      "Describe the registered observations with their limitations."
+    ],
+    "audience": "fan",
+    "claims": [
+      {
+        "as_of_seconds": 410.0,
+        "claim_id": "5cc7f774-c215-4773-9318-3a01ad8b23af:claim:740eb230803f34a1c1fe1e78",
+        "display_rule": "integers; metres one decimal; seconds exact",
+        "limitations": [
+          "Synthetic uncalibrated football; observations do not establish coach intent."
+        ],
+        "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+        "player_ids": [
+          "home-starter-8-9"
+        ],
+        "references": [
+          {
+            "category": "event",
+            "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+            "source_id": "evt_000491"
+          }
+        ],
+        "schema_version": 1,
+        "team_id": "NORTH",
+        "type": "observed_shot",
+        "unit": "event",
+        "value": {
+          "action": "shot",
+          "kind": "observed_shot"
+        },
+        "verification_method": "canonical_prefix_v1",
+        "window": [
+          410.0,
+          410.0
+        ]
+      }
+    ],
+    "insight": {
+      "as_of_seconds": 410.0,
+      "claim_ids": [
+        "5cc7f774-c215-4773-9318-3a01ad8b23af:claim:740eb230803f34a1c1fe1e78"
+      ],
+      "event_time_seconds": 410.0,
+      "evidence": [
+        {
+          "category": "event",
+          "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+          "source_id": "evt_000491"
+        }
+      ],
+      "fallback": {
+        "explanation": "NORTH register a shot attempt. Observed at 6.8 cumulative minutes. Synthetic uncalibrated football; observations do not establish coach intent.",
+        "headline": "NORTH register a shot attempt."
+      },
+      "insight_id": "5cc7f774-c215-4773-9318-3a01ad8b23af:insight:740eb230803f34a1c1fe1e78",
+      "limitations": [
+        "Synthetic uncalibrated football; observations do not establish coach intent."
+      ],
+      "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+      "observed_score": {
+        "away": 0,
+        "home": 0
+      },
+      "period": 1,
+      "player_ids": [
+        "home-starter-8-9"
+      ],
+      "priority": 30,
+      "priority_semantics": "editorial ordering, not probability",
+      "provenance": "pinned synthetic simulator canonical observations",
+      "quality": "verified_observation",
+      "schema_version": 1,
+      "team_id": "NORTH",
+      "type": "observed_shot",
+      "verified": true
+    },
+    "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+    "resolver": "match_id + reference category + source_id",
+    "schema_version": 1
+  },
+  "errors": [],
+  "narration_plan": null,
+  "overlay_plan": null,
+  "preferences": {
+    "audience": "fan",
+    "favorite_team": "NORTH",
+    "language": "en"
+  },
+  "schema_version": 2,
+  "trace_id": "e3994f649fbf4d68b920f3fe2aea0a78"
+}

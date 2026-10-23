@@ -1,0 +1,166 @@
+{
+  "analyses": [
+    {
+      "category": "regain_sequence",
+      "claim_ids": [
+        "5cc7f774-c215-4773-9318-3a01ad8b23af:claim:cdbee60d017684cbadcd070f"
+      ],
+      "limitation_codes": [
+        "synthetic"
+      ],
+      "requested_evidence": [
+        {
+          "category": "event",
+          "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+          "source_id": "evt_000422"
+        }
+      ],
+      "schema_version": 2,
+      "unsupported_possibilities": [
+        "coach_intent",
+        "causal_press"
+      ]
+    }
+  ],
+  "challenge": null,
+  "director": {
+    "angle": "sequence_first",
+    "challenge": false,
+    "max_calls": 6,
+    "schema_version": 2,
+    "specialists": [
+      "match_analyst"
+    ]
+  },
+  "envelope": {
+    "allowed_interpretations": [
+      "Describe the registered observations with their limitations."
+    ],
+    "audience": "analyst",
+    "claims": [
+      {
+        "as_of_seconds": 356.0,
+        "claim_id": "5cc7f774-c215-4773-9318-3a01ad8b23af:claim:cdbee60d017684cbadcd070f",
+        "display_rule": "integers; metres one decimal; seconds exact",
+        "limitations": [
+          "Synthetic uncalibrated football; observations do not establish coach intent."
+        ],
+        "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+        "player_ids": [
+          "away-starter-8-9"
+        ],
+        "references": [
+          {
+            "category": "event",
+            "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+            "source_id": "evt_000422"
+          },
+          {
+            "category": "event",
+            "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+            "source_id": "evt_000423"
+          },
+          {
+            "category": "event",
+            "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+            "source_id": "evt_000426"
+          }
+        ],
+        "schema_version": 1,
+        "team_id": "SOUTH",
+        "type": "turnover_to_shot",
+        "unit": "m_and_s",
+        "value": {
+          "elapsed_seconds": 3.5,
+          "from_team": "NORTH",
+          "kind": "turnover_to_shot",
+          "possession_id": "pos_34",
+          "regain_x_m": 87.77
+        },
+        "verification_method": "canonical_prefix_v1",
+        "window": [
+          352.5,
+          356.0
+        ]
+      }
+    ],
+    "insight": {
+      "as_of_seconds": 356.0,
+      "claim_ids": [
+        "5cc7f774-c215-4773-9318-3a01ad8b23af:claim:cdbee60d017684cbadcd070f"
+      ],
+      "event_time_seconds": 356.0,
+      "evidence": [
+        {
+          "category": "event",
+          "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+          "source_id": "evt_000422"
+        },
+        {
+          "category": "event",
+          "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+          "source_id": "evt_000423"
+        },
+        {
+          "category": "event",
+          "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+          "source_id": "evt_000426"
+        }
+      ],
+      "fallback": {
+        "explanation": "SOUTH: a high regain was followed by a shot 3.5s later in the same possession. Observed at 5.9 cumulative minutes. Synthetic uncalibrated football; observations do not establish coach intent.",
+        "headline": "SOUTH: a high regain was followed by a shot 3.5s later in the same possession."
+      },
+      "insight_id": "5cc7f774-c215-4773-9318-3a01ad8b23af:insight:cdbee60d017684cbadcd070f",
+      "limitations": [
+        "Synthetic uncalibrated football; observations do not establish coach intent."
+      ],
+      "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+      "observed_score": {
+        "away": 0,
+        "home": 0
+      },
+      "period": 1,
+      "player_ids": [
+        "away-starter-8-9"
+      ],
+      "priority": 80,
+      "priority_semantics": "editorial ordering, not probability",
+      "provenance": "pinned synthetic simulator canonical observations",
+      "quality": "verified_observation",
+      "schema_version": 1,
+      "team_id": "SOUTH",
+      "type": "turnover_to_shot",
+      "verified": true
+    },
+    "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+    "resolver": "match_id + reference category + source_id",
+    "schema_version": 1
+  },
+  "errors": [],
+  "narration_plan": {
+    "angle": "sequence_first",
+    "claim_ids": [
+      "5cc7f774-c215-4773-9318-3a01ad8b23af:claim:cdbee60d017684cbadcd070f"
+    ],
+    "depth": "detailed",
+    "hook": "evidence",
+    "qualification": "association",
+    "schema_version": 2
+  },
+  "overlay_plan": {
+    "claim_ids": [
+      "5cc7f774-c215-4773-9318-3a01ad8b23af:claim:cdbee60d017684cbadcd070f"
+    ],
+    "emphasis": "sequence",
+    "family": "regain_to_shot",
+    "schema_version": 2
+  },
+  "preferences": {
+    "audience": "analyst",
+    "favorite_team": "NORTH",
+    "language": "en"
+  },
+  "schema_version": 2,
+  "trace_id": "28cca0fe1b164e3b834ebeb3bf12d4b6"
+}

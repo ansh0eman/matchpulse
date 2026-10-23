@@ -1,0 +1,474 @@
+{
+  "resourceSpans": [
+    {
+      "resource": {
+        "attributes": [
+          {
+            "key": "service.name",
+            "value": {
+              "stringValue": "matchpulse-studio"
+            }
+          }
+        ]
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "matchpulse.studio",
+            "version": "2"
+          },
+          "spans": [
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "editorial"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "accepted"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af:insight:cdbee60d017684cbadcd070f"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372187878916",
+              "kind": 1,
+              "name": "editorial.accepted",
+              "spanId": "938fe80380e2418d",
+              "startTimeUnixNano": "1792747372187878916",
+              "traceId": "ee760b586a384517adc8767cd7a7133b"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "runtime"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "offline_harness"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af:insight:cdbee60d017684cbadcd070f"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372187881999",
+              "kind": 1,
+              "name": "runtime.offline_harness",
+              "spanId": "abee23bbd5614602",
+              "startTimeUnixNano": "1792747372187881999",
+              "traceId": "ee760b586a384517adc8767cd7a7133b"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "director"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "request_started"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af:insight:cdbee60d017684cbadcd070f"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372187915084",
+              "kind": 1,
+              "name": "director.request_started",
+              "spanId": "7a7ef3e140564d96",
+              "startTimeUnixNano": "1792747372187915084",
+              "traceId": "ee760b586a384517adc8767cd7a7133b"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "director"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "request_succeeded"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af:insight:cdbee60d017684cbadcd070f"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372187978791",
+              "kind": 1,
+              "name": "director.request_succeeded",
+              "spanId": "90d9b9963d454adc",
+              "startTimeUnixNano": "1792747372187978791",
+              "traceId": "ee760b586a384517adc8767cd7a7133b"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "director"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "route"
+                  }
+                },
+                {
+                  "key": "matchpulse.reason",
+                  "value": {
+                    "stringValue": "match_analyst"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af:insight:cdbee60d017684cbadcd070f"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372188000416",
+              "kind": 1,
+              "name": "director.route",
+              "spanId": "3fc177cd8de34f4c",
+              "startTimeUnixNano": "1792747372188000416",
+              "traceId": "ee760b586a384517adc8767cd7a7133b"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "match_analyst"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "request_started"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af:insight:cdbee60d017684cbadcd070f"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372188051458",
+              "kind": 1,
+              "name": "match_analyst.request_started",
+              "spanId": "32ea7c4b81ee4a04",
+              "startTimeUnixNano": "1792747372188051458",
+              "traceId": "ee760b586a384517adc8767cd7a7133b"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "match_analyst"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "request_succeeded"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af:insight:cdbee60d017684cbadcd070f"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372188145124",
+              "kind": 1,
+              "name": "match_analyst.request_succeeded",
+              "spanId": "c875fb7c6cbd4327",
+              "startTimeUnixNano": "1792747372188145124",
+              "traceId": "ee760b586a384517adc8767cd7a7133b"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "match_analyst"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "verified_handoff"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af:insight:cdbee60d017684cbadcd070f"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372188172041",
+              "kind": 1,
+              "name": "match_analyst.verified_handoff",
+              "spanId": "6f64ec8bef68414b",
+              "startTimeUnixNano": "1792747372188172041",
+              "traceId": "ee760b586a384517adc8767cd7a7133b"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "narrator"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "request_started"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af:insight:cdbee60d017684cbadcd070f"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372188265791",
+              "kind": 1,
+              "name": "narrator.request_started",
+              "spanId": "428400f2f907480c",
+              "startTimeUnixNano": "1792747372188265791",
+              "traceId": "ee760b586a384517adc8767cd7a7133b"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "replay_producer"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "request_started"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af:insight:cdbee60d017684cbadcd070f"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372188305334",
+              "kind": 1,
+              "name": "replay_producer.request_started",
+              "spanId": "32517beef18b4911",
+              "startTimeUnixNano": "1792747372188305334",
+              "traceId": "ee760b586a384517adc8767cd7a7133b"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "narrator"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "request_succeeded"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af:insight:cdbee60d017684cbadcd070f"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372188367958",
+              "kind": 1,
+              "name": "narrator.request_succeeded",
+              "spanId": "bda7e7340262449b",
+              "startTimeUnixNano": "1792747372188367958",
+              "traceId": "ee760b586a384517adc8767cd7a7133b"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "replay_producer"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "request_succeeded"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af:insight:cdbee60d017684cbadcd070f"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372188379291",
+              "kind": 1,
+              "name": "replay_producer.request_succeeded",
+              "spanId": "44454c7cbbd04343",
+              "startTimeUnixNano": "1792747372188379291",
+              "traceId": "ee760b586a384517adc8767cd7a7133b"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "publisher"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "artifact_verified"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "5cc7f774-c215-4773-9318-3a01ad8b23af:insight:cdbee60d017684cbadcd070f"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372188515292",
+              "kind": 1,
+              "name": "publisher.artifact_verified",
+              "spanId": "fbab03361cbf4e9f",
+              "startTimeUnixNano": "1792747372188515292",
+              "traceId": "ee760b586a384517adc8767cd7a7133b"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,435 @@
+{
+  "$defs": {
+    "Metric": {
+      "additionalProperties": false,
+      "properties": {
+        "claim_id": {
+          "title": "Claim Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "unit": {
+          "enum": [
+            "m",
+            "s",
+            "shots",
+            "goals"
+          ],
+          "title": "Unit",
+          "type": "string"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        }
+      },
+      "required": [
+        "claim_id",
+        "name",
+        "value",
+        "unit"
+      ],
+      "title": "Metric",
+      "type": "object"
+    },
+    "Narration": {
+      "additionalProperties": false,
+      "properties": {
+        "headline": {
+          "title": "Headline",
+          "type": "string"
+        },
+        "limitations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Limitations",
+          "type": "array"
+        },
+        "schema_version": {
+          "const": 2,
+          "default": 2,
+          "title": "Schema Version",
+          "type": "integer"
+        },
+        "sentences": {
+          "items": {
+            "$ref": "#/$defs/Sentence"
+          },
+          "title": "Sentences",
+          "type": "array"
+        }
+      },
+      "required": [
+        "headline",
+        "sentences",
+        "limitations"
+      ],
+      "title": "Narration",
+      "type": "object"
+    },
+    "OverlayPlan": {
+      "additionalProperties": false,
+      "properties": {
+        "claim_ids": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 8,
+          "minItems": 1,
+          "title": "Claim Ids",
+          "type": "array"
+        },
+        "emphasis": {
+          "enum": [
+            "incident",
+            "sequence",
+            "measurements"
+          ],
+          "title": "Emphasis",
+          "type": "string"
+        },
+        "family": {
+          "enum": [
+            "scoreline_change",
+            "event_location",
+            "shot_sequence",
+            "regain_to_shot",
+            "rolling_activity",
+            "positional_comparison"
+          ],
+          "title": "Family",
+          "type": "string"
+        },
+        "schema_version": {
+          "const": 2,
+          "default": 2,
+          "title": "Schema Version",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "claim_ids",
+        "family",
+        "emphasis"
+      ],
+      "title": "OverlayPlan",
+      "type": "object"
+    },
+    "Preferences": {
+      "additionalProperties": false,
+      "properties": {
+        "audience": {
+          "default": "fan",
+          "enum": [
+            "fan",
+            "analyst"
+          ],
+          "title": "Audience",
+          "type": "string"
+        },
+        "favorite_team": {
+          "anyOf": [
+            {
+              "enum": [
+                "NORTH",
+                "SOUTH"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Favorite Team"
+        },
+        "language": {
+          "const": "en",
+          "default": "en",
+          "title": "Language",
+          "type": "string"
+        }
+      },
+      "title": "Preferences",
+      "type": "object"
+    },
+    "Reference": {
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "enum": [
+            "event",
+            "tracking"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "match_id": {
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+          "title": "Match Id",
+          "type": "string"
+        },
+        "source_id": {
+          "title": "Source Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "match_id",
+        "category",
+        "source_id"
+      ],
+      "title": "Reference",
+      "type": "object"
+    },
+    "Sentence": {
+      "additionalProperties": false,
+      "properties": {
+        "claim_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Claim Ids",
+          "type": "array"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "claim_ids"
+      ],
+      "title": "Sentence",
+      "type": "object"
+    },
+    "VerifiedOverlay": {
+      "additionalProperties": false,
+      "properties": {
+        "coordinates": {
+          "items": {
+            "maxItems": 3,
+            "minItems": 3,
+            "prefixItems": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "type": "array"
+          },
+          "title": "Coordinates",
+          "type": "array"
+        },
+        "metrics": {
+          "items": {
+            "$ref": "#/$defs/Metric"
+          },
+          "title": "Metrics",
+          "type": "array"
+        },
+        "observation_semantics": {
+          "const": "source ball/player coordinates only; interpolation is visualization",
+          "default": "source ball/player coordinates only; interpolation is visualization",
+          "title": "Observation Semantics",
+          "type": "string"
+        },
+        "plan": {
+          "$ref": "#/$defs/OverlayPlan"
+        },
+        "references": {
+          "items": {
+            "$ref": "#/$defs/Reference"
+          },
+          "title": "References",
+          "type": "array"
+        },
+        "replay_window": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "minimum": 0,
+              "type": "number"
+            }
+          ],
+          "title": "Replay Window",
+          "type": "array"
+        },
+        "schema_version": {
+          "const": 2,
+          "default": 2,
+          "title": "Schema Version",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "plan",
+        "references",
+        "replay_window",
+        "metrics",
+        "coordinates"
+      ],
+      "title": "VerifiedOverlay",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "angle": {
+      "enum": [
+        "score_first",
+        "sequence_first",
+        "measurement_first",
+        "evidence_first"
+      ],
+      "title": "Angle",
+      "type": "string"
+    },
+    "available_seconds": {
+      "minimum": 0,
+      "title": "Available Seconds",
+      "type": "number"
+    },
+    "category": {
+      "enum": [
+        "score_context",
+        "shot_sequence",
+        "regain_sequence",
+        "attacking_activity",
+        "position_comparison",
+        "match_state",
+        "observed_event"
+      ],
+      "title": "Category",
+      "type": "string"
+    },
+    "claim_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Claim Ids",
+      "type": "array"
+    },
+    "errors": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Errors",
+      "type": "array"
+    },
+    "evidence": {
+      "items": {
+        "$ref": "#/$defs/Reference"
+      },
+      "title": "Evidence",
+      "type": "array"
+    },
+    "insight_id": {
+      "title": "Insight Id",
+      "type": "string"
+    },
+    "match_id": {
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+      "title": "Match Id",
+      "type": "string"
+    },
+    "narration": {
+      "$ref": "#/$defs/Narration"
+    },
+    "narration_status": {
+      "enum": [
+        "enriched",
+        "fallback"
+      ],
+      "title": "Narration Status",
+      "type": "string"
+    },
+    "origin": {
+      "enum": [
+        "foundry",
+        "offline_fake",
+        "deterministic"
+      ],
+      "title": "Origin",
+      "type": "string"
+    },
+    "overlay": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/VerifiedOverlay"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "overlay_status": {
+      "enum": [
+        "enriched",
+        "fallback",
+        "unavailable"
+      ],
+      "title": "Overlay Status",
+      "type": "string"
+    },
+    "preferences": {
+      "$ref": "#/$defs/Preferences"
+    },
+    "presented_seconds": {
+      "minimum": 0,
+      "title": "Presented Seconds",
+      "type": "number"
+    },
+    "schema_version": {
+      "const": 2,
+      "default": 2,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "source_seconds": {
+      "minimum": 0,
+      "title": "Source Seconds",
+      "type": "number"
+    },
+    "trace_id": {
+      "title": "Trace Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "match_id",
+    "insight_id",
+    "source_seconds",
+    "available_seconds",
+    "presented_seconds",
+    "preferences",
+    "claim_ids",
+    "category",
+    "angle",
+    "narration",
+    "overlay",
+    "evidence",
+    "trace_id",
+    "origin",
+    "narration_status",
+    "overlay_status",
+    "errors"
+  ],
+  "title": "BroadcastArtifact",
+  "type": "object"
+}

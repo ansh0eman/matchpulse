@@ -1,0 +1,753 @@
+{
+  "analyses": [
+    {
+      "category": "position_comparison",
+      "claim_ids": [
+        "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d:claim:658e2cff3976481744979ab9"
+      ],
+      "limitation_codes": [
+        "synthetic"
+      ],
+      "requested_evidence": [
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002732"
+        }
+      ],
+      "schema_version": 2,
+      "unsupported_possibilities": [
+        "coach_intent",
+        "causal_press"
+      ]
+    }
+  ],
+  "challenge": {
+    "affected_claim_ids": [
+      "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d:claim:658e2cff3976481744979ab9"
+    ],
+    "disposition": "narrow",
+    "objections": [
+      "narrow_scope"
+    ],
+    "schema_version": 2
+  },
+  "director": {
+    "angle": "measurement_first",
+    "challenge": true,
+    "max_calls": 6,
+    "schema_version": 2,
+    "specialists": [
+      "tactical_analyst"
+    ]
+  },
+  "envelope": {
+    "allowed_interpretations": [
+      "Describe the registered observations with their limitations."
+    ],
+    "audience": "fan",
+    "claims": [
+      {
+        "as_of_seconds": 3360.0,
+        "claim_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d:claim:658e2cff3976481744979ab9",
+        "display_rule": "integers; metres one decimal; seconds exact",
+        "limitations": [
+          "Observed synthetic positioning only; not evidence that the coach ordered a tactic or that pressure was effective."
+        ],
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "player_ids": [],
+        "references": [
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002732"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002734"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002742"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002744"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002755"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002757"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002758"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002760"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002834"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002836"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002838"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002839"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002840"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002841"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002845"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002848"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002860"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002861"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002862"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002866"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002867"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002868"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002871"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002872"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002874"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002875"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002928"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002930"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002953"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_002954"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003009"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003016"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003017"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003018"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003020"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003026"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003027"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003030"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003108"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003109"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003114"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003296"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003297"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003298"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003301"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003303"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003305"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003307"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003315"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003322"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003323"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003324"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003325"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003327"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003352"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003353"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003357"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003358"
+          },
+          {
+            "category": "tracking",
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "source_id": "frame_003360"
+          }
+        ],
+        "schema_version": 1,
+        "team_id": "NORTH",
+        "type": "observed_line_height_change",
+        "unit": "m",
+        "value": {
+          "kind": "observed_line_height_change",
+          "line": {
+            "after_m": 31.96388888888889,
+            "as_of_seconds": 3360.0,
+            "before_m": 21.951300813008128,
+            "change_m": 10.01258807588076,
+            "claim_id": "pos_37f092a17bccf2579bc6:line3",
+            "detection_id": "pos_37f092a17bccf2579bc6",
+            "direction": "advance",
+            "latest_observation_seconds": 3360.0,
+            "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+            "metric": "three_deepest_outfield_mean_x",
+            "qualification": "Observed synthetic positioning only; not evidence that the coach ordered a tactic or that pressure was effective.",
+            "recent_frames": 18,
+            "recent_window": [
+              3180.0,
+              3360.0
+            ],
+            "reference_frames": 41,
+            "reference_window": [
+              2710.0,
+              3180.0
+            ],
+            "statement": "During sampled opponent build-up, NORTH's three deepest outfield players averaged 22.0m and then 32.0m from their own goal: they advanced by 10.0m between the compared observations.",
+            "team_id": "NORTH",
+            "unit": "m"
+          }
+        },
+        "verification_method": "presentation_gate_v1",
+        "window": [
+          3180.0,
+          3360.0
+        ]
+      }
+    ],
+    "insight": {
+      "as_of_seconds": 3360.0,
+      "claim_ids": [
+        "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d:claim:658e2cff3976481744979ab9"
+      ],
+      "event_time_seconds": 3360.0,
+      "evidence": [
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002732"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002734"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002742"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002744"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002755"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002757"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002758"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002760"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002834"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002836"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002838"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002839"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002840"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002841"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002845"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002848"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002860"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002861"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002862"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002866"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002867"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002868"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002871"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002872"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002874"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002875"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002928"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002930"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002953"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_002954"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003009"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003016"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003017"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003018"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003020"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003026"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003027"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003030"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003108"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003109"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003114"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003296"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003297"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003298"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003301"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003303"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003305"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003307"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003315"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003322"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003323"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003324"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003325"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003327"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003352"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003353"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003357"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003358"
+        },
+        {
+          "category": "tracking",
+          "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+          "source_id": "frame_003360"
+        }
+      ],
+      "fallback": {
+        "explanation": "During sampled opponent build-up, NORTH's three deepest outfield players averaged 22.0m and then 32.0m from their own goal: they advanced by 10.0m between the compared observations. Observed at 56.0 cumulative minutes. Observed synthetic positioning only; not evidence that the coach ordered a tactic or that pressure was effective.",
+        "headline": "During sampled opponent build-up, NORTH's three deepest outfield players averaged 22.0m and then 32.0m from their own goal: they advanced by 10.0m between the compared observations."
+      },
+      "insight_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d:insight:658e2cff3976481744979ab9",
+      "limitations": [
+        "Observed synthetic positioning only; not evidence that the coach ordered a tactic or that pressure was effective."
+      ],
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "observed_score": {
+        "away": 0,
+        "home": 0
+      },
+      "period": 2,
+      "player_ids": [],
+      "priority": 70,
+      "priority_semantics": "editorial ordering, not probability",
+      "provenance": "pinned synthetic simulator canonical observations",
+      "quality": "verified_observation",
+      "schema_version": 1,
+      "team_id": "NORTH",
+      "type": "observed_line_height_change",
+      "verified": true
+    },
+    "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+    "resolver": "match_id + reference category + source_id",
+    "schema_version": 1
+  },
+  "errors": [],
+  "narration_plan": {
+    "angle": "evidence_first",
+    "claim_ids": [
+      "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d:claim:658e2cff3976481744979ab9"
+    ],
+    "depth": "brief",
+    "hook": "evidence",
+    "qualification": "sampled",
+    "schema_version": 2
+  },
+  "overlay_plan": {
+    "claim_ids": [
+      "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d:claim:658e2cff3976481744979ab9"
+    ],
+    "emphasis": "measurements",
+    "family": "positional_comparison",
+    "schema_version": 2
+  },
+  "preferences": {
+    "audience": "fan",
+    "favorite_team": "NORTH",
+    "language": "en"
+  },
+  "schema_version": 2,
+  "trace_id": "4a46d9a3381047e4aa70935da8f44556"
+}

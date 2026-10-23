@@ -144,3 +144,18 @@ backend/.venv/bin/python -m matchpulse.stories.cli --events <UUID>.jsonl --outpu
 Optional: `--tracking <UUID>.tracking.jsonl.gz --positional-config research/step25/artifacts/selected.json`. Outputs include timeline.json, insights.json, claims.json, evidence-index.json, suppressed.json, summary.json, presentation.json and compact agent-inputs.json. Full new exports stay local; compact review artifacts and compressed canonical fixtures are under research/step3a/artifacts. This remains synthetic, uncalibrated football; a regain is not proof of pressing effectiveness, an observed line is not a coach instruction, and chance_quality is not xG.
 
 Next: [one authenticated Foundry call with a verified envelope and strict response validation](research/step3a/foundry-handoff.md), then audience narration within a reviewed grounding contract. [Frontend handoff](research/step3a/frontend-handoff.md) specifies exact timeline/evidence data; no React implementation is included yet.
+
+## Step 3B — Adaptive broadcast studio (live goal integration verified)
+
+New `backend/src/matchpulse/agents/` implements controlled Director, event/tactical specialists, Challenger, Narrator and Replay Producer roles; scoped evidence tools; version2 narrative/visual compilation; partial failure recovery; audience/team preferences; narrow read-only questions; and traceable broadcast artifacts. The original stories/ code remains factual authority.
+
+**Authenticated Foundry proof and one complete goal workflow now pass.** The separately opted-in integration module reports4 passed, including enriched narration/overlay and model-requested claim/evidence tools through actual Microsoft Agent Framework. Local post-provider-repair regression159 passed/2 intentionally skipped live tests. Preserve the repaired AIProjectClient lifecycle in provider.py. Earlier fake artifacts and saved partial/fallback live captures keep their original labels; the fully enriched live test did not persist its BroadcastArtifact. Cloud telemetry/public hosting and broad reliability are not established. See [Azure setup and mandatory live gates](research/step3b/foundry-setup.md), [actual verdict](research/step3b/final-verdict.md), [architecture](research/step3b/architecture-research.md), [results](research/step3b/evaluation-results.md) and [demo commands](research/step3b/demo-walkthrough.md).
+
+```sh
+backend/.venv/bin/python -m matchpulse.agents.cli studio --events data/step2/inference/02840f35-cb05-4812-aa9d-1237e4ab1b9d.jsonl --insight-type goal_context --provider fake --output backend/output/agents/goal.json
+backend/.venv/bin/python backend/scripts/step3b_review.py
+```
+
+Fan editorial policy reduces the honest0–0 timeline from63 to18 items by hiding repetitive standalone gains; Analyst Mode keeps63. All original verified facts/research outputs remain intact. Free factual prose, extra unregistered context, coaching intent, calibrated xG and unsupported localization are rejected. Extra agents have not demonstrated real-model superiority over the simpler baseline. [Execution walkthrough](research/step3b/execution-walkthrough.md) and [frontend contract](research/step3b/frontend-handoff.md) explain the exact boundaries.
+
+Historical initial Step3B verification:156 Python tests passed/5 integration skips;10 TypeScript tests and typecheck passed. Later SDK validation and provider repair:159 passed/2 live opt-in skips locally; separate live module4 passed in29.87s. No suite or paid call was rerun for the documentation update. [Current live evidence](research/step3b/artifacts/live-foundry-validation.json) and [Step3C implementation file plan](research/step3b/step3c-implementation-plan.md) supersede earlier blocked-status notes without rewriting historical results.

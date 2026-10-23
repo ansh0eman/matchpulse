@@ -1,0 +1,97 @@
+{
+  "cloud_delivery": false,
+  "events": [
+    {
+      "elapsed_ms": 8.496875001583248,
+      "event": "accepted",
+      "reason": null,
+      "role": "editorial",
+      "schema_version": 1,
+      "span_id": "552aea4cdccb470a",
+      "trace_id": "ad225edab9cc4b6a926599e0ed15a67c",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 8.503457996994257,
+      "event": "offline_harness",
+      "reason": null,
+      "role": "runtime",
+      "schema_version": 1,
+      "span_id": "8aaea57216574fb2",
+      "trace_id": "ad225edab9cc4b6a926599e0ed15a67c",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 8.604000002378598,
+      "event": "request_started",
+      "reason": null,
+      "role": "director",
+      "schema_version": 1,
+      "span_id": "2e36babb3432411c",
+      "trace_id": "ad225edab9cc4b6a926599e0ed15a67c",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 8.757625008001924,
+      "event": "request_succeeded",
+      "reason": null,
+      "role": "director",
+      "schema_version": 1,
+      "span_id": "f6e75666eee64ed5",
+      "trace_id": "ad225edab9cc4b6a926599e0ed15a67c",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 8.782416000030935,
+      "event": "route",
+      "reason": "tactical_analyst",
+      "role": "director",
+      "schema_version": 1,
+      "span_id": "64fab2020d6a47ed",
+      "trace_id": "ad225edab9cc4b6a926599e0ed15a67c",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 8.87737498851493,
+      "event": "request_started",
+      "reason": null,
+      "role": "tactical_analyst",
+      "schema_version": 1,
+      "span_id": "44d31b5f0cff425d",
+      "trace_id": "ad225edab9cc4b6a926599e0ed15a67c",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 8.941082982346416,
+      "event": "request_failed",
+      "reason": "unavailable",
+      "role": "tactical_analyst",
+      "schema_version": 1,
+      "span_id": "e20de340eff1451c",
+      "trace_id": "ad225edab9cc4b6a926599e0ed15a67c",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 92.18766598496586,
+      "event": "artifact_verified",
+      "reason": null,
+      "role": "publisher",
+      "schema_version": 1,
+      "span_id": "6fbe502fa600465d",
+      "trace_id": "ad225edab9cc4b6a926599e0ed15a67c",
+      "usage_input": null,
+      "usage_output": null
+    }
+  ],
+  "insight_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d:insight:658e2cff3976481744979ab9",
+  "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+  "schema_version": 1,
+  "trace_id": "ad225edab9cc4b6a926599e0ed15a67c"
+}

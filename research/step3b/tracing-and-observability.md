@@ -1,0 +1,12 @@
+# Observability actually exercised
+
+Trace records role starts/success/failure, chosen route, verified handoff, challenge/revision, retry, deterministic bypass and publication. Correlation includes match/insight/trace ID; each event has a span ID and elapsed milliseconds. Tools separately record bounded redacted names/scope/status. Sample success and failure traces are under artifacts/, all labeled offline fake-provider evidence.
+
+telemetry.Trace.otlp exports local OTLP/JSON resourceSpans/scopeSpans containing observed event spans. These zero-duration diagnostic spans are generated from actual local event timestamps; they are not claimed to be Microsoft SDK executor spans or delivered Application Insights telemetry. The isolated environment now includes opentelemetry-api1.45.1, but no OpenTelemetry SDK/exporter. API availability does not establish collected SDK spans or delivery; the earlier local trace artifacts retain their original provenance. Cloud delivery is explicitly false.
+
+Foundry proof is designed to record actual deployment, installed versions, request surface, latency and available usage after success. Deployment matchpulse-gpt41-mini and minimal-proof latency4.687s/usage878 input+136 output tokens are now observed. Aggregate workflow usage/cost and systematic latency statistics remain unreported. Fake request counters are application invocations, NOT actual LLM requests. Provider SDK may have internal transport retries not represented by the wrapper counter. No pricing estimate is fabricated.
+
+After Azure project/deployment setup: configure an approved OTel collector/Application Insights exporter, correlate SDK request IDs, verify a real tool-call span and inspect billed usage. Keep prompt/content collection disabled; never export credentials, headers, raw prompts or full histories. Compare transport requests with application retry counters before setting production budgets.
+
+
+Live evidence update: the4-pass integration test observes the complete enriched goal workflow/tool calls, but its successful BroadcastArtifact was not persisted by that test. Saved files named foundry-workflow-success/final/verified in the coordination folder remain earlier partial/fallback runs; their actual status fields govern presentation, not filenames. Preserve those traces as recovery evidence. No passing-test artifact is synthesized or relabeled as a successful saved trace. No cloud telemetry delivery is established.

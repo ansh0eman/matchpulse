@@ -1,0 +1,86 @@
+{
+  "cloud_delivery": false,
+  "events": [
+    {
+      "elapsed_ms": 0.12316700303927064,
+      "event": "accepted",
+      "reason": null,
+      "role": "editorial",
+      "schema_version": 1,
+      "span_id": "6160320de9984962",
+      "trace_id": "704bb59809504cde997b457684cc576f",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.12933398829773068,
+      "event": "offline_harness",
+      "reason": null,
+      "role": "runtime",
+      "schema_version": 1,
+      "span_id": "1bb06b0d35844ef9",
+      "trace_id": "704bb59809504cde997b457684cc576f",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.20445900736376643,
+      "event": "request_started",
+      "reason": null,
+      "role": "director",
+      "schema_version": 1,
+      "span_id": "69b5b68a0b024f93",
+      "trace_id": "704bb59809504cde997b457684cc576f",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.31887501245364547,
+      "event": "request_failed",
+      "reason": "auth",
+      "role": "director",
+      "schema_version": 1,
+      "span_id": "b50c1fcfb3cb4c3c",
+      "trace_id": "704bb59809504cde997b457684cc576f",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.344583997502923,
+      "event": "fallback",
+      "reason": "director:auth",
+      "role": "director",
+      "schema_version": 1,
+      "span_id": "09f5f72f736f4d45",
+      "trace_id": "704bb59809504cde997b457684cc576f",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.348208996001631,
+      "event": "route",
+      "reason": "match_analyst",
+      "role": "director",
+      "schema_version": 1,
+      "span_id": "6f7239230e9d49fe",
+      "trace_id": "704bb59809504cde997b457684cc576f",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.7425420044455677,
+      "event": "artifact_verified",
+      "reason": null,
+      "role": "publisher",
+      "schema_version": 1,
+      "span_id": "83334797cc5b426e",
+      "trace_id": "704bb59809504cde997b457684cc576f",
+      "usage_input": null,
+      "usage_output": null
+    }
+  ],
+  "insight_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:insight:e6e7fb2df33dccb5eecd1e77",
+  "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+  "schema_version": 1,
+  "trace_id": "704bb59809504cde997b457684cc576f"
+}

@@ -1,0 +1,9 @@
+# Deterministic narrative and overlay compilation
+
+Models select NarrationPlan enums and approved IDs. narrative_compiler inserts canonical facts using controlled English templates. Fan mode is brief; analyst mode includes exact windows/units/source IDs and positional support. Hook choices direct/replay/evidence and score/sequence/measurement/evidence angles change structure. Favorite-team emphasis is a viewer label, not invented sentiment. English only; unsupported languages are rejected, not advertised as translated.
+
+Every factual sentence carries registered claim IDs. Required synthetic/sampled/association limitations remain. There is no arbitrary generated factual string to sanitize with a blacklist. Existing fallback AgentOutput v1 is preserved; new studio plans are v2. Challenger narrow forces evidence-first wording; objection/failure can skip narrator and retain a deterministic safe fact. No causal coach/press claims are expressible.
+
+OverlayPlan supplies allowed family, IDs and emphasis. overlay_compiler independently resolves all source refs, derives replay min/max times, ball coordinates and registered numeric metrics, then emits VerifiedOverlay. Position overlays retain exact observed frames; no player path/pass endpoint is fabricated. All numbers inserted by code. Publisher recomputes narrative/overlay before export; publication.verify_publication also rejects post-render number, clock, namespace, reference or wording tampering. Pydantic validates structure; evidence arithmetic verifies truth within the synthetic source contract.
+
+Current scope is the original incident's approved facts. A plausible but unregistered contextual claim is rejected even if another model likes it. Localization, free prose and cross-incident synthesis require separately reviewed versioned contracts. Structural validity and model agreement alone cannot prove broader football interpretation.

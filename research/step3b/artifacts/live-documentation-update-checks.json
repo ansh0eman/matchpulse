@@ -1,0 +1,17 @@
+{
+  "scope": "documentation, AGENTS/README current status, compact evidence and Step3C file plan only",
+  "provider_repair_sha256_preserved": "53b9bbaa872575bf8ff9af84c22ed3afaa3c19e43c7b0f694c9155c8fb39e231",
+  "source_changes_vs_original_offline_review": [
+    "backend/src/matchpulse/agents/provider.py"
+  ],
+  "frozen_paths_changed": [],
+  "git_diff_check_exit_status": 0,
+  "tests_rerun": false,
+  "paid_calls_this_turn": 0,
+  "frontend_files_edited": false,
+  "committed": false,
+  "pushed": false,
+  "deployed": false,
+  "live_validation": "verified existing 4-pass log; not a replayed paid test",
+  "historical_artifact_provenance": "preserved; do not relabel saved partial captures as full enrichment"
+}

@@ -1,0 +1,675 @@
+{
+  "angle": "evidence_first",
+  "available_seconds": 3360.0,
+  "category": "position_comparison",
+  "claim_ids": [
+    "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d:claim:658e2cff3976481744979ab9"
+  ],
+  "errors": [],
+  "evidence": [
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002732"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002734"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002742"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002744"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002755"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002757"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002758"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002760"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002834"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002836"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002838"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002839"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002840"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002841"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002845"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002848"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002860"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002861"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002862"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002866"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002867"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002868"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002871"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002872"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002874"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002875"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002928"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002930"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002953"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_002954"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003009"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003016"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003017"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003018"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003020"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003026"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003027"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003030"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003108"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003109"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003114"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003296"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003297"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003298"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003301"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003303"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003305"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003307"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003315"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003322"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003323"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003324"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003325"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003327"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003352"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003353"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003357"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003358"
+    },
+    {
+      "category": "tracking",
+      "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+      "source_id": "frame_003360"
+    }
+  ],
+  "insight_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d:insight:658e2cff3976481744979ab9",
+  "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+  "narration": {
+    "headline": "NORTH view \u2014 The recorded observations show: During sampled opponent build-up, NORTH's three deepest outfield players averaged 22.0m and then 32.0m from their own goal: they advanced by 10.0m between the compared observations.",
+    "limitations": [
+      "Observed synthetic positioning only; not evidence that the coach ordered a tactic or that pressure was effective."
+    ],
+    "schema_version": 2,
+    "sentences": [
+      {
+        "claim_ids": [
+          "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d:claim:658e2cff3976481744979ab9"
+        ],
+        "text": "The recorded observations show: During sampled opponent build-up, NORTH's three deepest outfield players averaged 22.0m and then 32.0m from their own goal: they advanced by 10.0m between the compared observations."
+      },
+      {
+        "claim_ids": [
+          "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d:claim:658e2cff3976481744979ab9"
+        ],
+        "text": "Source window (3180, 3360] seconds; units m; evidence frame_002732, frame_002734, frame_002742. Before 22.0m; after 32.0m; support 41 reference and 18 recent frames. Latest contributing observation 3360s."
+      }
+    ]
+  },
+  "narration_status": "enriched",
+  "origin": "offline_fake",
+  "overlay": {
+    "coordinates": [],
+    "metrics": [
+      {
+        "claim_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d:claim:658e2cff3976481744979ab9",
+        "name": "before",
+        "unit": "m",
+        "value": 21.951300813008128
+      },
+      {
+        "claim_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d:claim:658e2cff3976481744979ab9",
+        "name": "after",
+        "unit": "m",
+        "value": 31.96388888888889
+      },
+      {
+        "claim_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d:claim:658e2cff3976481744979ab9",
+        "name": "change",
+        "unit": "m",
+        "value": 10.01258807588076
+      }
+    ],
+    "observation_semantics": "source ball/player coordinates only; interpolation is visualization",
+    "plan": {
+      "claim_ids": [
+        "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d:claim:658e2cff3976481744979ab9"
+      ],
+      "emphasis": "measurements",
+      "family": "positional_comparison",
+      "schema_version": 2
+    },
+    "references": [
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002732"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002734"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002742"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002744"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002755"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002757"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002758"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002760"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002834"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002836"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002838"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002839"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002840"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002841"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002845"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002848"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002860"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002861"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002862"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002866"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002867"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002868"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002871"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002872"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002874"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002875"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002928"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002930"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002953"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_002954"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003009"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003016"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003017"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003018"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003020"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003026"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003027"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003030"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003108"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003109"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003114"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003296"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003297"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003298"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003301"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003303"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003305"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003307"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003315"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003322"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003323"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003324"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003325"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003327"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003352"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003353"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003357"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003358"
+      },
+      {
+        "category": "tracking",
+        "match_id": "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
+        "source_id": "frame_003360"
+      }
+    ],
+    "replay_window": [
+      2732.0,
+      3360.0
+    ],
+    "schema_version": 2
+  },
+  "overlay_status": "enriched",
+  "preferences": {
+    "audience": "analyst",
+    "favorite_team": "NORTH",
+    "language": "en"
+  },
+  "presented_seconds": 3360.0,
+  "schema_version": 2,
+  "source_seconds": 3360.0,
+  "trace_id": "187f38b3d287417c86e959a0fab5c327"
+}

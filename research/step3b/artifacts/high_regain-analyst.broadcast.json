@@ -1,0 +1,104 @@
+{
+  "angle": "evidence_first",
+  "available_seconds": 13.75,
+  "category": "observed_event",
+  "claim_ids": [
+    "5cc7f774-c215-4773-9318-3a01ad8b23af:claim:d4a774adea6012f8ff4ad6b3"
+  ],
+  "errors": [],
+  "evidence": [
+    {
+      "category": "event",
+      "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+      "source_id": "evt_000017"
+    },
+    {
+      "category": "event",
+      "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+      "source_id": "evt_000018"
+    }
+  ],
+  "insight_id": "5cc7f774-c215-4773-9318-3a01ad8b23af:insight:d4a774adea6012f8ff4ad6b3",
+  "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+  "narration": {
+    "headline": "SOUTH gain possession at 77.8m along their attacking axis.",
+    "limitations": [
+      "Synthetic uncalibrated football; observations do not establish coach intent."
+    ],
+    "schema_version": 2,
+    "sentences": [
+      {
+        "claim_ids": [
+          "5cc7f774-c215-4773-9318-3a01ad8b23af:claim:d4a774adea6012f8ff4ad6b3"
+        ],
+        "text": "SOUTH gain possession at 77.8m along their attacking axis. Observed at 0.2 cumulative minutes. Synthetic uncalibrated football; observations do not establish coach intent."
+      }
+    ]
+  },
+  "narration_status": "fallback",
+  "origin": "deterministic",
+  "overlay": {
+    "coordinates": [
+      [
+        "evt_000017",
+        29.55,
+        39.06
+      ],
+      [
+        "evt_000018",
+        27.23,
+        38.11
+      ]
+    ],
+    "metrics": [
+      {
+        "claim_id": "5cc7f774-c215-4773-9318-3a01ad8b23af:claim:d4a774adea6012f8ff4ad6b3",
+        "name": "regain_x",
+        "unit": "m",
+        "value": 77.77
+      },
+      {
+        "claim_id": "5cc7f774-c215-4773-9318-3a01ad8b23af:claim:d4a774adea6012f8ff4ad6b3",
+        "name": "elapsed",
+        "unit": "s",
+        "value": 0.0
+      }
+    ],
+    "observation_semantics": "source ball/player coordinates only; interpolation is visualization",
+    "plan": {
+      "claim_ids": [
+        "5cc7f774-c215-4773-9318-3a01ad8b23af:claim:d4a774adea6012f8ff4ad6b3"
+      ],
+      "emphasis": "incident",
+      "family": "event_location",
+      "schema_version": 2
+    },
+    "references": [
+      {
+        "category": "event",
+        "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+        "source_id": "evt_000017"
+      },
+      {
+        "category": "event",
+        "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+        "source_id": "evt_000018"
+      }
+    ],
+    "replay_window": [
+      13.75,
+      13.75
+    ],
+    "schema_version": 2
+  },
+  "overlay_status": "fallback",
+  "preferences": {
+    "audience": "analyst",
+    "favorite_team": "NORTH",
+    "language": "en"
+  },
+  "presented_seconds": 13.75,
+  "schema_version": 2,
+  "source_seconds": 13.75,
+  "trace_id": "50ba0bd69d4c4a74bfaed0f25b1d9c71"
+}

@@ -1,0 +1,152 @@
+{
+  "cloud_delivery": false,
+  "events": [
+    {
+      "elapsed_ms": 0.03341698902659118,
+      "event": "accepted",
+      "reason": null,
+      "role": "editorial",
+      "schema_version": 1,
+      "span_id": "14283231fb1e4d4d",
+      "trace_id": "28cca0fe1b164e3b834ebeb3bf12d4b6",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.03708398435264826,
+      "event": "offline_harness",
+      "reason": null,
+      "role": "runtime",
+      "schema_version": 1,
+      "span_id": "713c971d7f324acd",
+      "trace_id": "28cca0fe1b164e3b834ebeb3bf12d4b6",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.0739170063752681,
+      "event": "request_started",
+      "reason": null,
+      "role": "director",
+      "schema_version": 1,
+      "span_id": "e2cebd39c7d94e24",
+      "trace_id": "28cca0fe1b164e3b834ebeb3bf12d4b6",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.15291699673980474,
+      "event": "request_succeeded",
+      "reason": null,
+      "role": "director",
+      "schema_version": 1,
+      "span_id": "47c7b4a1aa9f4196",
+      "trace_id": "28cca0fe1b164e3b834ebeb3bf12d4b6",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.17591699725016952,
+      "event": "route",
+      "reason": "match_analyst",
+      "role": "director",
+      "schema_version": 1,
+      "span_id": "ad4a56f40acb47ba",
+      "trace_id": "28cca0fe1b164e3b834ebeb3bf12d4b6",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.22908399114385247,
+      "event": "request_started",
+      "reason": null,
+      "role": "match_analyst",
+      "schema_version": 1,
+      "span_id": "35455e0b0bf047db",
+      "trace_id": "28cca0fe1b164e3b834ebeb3bf12d4b6",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.33758400240913033,
+      "event": "request_succeeded",
+      "reason": null,
+      "role": "match_analyst",
+      "schema_version": 1,
+      "span_id": "0186bbdf95e6419d",
+      "trace_id": "28cca0fe1b164e3b834ebeb3bf12d4b6",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.36633398849517107,
+      "event": "verified_handoff",
+      "reason": null,
+      "role": "match_analyst",
+      "schema_version": 1,
+      "span_id": "582c5f9d64b7400d",
+      "trace_id": "28cca0fe1b164e3b834ebeb3bf12d4b6",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.46312500489875674,
+      "event": "request_started",
+      "reason": null,
+      "role": "narrator",
+      "schema_version": 1,
+      "span_id": "4457c9e98c954dbc",
+      "trace_id": "28cca0fe1b164e3b834ebeb3bf12d4b6",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.5050839972682297,
+      "event": "request_started",
+      "reason": null,
+      "role": "replay_producer",
+      "schema_version": 1,
+      "span_id": "07b5e3d31f2542cc",
+      "trace_id": "28cca0fe1b164e3b834ebeb3bf12d4b6",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.6155000010039657,
+      "event": "request_succeeded",
+      "reason": null,
+      "role": "narrator",
+      "schema_version": 1,
+      "span_id": "2334ed03a2ba4183",
+      "trace_id": "28cca0fe1b164e3b834ebeb3bf12d4b6",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.6281249807216227,
+      "event": "request_succeeded",
+      "reason": null,
+      "role": "replay_producer",
+      "schema_version": 1,
+      "span_id": "e3214b712e4f4ade",
+      "trace_id": "28cca0fe1b164e3b834ebeb3bf12d4b6",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.7716669933870435,
+      "event": "artifact_verified",
+      "reason": null,
+      "role": "publisher",
+      "schema_version": 1,
+      "span_id": "1e15a26dbd7b4352",
+      "trace_id": "28cca0fe1b164e3b834ebeb3bf12d4b6",
+      "usage_input": null,
+      "usage_output": null
+    }
+  ],
+  "insight_id": "5cc7f774-c215-4773-9318-3a01ad8b23af:insight:cdbee60d017684cbadcd070f",
+  "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+  "schema_version": 1,
+  "trace_id": "28cca0fe1b164e3b834ebeb3bf12d4b6"
+}

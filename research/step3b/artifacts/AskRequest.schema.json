@@ -1,0 +1,43 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "as_of_seconds": {
+      "minimum": 0,
+      "title": "As Of Seconds",
+      "type": "number"
+    },
+    "insight_id": {
+      "title": "Insight Id",
+      "type": "string"
+    },
+    "match_id": {
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$",
+      "title": "Match Id",
+      "type": "string"
+    },
+    "question": {
+      "enum": [
+        "evidence",
+        "before_goal",
+        "shot_sequence",
+        "why_highlighted",
+        "position_change",
+        "compare_position",
+        "coach_intent",
+        "xg",
+        "possession_percentage",
+        "counterfactual"
+      ],
+      "title": "Question",
+      "type": "string"
+    }
+  },
+  "required": [
+    "match_id",
+    "as_of_seconds",
+    "question",
+    "insight_id"
+  ],
+  "title": "AskRequest",
+  "type": "object"
+}

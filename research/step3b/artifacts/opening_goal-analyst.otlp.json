@@ -1,0 +1,582 @@
+{
+  "resourceSpans": [
+    {
+      "resource": {
+        "attributes": [
+          {
+            "key": "service.name",
+            "value": {
+              "stringValue": "matchpulse-studio"
+            }
+          }
+        ]
+      },
+      "scopeSpans": [
+        {
+          "scope": {
+            "name": "matchpulse.studio",
+            "version": "2"
+          },
+          "spans": [
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "editorial"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "accepted"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:insight:e6e7fb2df33dccb5eecd1e77"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372177959957",
+              "kind": 1,
+              "name": "editorial.accepted",
+              "spanId": "c42c003724ea4e7f",
+              "startTimeUnixNano": "1792747372177959957",
+              "traceId": "782f1e1c89a445e3ab80dd74171ee820"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "runtime"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "offline_harness"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:insight:e6e7fb2df33dccb5eecd1e77"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372177963375",
+              "kind": 1,
+              "name": "runtime.offline_harness",
+              "spanId": "0cee76be6be349da",
+              "startTimeUnixNano": "1792747372177963375",
+              "traceId": "782f1e1c89a445e3ab80dd74171ee820"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "director"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "request_started"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:insight:e6e7fb2df33dccb5eecd1e77"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372177997790",
+              "kind": 1,
+              "name": "director.request_started",
+              "spanId": "ccb92e4d35c24c9b",
+              "startTimeUnixNano": "1792747372177997790",
+              "traceId": "782f1e1c89a445e3ab80dd74171ee820"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "director"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "request_succeeded"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:insight:e6e7fb2df33dccb5eecd1e77"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372178058875",
+              "kind": 1,
+              "name": "director.request_succeeded",
+              "spanId": "2821e44cef9c430f",
+              "startTimeUnixNano": "1792747372178058875",
+              "traceId": "782f1e1c89a445e3ab80dd74171ee820"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "director"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "route"
+                  }
+                },
+                {
+                  "key": "matchpulse.reason",
+                  "value": {
+                    "stringValue": "match_analyst"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:insight:e6e7fb2df33dccb5eecd1e77"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372178081166",
+              "kind": 1,
+              "name": "director.route",
+              "spanId": "0c8af4a3b2ef4620",
+              "startTimeUnixNano": "1792747372178081166",
+              "traceId": "782f1e1c89a445e3ab80dd74171ee820"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "match_analyst"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "request_started"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:insight:e6e7fb2df33dccb5eecd1e77"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372178131582",
+              "kind": 1,
+              "name": "match_analyst.request_started",
+              "spanId": "72820f3d87ca4b33",
+              "startTimeUnixNano": "1792747372178131582",
+              "traceId": "782f1e1c89a445e3ab80dd74171ee820"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "match_analyst"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "request_succeeded"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:insight:e6e7fb2df33dccb5eecd1e77"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372178224290",
+              "kind": 1,
+              "name": "match_analyst.request_succeeded",
+              "spanId": "8ac1b27231da423c",
+              "startTimeUnixNano": "1792747372178224290",
+              "traceId": "782f1e1c89a445e3ab80dd74171ee820"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "match_analyst"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "verified_handoff"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:insight:e6e7fb2df33dccb5eecd1e77"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372178250999",
+              "kind": 1,
+              "name": "match_analyst.verified_handoff",
+              "spanId": "11209d95d19a4c99",
+              "startTimeUnixNano": "1792747372178250999",
+              "traceId": "782f1e1c89a445e3ab80dd74171ee820"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "challenger"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "request_started"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:insight:e6e7fb2df33dccb5eecd1e77"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372178315125",
+              "kind": 1,
+              "name": "challenger.request_started",
+              "spanId": "7e366b6486194382",
+              "startTimeUnixNano": "1792747372178315125",
+              "traceId": "782f1e1c89a445e3ab80dd74171ee820"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "challenger"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "request_succeeded"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:insight:e6e7fb2df33dccb5eecd1e77"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372178374874",
+              "kind": 1,
+              "name": "challenger.request_succeeded",
+              "spanId": "1025a5851f3b43f9",
+              "startTimeUnixNano": "1792747372178374874",
+              "traceId": "782f1e1c89a445e3ab80dd74171ee820"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "challenger"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "review"
+                  }
+                },
+                {
+                  "key": "matchpulse.reason",
+                  "value": {
+                    "stringValue": "accept"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:insight:e6e7fb2df33dccb5eecd1e77"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372178400290",
+              "kind": 1,
+              "name": "challenger.review",
+              "spanId": "835e361f56fb46e9",
+              "startTimeUnixNano": "1792747372178400290",
+              "traceId": "782f1e1c89a445e3ab80dd74171ee820"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "narrator"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "request_started"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:insight:e6e7fb2df33dccb5eecd1e77"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372178465915",
+              "kind": 1,
+              "name": "narrator.request_started",
+              "spanId": "0651326a57a840ce",
+              "startTimeUnixNano": "1792747372178465915",
+              "traceId": "782f1e1c89a445e3ab80dd74171ee820"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "replay_producer"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "request_started"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:insight:e6e7fb2df33dccb5eecd1e77"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372178500832",
+              "kind": 1,
+              "name": "replay_producer.request_started",
+              "spanId": "c1ddddb6f87d445f",
+              "startTimeUnixNano": "1792747372178500832",
+              "traceId": "782f1e1c89a445e3ab80dd74171ee820"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "narrator"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "request_succeeded"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:insight:e6e7fb2df33dccb5eecd1e77"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372178558583",
+              "kind": 1,
+              "name": "narrator.request_succeeded",
+              "spanId": "9ec4e559f77b4434",
+              "startTimeUnixNano": "1792747372178558583",
+              "traceId": "782f1e1c89a445e3ab80dd74171ee820"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "replay_producer"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "request_succeeded"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:insight:e6e7fb2df33dccb5eecd1e77"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372178569415",
+              "kind": 1,
+              "name": "replay_producer.request_succeeded",
+              "spanId": "35ba38bdb5a24e09",
+              "startTimeUnixNano": "1792747372178569415",
+              "traceId": "782f1e1c89a445e3ab80dd74171ee820"
+            },
+            {
+              "attributes": [
+                {
+                  "key": "agent.role",
+                  "value": {
+                    "stringValue": "publisher"
+                  }
+                },
+                {
+                  "key": "matchpulse.event",
+                  "value": {
+                    "stringValue": "artifact_verified"
+                  }
+                },
+                {
+                  "key": "matchpulse.match_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d"
+                  }
+                },
+                {
+                  "key": "matchpulse.insight_id",
+                  "value": {
+                    "stringValue": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:insight:e6e7fb2df33dccb5eecd1e77"
+                  }
+                }
+              ],
+              "endTimeUnixNano": "1792747372178987375",
+              "kind": 1,
+              "name": "publisher.artifact_verified",
+              "spanId": "06bf572d5c0c46b5",
+              "startTimeUnixNano": "1792747372178987375",
+              "traceId": "782f1e1c89a445e3ab80dd74171ee820"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

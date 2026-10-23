@@ -1,0 +1,38 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "audience": {
+      "default": "fan",
+      "enum": [
+        "fan",
+        "analyst"
+      ],
+      "title": "Audience",
+      "type": "string"
+    },
+    "favorite_team": {
+      "anyOf": [
+        {
+          "enum": [
+            "NORTH",
+            "SOUTH"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Favorite Team"
+    },
+    "language": {
+      "const": "en",
+      "default": "en",
+      "title": "Language",
+      "type": "string"
+    }
+  },
+  "title": "Preferences",
+  "type": "object"
+}

@@ -1,0 +1,168 @@
+{
+  "analyses": [
+    {
+      "category": "score_context",
+      "claim_ids": [
+        "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77"
+      ],
+      "limitation_codes": [
+        "synthetic"
+      ],
+      "requested_evidence": [
+        {
+          "category": "event",
+          "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+          "source_id": "evt_002782"
+        }
+      ],
+      "schema_version": 2,
+      "unsupported_possibilities": [
+        "coach_intent",
+        "causal_press"
+      ]
+    }
+  ],
+  "challenge": {
+    "affected_claim_ids": [
+      "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77"
+    ],
+    "disposition": "accept",
+    "objections": [],
+    "schema_version": 2
+  },
+  "director": {
+    "angle": "score_first",
+    "challenge": true,
+    "max_calls": 6,
+    "schema_version": 2,
+    "specialists": [
+      "match_analyst"
+    ]
+  },
+  "envelope": {
+    "allowed_interpretations": [
+      "Describe the registered observations with their limitations."
+    ],
+    "audience": "fan",
+    "claims": [
+      {
+        "as_of_seconds": 2370.5,
+        "claim_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77",
+        "display_rule": "integers; metres one decimal; seconds exact",
+        "limitations": [
+          "Synthetic uncalibrated football; observations do not establish coach intent."
+        ],
+        "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+        "player_ids": [
+          "home-starter-8-9"
+        ],
+        "references": [
+          {
+            "category": "event",
+            "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+            "source_id": "evt_002782"
+          },
+          {
+            "category": "event",
+            "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+            "source_id": "evt_002783"
+          }
+        ],
+        "schema_version": 1,
+        "team_id": "NORTH",
+        "type": "goal_context",
+        "unit": "score",
+        "value": {
+          "after": {
+            "away": 0,
+            "home": 1
+          },
+          "before": {
+            "away": 0,
+            "home": 0
+          },
+          "context": "opening_goal",
+          "kind": "goal_context"
+        },
+        "verification_method": "canonical_prefix_v1",
+        "window": [
+          2370.0,
+          2370.5
+        ]
+      }
+    ],
+    "insight": {
+      "as_of_seconds": 2370.5,
+      "claim_ids": [
+        "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77"
+      ],
+      "event_time_seconds": 2370.5,
+      "evidence": [
+        {
+          "category": "event",
+          "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+          "source_id": "evt_002782"
+        },
+        {
+          "category": "event",
+          "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+          "source_id": "evt_002783"
+        }
+      ],
+      "fallback": {
+        "explanation": "NORTH: opening goal. Score 1\u20130 (NORTH\u2013SOUTH). Observed at 39.5 cumulative minutes. Synthetic uncalibrated football; observations do not establish coach intent.",
+        "headline": "NORTH: opening goal. Score 1\u20130 (NORTH\u2013SOUTH)."
+      },
+      "insight_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:insight:e6e7fb2df33dccb5eecd1e77",
+      "limitations": [
+        "Synthetic uncalibrated football; observations do not establish coach intent."
+      ],
+      "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+      "observed_score": {
+        "away": 0,
+        "home": 1
+      },
+      "period": 1,
+      "player_ids": [
+        "home-starter-8-9"
+      ],
+      "priority": 100,
+      "priority_semantics": "editorial ordering, not probability",
+      "provenance": "pinned synthetic simulator canonical observations",
+      "quality": "verified_observation",
+      "schema_version": 1,
+      "team_id": "NORTH",
+      "type": "goal_context",
+      "verified": true
+    },
+    "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+    "resolver": "match_id + reference category + source_id",
+    "schema_version": 1
+  },
+  "errors": [],
+  "narration_plan": {
+    "angle": "score_first",
+    "claim_ids": [
+      "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77"
+    ],
+    "depth": "brief",
+    "hook": "replay",
+    "qualification": "synthetic",
+    "schema_version": 2
+  },
+  "overlay_plan": {
+    "claim_ids": [
+      "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77"
+    ],
+    "emphasis": "incident",
+    "family": "scoreline_change",
+    "schema_version": 2
+  },
+  "preferences": {
+    "audience": "fan",
+    "favorite_team": "NORTH",
+    "language": "en"
+  },
+  "schema_version": 2,
+  "trace_id": "b05ed62c930749779553a474e1013fd1"
+}

@@ -1,0 +1,97 @@
+[
+  {
+    "name": "fan-timeline",
+    "argv": [
+      "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/.venv/bin/python",
+      "-m",
+      "matchpulse.agents.cli",
+      "timeline",
+      "--events",
+      "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/output/stories/source/5cc7f774-c215-4773-9318-3a01ad8b23af.jsonl",
+      "--audience",
+      "fan",
+      "--output",
+      "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/output/agents/fan-timeline.json"
+    ],
+    "exit_status": 0,
+    "seconds": 0.2607328339945525
+  },
+  {
+    "name": "analyst-timeline",
+    "argv": [
+      "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/.venv/bin/python",
+      "-m",
+      "matchpulse.agents.cli",
+      "timeline",
+      "--events",
+      "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/output/stories/source/5cc7f774-c215-4773-9318-3a01ad8b23af.jsonl",
+      "--audience",
+      "analyst",
+      "--output",
+      "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/output/agents/analyst-timeline.json"
+    ],
+    "exit_status": 0,
+    "seconds": 0.19050245799007826
+  },
+  {
+    "name": "ask-before-goal",
+    "argv": [
+      "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/.venv/bin/python",
+      "-m",
+      "matchpulse.agents.cli",
+      "ask",
+      "--events",
+      "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/data/step2/inference/02840f35-cb05-4812-aa9d-1237e4ab1b9d.jsonl",
+      "--insight-type",
+      "goal_context",
+      "--question",
+      "before_goal",
+      "--output",
+      "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/output/agents/ask-before-goal.json"
+    ],
+    "exit_status": 0,
+    "seconds": 0.1865577080170624
+  },
+  {
+    "name": "cli-recovery",
+    "argv": [
+      "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/.venv/bin/python",
+      "-m",
+      "matchpulse.agents.cli",
+      "studio",
+      "--events",
+      "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/data/step2/inference/02840f35-cb05-4812-aa9d-1237e4ab1b9d.jsonl",
+      "--insight-type",
+      "goal_context",
+      "--fail-role",
+      "narrator",
+      "--failure",
+      "timeout",
+      "--timeout",
+      "0.03",
+      "--output",
+      "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/output/agents/cli-recovery.json"
+    ],
+    "exit_status": 0,
+    "seconds": 0.32419804198434576
+  },
+  {
+    "name": "south-preference",
+    "argv": [
+      "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/.venv/bin/python",
+      "-m",
+      "matchpulse.agents.cli",
+      "studio",
+      "--events",
+      "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/data/step2/inference/02840f35-cb05-4812-aa9d-1237e4ab1b9d.jsonl",
+      "--insight-type",
+      "goal_context",
+      "--favorite-team",
+      "SOUTH",
+      "--output",
+      "/Users/ansh0eman/Documents/Projects/inside the game - microsoft/backend/output/agents/south-preference.json"
+    ],
+    "exit_status": 0,
+    "seconds": 0.2105660000233911
+  }
+]

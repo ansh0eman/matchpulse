@@ -1,0 +1,152 @@
+{
+  "cloud_delivery": false,
+  "events": [
+    {
+      "elapsed_ms": 0.029916991479694843,
+      "event": "accepted",
+      "reason": null,
+      "role": "editorial",
+      "schema_version": 1,
+      "span_id": "938fe80380e2418d",
+      "trace_id": "ee760b586a384517adc8767cd7a7133b",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.0329999893438071,
+      "event": "offline_harness",
+      "reason": null,
+      "role": "runtime",
+      "schema_version": 1,
+      "span_id": "abee23bbd5614602",
+      "trace_id": "ee760b586a384517adc8767cd7a7133b",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.06608400144614279,
+      "event": "request_started",
+      "reason": null,
+      "role": "director",
+      "schema_version": 1,
+      "span_id": "7a7ef3e140564d96",
+      "trace_id": "ee760b586a384517adc8767cd7a7133b",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.1297919952776283,
+      "event": "request_succeeded",
+      "reason": null,
+      "role": "director",
+      "schema_version": 1,
+      "span_id": "90d9b9963d454adc",
+      "trace_id": "ee760b586a384517adc8767cd7a7133b",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.1514169853180647,
+      "event": "route",
+      "reason": "match_analyst",
+      "role": "director",
+      "schema_version": 1,
+      "span_id": "3fc177cd8de34f4c",
+      "trace_id": "ee760b586a384517adc8767cd7a7133b",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.2024589921347797,
+      "event": "request_started",
+      "reason": null,
+      "role": "match_analyst",
+      "schema_version": 1,
+      "span_id": "32ea7c4b81ee4a04",
+      "trace_id": "ee760b586a384517adc8767cd7a7133b",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.2961249847430736,
+      "event": "request_succeeded",
+      "reason": null,
+      "role": "match_analyst",
+      "schema_version": 1,
+      "span_id": "c875fb7c6cbd4327",
+      "trace_id": "ee760b586a384517adc8767cd7a7133b",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.3230419824831188,
+      "event": "verified_handoff",
+      "reason": null,
+      "role": "match_analyst",
+      "schema_version": 1,
+      "span_id": "6f64ec8bef68414b",
+      "trace_id": "ee760b586a384517adc8767cd7a7133b",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.41679199784994125,
+      "event": "request_started",
+      "reason": null,
+      "role": "narrator",
+      "schema_version": 1,
+      "span_id": "428400f2f907480c",
+      "trace_id": "ee760b586a384517adc8767cd7a7133b",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.45633400441147387,
+      "event": "request_started",
+      "reason": null,
+      "role": "replay_producer",
+      "schema_version": 1,
+      "span_id": "32517beef18b4911",
+      "trace_id": "ee760b586a384517adc8767cd7a7133b",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.5189589865040034,
+      "event": "request_succeeded",
+      "reason": null,
+      "role": "narrator",
+      "schema_version": 1,
+      "span_id": "bda7e7340262449b",
+      "trace_id": "ee760b586a384517adc8767cd7a7133b",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.530291988980025,
+      "event": "request_succeeded",
+      "reason": null,
+      "role": "replay_producer",
+      "schema_version": 1,
+      "span_id": "44454c7cbbd04343",
+      "trace_id": "ee760b586a384517adc8767cd7a7133b",
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "elapsed_ms": 0.6662920059170574,
+      "event": "artifact_verified",
+      "reason": null,
+      "role": "publisher",
+      "schema_version": 1,
+      "span_id": "fbab03361cbf4e9f",
+      "trace_id": "ee760b586a384517adc8767cd7a7133b",
+      "usage_input": null,
+      "usage_output": null
+    }
+  ],
+  "insight_id": "5cc7f774-c215-4773-9318-3a01ad8b23af:insight:cdbee60d017684cbadcd070f",
+  "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+  "schema_version": 1,
+  "trace_id": "ee760b586a384517adc8767cd7a7133b"
+}

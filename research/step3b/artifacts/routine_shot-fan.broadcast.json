@@ -1,0 +1,76 @@
+{
+  "angle": "evidence_first",
+  "available_seconds": 410.0,
+  "category": "shot_sequence",
+  "claim_ids": [
+    "5cc7f774-c215-4773-9318-3a01ad8b23af:claim:740eb230803f34a1c1fe1e78"
+  ],
+  "errors": [],
+  "evidence": [
+    {
+      "category": "event",
+      "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+      "source_id": "evt_000491"
+    }
+  ],
+  "insight_id": "5cc7f774-c215-4773-9318-3a01ad8b23af:insight:740eb230803f34a1c1fe1e78",
+  "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+  "narration": {
+    "headline": "NORTH register a shot attempt.",
+    "limitations": [
+      "Synthetic uncalibrated football; observations do not establish coach intent."
+    ],
+    "schema_version": 2,
+    "sentences": [
+      {
+        "claim_ids": [
+          "5cc7f774-c215-4773-9318-3a01ad8b23af:claim:740eb230803f34a1c1fe1e78"
+        ],
+        "text": "NORTH register a shot attempt. Observed at 6.8 cumulative minutes. Synthetic uncalibrated football; observations do not establish coach intent."
+      }
+    ]
+  },
+  "narration_status": "fallback",
+  "origin": "deterministic",
+  "overlay": {
+    "coordinates": [
+      [
+        "evt_000491",
+        99.73,
+        40.2
+      ]
+    ],
+    "metrics": [],
+    "observation_semantics": "source ball/player coordinates only; interpolation is visualization",
+    "plan": {
+      "claim_ids": [
+        "5cc7f774-c215-4773-9318-3a01ad8b23af:claim:740eb230803f34a1c1fe1e78"
+      ],
+      "emphasis": "sequence",
+      "family": "shot_sequence",
+      "schema_version": 2
+    },
+    "references": [
+      {
+        "category": "event",
+        "match_id": "5cc7f774-c215-4773-9318-3a01ad8b23af",
+        "source_id": "evt_000491"
+      }
+    ],
+    "replay_window": [
+      410.0,
+      410.0
+    ],
+    "schema_version": 2
+  },
+  "overlay_status": "fallback",
+  "preferences": {
+    "audience": "fan",
+    "favorite_team": "NORTH",
+    "language": "en"
+  },
+  "presented_seconds": 410.0,
+  "schema_version": 2,
+  "source_seconds": 410.0,
+  "trace_id": "e3994f649fbf4d68b920f3fe2aea0a78"
+}

@@ -1,0 +1,48 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "affected_claim_ids": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 8,
+      "title": "Affected Claim Ids",
+      "type": "array"
+    },
+    "disposition": {
+      "enum": [
+        "accept",
+        "narrow",
+        "fallback"
+      ],
+      "title": "Disposition",
+      "type": "string"
+    },
+    "objections": {
+      "items": {
+        "enum": [
+          "narrow_scope",
+          "insufficient_context",
+          "unsupported_causality",
+          "missing_evidence"
+        ],
+        "type": "string"
+      },
+      "title": "Objections",
+      "type": "array"
+    },
+    "schema_version": {
+      "const": 2,
+      "default": 2,
+      "title": "Schema Version",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "affected_claim_ids",
+    "objections",
+    "disposition"
+  ],
+  "title": "Challenge",
+  "type": "object"
+}

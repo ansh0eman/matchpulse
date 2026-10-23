@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-23",
+  "status": "BLOCKED_PACKAGE_DNS",
+  "isolated_environment": "backend/.venv-foundry",
+  "python": "3.12.13",
+  "commands": [
+    {
+      "argv": [
+        "uv",
+        "venv",
+        "--python",
+        "backend/.venv/bin/python",
+        "backend/.venv-foundry"
+      ],
+      "environment": {
+        "UV_CACHE_DIR": "/tmp/matchpulse-sdk-retry-cache"
+      },
+      "exit_status": 0
+    },
+    {
+      "argv": [
+        "uv",
+        "pip",
+        "install",
+        "--python",
+        "backend/.venv-foundry/bin/python",
+        "-e",
+        "backend",
+        "-r",
+        "backend/src/matchpulse/agents/requirements-cloud.txt"
+      ],
+      "environment": {
+        "UV_CACHE_DIR": "/tmp/matchpulse-sdk-retry-cache"
+      },
+      "exit_status": 2,
+      "error": "Failed to resolve pypi.org; fetch https://pypi.org/simple/pydantic/ failed after retries"
+    },
+    {
+      "argv": [
+        "backend/.venv/bin/python",
+        "-m",
+        "pytest",
+        "backend/tests/agents/test_studio.py::test_framework_runtime_separate",
+        "backend/tests/agents/test_optional_integrations.py::test_private_mcp_in_memory",
+        "backend/tests/agents/test_optional_integrations.py::test_exported_json_schema_meta_validation",
+        "-q",
+        "-rs"
+      ],
+      "exit_status": 0,
+      "passed": 0,
+      "skipped": 3
+    }
+  ],
+  "isolated_installed_versions": {
+    "agent-framework-core": null,
+    "agent-framework-foundry": null,
+    "mcp": null,
+    "jsonschema": null,
+    "pydantic": null,
+    "pytest": null
+  },
+  "compatibility_resolved": false,
+  "sdk_graph_executed": false,
+  "mcp_integration_executed": false,
+  "external_schema_validation_executed": false,
+  "provider_calls": 0,
+  "azure_resources_created": 0,
+  "backend_uv_lock_git_blob": "cd956650bb555d83b09366c93ad2ca887d0492de",
+  "previous_offline_artifacts_overwritten": false
+}

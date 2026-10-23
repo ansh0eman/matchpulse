@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-23",
+  "status": "SDK_VALIDATED_AZURE_INFERENCE_NOT_RUN",
+  "environment": "backend/.venv-foundry",
+  "python": "3.12.13",
+  "installed_versions": {
+    "pydantic": "2.12.3",
+    "agent-framework-core": "1.23.0",
+    "agent-framework-foundry": "1.15.0",
+    "mcp": "2.3.0",
+    "jsonschema": "4.25.1",
+    "azure-identity": "1.26.0",
+    "azure-ai-projects": "2.7.0",
+    "agent-framework-openai": "1.17.0",
+    "openai": "3.37.0",
+    "opentelemetry-api": "1.45.1",
+    "opentelemetry-sdk": null,
+    "pytest": "8.4.2"
+  },
+  "test_run": {
+    "argv": [
+      "backend/.venv-foundry/bin/python",
+      "-m",
+      "pytest",
+      "backend/tests",
+      "-q",
+      "-ra"
+    ],
+    "environment": {
+      "MATCHPULSE_LIVE_TEST": "0",
+      "MATCHPULSE_LIVE_WORKFLOW_TEST": "0"
+    },
+    "exit_status": 0,
+    "passed": 159,
+    "skipped": 2,
+    "duration_seconds": 29.19,
+    "execution_origin": "coordination chat; existing logs verified, suite not rerun for documentation"
+  },
+  "validated_checks": {
+    "microsoft_agent_framework_graph_with_fake_provider": true,
+    "private_mcp_in_memory_client_server": true,
+    "step3b_json_schema_meta_validation": true
+  },
+  "schema_files": 10,
+  "not_validated": [
+    "authenticated_foundry_model_inference",
+    "model_requested_live_tool_use",
+    "MCP_stdio_subprocess_or_live_agent_attachment",
+    "Application_Insights_delivery",
+    "Foundry_service_evaluators"
+  ],
+  "new_provider_calls_during_documentation_update": 0,
+  "existing_artifact_provenance_changed": false,
+  "evidence": [
+    {
+      "path": "/Users/ansh0eman/Documents/ChatGPT/Mictrosoft - inside the game/coordination/sdk-install.log",
+      "sha256": "5f382531ae0cede29feb70c10556da18efb0bd9230304295405acfb77b9c63bb"
+    },
+    {
+      "path": "/Users/ansh0eman/Documents/ChatGPT/Mictrosoft - inside the game/coordination/sdk-tests.log",
+      "sha256": "c167b12dd1ebfad511ea4bf2842428f749d8b0930381828b6932c684c6bcf690"
+    }
+  ],
+  "backend_uv_lock_git_blob": "cd956650bb555d83b09366c93ad2ca887d0492de"
+}

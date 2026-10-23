@@ -1,0 +1,50 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "angle": {
+      "enum": [
+        "score_first",
+        "sequence_first",
+        "measurement_first",
+        "evidence_first"
+      ],
+      "title": "Angle",
+      "type": "string"
+    },
+    "challenge": {
+      "title": "Challenge",
+      "type": "boolean"
+    },
+    "max_calls": {
+      "maximum": 6,
+      "minimum": 1,
+      "title": "Max Calls",
+      "type": "integer"
+    },
+    "schema_version": {
+      "const": 2,
+      "default": 2,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "specialists": {
+      "items": {
+        "enum": [
+          "match_analyst",
+          "tactical_analyst"
+        ],
+        "type": "string"
+      },
+      "title": "Specialists",
+      "type": "array"
+    }
+  },
+  "required": [
+    "specialists",
+    "angle",
+    "challenge",
+    "max_calls"
+  ],
+  "title": "DirectorDecision",
+  "type": "object"
+}
