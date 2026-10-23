@@ -9,6 +9,8 @@
 !web/vite.config.ts
 !web/src/
 !web/src/**
+!web/public/
+!web/public/**
 !backend/
 !backend/pyproject.toml
 !backend/requirements-viewer.txt
@@ -31,6 +33,12 @@
 !research/step3c/artifacts/recorded-foundry-trace.json
 !research/step3c/artifacts/recorded-goal-partial.broadcast.json
 !research/step3c/artifacts/recorded-goal-partial.state.json
+!research/step3d/
+!research/step3d/artifacts/
+!research/step3d/artifacts/foundry-goal.broadcast.json
+!research/step3d/artifacts/foundry-goal.state.json
+!research/step3d/artifacts/foundry-goal.trace.json
+!research/step3d/artifacts/foundry-capture.json
 **/__pycache__/
 **/*.pyc
 web/node_modules/

@@ -18,6 +18,7 @@ COPY research/step25/artifacts/selected.json /app/research/step25/artifacts/sele
 COPY research/step3b/artifacts/live-foundry-validation.json research/step3b/artifacts/foundry-authenticated-proof.json /app/research/step3b/artifacts/
 COPY research/step3c/artifacts/recorded-foundry-trace.json /app/research/step3c/artifacts/
 COPY research/step3c/artifacts/recorded-goal-partial.broadcast.json research/step3c/artifacts/recorded-goal-partial.state.json /app/research/step3c/artifacts/
+COPY research/step3d/artifacts/foundry-goal.broadcast.json research/step3d/artifacts/foundry-goal.state.json research/step3d/artifacts/foundry-goal.trace.json research/step3d/artifacts/foundry-capture.json /app/research/step3d/artifacts/
 COPY --from=web /web/dist /app/web-dist
 RUN useradd --uid 10001 --create-home studio && chown -R studio:studio /app
 USER studio

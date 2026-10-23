@@ -1,12 +1,22 @@
-# MatchPulse AI — Why the Game Changed
+# MatchPulse AI — Proof, not just commentary.
 
-A synthetic-football research implementation of **Detect -> Prove -> Explain -> Explore**. Step 2.5 adds strict observable tracking, context-conditioned geometry, a frozen detector comparison and independently recomputable positional EvidencePacks while preserving the event-only Step 2 system.
+An evidence-first AI broadcast studio for synthetic football. Follow the match, switch between Fan and Analyst, and open **Proof Lens** to recompute an explanation from the original events or player positions. Microsoft Foundry and Agent Framework provide bounded specialist orchestration; deterministic verification decides what can be displayed.
+
+**Detect → Prove → Explain → Explore**
+
+![Working Broadcast Theatre](research/step3d/artifacts/theatre-laptop.png)
+
+The default **Theatre** puts the pitch and moment first. **Broadcast studio** retains the detailed three-column workspace. Proof Lens opens with a visual Summary, then Method and Audit; all 59 positional samples remain available, with a downloadable JSON receipt. Guided demo offers a four-chapter 76-second story across clearly separate fixtures. `/?view=broadcast` provides clean program output. Fonts are bundled locally with their licences.
+
+Start locally using the commands below. Public deployment/video are pending, and the repository remains private as instructed. [Data card](DATA_CARD.md) · [Agent card](AGENT_CARD.md) · [Evaluation](EVALUATION.md) · [Evidence map](RUBRIC_MAP.md) · [Release status](RELEASE.md).
+
+The research below preserves Step 2/2.5 outcomes, including failed broad detection targets. The UI redesign does not change those findings or establish real-match calibration.
 
 ## Broadcast studio — Step 3C
 
 The local React/TypeScript studio now connects to a source-verifying Python API: five isolated match scenarios, synchronized observed positions/clock/score, Fan/Analyst and favorite-team controls, restricted questions, recaps and an interactive Proof Lens. Proof Lens recomputes line geometry from original player coordinates and exposes all 59 contributing samples, source hashes, timing and limitations. It also shows when stale evidence must be withheld.
 
-Microsoft Agent Framework/Foundry integration is separately authenticated and tested. The studio exposes a genuine recorded recovery trace and one source-reverified partial Foundry goal artifact; other cards use deterministic compilation. Replay clicks make **no cloud model calls**. The historical partial capture is not the fully enriched workflow that passed integration testing. English only; synthetic data; no inferred coach intent or real-world accuracy claim. Azure hosting and public submission remain pending.
+Microsoft Agent Framework/Foundry integration is authenticated and tested. A newly authorized real goal workflow is now **persisted with enriched narration and replay**, then independently reverified before display: 23.83 seconds, five agent requests, five successful evidence-tool calls and 11,662 input / 807 output reported tokens. The earlier partial/fallback capture remains a separate historical recovery example. Other cards/adaptations compile deterministically; replay clicks make **no cloud model calls**. These are single-run observations, not reliability or quality-superiority measurements. See [capture provenance and metering limitation](research/step3d/foundry-capture.md). English only; synthetic data; no inferred coach intent or real-world accuracy claim. Azure hosting and public submission remain pending.
 
 Run from the repository root using the existing isolated SDK environment:
 

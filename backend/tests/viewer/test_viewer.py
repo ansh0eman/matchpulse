@@ -140,18 +140,51 @@ def test_restricted_questions_and_clock_scope():
 def test_recorded_activity_is_honest_and_contains_no_credentials():
     r = client.get("/api/activity").json()
     assert r["mode"] == "recorded_validation" and r["tests_passed"] == 4
-    assert not r["full_broadcast_capture"]
+    assert r["full_broadcast_capture"]
     assert r["proof"]["authenticated_call_succeeded"]
     assert r["capture"]["origin"] == "foundry"
-    assert r["capture"]["narration_status"] == "fallback"
+    assert r["capture"]["narration_status"] == "enriched"
+    assert r["recovery_capture"]["narration_status"] == "fallback"
+    assert r["capture_summary"]["model_http_requests"] is None
+    assert "httpx2" in r["capture_summary"]["counter_status"]
     assert all(t["status"] == "success" for t in r["capture"]["tools"])
 
 
 def test_recorded_card_is_reverified_and_preference_scoped():
     r = goal(view(query()))
     assert r["origin"] == "recorded_foundry"
-    assert r["narration_status"] == "fallback" and r["overlay_status"] == "enriched"
+    assert r["narration_status"] == "enriched" and r["overlay_status"] == "enriched"
     assert goal(view(query(audience="analyst")))["origin"] == "deterministic"
+
+
+def test_historical_partial_capture_is_preserved_and_verifies_separately():
+    from matchpulse.viewer.catalog import ROOT
+    from matchpulse.agents.schemas import BroadcastArtifact, WorkflowState
+    from matchpulse.agents.tools import EvidenceTools
+    from matchpulse.agents.publication import verify_publication
+
+    base = ROOT / "research/step3c/artifacts/recorded-goal-partial"
+    artifact = BroadcastArtifact.model_validate_json(
+        base.with_suffix(".broadcast.json").read_text()
+    )
+    state = WorkflowState.model_validate_json(
+        base.with_suffix(".state.json").read_text()
+    )
+    result = source("opening-goal")
+    item = next(
+        t for t in result["timeline"] if t.insight.insight_id == artifact.insight_id
+    )
+    assert (
+        artifact.narration_status == "fallback"
+        and artifact.overlay_status == "enriched"
+    )
+    assert verify_publication(
+        artifact,
+        state,
+        item,
+        result,
+        EvidenceTools(result, result["index"].match_id, item.insight.as_of_seconds),
+    )
 
 
 def test_source_failure_is_actionable_without_paths(monkeypatch):

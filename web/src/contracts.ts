@@ -172,4 +172,12 @@ export interface Capture {
 }
 export interface Activity {
   capture: Capture;
+  recovery_capture?: Capture;
+  capture_summary?: {
+    elapsed_seconds: number;
+    agent_request_attempts: number;
+    model_http_requests: number | null;
+    counter_status: string;
+    reported_tokens: { input: number; output: number };
+  } | null;
 }

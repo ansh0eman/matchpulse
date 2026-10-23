@@ -1,0 +1,62 @@
+{
+  "date_local": "2026-10-24",
+  "base_commit": "4efff9f",
+  "mode": "private local product milestone; one explicitly authorized Foundry workflow capture",
+  "backend": {"passed": 181, "skipped_live": 2, "failed": 0},
+  "web_build": "TypeScript and Vite passed",
+  "container": {
+    "image": "matchpulse-viewer:step3d",
+    "digest": "sha256:5ed35f4ac4185d600a89779560ce5a2b46b7a7d74c1f87882deed5a0411ec9dc",
+    "test_url": "http://127.0.0.1:8013"
+  },
+  "browser": {
+    "start_utc": "2026-10-23T23:04:46.410Z",
+    "passed": 13, "failed": 0, "skipped": 0, "flaky": 0,
+    "duration_ms": 111248.468,
+    "real_time_tour_duration_ms": 78574,
+    "viewports": [[1366, 768], [390, 844]]
+  },
+  "npm_reported_vulnerabilities": 0,
+  "staged_secret_findings": 0,
+  "local_video_rough_cut": {
+    "path": "output/playwright/matchpulse-guided-story-rough-cut.mp4",
+    "duration_seconds": 79.72,
+    "resolution": [1366, 768], "codec": "h264",
+    "bytes": 1380618, "audio": false, "published": false,
+    "status": "genuine silent source recording; final narration and Agent Room segment pending"
+  },
+  "azure_sized_local_candidate": {
+    "architecture": "amd64", "cpu": 0.5, "memory": "1GiB",
+    "digest": "sha256:5200e3c83898c81b5da7a71b02ec2336b5322d9b2e9a1c38d3cd1d6b99c97098",
+    "test_url": "http://127.0.0.1:8014",
+    "start_utc": "2026-10-23T23:06:48.521Z",
+    "passed": 13, "failed": 0, "skipped": 0, "flaky": 0,
+    "duration_ms": 117218.299, "real_time_tour_duration_ms": 77113,
+    "azure_deployed": false, "bicep_compile": "passed"
+  },
+  "offline_comparison": {
+    "provider": "FakeProvider; not real-model or MAF evidence",
+    "review_episodes": 22,
+    "registered_claim_episodes": 19,
+    "controls_without_registered_claim": 3,
+    "considered_per_configuration": 44,
+    "verified_publications_per_configuration": 26,
+    "provider_requests": {"deterministic": 0, "simple": 52, "adaptive": 94},
+    "verified_fault_configurations": 10,
+    "fault_roles_actually_requested": 8,
+    "human_ratings": null, "model_tokens": null, "cloud_cost": null
+  },
+  "frozen_sources_changed": false,
+  "public_release_performed": false,
+  "new_foundry_capture_performed": true,
+  "foundry_capture": {
+    "independently_verified": true,
+    "elapsed_seconds": 23.828737125,
+    "agent_request_attempts": 5,
+    "successful_tool_calls": 5,
+    "sdk_input_tokens": 11662,
+    "sdk_output_tokens": 807,
+    "actual_model_http_requests": null,
+    "limitation": "Initial meter missed SDK httpx2 transport; actual wire-request count and 12-wire-request cap compliance unverified. No repeat live capture."
+  }
+}

@@ -80,6 +80,20 @@ def observation(e):
     }
 
 
+def recorded_goal():
+    captured = ROOT / "research/step3d/artifacts/foundry-goal"
+    if not captured.with_suffix(".broadcast.json").exists():
+        captured = ROOT / "research/step3c/artifacts/recorded-goal-partial"
+    return (
+        BroadcastArtifact.model_validate_json(
+            captured.with_suffix(".broadcast.json").read_text()
+        ),
+        WorkflowState.model_validate_json(
+            captured.with_suffix(".state.json").read_text()
+        ),
+    )
+
+
 def render(item, result, query):
     index = result["index"]
     registry = {c.claim_id: c for c in result["claims"]}
@@ -94,13 +108,7 @@ def render(item, result, query):
     nstatus = "deterministic"
     ostatus = "deterministic"
     if query.scenario == "opening-goal" and item.insight.type == "goal_context":
-        captured = ROOT / "research/step3c/artifacts/recorded-goal-partial"
-        artifact = BroadcastArtifact.model_validate_json(
-            captured.with_suffix(".broadcast.json").read_text()
-        )
-        state = WorkflowState.model_validate_json(
-            captured.with_suffix(".state.json").read_text()
-        )
+        artifact, state = recorded_goal()
         # A historic model plan is displayed only after current source recompilation.
         if (
             artifact.preferences == pref
@@ -215,6 +223,19 @@ def activity():
             ROOT / "research/step3b/artifacts/foundry-authenticated-proof.json"
         ).read_text()
     )
+    artifact, state = recorded_goal()
+    result = source("opening-goal")
+    item = next(
+        t for t in result["timeline"] if t.insight.insight_id == artifact.insight_id
+    )
+    tools = EvidenceTools(result, result["index"].match_id, item.insight.as_of_seconds)
+    if not verify_publication(artifact, state, item, result, tools):
+        raise ValueError("Recorded capture no longer verifies against source")
+    latest = ROOT / "research/step3d/artifacts/foundry-goal.trace.json"
+    recovery = json.loads(
+        (ROOT / "research/step3c/artifacts/recorded-foundry-trace.json").read_text()
+    )
+    complete = artifact.narration_status == artifact.overlay_status == "enriched"
     return {
         "mode": "recorded_validation",
         "date": summary["date"],
@@ -230,10 +251,8 @@ def activity():
         },
         "gates": summary["live_tests"]["asserted_gates"],
         "tests_passed": summary["live_tests"]["passed"],
-        "full_broadcast_capture": summary[
-            "successful_enriched_broadcast_capture_available"
-        ],
-        "limitations": summary["scope_limit"],
+        "full_broadcast_capture": complete,
+        "limitations": "One source-reverified recorded goal, exact Fan/no-favorite preferences. Other cards and adaptations are deterministic. Not a reliability, human-quality or cost study. No cloud trace collector delivery is asserted.",
         "roles": [
             {"role": r, "status": "validated in recorded goal test"}
             for r in (
@@ -248,7 +267,11 @@ def activity():
         "proof_sha256": digest(
             ROOT / "research/step3b/artifacts/foundry-authenticated-proof.json"
         ),
-        "capture": json.loads(
-            (ROOT / "research/step3c/artifacts/recorded-foundry-trace.json").read_text()
-        ),
+        "capture": json.loads(latest.read_text()) if latest.exists() else recovery,
+        "recovery_capture": recovery,
+        "capture_summary": json.loads(
+            (ROOT / "research/step3d/artifacts/foundry-capture.json").read_text()
+        )
+        if latest.exists()
+        else None,
     }

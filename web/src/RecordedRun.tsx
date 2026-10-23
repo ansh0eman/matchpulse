@@ -2,11 +2,16 @@ import type { Capture } from "./contracts";
 export function RecordedRun({ capture }: { capture: Capture }) {
   return (
     <section className="recorded-run">
-      <h3>A real run, including the recovery.</h3>
+      <h3>
+        {capture.narration_status === "enriched" &&
+        capture.overlay_status === "enriched"
+          ? "A real run, source-verified end to end."
+          : "A real run, including the recovery."}
+      </h3>
       <p>
         {capture.label}. Recorded at source time {capture.source_seconds}s, in
-        the opening-goal fixture. This is separate from the complete passing
-        test above.
+        the opening-goal fixture. Recorded execution, separate from the
+        historical integration checks.
       </p>
       <div className="run-outcomes">
         <span>

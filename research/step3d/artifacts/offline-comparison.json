@@ -1,0 +1,1443 @@
+{
+  "kind": "OFFLINE FakeProvider engineering comparison; not real-model quality or MAF execution",
+  "source_packet_episodes": 22,
+  "review_key_entries": 20,
+  "registered_claim_episodes": 19,
+  "review_controls_without_registered_claim": [
+    {
+      "episode": "episode-015",
+      "type": "suppressed_position"
+    },
+    {
+      "episode": "episode-021",
+      "type": "normal_observed_interval"
+    },
+    {
+      "episode": "episode-022",
+      "type": "borderline_measurement_only"
+    }
+  ],
+  "considered_preferences": [
+    "fan",
+    "analyst"
+  ],
+  "human_ratings": null,
+  "cloud_latency": null,
+  "tokens": null,
+  "cloud_cost": null,
+  "summaries": {
+    "fallback": {
+      "considered": 44,
+      "published_and_verified": 26,
+      "suppressed": 18,
+      "statuses": {
+        "review_control_not_published": 6,
+        "scheduler_or_audience_suppressed": 12,
+        "verified_publication": 26
+      },
+      "total_provider_requests": 0,
+      "mean_requests_per_published_moment": 0,
+      "actual_modes": {
+        "fallback": 26
+      }
+    },
+    "simple": {
+      "considered": 44,
+      "published_and_verified": 26,
+      "suppressed": 18,
+      "statuses": {
+        "review_control_not_published": 6,
+        "scheduler_or_audience_suppressed": 12,
+        "verified_publication": 26
+      },
+      "total_provider_requests": 52,
+      "mean_requests_per_published_moment": 2,
+      "actual_modes": {
+        "simple": 26
+      }
+    },
+    "adaptive": {
+      "considered": 44,
+      "published_and_verified": 26,
+      "suppressed": 18,
+      "statuses": {
+        "review_control_not_published": 6,
+        "scheduler_or_audience_suppressed": 12,
+        "verified_publication": 26
+      },
+      "total_provider_requests": 94,
+      "mean_requests_per_published_moment": 3.6153846153846154,
+      "actual_modes": {
+        "fallback": 4,
+        "adaptive": 22
+      }
+    }
+  },
+  "records": [
+    {
+      "episode": "episode-015",
+      "audience": "fan",
+      "mode": "fallback",
+      "status": "review_control_not_published",
+      "requests": 0
+    },
+    {
+      "episode": "episode-015",
+      "audience": "fan",
+      "mode": "simple",
+      "status": "review_control_not_published",
+      "requests": 0
+    },
+    {
+      "episode": "episode-015",
+      "audience": "fan",
+      "mode": "adaptive",
+      "status": "review_control_not_published",
+      "requests": 0
+    },
+    {
+      "episode": "episode-015",
+      "audience": "analyst",
+      "mode": "fallback",
+      "status": "review_control_not_published",
+      "requests": 0
+    },
+    {
+      "episode": "episode-015",
+      "audience": "analyst",
+      "mode": "simple",
+      "status": "review_control_not_published",
+      "requests": 0
+    },
+    {
+      "episode": "episode-015",
+      "audience": "analyst",
+      "mode": "adaptive",
+      "status": "review_control_not_published",
+      "requests": 0
+    },
+    {
+      "episode": "episode-021",
+      "audience": "fan",
+      "mode": "fallback",
+      "status": "review_control_not_published",
+      "requests": 0
+    },
+    {
+      "episode": "episode-021",
+      "audience": "fan",
+      "mode": "simple",
+      "status": "review_control_not_published",
+      "requests": 0
+    },
+    {
+      "episode": "episode-021",
+      "audience": "fan",
+      "mode": "adaptive",
+      "status": "review_control_not_published",
+      "requests": 0
+    },
+    {
+      "episode": "episode-021",
+      "audience": "analyst",
+      "mode": "fallback",
+      "status": "review_control_not_published",
+      "requests": 0
+    },
+    {
+      "episode": "episode-021",
+      "audience": "analyst",
+      "mode": "simple",
+      "status": "review_control_not_published",
+      "requests": 0
+    },
+    {
+      "episode": "episode-021",
+      "audience": "analyst",
+      "mode": "adaptive",
+      "status": "review_control_not_published",
+      "requests": 0
+    },
+    {
+      "episode": "episode-022",
+      "audience": "fan",
+      "mode": "fallback",
+      "status": "review_control_not_published",
+      "requests": 0
+    },
+    {
+      "episode": "episode-022",
+      "audience": "fan",
+      "mode": "simple",
+      "status": "review_control_not_published",
+      "requests": 0
+    },
+    {
+      "episode": "episode-022",
+      "audience": "fan",
+      "mode": "adaptive",
+      "status": "review_control_not_published",
+      "requests": 0
+    },
+    {
+      "episode": "episode-022",
+      "audience": "analyst",
+      "mode": "fallback",
+      "status": "review_control_not_published",
+      "requests": 0
+    },
+    {
+      "episode": "episode-022",
+      "audience": "analyst",
+      "mode": "simple",
+      "status": "review_control_not_published",
+      "requests": 0
+    },
+    {
+      "episode": "episode-022",
+      "audience": "analyst",
+      "mode": "adaptive",
+      "status": "review_control_not_published",
+      "requests": 0
+    },
+    {
+      "episode": "episode-001",
+      "audience": "fan",
+      "mode": "fallback",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-001",
+      "audience": "fan",
+      "mode": "simple",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-001",
+      "audience": "fan",
+      "mode": "adaptive",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-001",
+      "audience": "analyst",
+      "mode": "fallback",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-001",
+      "audience": "analyst",
+      "mode": "simple",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-001",
+      "audience": "analyst",
+      "mode": "adaptive",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-002",
+      "audience": "fan",
+      "mode": "fallback",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-002",
+      "audience": "fan",
+      "mode": "simple",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-002",
+      "audience": "fan",
+      "mode": "adaptive",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-002",
+      "audience": "analyst",
+      "mode": "fallback",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-002",
+      "audience": "analyst",
+      "mode": "simple",
+      "status": "verified_publication",
+      "requests": 2,
+      "actual_mode": "simple",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-002",
+      "audience": "analyst",
+      "mode": "adaptive",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-003",
+      "audience": "fan",
+      "mode": "fallback",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-003",
+      "audience": "fan",
+      "mode": "simple",
+      "status": "verified_publication",
+      "requests": 2,
+      "actual_mode": "simple",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-003",
+      "audience": "fan",
+      "mode": "adaptive",
+      "status": "verified_publication",
+      "requests": 4,
+      "actual_mode": "adaptive",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "enriched"
+    },
+    {
+      "episode": "episode-003",
+      "audience": "analyst",
+      "mode": "fallback",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-003",
+      "audience": "analyst",
+      "mode": "simple",
+      "status": "verified_publication",
+      "requests": 2,
+      "actual_mode": "simple",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-003",
+      "audience": "analyst",
+      "mode": "adaptive",
+      "status": "verified_publication",
+      "requests": 4,
+      "actual_mode": "adaptive",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "enriched"
+    },
+    {
+      "episode": "episode-004",
+      "audience": "fan",
+      "mode": "fallback",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-004",
+      "audience": "fan",
+      "mode": "simple",
+      "status": "verified_publication",
+      "requests": 2,
+      "actual_mode": "simple",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-004",
+      "audience": "fan",
+      "mode": "adaptive",
+      "status": "verified_publication",
+      "requests": 4,
+      "actual_mode": "adaptive",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "enriched"
+    },
+    {
+      "episode": "episode-004",
+      "audience": "analyst",
+      "mode": "fallback",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-004",
+      "audience": "analyst",
+      "mode": "simple",
+      "status": "verified_publication",
+      "requests": 2,
+      "actual_mode": "simple",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-004",
+      "audience": "analyst",
+      "mode": "adaptive",
+      "status": "verified_publication",
+      "requests": 4,
+      "actual_mode": "adaptive",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "enriched"
+    },
+    {
+      "episode": "episode-005",
+      "audience": "fan",
+      "mode": "fallback",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-005",
+      "audience": "fan",
+      "mode": "simple",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-005",
+      "audience": "fan",
+      "mode": "adaptive",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-005",
+      "audience": "analyst",
+      "mode": "fallback",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-005",
+      "audience": "analyst",
+      "mode": "simple",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-005",
+      "audience": "analyst",
+      "mode": "adaptive",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-006",
+      "audience": "fan",
+      "mode": "fallback",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-006",
+      "audience": "fan",
+      "mode": "simple",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-006",
+      "audience": "fan",
+      "mode": "adaptive",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-006",
+      "audience": "analyst",
+      "mode": "fallback",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-006",
+      "audience": "analyst",
+      "mode": "simple",
+      "status": "verified_publication",
+      "requests": 2,
+      "actual_mode": "simple",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-006",
+      "audience": "analyst",
+      "mode": "adaptive",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-007",
+      "audience": "fan",
+      "mode": "fallback",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-007",
+      "audience": "fan",
+      "mode": "simple",
+      "status": "verified_publication",
+      "requests": 2,
+      "actual_mode": "simple",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-007",
+      "audience": "fan",
+      "mode": "adaptive",
+      "status": "verified_publication",
+      "requests": 4,
+      "actual_mode": "adaptive",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "enriched"
+    },
+    {
+      "episode": "episode-007",
+      "audience": "analyst",
+      "mode": "fallback",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-007",
+      "audience": "analyst",
+      "mode": "simple",
+      "status": "verified_publication",
+      "requests": 2,
+      "actual_mode": "simple",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-007",
+      "audience": "analyst",
+      "mode": "adaptive",
+      "status": "verified_publication",
+      "requests": 4,
+      "actual_mode": "adaptive",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "enriched"
+    },
+    {
+      "episode": "episode-008",
+      "audience": "fan",
+      "mode": "fallback",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-008",
+      "audience": "fan",
+      "mode": "simple",
+      "status": "verified_publication",
+      "requests": 2,
+      "actual_mode": "simple",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-008",
+      "audience": "fan",
+      "mode": "adaptive",
+      "status": "verified_publication",
+      "requests": 4,
+      "actual_mode": "adaptive",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "enriched"
+    },
+    {
+      "episode": "episode-008",
+      "audience": "analyst",
+      "mode": "fallback",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-008",
+      "audience": "analyst",
+      "mode": "simple",
+      "status": "verified_publication",
+      "requests": 2,
+      "actual_mode": "simple",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-008",
+      "audience": "analyst",
+      "mode": "adaptive",
+      "status": "verified_publication",
+      "requests": 4,
+      "actual_mode": "adaptive",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "enriched"
+    },
+    {
+      "episode": "episode-009",
+      "audience": "fan",
+      "mode": "fallback",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-009",
+      "audience": "fan",
+      "mode": "simple",
+      "status": "verified_publication",
+      "requests": 2,
+      "actual_mode": "simple",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-009",
+      "audience": "fan",
+      "mode": "adaptive",
+      "status": "verified_publication",
+      "requests": 5,
+      "actual_mode": "adaptive",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "enriched"
+    },
+    {
+      "episode": "episode-009",
+      "audience": "analyst",
+      "mode": "fallback",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-009",
+      "audience": "analyst",
+      "mode": "simple",
+      "status": "verified_publication",
+      "requests": 2,
+      "actual_mode": "simple",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-009",
+      "audience": "analyst",
+      "mode": "adaptive",
+      "status": "verified_publication",
+      "requests": 5,
+      "actual_mode": "adaptive",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "enriched"
+    },
+    {
+      "episode": "episode-010",
+      "audience": "fan",
+      "mode": "fallback",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-010",
+      "audience": "fan",
+      "mode": "simple",
+      "status": "verified_publication",
+      "requests": 2,
+      "actual_mode": "simple",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-010",
+      "audience": "fan",
+      "mode": "adaptive",
+      "status": "verified_publication",
+      "requests": 5,
+      "actual_mode": "adaptive",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "enriched"
+    },
+    {
+      "episode": "episode-010",
+      "audience": "analyst",
+      "mode": "fallback",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-010",
+      "audience": "analyst",
+      "mode": "simple",
+      "status": "verified_publication",
+      "requests": 2,
+      "actual_mode": "simple",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-010",
+      "audience": "analyst",
+      "mode": "adaptive",
+      "status": "verified_publication",
+      "requests": 5,
+      "actual_mode": "adaptive",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "enriched"
+    },
+    {
+      "episode": "episode-011",
+      "audience": "fan",
+      "mode": "fallback",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-011",
+      "audience": "fan",
+      "mode": "simple",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-011",
+      "audience": "fan",
+      "mode": "adaptive",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-011",
+      "audience": "analyst",
+      "mode": "fallback",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-011",
+      "audience": "analyst",
+      "mode": "simple",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-011",
+      "audience": "analyst",
+      "mode": "adaptive",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-012",
+      "audience": "fan",
+      "mode": "fallback",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-012",
+      "audience": "fan",
+      "mode": "simple",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-012",
+      "audience": "fan",
+      "mode": "adaptive",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-012",
+      "audience": "analyst",
+      "mode": "fallback",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-012",
+      "audience": "analyst",
+      "mode": "simple",
+      "status": "verified_publication",
+      "requests": 2,
+      "actual_mode": "simple",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-012",
+      "audience": "analyst",
+      "mode": "adaptive",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-013",
+      "audience": "fan",
+      "mode": "fallback",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-013",
+      "audience": "fan",
+      "mode": "simple",
+      "status": "verified_publication",
+      "requests": 2,
+      "actual_mode": "simple",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-013",
+      "audience": "fan",
+      "mode": "adaptive",
+      "status": "verified_publication",
+      "requests": 4,
+      "actual_mode": "adaptive",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "enriched"
+    },
+    {
+      "episode": "episode-013",
+      "audience": "analyst",
+      "mode": "fallback",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-013",
+      "audience": "analyst",
+      "mode": "simple",
+      "status": "verified_publication",
+      "requests": 2,
+      "actual_mode": "simple",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-013",
+      "audience": "analyst",
+      "mode": "adaptive",
+      "status": "verified_publication",
+      "requests": 4,
+      "actual_mode": "adaptive",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "enriched"
+    },
+    {
+      "episode": "episode-014",
+      "audience": "fan",
+      "mode": "fallback",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-014",
+      "audience": "fan",
+      "mode": "simple",
+      "status": "verified_publication",
+      "requests": 2,
+      "actual_mode": "simple",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-014",
+      "audience": "fan",
+      "mode": "adaptive",
+      "status": "verified_publication",
+      "requests": 4,
+      "actual_mode": "adaptive",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "enriched"
+    },
+    {
+      "episode": "episode-014",
+      "audience": "analyst",
+      "mode": "fallback",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-014",
+      "audience": "analyst",
+      "mode": "simple",
+      "status": "verified_publication",
+      "requests": 2,
+      "actual_mode": "simple",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-014",
+      "audience": "analyst",
+      "mode": "adaptive",
+      "status": "verified_publication",
+      "requests": 4,
+      "actual_mode": "adaptive",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "enriched"
+    },
+    {
+      "episode": "episode-016",
+      "audience": "fan",
+      "mode": "fallback",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-016",
+      "audience": "fan",
+      "mode": "simple",
+      "status": "verified_publication",
+      "requests": 2,
+      "actual_mode": "simple",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-016",
+      "audience": "fan",
+      "mode": "adaptive",
+      "status": "verified_publication",
+      "requests": 5,
+      "actual_mode": "adaptive",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "enriched"
+    },
+    {
+      "episode": "episode-016",
+      "audience": "analyst",
+      "mode": "fallback",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-016",
+      "audience": "analyst",
+      "mode": "simple",
+      "status": "verified_publication",
+      "requests": 2,
+      "actual_mode": "simple",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-016",
+      "audience": "analyst",
+      "mode": "adaptive",
+      "status": "verified_publication",
+      "requests": 5,
+      "actual_mode": "adaptive",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "enriched"
+    },
+    {
+      "episode": "episode-017",
+      "audience": "fan",
+      "mode": "fallback",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-017",
+      "audience": "fan",
+      "mode": "simple",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-017",
+      "audience": "fan",
+      "mode": "adaptive",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-017",
+      "audience": "analyst",
+      "mode": "fallback",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-017",
+      "audience": "analyst",
+      "mode": "simple",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-017",
+      "audience": "analyst",
+      "mode": "adaptive",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-018",
+      "audience": "fan",
+      "mode": "fallback",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-018",
+      "audience": "fan",
+      "mode": "simple",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-018",
+      "audience": "fan",
+      "mode": "adaptive",
+      "status": "scheduler_or_audience_suppressed",
+      "requests": 0
+    },
+    {
+      "episode": "episode-018",
+      "audience": "analyst",
+      "mode": "fallback",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-018",
+      "audience": "analyst",
+      "mode": "simple",
+      "status": "verified_publication",
+      "requests": 2,
+      "actual_mode": "simple",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-018",
+      "audience": "analyst",
+      "mode": "adaptive",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-019",
+      "audience": "fan",
+      "mode": "fallback",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-019",
+      "audience": "fan",
+      "mode": "simple",
+      "status": "verified_publication",
+      "requests": 2,
+      "actual_mode": "simple",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-019",
+      "audience": "fan",
+      "mode": "adaptive",
+      "status": "verified_publication",
+      "requests": 4,
+      "actual_mode": "adaptive",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "enriched"
+    },
+    {
+      "episode": "episode-019",
+      "audience": "analyst",
+      "mode": "fallback",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-019",
+      "audience": "analyst",
+      "mode": "simple",
+      "status": "verified_publication",
+      "requests": 2,
+      "actual_mode": "simple",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-019",
+      "audience": "analyst",
+      "mode": "adaptive",
+      "status": "verified_publication",
+      "requests": 4,
+      "actual_mode": "adaptive",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "enriched"
+    },
+    {
+      "episode": "episode-020",
+      "audience": "fan",
+      "mode": "fallback",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-020",
+      "audience": "fan",
+      "mode": "simple",
+      "status": "verified_publication",
+      "requests": 2,
+      "actual_mode": "simple",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-020",
+      "audience": "fan",
+      "mode": "adaptive",
+      "status": "verified_publication",
+      "requests": 4,
+      "actual_mode": "adaptive",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "enriched"
+    },
+    {
+      "episode": "episode-020",
+      "audience": "analyst",
+      "mode": "fallback",
+      "status": "verified_publication",
+      "requests": 0,
+      "actual_mode": "fallback",
+      "tool_calls": 0,
+      "narration_status": "fallback",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-020",
+      "audience": "analyst",
+      "mode": "simple",
+      "status": "verified_publication",
+      "requests": 2,
+      "actual_mode": "simple",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback"
+    },
+    {
+      "episode": "episode-020",
+      "audience": "analyst",
+      "mode": "adaptive",
+      "status": "verified_publication",
+      "requests": 4,
+      "actual_mode": "adaptive",
+      "tool_calls": 2,
+      "narration_status": "enriched",
+      "overlay_status": "enriched"
+    }
+  ],
+  "fault_cases": [
+    {
+      "mode": "simple",
+      "fault_role": "narrator",
+      "fault": "timeout",
+      "fault_role_requested": true,
+      "verified": true,
+      "requests": 3,
+      "narration_status": "fallback",
+      "overlay_status": "fallback",
+      "errors": [
+        "narrator:timeout"
+      ]
+    },
+    {
+      "mode": "simple",
+      "fault_role": "narrator",
+      "fault": "malformed",
+      "fault_role_requested": true,
+      "verified": true,
+      "requests": 2,
+      "narration_status": "fallback",
+      "overlay_status": "fallback",
+      "errors": [
+        "narrator:invalid_output_or_tool"
+      ]
+    },
+    {
+      "mode": "simple",
+      "fault_role": "replay_producer",
+      "fault": "wrong_overlay",
+      "fault_role_requested": false,
+      "verified": true,
+      "requests": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback",
+      "errors": []
+    },
+    {
+      "mode": "simple",
+      "fault_role": "match_analyst",
+      "fault": "unknown_claim",
+      "fault_role_requested": true,
+      "verified": true,
+      "requests": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback",
+      "errors": [
+        "match_analyst:invalid_analysis"
+      ]
+    },
+    {
+      "mode": "simple",
+      "fault_role": "challenger",
+      "fault": "objection",
+      "fault_role_requested": false,
+      "verified": true,
+      "requests": 2,
+      "narration_status": "enriched",
+      "overlay_status": "fallback",
+      "errors": []
+    },
+    {
+      "mode": "adaptive",
+      "fault_role": "narrator",
+      "fault": "timeout",
+      "fault_role_requested": true,
+      "verified": true,
+      "requests": 6,
+      "narration_status": "fallback",
+      "overlay_status": "enriched",
+      "errors": [
+        "narrator:timeout"
+      ]
+    },
+    {
+      "mode": "adaptive",
+      "fault_role": "narrator",
+      "fault": "malformed",
+      "fault_role_requested": true,
+      "verified": true,
+      "requests": 5,
+      "narration_status": "fallback",
+      "overlay_status": "enriched",
+      "errors": [
+        "narrator:invalid_output_or_tool"
+      ]
+    },
+    {
+      "mode": "adaptive",
+      "fault_role": "replay_producer",
+      "fault": "wrong_overlay",
+      "fault_role_requested": true,
+      "verified": true,
+      "requests": 5,
+      "narration_status": "enriched",
+      "overlay_status": "fallback",
+      "errors": [
+        "replay_producer:grounding_failed"
+      ]
+    },
+    {
+      "mode": "adaptive",
+      "fault_role": "match_analyst",
+      "fault": "unknown_claim",
+      "fault_role_requested": true,
+      "verified": true,
+      "requests": 5,
+      "narration_status": "enriched",
+      "overlay_status": "enriched",
+      "errors": [
+        "match_analyst:invalid_analysis"
+      ]
+    },
+    {
+      "mode": "adaptive",
+      "fault_role": "challenger",
+      "fault": "objection",
+      "fault_role_requested": true,
+      "verified": true,
+      "requests": 4,
+      "narration_status": "fallback",
+      "overlay_status": "enriched",
+      "errors": [
+        "narrator:challenge_fallback"
+      ]
+    }
+  ],
+  "conclusion": "Finite source-publication, routing and recovery checks only. Real-model and human superiority unmeasured."
+}

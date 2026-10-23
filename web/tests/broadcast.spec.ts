@@ -2,7 +2,7 @@ import { test, expect, Page } from "@playwright/test";
 async function ready(page: Page) {
   await expect(
     page.getByRole("button", { name: "Open Proof Lens", exact: true }),
-  ).toBeVisible({ timeout: 60000 });
+  ).toBeEnabled({ timeout: 60000 });
 }
 async function select(page: Page, name: string) {
   await page
@@ -24,7 +24,7 @@ test("broadcast, source proof, preferences and temporal score transitions", asyn
 }, info) => {
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
-  await page.goto("/");
+  await page.goto("/?view=studio");
   await ready(page);
   await expect(page.getByTestId("score")).toHaveText("0:0");
   const initial = await (
@@ -45,6 +45,7 @@ test("broadcast, source proof, preferences and temporal score transitions", asyn
   ).toBeVisible();
   await page.evaluate(() => window.scrollTo(0, 0));
   await page.screenshot({
+    animations: "disabled",
     path: `../output/playwright/${info.project.name}-broadcast.png`,
     fullPage: true,
   });
@@ -54,6 +55,7 @@ test("broadcast, source proof, preferences and temporal score transitions", asyn
   await expect(
     page.getByText("Recomputed. Verified.", { exact: true }),
   ).toBeVisible();
+  await page.getByRole("button", { name: "audit", exact: true }).click();
   await page.getByRole("button", { name: "observations", exact: true }).click();
   await expect(
     page.getByText("The original observations.", { exact: true }),
@@ -109,7 +111,7 @@ test("broadcast, source proof, preferences and temporal score transitions", asyn
 test("positional Proof Lens exposes source geometry and stale evidence is withheld", async ({
   page,
 }, info) => {
-  await page.goto("/");
+  await page.goto("/?view=studio");
   await ready(page);
   await select(page, "A higher line, proved");
   await expect(page.locator(".current-story h2")).toContainText("10.0m");
@@ -131,9 +133,11 @@ test("positional Proof Lens exposes source geometry and stale evidence is withhe
     "41 before / 18 after",
   );
   await page.screenshot({
+    animations: "disabled",
     path: `../output/playwright/${info.project.name}-proof-lens.png`,
     fullPage: false,
   });
+  await page.getByRole("button", { name: "audit", exact: true }).click();
   await page.getByRole("button", { name: "observations", exact: true }).click();
   await expect(
     page.getByText("Three deepest outfielders, attack-relative x:", {
@@ -151,6 +155,7 @@ test("positional Proof Lens exposes source geometry and stale evidence is withhe
   ).toBeVisible();
   await expect(page.locator(".withheld")).toContainText("132s");
   await page.screenshot({
+    animations: "disabled",
     path: `../output/playwright/${info.project.name}-withheld.png`,
     fullPage: true,
   });
@@ -158,7 +163,7 @@ test("positional Proof Lens exposes source geometry and stale evidence is withhe
 test("recorded agent evidence, playback and service recovery", async ({
   page,
 }, info) => {
-  await page.goto("/");
+  await page.goto("/?view=studio");
   await ready(page);
   await page.getByRole("button", { name: "Play replay", exact: true }).click();
   await expect(page.getByTestId("clock")).not.toHaveText("05:56");
@@ -176,7 +181,7 @@ test("recorded agent evidence, playback and service recovery", async ({
       "4 integration checks passed",
     );
     await expect(page.getByRole("dialog")).toContainText(
-      "A real run, including the recovery.",
+      "A real run, source-verified end to end.",
     );
     await page.getByRole("button", { name: "Close agent room" }).click();
   } else {
@@ -188,6 +193,7 @@ test("recorded agent evidence, playback and service recovery", async ({
     );
     await expect(page.getByRole("dialog")).toContainText("resolve_claim");
     await page.screenshot({
+      animations: "disabled",
       path: "../output/playwright/laptop-agent-room.png",
     });
     await page.getByRole("button", { name: "Close agent room" }).click();

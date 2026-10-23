@@ -1,5 +1,9 @@
 # Third-party notices
 
+## Broadcast typography
+
+Manrope Variable (@fontsource-variable/manrope 5.3.0), copyright 2019 The Manrope Project Authors, and IBM Plex Mono (@fontsource/ibm-plex-mono 5.3.0), copyright 2017 IBM Corp., are bundled locally by Vite under the SIL Open Font License 1.1. Their full copyright and license notices are retained at web/public/licenses/Manrope-OFL.txt and web/public/licenses/IBM-Plex-Mono-OFL.txt and copied into the built viewer. No external font CDN is contacted. These components retain their original licenses.
+
 ## football-simulator
 
 Author: Tobias Bleckert. Source: https://github.com/tbleckert/football-simulator

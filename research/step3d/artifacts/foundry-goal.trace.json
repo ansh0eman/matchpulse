@@ -1,0 +1,174 @@
+{
+  "label": "Recorded real Foundry/MAF goal with enriched narration and replay",
+  "origin": "foundry",
+  "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+  "source_seconds": 2370.5,
+  "narration_status": "enriched",
+  "overlay_status": "enriched",
+  "events": [
+    {
+      "role": "editorial",
+      "event": "accepted",
+      "reason": null,
+      "elapsed_ms": 5.395375017542392,
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "role": "runtime",
+      "event": "microsoft_agent_framework",
+      "reason": null,
+      "elapsed_ms": 58.00950000411831,
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "role": "director",
+      "event": "request_started",
+      "reason": null,
+      "elapsed_ms": 59.632499993313104,
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "role": "director",
+      "event": "request_succeeded",
+      "reason": null,
+      "elapsed_ms": 7072.331208008109,
+      "usage_input": 1091,
+      "usage_output": 30
+    },
+    {
+      "role": "director",
+      "event": "route",
+      "reason": "match_analyst",
+      "elapsed_ms": 7072.388792003039,
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "role": "match_analyst",
+      "event": "request_started",
+      "reason": null,
+      "elapsed_ms": 7072.986624989426,
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "role": "match_analyst",
+      "event": "request_succeeded",
+      "reason": null,
+      "elapsed_ms": 13489.923499990255,
+      "usage_input": 3689,
+      "usage_output": 344
+    },
+    {
+      "role": "match_analyst",
+      "event": "verified_handoff",
+      "reason": null,
+      "elapsed_ms": 13490.11966699618,
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "role": "challenger",
+      "event": "request_started",
+      "reason": null,
+      "elapsed_ms": 13491.57016701065,
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "role": "challenger",
+      "event": "request_succeeded",
+      "reason": null,
+      "elapsed_ms": 20620.761666999897,
+      "usage_input": 4161,
+      "usage_output": 298
+    },
+    {
+      "role": "challenger",
+      "event": "review",
+      "reason": "narrow",
+      "elapsed_ms": 20621.140875009587,
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "role": "narrator",
+      "event": "request_started",
+      "reason": null,
+      "elapsed_ms": 20623.03454198991,
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "role": "replay_producer",
+      "event": "request_started",
+      "reason": null,
+      "elapsed_ms": 20630.36787501187,
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "role": "replay_producer",
+      "event": "request_succeeded",
+      "reason": null,
+      "elapsed_ms": 23617.227167007513,
+      "usage_input": 1334,
+      "usage_output": 64
+    },
+    {
+      "role": "narrator",
+      "event": "request_succeeded",
+      "reason": null,
+      "elapsed_ms": 23820.357958000386,
+      "usage_input": 1387,
+      "usage_output": 71
+    },
+    {
+      "role": "narrator",
+      "event": "challenge_revision",
+      "reason": "narrowed_to_evidence",
+      "elapsed_ms": 23820.573042001342,
+      "usage_input": null,
+      "usage_output": null
+    },
+    {
+      "role": "publisher",
+      "event": "artifact_verified",
+      "reason": null,
+      "elapsed_ms": 23823.1901669933,
+      "usage_input": null,
+      "usage_output": null
+    }
+  ],
+  "tools": [
+    {
+      "tool": "resolve_claim",
+      "as_of_seconds": 2370.5,
+      "status": "success"
+    },
+    {
+      "tool": "resolve_evidence",
+      "as_of_seconds": 2370.5,
+      "status": "success"
+    },
+    {
+      "tool": "resolve_claim",
+      "as_of_seconds": 2370.5,
+      "status": "success"
+    },
+    {
+      "tool": "resolve_evidence",
+      "as_of_seconds": 2370.5,
+      "status": "success"
+    },
+    {
+      "tool": "resolve_evidence",
+      "as_of_seconds": 2370.5,
+      "status": "success"
+    }
+  ],
+  "source_sha256": "f7a66666be2c09038aadb2861fe829c1c4533b778c0bf1fb0acbb4ff28099e95"
+}

@@ -1,0 +1,116 @@
+{
+  "angle": "evidence_first",
+  "available_seconds": 2370.5,
+  "category": "score_context",
+  "claim_ids": [
+    "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77"
+  ],
+  "errors": [],
+  "evidence": [
+    {
+      "category": "event",
+      "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+      "source_id": "evt_002782"
+    },
+    {
+      "category": "event",
+      "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+      "source_id": "evt_002783"
+    }
+  ],
+  "insight_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:insight:e6e7fb2df33dccb5eecd1e77",
+  "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+  "narration": {
+    "headline": "The recorded observations show: NORTH: opening goal. Score 1\u20130 (NORTH\u2013SOUTH).",
+    "limitations": [
+      "Synthetic uncalibrated football; observations do not establish coach intent."
+    ],
+    "schema_version": 2,
+    "sentences": [
+      {
+        "claim_ids": [
+          "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77"
+        ],
+        "text": "The recorded observations show: NORTH: opening goal. Score 1\u20130 (NORTH\u2013SOUTH)."
+      }
+    ]
+  },
+  "narration_status": "enriched",
+  "origin": "foundry",
+  "overlay": {
+    "coordinates": [
+      [
+        "evt_002782",
+        88.29,
+        27.0
+      ],
+      [
+        "evt_002783",
+        113.01,
+        31.45
+      ]
+    ],
+    "metrics": [
+      {
+        "claim_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77",
+        "name": "NORTH_before",
+        "unit": "goals",
+        "value": 0.0
+      },
+      {
+        "claim_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77",
+        "name": "SOUTH_before",
+        "unit": "goals",
+        "value": 0.0
+      },
+      {
+        "claim_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77",
+        "name": "NORTH_after",
+        "unit": "goals",
+        "value": 1.0
+      },
+      {
+        "claim_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77",
+        "name": "SOUTH_after",
+        "unit": "goals",
+        "value": 0.0
+      }
+    ],
+    "observation_semantics": "source ball/player coordinates only; interpolation is visualization",
+    "plan": {
+      "claim_ids": [
+        "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77"
+      ],
+      "emphasis": "incident",
+      "family": "scoreline_change",
+      "schema_version": 2
+    },
+    "references": [
+      {
+        "category": "event",
+        "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+        "source_id": "evt_002782"
+      },
+      {
+        "category": "event",
+        "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+        "source_id": "evt_002783"
+      }
+    ],
+    "replay_window": [
+      2370.0,
+      2370.5
+    ],
+    "schema_version": 2
+  },
+  "overlay_status": "enriched",
+  "preferences": {
+    "audience": "fan",
+    "favorite_team": null,
+    "language": "en"
+  },
+  "presented_seconds": 2370.5,
+  "schema_version": 2,
+  "source_seconds": 2370.5,
+  "trace_id": "66a073f95788471b9d4bd8cac48999bd"
+}

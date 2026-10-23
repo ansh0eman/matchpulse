@@ -1,0 +1,32 @@
+{
+  "agent_request_attempts": 5,
+  "authorized_model_request_limit": 12,
+  "cloud_trace_delivery": false,
+  "elapsed_seconds": 23.82873712500441,
+  "fully_enriched": true,
+  "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+  "model_deployment": "matchpulse-gpt41-mini",
+  "model_http_attempts": [],
+  "narration_status": "enriched",
+  "origin": "foundry",
+  "overlay_status": "enriched",
+  "sdk_versions": {
+    "agent-framework-core": "1.23.0",
+    "agent-framework-foundry": "1.15.0",
+    "azure-ai-projects": "2.7.0",
+    "azure-identity": "1.26.0",
+    "httpx": "0.28.1"
+  },
+  "source_publication_verified": true,
+  "source_sha256": "debaa05d3aaaed3b4b01e0621c818ed8a9d8bd3e6aa75f6fec008c1437643291",
+  "started_utc": "2026-10-23T19:58:53.451732+00:00",
+  "successful_tool_calls": 5,
+  "transport_counter_observations": 0,
+  "model_http_requests": null,
+  "counter_status": "Not observed: original guard covered httpx, installed SDK used httpx2. No transport-level cap attestation for this run.",
+  "guard_repaired_after_capture": "Both HTTP transports are now covered and mocked cap-tested; capture was not repeated.",
+  "reported_tokens": {
+    "input": 11662,
+    "output": 807
+  }
+}
