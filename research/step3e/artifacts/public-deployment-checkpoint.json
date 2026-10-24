@@ -1,0 +1,63 @@
+{
+  "url": "https://matchpulse-studio.politesea-3d29a667.eastus.azurecontainerapps.io",
+  "deployment": {
+    "state": "Succeeded",
+    "fqdn": "matchpulse-studio.politesea-3d29a667.eastus.azurecontainerapps.io",
+    "https_only": true,
+    "image": "ghcr.io/ansh0eman/matchpulse-viewer@sha256:2f6718b03c0fe983fa6a10fae6bbc2f2ab739066fe33897ec208dd12d71db12c",
+    "resources": {
+      "cpu": 0.5,
+      "ephemeralStorage": "2Gi",
+      "memory": "1Gi"
+    },
+    "scale": {
+      "cooldownPeriod": 300,
+      "maxReplicas": 1,
+      "minReplicas": 0,
+      "pollingInterval": 30,
+      "rules": [
+        {
+          "http": {
+            "metadata": {
+              "concurrentRequests": "10"
+            }
+          },
+          "name": "http"
+        }
+      ]
+    },
+    "identity": {
+      "type": "None"
+    },
+    "registry_credentials": 0
+  },
+  "http_smoke": {
+    "status": "passed",
+    "url": "https://matchpulse-studio.politesea-3d29a667.eastus.azurecontainerapps.io",
+    "health_seconds": 0.9099974170094356,
+    "first_line_view_seconds": 5.073254165996332,
+    "verified_samples": 59,
+    "change_m": 10.01258807588076,
+    "source_hashes": {
+      "events": "6f1672999abc21f38e59ad789aceef587f713cd0043a4ee1a3b5ad6b7dafe126",
+      "tracking": "d4e6aaaddacf084ba18470b7ba93bbf0cdc2d242f8707f3bc83f5a475c8cf559",
+      "config": "23671808753e918d1b7a42ed07fafa46bc371dc0686eded3bc53bf6b6a0b5458"
+    },
+    "model_calls": 0,
+    "native_goal_verified": true,
+    "native_source_hashes": {
+      "events": "a0776ea16bf6d4541795da65c4bbfe19a653da2b1203a0e1b1912b95fbd5a2e8",
+      "tracking": "d01d3e283b6e8a0b1d60014b237cf73b1b29dee4454258e592520323121b61ee",
+      "config": "23671808753e918d1b7a42ed07fafa46bc371dc0686eded3bc53bf6b6a0b5458"
+    },
+    "scope": "HTTP release smoke check; not a scale-zero cold-start or load benchmark"
+  },
+  "browser": {
+    "passed": 25,
+    "failed": 1,
+    "uncompleted": 7,
+    "stopped_by_user": true,
+    "failure": "Invalid prefetched packet test expected Playback buffer unavailable alert within 5000ms; alert had not appeared. Root cause unresolved; remote request timing is suspected, not established."
+  },
+  "scope": "Deployment and HTTP smoke succeeded; public browser acceptance incomplete. No cold-start benchmark or final submission confirmation."
+}

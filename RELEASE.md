@@ -10,11 +10,11 @@ October 24, 2026. Step 3E follows b9862d7. Resolve the containing commit for exa
 | Prior Step3D ARM64 image digest | sha256:5ed35f4ac4185d600a89779560ce5a2b46b7a7d74c1f87882deed5a0411ec9dc |
 | Current AMD64 validation | Source 50da7ea; config sha256:5d09c5ca3469014830048aaa3087702346f8422cdd51f5f88096ddd7d513339c; saved-image round trip verified; 33/33 browser cases passed in 383.97s at 0.5 CPU / 1 GiB; public acceptance pending |
 | Current preview | http://127.0.0.1:8013 while the local check container is running |
-| Azure hosting | Not deployed. Compiled template now contains only ACA Consumption environment/app. Public GHCR replaces paid ACR/identity; protected trial credit expires Nov22 |
+| Azure hosting | Deployed HTTPS ACA Consumption viewer at https://matchpulse-studio.politesea-3d29a667.eastus.azurecontainerapps.io; immutable accepted GHCR image, 0.5 CPU / 1 GiB, 0–1 replica, no identity or registry credential. Public HTTP smoke passed; browser acceptance incomplete: 25 passed, 1 failed, 7 uncompleted when user stopped work |
 | Fixture bundle | Published viewer-fixtures-v2 asset: ten files / 31,984,795 bytes plus manifest; original eight rows unchanged; checksums/notices included |
 | Foundry | Newly authorized source-verified fully enriched goal capture persisted; historical recovery remains separate. Actual network-request count is unobserved; see capture provenance |
 | Video | New genuine 112-second six-scene recording, local stock narration, H.264/AAC and English caption track assembled. Actual frame review performed; listening review/public upload pending |
-| Innovation Studio | Final name/links/entry still require checking and submission |
+| Innovation Studio | Registered account rejected as absent from Microsoft tenant; original invitation loops. User independently reproduced. Authorized support follow-up sent in existing thread. Final name/links/entry remain unconfirmed; no submission |
 
 New evidence is under research/step3e/; historical Step 3D image hashes above belong to that earlier accepted code. Current workflow validates/publishes an exact locally accepted AMD64 image without rebuilding or a PAT. No Azure identity is baked into the viewer. Final current image/digest, six license notices, anonymous pull and HTTPS/browser checks remain gates.
 

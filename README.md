@@ -4,6 +4,8 @@ An evidence-first AI broadcast studio for synthetic football. Follow the match, 
 
 **Detect → Prove → Explain → Explore**
 
+[Public Azure preview](https://matchpulse-studio.politesea-3d29a667.eastus.azurecontainerapps.io) · [Current checkpoint and remaining issues](research/product-excellence/CHECKPOINT.md). Deployment and public HTTP source-verification checks passed; full public browser acceptance is incomplete. This is not a production-readiness or submission claim.
+
 ![Working Matchday broadcast](research/design/after/1440-native-goal.png)
 
 **Matchday** opens three source seconds before a native synthetic goal. The score, clock and original quarter-second player positions advance together without remounting the pitch. Select **A higher line, proved** for the separate tracked comparison: **21.95m → 31.96m, +10.01m**, supported by 59 original frames. **Analysis Room** retains the detailed workspace. Proof Lens has Summary, contributor inspection, Method and Audit, plus a verified JSON receipt. The 76-second guided story uses clearly separate goal, tracking and stale-evidence fixtures. `/?view=broadcast` provides clean program output. Fonts and runtime notices are bundled locally.
