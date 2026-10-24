@@ -1,0 +1,87 @@
+{
+  "source_sha": "50da7eadb384890415c4c888f47a7bcc23b22622",
+  "saved_image": {
+    "status": "passed",
+    "config_digest": "sha256:5d09c5ca3469014830048aaa3087702346f8422cdd51f5f88096ddd7d513339c",
+    "source_sha": "50da7eadb384890415c4c888f47a7bcc23b22622",
+    "architecture": "amd64",
+    "os": "linux",
+    "layers": 16,
+    "verified_uncompressed_bytes": 518648320,
+    "tag": "matchpulse-viewer:release-amd64",
+    "scope": "Saved config and ordered rootfs identity; not a security or functional acceptance audit"
+  },
+  "roundtrip": {
+    "status": "passed",
+    "config_digest": "sha256:5d09c5ca3469014830048aaa3087702346f8422cdd51f5f88096ddd7d513339c",
+    "source_sha": "50da7eadb384890415c4c888f47a7bcc23b22622",
+    "architecture": "amd64",
+    "os": "linux",
+    "layers": 16,
+    "verified_uncompressed_bytes": 518648320,
+    "tag": "matchpulse-viewer:release-amd64",
+    "scope": "Saved config and ordered rootfs identity; not a security or functional acceptance audit"
+  },
+  "browser": {
+    "startTime": "2026-10-24T17:08:39.990Z",
+    "duration": 383972.40499999997,
+    "expected": 33,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "resources": {
+    "cpu": 0.5,
+    "memory": "1GiB"
+  },
+  "history_scan": {
+    "commits": 25,
+    "findings": 0
+  },
+  "image_application_scan_findings": 0,
+  "npm_advisories": 0,
+  "fixture_files_verified": 10,
+  "fixture_bytes": 31984795,
+  "licenses_verified": 6,
+  "host_mounts": 0,
+  "model_calls": 0,
+  "trial": {
+    "state": "Enabled",
+    "offer": "FreeTrial_2014-09-01",
+    "spending_limit": "On",
+    "observed_credit_usd": 200,
+    "expires": "2026-11-22T09:46:19Z"
+  },
+  "video": {
+    "sha256": "d0c49fba1d37ff8224deaf2a221cc1b7b1c7946fdbec704d13fa046f4f499119",
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 1366,
+          "height": 768
+        },
+        {
+          "codec_name": "aac",
+          "codec_type": "audio"
+        },
+        {
+          "codec_name": "mov_text",
+          "codec_type": "subtitle"
+        }
+      ],
+      "format": {
+        "duration": "112.000000",
+        "size": "3315576"
+      }
+    },
+    "narration": "Local Kokoro stock af_heart, no cloning or hosted inference",
+    "captions": "Embedded English track and narration.srt sidecar; proportional alignment, not forced alignment",
+    "source": "Six real browser scene recordings, trimmed and joined with local narration",
+    "review": "Assembly checks only; visual and listening review required before publication"
+  },
+  "scope": "Local packaged AMD64 acceptance and finite source/image audit; public HTTPS and submission still pending"
+}
