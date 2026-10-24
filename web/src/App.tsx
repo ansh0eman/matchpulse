@@ -33,6 +33,7 @@ import { BroadcastTheatre } from "./broadcast/BroadcastTheatre";
 import { CHAPTERS, GuidedStory } from "./demo/GuidedStory";
 import { WorkflowGraph } from "./agents/WorkflowGraph";
 import { visibleSnapshot } from "./playback/causal";
+import { useBufferedReplay } from "./playback/useBufferedReplay";
 
 export default function App() {
   const [mode, setMode] = useState(() => {
@@ -43,14 +44,17 @@ export default function App() {
     [tourSeconds, setTourSeconds] = useState(0),
     [tourRunning, setTourRunning] = useState(false);
   const [scenarios, setScenarios] = useState<Scenario[]>([]),
-    [scenario, setScenario] = useState(() => mode === "studio" ? "open-play" : "line-shift"),
-    [clock, setClock] = useState(() => mode === "studio" ? 356 : 3360),
+    [scenario, setScenario] = useState(() =>
+      mode === "studio" ? "open-play" : "line-shift",
+    ),
+    [clock, setClock] = useState(() => (mode === "studio" ? 356 : 3360)),
     [audience, setAudience] = useState<Audience>("fan"),
     [favorite, setFavorite] = useState<Team | "">("");
   const [snapshot, setData] = useState<View | null>(null),
     [loadedParams, setLoadedParams] = useState(""),
     [error, setError] = useState<string | null>(null),
     [loading, setLoading] = useState(true),
+    [playbackFault, setPlaybackFault] = useState<string | null>(null),
     [playing, setPlaying] = useState(false),
     [speed, setSpeed] = useState(4),
     [retry, setRetry] = useState(0);
@@ -66,7 +70,6 @@ export default function App() {
     [answer, setAnswer] = useState<Answer | null>(null),
     [asking, setAsking] = useState(false);
   const generation = useRef(0),
-    playbackPending = useRef(false),
     pendingSelection = useRef<string | null>(null),
     askController = useRef<AbortController | null>(null);
   useDialog(drawer || room || guide);
@@ -79,6 +82,24 @@ export default function App() {
   }).toString();
   const data = visibleSnapshot(snapshot, loadedParams, params);
   const blocking = loading && !data;
+  const buffering = useBufferedReplay({
+    playing,
+    clock,
+    speed,
+    retry,
+    scenario,
+    audience,
+    favorite,
+    seed: snapshot,
+    onView: (v, key) => {
+      setClock(v.clock);
+      setData(v);
+      setLoadedParams(key);
+      setLoading(false);
+    },
+    onStop: () => setPlaying(false),
+    onError: setPlaybackFault,
+  });
   const current: Story | undefined =
     data?.timeline.find((t) => t.id === selected) ??
     [...(data?.timeline ?? [])]
@@ -124,14 +145,13 @@ export default function App() {
     return () => c.abort();
   }, []);
   useEffect(() => {
+    if (playing) return;
     const c = new AbortController();
-    playbackPending.current = true;
     setLoading(true);
     setError(null);
     get<View>(`/api/view?${params}`, c.signal)
       .then((v) => {
         if (c.signal.aborted) return;
-        playbackPending.current = false;
         setData(v);
         setLoadedParams(params);
         setLoading(false);
@@ -139,27 +159,16 @@ export default function App() {
       })
       .catch((e) => {
         if (e.name !== "AbortError") {
-          playbackPending.current = false;
           setError(e.message);
           setLoading(false);
           setPlaying(false);
         }
       });
     return () => c.abort();
-  }, [params, retry]);
-  useEffect(() => {
-    if (!playing) return;
-    const id = setInterval(
-      () => {
-        // Backpressure: never abort a slow source request with the next tick.
-        if (!playbackPending.current) setClock((v) => Math.min(data?.duration ?? v, v + speed));
-      },
-      1000,
-    );
-    return () => clearInterval(id);
-  }, [playing, speed, data?.duration]);
+  }, [params, retry, playing]);
   useEffect(() => {
     generation.current++;
+    setPlaybackFault(null);
     askController.current?.abort();
     setAnswer(null);
     setAsking(false);
@@ -351,10 +360,11 @@ export default function App() {
           clock={clock}
           playing={playing}
           loading={blocking}
+          buffering={buffering}
           speed={speed}
           audience={audience}
           favorite={favorite}
-          error={error}
+          error={error ?? playbackFault}
           clean={mode === "broadcast"}
           choose={choose}
           seek={(value) => {
@@ -366,7 +376,10 @@ export default function App() {
           setAudience={setAudience}
           setFavorite={setFavorite}
           inspect={() => inspect()}
-          retry={() => setRetry((v) => v + 1)}
+          retry={() => {
+            setPlaybackFault(null);
+            setRetry((v) => v + 1);
+          }}
           selectStory={seekStory}
           toggleClean={() =>
             setMode(mode === "broadcast" ? "theatre" : "broadcast")
@@ -461,14 +474,17 @@ export default function App() {
                 Verified replay · no live model call
               </span>
             </div>
-            {error ? (
+            {error || playbackFault ? (
               <section className="service-error" role="alert">
                 <ShieldCheckIcon size={30} />
                 <h2>Evidence unavailable.</h2>
-                <p>{error}</p>
+                <p>{error ?? playbackFault}</p>
                 <button
                   className="primary-button"
-                  onClick={() => setRetry((v) => v + 1)}
+                  onClick={() => {
+                    setPlaybackFault(null);
+                    setRetry((v) => v + 1);
+                  }}
                 >
                   Retry source connection
                 </button>
@@ -609,7 +625,7 @@ export default function App() {
                       type="range"
                       min="0"
                       max={data?.duration ?? 6000}
-                      step="0.5"
+                      step="0.25"
                       value={clock}
                       onChange={(e) => {
                         setPlaying(false);

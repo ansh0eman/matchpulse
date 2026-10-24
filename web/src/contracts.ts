@@ -56,6 +56,11 @@ export interface Story {
   };
 }
 export interface View {
+  preferences: {
+    audience: Audience;
+    favorite_team: Team | null;
+    language: "en";
+  };
   scenario: string;
   match_id: string;
   clock: number;
@@ -80,6 +85,17 @@ export interface View {
   };
   recap: { id: string; time: number; text: string }[];
   provenance: string;
+}
+export interface PlaybackSegment {
+  schema_version: 1;
+  mode: "prefetched_causal_replay";
+  start: number;
+  end: number;
+  base: View;
+  events: (Observation & { sequence: number })[];
+  frames: (Frame & { sequence: number })[];
+  diagnostics: View["diagnostics"];
+  publication_rule: string;
 }
 export interface Sample {
   frame_id: string;

@@ -18,3 +18,7 @@ class Question(BaseModel):
     view: ViewQuery
     question: AskRequest.model_fields["question"].annotation
     insight_id: str = Field(min_length=1, max_length=180)
+
+
+class PlaybackQuery(ViewQuery):
+    window_seconds: float = Field(default=16, ge=0.5, le=16)

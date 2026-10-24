@@ -1,6 +1,6 @@
 # Product architecture and authoritative gaps
 
-This index consolidates prior evidence; it does not replace frozen findings. Last committed baseline: 2b7097200549c264c2ceb8aeca9b68a6b1d1f973. Current uncommitted milestone repairs playback continuity. Public release remains gated on the final accepted artifact, not an arbitrary October 25 feature cutoff.
+This index consolidates prior evidence; it does not replace frozen findings. Step3E baseline: 2b7097200549c264c2ceb8aeca9b68a6b1d1f973; first continuity repair: 98cedc3. The next milestone adds bounded causal replay buffering, documented in [buffered-replay.md](buffered-replay.md). Public release remains gated on the final accepted artifact, not an arbitrary October 25 feature cutoff.
 
 ```mermaid
 flowchart TD
@@ -17,7 +17,8 @@ flowchart TD
   FAST --> VERIFY
   VERIFY --> VIEW["Catalog-scoped Python viewer API"]
   ING --> PROOF["Proof receipt: original-source recomputation"]
-  VIEW --> UI["App → Theatre / Studio / Agent Room"]
+  VIEW --> BUFFER["Bounded recorded prefetch → validated causal prefix"]
+  BUFFER --> UI["App → Theatre / Studio / Agent Room"]
   PROOF --> LENS["Summary → contributors → Method → Audit"]
   UI --> LENS
 ```
@@ -30,8 +31,8 @@ flowchart TD
 | Match Story Engine | stories/replay.py, claims.py, registry.py, evidence.py, scheduler.py. Claims verify independently before eligible public incidents. | Recorded 664/664 verification and 294 timeline items are prior four-match results, not new accuracy or usefulness measurements. |
 | Agent workflow | agents/workflow.py `Studio`; framework.py `run_graph`; provider.py; tools.py; schemas.py. Typed state, conditional roles and scoped tools. | Genuine saved Foundry/MAF goal; local role definitions, zero registered Agent Service agents in inspected project. See linked compliance audit. |
 | Publication | agents/narrative_compiler.py, overlay_compiler.py, publication.py. Derive facts from approved IDs, verify plans, independently recover branches. | Existing adversarial suite and source-reverified success/fallback. Model consensus is not source verification. |
-| Viewer | viewer/catalog.py, schemas.py, service.py, proof.py, api.py. Five isolated recorded fixtures, prefix scores, bounded questions and recomputed receipts. | 181 backend tests/2 deliberately disabled live tests in Step3E. No deployed live producer or model call per viewer interaction. |
-| Frontend | App.tsx, playback/causal.ts, broadcast/, ProofLens, proof/ProofSummary, agents/DecisionEvidence. Context-safe state and observed SVG positions. | Continuity targeted4/4; full development21/21 and packaged native21/21 passed. Four-second jumps at4× are source snapshots, not measured continuous trajectories. |
+| Viewer | viewer/catalog.py, schemas.py, service.py, playback.py, proof.py, api.py. Five isolated recorded fixtures, bounded prefetch, prefix scores, bounded questions and recomputed receipts. | 194 backend tests/2 deliberately disabled live tests after buffering. No deployed live producer or model call per viewer interaction. |
+| Frontend | App.tsx, playback/causal.ts, segment.ts, useBufferedReplay.ts, broadcast/, ProofLens, proof/ProofSummary, agents/DecisionEvidence. Context-safe buffered prefixes and memoized observed SVG geometry. | Packaged native31/31 passed after buffering. Quarter-second source clock; positions still use original sampled frames, not inferred continuous trajectories. |
 | Evaluation | backend/scripts/step3d_evaluate.py and EVALUATION.md. Comparable offline engineering modes/fault cases. | FakeProvider A/B/C requests0/52/94; no real-model superiority or fabricated human ratings. |
 | Release | Dockerfile.viewer, exact fixture manifest, infra/viewer.bicep, manual publishing workflow and check_viewer_release.py. | Protected trial verified throughNov22, ₹0 conditions retained. Newest artifact not yet accepted/public; save/load identity and actual HTTPS still need verification. |
 

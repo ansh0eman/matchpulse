@@ -11,7 +11,8 @@ from starlette.staticfiles import StaticFiles
 from starlette.middleware import Middleware
 from starlette.middleware.base import BaseHTTPMiddleware
 from pydantic import ValidationError
-from .schemas import ViewQuery, Question
+from .schemas import ViewQuery, Question, PlaybackQuery
+from .playback import segment
 from .service import catalog, view, question, activity
 from .proof import receipt
 
@@ -25,6 +26,8 @@ async def dispatch(request: Request):
             result = catalog()
         elif path == "/api/activity":
             result = activity()
+        elif path == "/api/playback":
+            result = segment(PlaybackQuery.model_validate(dict(request.query_params)))
         elif path == "/api/ask":
             body = bytearray()
             async for chunk in request.stream():
@@ -82,6 +85,7 @@ app = Starlette(
             "/api/health",
             "/api/scenarios",
             "/api/view",
+            "/api/playback",
             "/api/proof",
             "/api/ask",
             "/api/activity",

@@ -20,6 +20,7 @@ interface Props {
   clock: number;
   playing: boolean;
   loading: boolean;
+  buffering: boolean;
   speed: number;
   audience: Audience;
   favorite: Team | "";
@@ -42,8 +43,11 @@ export function BroadcastTheatre(p: Props) {
   const before = metrics.find((m) => m.name === "before")?.value;
   const after = metrics.find((m) => m.name === "after")?.value;
   const positional = p.current?.type === "observed_line_height_change";
-  const frameCount = new Set(p.current?.overlay.references
-    .filter((r) => r.category === "tracking").map((r) => r.source_id)).size;
+  const frameCount = new Set(
+    p.current?.overlay.references
+      .filter((r) => r.category === "tracking")
+      .map((r) => r.source_id),
+  ).size;
   const withheld = p.data?.diagnostics.find((d) =>
     d.reasons.includes("stale_recent_evidence"),
   );
@@ -79,13 +83,18 @@ export function BroadcastTheatre(p: Props) {
           >
             <div className="theatre-scorebug">
               <span className="score-club">NORTH</span>
-              <strong data-testid="score" key={`${p.data?.score.home}:${p.data?.score.away}`}>
+              <strong
+                data-testid="score"
+                key={`${p.data?.score.home}:${p.data?.score.away}`}
+              >
                 {p.data?.score.home ?? "–"}
                 <i>:</i>
                 {p.data?.score.away ?? "–"}
               </strong>
               <span className="score-club">SOUTH</span>
-              <time data-testid="clock">{clockText(p.data?.clock ?? p.clock)}</time>
+              <time data-testid="clock">
+                {clockText(p.data?.clock ?? p.clock)}
+              </time>
               <span className="score-period">P{p.data?.period ?? "–"}</span>
             </div>
             <div className="theatre-source">
@@ -93,11 +102,13 @@ export function BroadcastTheatre(p: Props) {
               Synthetic replay
               <br />
               <small>
-                {p.data && p.data.clock < p.clock
-                  ? `Verified through ${clockText(p.data.clock)} · awaiting observations`
-                  : p.data?.tracking_available
-                  ? `Observed frame · ${p.data.frame_age?.toFixed(1) ?? "–"}s old`
-                  : "Event locations · no player tracking"}
+                {p.buffering
+                  ? "Buffering source observations · verified view retained"
+                  : p.data && p.data.clock < p.clock
+                    ? `Verified through ${clockText(p.data.clock)} · awaiting observations`
+                    : p.data?.tracking_available
+                      ? `Observed frame · ${p.data.frame_age?.toFixed(1) ?? "–"}s old`
+                      : "Event locations · no player tracking"}
               </small>
             </div>
             <div className="theatre-pitch">
@@ -112,12 +123,17 @@ export function BroadcastTheatre(p: Props) {
               </div>
             )}
             <div className="moment-lower-third" key={p.current?.id ?? "empty"}>
-              <div className="moment-copy" aria-live="polite" aria-atomic="true">
+              <div
+                className="moment-copy"
+                aria-live="polite"
+                aria-atomic="true"
+              >
                 <span className={`moment-label ${withheld ? "caution" : ""}`}>
                   {withheld
                     ? "EVIDENCE WITHHELD"
-                    : positional ? "OBSERVED LINE CHANGE"
-                    : `${p.current?.team ?? "MATCH"} · ${p.current?.type.replaceAll("_", " ") ?? "SOURCE REPLAY"}`}
+                    : positional
+                      ? "OBSERVED LINE CHANGE"
+                      : `${p.current?.team ?? "MATCH"} · ${p.current?.type.replaceAll("_", " ") ?? "SOURCE REPLAY"}`}
                 </span>
                 <h1>
                   {withheld ? "Sometimes, the evidence says wait." : copy.title}
@@ -139,15 +155,36 @@ export function BroadcastTheatre(p: Props) {
                 <ArrowRightIcon size={20} />
               </button>
               {positional && before !== undefined && after !== undefined && (
-                <div className="stage-measurements" aria-label="Verified line comparison">
-                  <div><strong>{before.toFixed(2)}<small>m</small></strong><span>BEFORE</span></div>
+                <div
+                  className="stage-measurements"
+                  aria-label="Verified line comparison"
+                >
+                  <div>
+                    <strong>
+                      {before.toFixed(2)}
+                      <small>m</small>
+                    </strong>
+                    <span>BEFORE</span>
+                  </div>
                   <ArrowRightIcon size={24} aria-hidden="true" />
-                  <div><strong>{after.toFixed(2)}<small>m</small></strong><span>AFTER</span></div>
-                  <p>{frameCount} original source frames · context-weighted means</p>
+                  <div>
+                    <strong>
+                      {after.toFixed(2)}
+                      <small>m</small>
+                    </strong>
+                    <span>AFTER</span>
+                  </div>
+                  <p>
+                    {frameCount} original source frames · context-weighted means
+                  </p>
                 </div>
               )}
             </div>
-            <div className="stage-disclosure">{p.scenario?.tracking ? "Observed snapshots, no inferred trajectories" : "Event-only fixture, no player tracking"}</div>
+            <div className="stage-disclosure">
+              {p.scenario?.tracking
+                ? "Observed snapshots, no inferred trajectories"
+                : "Event-only fixture, no player tracking"}
+            </div>
           </section>
           {!p.clean && (
             <>
@@ -175,7 +212,7 @@ export function BroadcastTheatre(p: Props) {
                   type="range"
                   min={0}
                   max={p.data?.duration ?? p.scenario?.start ?? 6000}
-                  step={0.5}
+                  step={0.25}
                   value={p.clock}
                   onChange={(e) => p.seek(+e.target.value)}
                 />
