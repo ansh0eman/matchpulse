@@ -41,6 +41,21 @@ def check(base):
     assert proof["verified"] is True and len(proof["samples"]) == 59
     assert math.isclose(proof["calculation"]["change_m"], 10.01258807588076, abs_tol=1e-10)
     assert proof["match_id"] == view["match_id"]
+    native_before = get("/api/view", scenario="native-goals", clock=1613.75, audience="fan")
+    native_after = get("/api/view", scenario="native-goals", clock=1614, audience="fan")
+    assert native_before["score"] == {"home": 0, "away": 0}
+    assert native_after["score"] == {"home": 1, "away": 0}
+    assert native_before["frame"]["time_seconds"] == 1613.75
+    assert native_after["frame"]["time_seconds"] == 1614
+    assert len(native_after["frame"]["players"]) == 22
+    assert native_after["source_hashes"]["events"] == "a0776ea16bf6d4541795da65c4bbfe19a653da2b1203a0e1b1912b95fbd5a2e8"
+    assert native_after["source_hashes"]["tracking"] == "d01d3e283b6e8a0b1d60014b237cf73b1b29dee4454258e592520323121b61ee"
+    native_goal = next(t for t in native_after["timeline"] if t["type"] == "goal_context" and t["source_seconds"] == 1614)
+    assert native_goal["priority"] == 100 and native_goal["origin"] == "deterministic"
+    native_proof = get("/api/proof", scenario="native-goals", clock=1614, audience="fan", claim_id=native_goal["claim_ids"][0])
+    assert native_proof["verified"] is True and native_proof["match_id"] == native_after["match_id"]
+    assert native_proof["calculation"]["before"] == native_before["score"]
+    assert native_proof["calculation"]["after"] == native_after["score"]
     before = get("/api/view", scenario="opening-goal", clock=2370, audience="fan")
     after = get("/api/view", scenario="opening-goal", clock=2371, audience="fan")
     assert before["score"] == {"home": 0, "away": 0}
@@ -57,6 +72,7 @@ def check(base):
             "first_line_view_seconds": view_seconds, "verified_samples": 59,
             "change_m": proof["calculation"]["change_m"],
             "source_hashes": proof["source_hashes"], "model_calls": 0,
+            "native_goal_verified": True, "native_source_hashes": native_after["source_hashes"],
             "scope": "HTTP release smoke check; not a scale-zero cold-start or load benchmark"}
 
 

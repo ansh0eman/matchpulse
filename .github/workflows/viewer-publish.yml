@@ -5,8 +5,8 @@ on:
       asset_sha256:
         description: SHA256 of the audited saved-image archive
         required: true
-      image_id:
-        description: Exact locally accepted sha256 image ID
+      config_digest:
+        description: Accepted sha256 config digest binding runtime settings and ordered rootfs
         required: true
       source_sha:
         description: Source commit recorded in the tested image label
@@ -21,38 +21,40 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ inputs.source_sha }}
       - name: Retrieve exact accepted image, validate and smoke test
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ARCHIVE_SHA: ${{ inputs.asset_sha256 }}
-          EXPECTED_IMAGE: ${{ inputs.image_id }}
+          EXPECTED_CONFIG: ${{ inputs.config_digest }}
           SOURCE_SHA: ${{ inputs.source_sha }}
         run: |
           set -euo pipefail
-          gh release download viewer-fixtures-v1 --pattern viewer-image-amd64.tar.gz --dir /tmp/image --repo "$GITHUB_REPOSITORY"
+          gh release download viewer-fixtures-v2 --pattern viewer-image-amd64.tar.gz --dir /tmp/image --repo "$GITHUB_REPOSITORY"
           python3 - <<'PY'
           import hashlib, os, pathlib, re
           assert re.fullmatch(r'[0-9a-f]{64}', os.environ['ARCHIVE_SHA'])
-          assert re.fullmatch(r'sha256:[0-9a-f]{64}', os.environ['EXPECTED_IMAGE'])
+          assert re.fullmatch(r'sha256:[0-9a-f]{64}', os.environ['EXPECTED_CONFIG'])
           assert re.fullmatch(r'[0-9a-f]{40}', os.environ['SOURCE_SHA'])
           p = pathlib.Path('/tmp/image/viewer-image-amd64.tar.gz')
           assert hashlib.file_digest(p.open('rb'), 'sha256').hexdigest() == os.environ['ARCHIVE_SHA']
           PY
+          python3 backend/scripts/check_saved_viewer_image.py --archive /tmp/image/viewer-image-amd64.tar.gz --tag matchpulse-viewer:release-amd64 --source "$SOURCE_SHA" --expected-config "$EXPECTED_CONFIG"
           docker load -i /tmp/image/viewer-image-amd64.tar.gz
-          test "$(docker image inspect matchpulse-viewer:step3e-amd64 --format '{{.Id}}')" = "$EXPECTED_IMAGE"
-          test "$(docker image inspect "$EXPECTED_IMAGE" --format '{{index .Config.Labels "org.opencontainers.image.revision"}}')" = "$SOURCE_SHA"
-          docker run -d --name viewer -p 127.0.0.1:8010:8010 "$EXPECTED_IMAGE"
+          docker save matchpulse-viewer:release-amd64 -o /tmp/image/loaded.tar
+          python3 backend/scripts/check_saved_viewer_image.py --archive /tmp/image/loaded.tar --tag matchpulse-viewer:release-amd64 --source "$SOURCE_SHA" --expected-config "$EXPECTED_CONFIG"
+          docker run -d --name viewer --cpus=0.5 --memory=1g -p 127.0.0.1:8010:8010 matchpulse-viewer:release-amd64
           python3 backend/scripts/check_viewer_release.py --url http://127.0.0.1:8010
       - name: Publish to GHCR using short-lived repository token
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SOURCE_SHA: ${{ inputs.source_sha }}
-          EXPECTED_IMAGE: ${{ inputs.image_id }}
         run: |
           set -euo pipefail
           printf '%s' "$GH_TOKEN" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
           image="ghcr.io/ansh0eman/matchpulse-viewer:$SOURCE_SHA"
-          docker tag "$EXPECTED_IMAGE" "$image"
+          docker tag matchpulse-viewer:release-amd64 "$image"
           docker push "$image"
           docker logout ghcr.io
           printf 'Published tested source revision: %s\n' "$SOURCE_SHA" >> "$GITHUB_STEP_SUMMARY"
