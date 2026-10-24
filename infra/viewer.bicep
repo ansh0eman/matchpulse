@@ -10,7 +10,6 @@ resource environment 'Microsoft.App/managedEnvironments@2024-03-01' = {
   name: '${appName}-env'
   location: location
   properties: {
-    appLogsConfiguration: { destination: 'none' }
     workloadProfiles: [
       { name: 'Consumption', workloadProfileType: 'Consumption' }
     ]
