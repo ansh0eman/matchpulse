@@ -14,6 +14,6 @@ The user authorizes audited source/image/video publication and final submission 
 | Innovation Studio fields | Not rechecked this milestone |
 | Entry submitted | **No confirmed submission** |
 
-Internal private-product freeze: **October 24, 18:00 IST**; release decision checkpoint **October 25, 12:00 IST**. Execute earlier when gates pass. After first public acceptance, allow correctness/security/release fixes only. Deadline: October 27, 23:59 Pacific / October 28, 12:29 IST. Keep judge access through November 10; no immediate post-deadline deletion.
+The later Product Excellence directive supersedes the arbitrary October24/25 feature freeze. Work now proceeds by independent acceptance gates; do not publish an unfinished artifact to meet that internal date. Hackathon deadline remains October27,23:59Pacific / October28,12:29IST. Keep judge access through November10; no immediate post-deadline deletion. Current system/gaps are consolidated under research/product-excellence/.
 
 Replace pending states only with verified commit/digest/URL, actual browser result or platform confirmation. Uploading a video or editing fields is not submission acceptance.

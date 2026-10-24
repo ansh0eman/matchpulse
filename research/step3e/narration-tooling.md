@@ -79,3 +79,32 @@ Set the same HF_HOME/TORCH_HOME before running the core; retain/verify the hashe
 Text: “MatchPulse lets you inspect the evidence behind a football explanation.” Output `/tmp/matchpulse-tts/proof.wav`: **5.15 seconds**, 24,000 Hz, mono, PCM 16-bit, 123,600 samples, 247,244 bytes. SHA-256: `10e433f847648db65689a347153cdee607f110cc1ed4ec662ce1970a9ea3cf68`. Generation, including constructing the local model, took **2.869 seconds** in this one run; it is not a benchmark or latency guarantee. Peak amplitude 0.352 and RMS 0.0478; all samples are finite. `proof.json` contains the exact text, phonemes, versions and metadata. WAV decoding independently confirmed the sample count and duration.
 
 No full script, final mix or public video was synthesized or published by this proof. The release owner should listen for pronunciation/pace, synthesize the approved final script locally, align narration with genuine screen recordings, add readable captions, inspect the full result and confirm a duration strictly below two minutes. Keep voice synthesis separate from claims of Microsoft Foundry model execution. Final audio hashes and credits belong in the actual release evidence once that work is complete.
+
+## Subsequent full-script synthesis — completed locally
+
+The release owner subsequently authored `research/step3e/demo-script.json` and authorized all six scenes. The initial closing text exceeded its eight-second slot's 0.3s margin by 0.2s at the maximum allowed speed, so synthesis stopped without trimming text. The owner then changed the goal slot from 20s to 19s and the closing slot from 8s to 9s, retaining a 112s total and all original wording. The revised script was synthesized successfully on local CPU using the same pinned model and stock voice. HF/Transformers offline flags were enabled; there were **zero hosted inference calls**.
+
+| Scene | Timeline start | Assigned duration | Actual speech | Kokoro speed | Padding |
+|---|---:|---:|---:|---:|---|
+| opening | 0s | 14s | 13.600s | 1.06 | 0.15s before / 0.250s after |
+| goal | 14s | 19s | 16.700s | 1.00 | 0.15s before / 2.150s after |
+| proof | 33s | 30s | 24.575s | 1.00 | 0.15s before / 5.275s after |
+| restraint | 63s | 13s | 12.325s | 1.00 | 0.15s before / 0.525s after |
+| agents | 76s | 27s | 26.525s | 1.13 | 0.15s before / 0.325s after |
+| close | 103s | 9s | 8.550s | 1.00 | 0.15s before / 0.300s after |
+
+Every speech segment fits within its assigned duration minus at least 0.3s. No words were removed, no speech was cut, and no speed exceeded 1.15. Each scene has an original speech WAV and an exact-duration padded WAV under the ignored local directory `backend/output/release/narration/`.
+
+The combined `narration.wav` is **112.000 seconds**, mono 24,000 Hz PCM16, 2,688,000 frames and 5,376,044 bytes. SHA-256: `cefbb4f26c49d05b03e1f44dd21f12300cd6b44e51e28734cab8a826e348f458`. All floating-point samples are finite; peak amplitude 0.6751, RMS 0.04914, no full-scale clipping. This local synthesis took 24.273s in one run, not a promised performance bound.
+
+`metadata.json` records the exact text, per-scene attempts/speeds, actual speech/padding, source model/voice hashes, package versions, output hashes and zero-hosted-call boundary. Approved script SHA-256: `f6dd25c288432e7c785beb96e44a452cd05b847570c62a8353e02402d267cbb7`; the runner checked that its bytes remained unchanged during synthesis.
+
+`narration.srt` contains **22** ordered, nonoverlapping captions. Independent checks confirmed that joining their words reproduces the complete approved script exactly, and every timestamp is within 0–112s. Its SHA-256 is `977c54fcf1764c0075c7930008e5a5e6b928d3a4c9d18efff758335dd072bea8`. Timing is word-count-proportional within actual speech spans, **not forced word alignment**. Listening and final-video synchronization review remain necessary; successful file validation is not an independent speech-quality or usability review.
+
+Exact local reproduction, using the current approved script and existing isolated assets:
+
+```sh
+/tmp/matchpulse-tts/venv/bin/python /tmp/matchpulse-tts/narrate_release.py
+```
+
+The runner sets its own isolated cache and offline flags, verifies pinned asset hashes, allows bounded speed adjustment only within 0.95–1.15, and fails explicitly if a scene cannot fit. It pads rather than stretching the final audio timeline. WAV decoding independently confirmed all scene lengths and the combined 112s duration. Final screen recording, mixing, public upload and submission are owned by the release process; none is implied by producing this audio track.

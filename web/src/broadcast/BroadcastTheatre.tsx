@@ -85,7 +85,7 @@ export function BroadcastTheatre(p: Props) {
                 {p.data?.score.away ?? "–"}
               </strong>
               <span className="score-club">SOUTH</span>
-              <time data-testid="clock">{clockText(p.clock)}</time>
+              <time data-testid="clock">{clockText(p.data?.clock ?? p.clock)}</time>
               <span className="score-period">P{p.data?.period ?? "–"}</span>
             </div>
             <div className="theatre-source">
@@ -93,7 +93,9 @@ export function BroadcastTheatre(p: Props) {
               Synthetic replay
               <br />
               <small>
-                {p.data?.tracking_available
+                {p.data && p.data.clock < p.clock
+                  ? `Verified through ${clockText(p.data.clock)} · awaiting observations`
+                  : p.data?.tracking_available
                   ? `Observed frame · ${p.data.frame_age?.toFixed(1) ?? "–"}s old`
                   : "Event locations · no player tracking"}
               </small>
@@ -110,7 +112,7 @@ export function BroadcastTheatre(p: Props) {
               </div>
             )}
             <div className="moment-lower-third" key={p.current?.id ?? "empty"}>
-              <div className="moment-copy">
+              <div className="moment-copy" aria-live="polite" aria-atomic="true">
                 <span className={`moment-label ${withheld ? "caution" : ""}`}>
                   {withheld
                     ? "EVIDENCE WITHHELD"

@@ -32,6 +32,7 @@ import { ProofLens, clockText } from "./ProofLens";
 import { BroadcastTheatre } from "./broadcast/BroadcastTheatre";
 import { CHAPTERS, GuidedStory } from "./demo/GuidedStory";
 import { WorkflowGraph } from "./agents/WorkflowGraph";
+import { visibleSnapshot } from "./playback/causal";
 
 export default function App() {
   const [mode, setMode] = useState(() => {
@@ -65,6 +66,7 @@ export default function App() {
     [answer, setAnswer] = useState<Answer | null>(null),
     [asking, setAsking] = useState(false);
   const generation = useRef(0),
+    playbackPending = useRef(false),
     pendingSelection = useRef<string | null>(null),
     askController = useRef<AbortController | null>(null);
   useDialog(drawer || room || guide);
@@ -75,8 +77,8 @@ export default function App() {
     audience,
     ...(favorite ? { favorite } : {}),
   }).toString();
-  // Never display a previous clock/audience/fixture while its replacement loads.
-  const data = loadedParams === params ? snapshot : null;
+  const data = visibleSnapshot(snapshot, loadedParams, params);
+  const blocking = loading && !data;
   const current: Story | undefined =
     data?.timeline.find((t) => t.id === selected) ??
     [...(data?.timeline ?? [])]
@@ -123,10 +125,13 @@ export default function App() {
   }, []);
   useEffect(() => {
     const c = new AbortController();
+    playbackPending.current = true;
     setLoading(true);
     setError(null);
     get<View>(`/api/view?${params}`, c.signal)
       .then((v) => {
+        if (c.signal.aborted) return;
+        playbackPending.current = false;
         setData(v);
         setLoadedParams(params);
         setLoading(false);
@@ -134,6 +139,7 @@ export default function App() {
       })
       .catch((e) => {
         if (e.name !== "AbortError") {
+          playbackPending.current = false;
           setError(e.message);
           setLoading(false);
           setPlaying(false);
@@ -144,7 +150,10 @@ export default function App() {
   useEffect(() => {
     if (!playing) return;
     const id = setInterval(
-      () => setClock((v) => Math.min(data?.duration ?? v, v + speed)),
+      () => {
+        // Backpressure: never abort a slow source request with the next tick.
+        if (!playbackPending.current) setClock((v) => Math.min(data?.duration ?? v, v + speed));
+      },
       1000,
     );
     return () => clearInterval(id);
@@ -341,7 +350,7 @@ export default function App() {
           scenarios={scenarios}
           clock={clock}
           playing={playing}
-          loading={loading}
+          loading={blocking}
           speed={speed}
           audience={audience}
           favorite={favorite}
@@ -467,7 +476,7 @@ export default function App() {
             ) : (
               <>
                 <section
-                  className={`match-stage ${loading ? "refreshing" : ""}`}
+                  className={`match-stage ${blocking ? "refreshing" : ""}`}
                   aria-label="Match replay"
                 >
                   <div className="scoreboard">
@@ -485,7 +494,7 @@ export default function App() {
                         {data?.score.away ?? "–"}
                       </strong>
                       <span className="match-clock" data-testid="clock">
-                        {clockText(clock)}
+                        {clockText(data?.clock ?? clock)}
                       </span>
                     </div>
                     <div className="team team-away">
@@ -512,7 +521,7 @@ export default function App() {
                     <button
                       className="stage-insight"
                       onClick={() => inspect()}
-                      disabled={loading}
+                      disabled={blocking}
                     >
                       <span>{current.narration.headline}</span>
                       <span>
@@ -555,7 +564,7 @@ export default function App() {
                         <button
                           key={metric.name}
                           onClick={() => inspect(metric.claim_id)}
-                          disabled={loading}
+                          disabled={blocking}
                         >
                           <small>
                             {metric.name === "regain_x"
@@ -585,7 +594,7 @@ export default function App() {
                     <button
                       className="play-button"
                       aria-label={playing ? "Pause replay" : "Play replay"}
-                      disabled={!data || loading}
+                      disabled={!data || blocking}
                       onClick={() => setPlaying((v) => !v)}
                     >
                       {playing ? (
@@ -742,7 +751,7 @@ export default function App() {
                         ["coach_intent", "Did the coach intend this?"],
                       ].map(([q, l]) => (
                         <button
-                          disabled={!current || asking || loading}
+                          disabled={!current || asking || blocking}
                           key={q}
                           onClick={() => ask(q)}
                         >

@@ -18,6 +18,8 @@ Read the [actual request walkthrough](research/step3e/execution-walkthrough.md),
 
 The research below preserves Step 2/2.5 outcomes, including failed broad detection targets. The UI redesign does not change those findings or establish real-match calibration.
 
+The [Product Excellence architecture and gap register](research/product-excellence/architecture.md) consolidates the system, source capabilities and next milestones. Latest continuity repair keeps the last verified prefix visible during forward playback, applies request backpressure and immediately rejects future snapshots on backward seeks. Both development and packaged-native browser regressions passed21/21; this remains recorded replay, not a live-input service.
+
 ## Broadcast studio — Step 3C
 
 The local React/TypeScript studio now connects to a source-verifying Python API: five isolated match scenarios, synchronized observed positions/clock/score, Fan/Analyst and favorite-team controls, restricted questions, recaps and an interactive Proof Lens. Proof Lens recomputes line geometry from original player coordinates and exposes all 59 contributing samples, source hashes, timing and limitations. It also shows when stale evidence must be withheld.
