@@ -6,7 +6,7 @@ October 24, 2026. Step 3E follows b9862d7. Resolve the containing commit for exa
 |---|---|
 | Repository | Private until final audits/product acceptance; conditional public-release authorization is now granted |
 | Product | Buffered replay retains the pitch; native goal showcase has two same-run goals and quarter-second positions; +10.01m Proof Lens and real recorded agent decisions retained |
-| Current local viewer | matchpulse-viewer:native-goals, sha256:63344b8a0138b1b9064706e5a6eb6f825dc997999436b7b278824c73685c6d52; packaged-native33/33 passed at0.5CPU/1GiB |
+| Current accepted local image | matchpulse-viewer:premium-final, sha256:02c9099094accaf72cd292d9869e006d90fc705d98c338d5daddc082f7dac3de; 33/33 browser cases passed at 0.5 CPU / 1 GiB; premium Matchday laptop/mobile evidence in research/design/ |
 | Prior Step3D ARM64 image digest | sha256:5ed35f4ac4185d600a89779560ce5a2b46b7a7d74c1f87882deed5a0411ec9dc |
 | Prior AMD64 validation | Step3D image5200e3c… passed13 checks at0.5CPU/1GiB. Step3E source2b70972 AMD64 image built but was superseded by the continuity repair; no newer AMD64/public acceptance claimed |
 | Current preview | http://127.0.0.1:8013 while the local check container is running |

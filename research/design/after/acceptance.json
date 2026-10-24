@@ -1,0 +1,33 @@
+{
+  "image": "sha256:02c9099094accaf72cd292d9869e006d90fc705d98c338d5daddc082f7dac3de",
+  "target": "http://127.0.0.1:8017",
+  "resources": {
+    "cpu": 0.5,
+    "memory": "1GiB"
+  },
+  "browser": "Chromium",
+  "viewports": [
+    [
+      1366,
+      768
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "additional_capture": [
+    1440,
+    900
+  ],
+  "stats": {
+    "startTime": "2026-10-24T16:59:52.776Z",
+    "duration": 272037.641,
+    "expected": 33,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "model_calls": 0,
+  "scope": "Packaged local browser acceptance; public HTTPS and physical devices not verified"
+}

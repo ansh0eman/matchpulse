@@ -155,7 +155,7 @@ test("one buffered request advances multiple source ticks without refetching the
     if (r.url().includes("/api/view?")) views++;
     if (r.url().includes("/api/playback?")) buffers++;
   });
-  await page.goto("/");
+  await page.goto("/?scenario=line-shift");
   await expect(
     page.getByRole("button", { name: "Open Proof Lens", exact: true }),
   ).toBeEnabled({ timeout: 60000 });
@@ -179,7 +179,7 @@ test("one buffered request advances multiple source ticks without refetching the
 test("an invalid prefetched packet pauses with an actionable error and recovers without publishing it", async ({
   page,
 }) => {
-  await page.goto("/");
+  await page.goto("/?scenario=line-shift");
   await expect(
     page.getByRole("button", { name: "Open Proof Lens", exact: true }),
   ).toBeEnabled({ timeout: 60000 });
@@ -207,7 +207,7 @@ test("buffered goal playback publishes the score only at its observed source bou
   page,
   request,
 }) => {
-  await page.goto("/");
+  await page.goto("/?scenario=line-shift");
   await expect(
     page.getByRole("button", { name: "Open Proof Lens", exact: true }),
   ).toBeEnabled({ timeout: 60000 });

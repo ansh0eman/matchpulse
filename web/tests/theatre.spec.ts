@@ -16,7 +16,7 @@ test("Theatre is source-synchronized and program output removes studio chrome", 
 }, info) => {
   const errors: string[] = [];
   page.on("pageerror", (e) => errors.push(e.message));
-  await page.goto("/");
+  await page.goto("/?scenario=line-shift");
   await ready(page);
   await expect(
     page.getByRole("main", { name: "Broadcast Theatre" }),
@@ -63,7 +63,7 @@ test("Theatre is source-synchronized and program output removes studio chrome", 
 test("Proof Summary progressively discloses method and audit, and exports the source receipt", async ({
   page,
 }, info) => {
-  await page.goto("/");
+  await page.goto("/?scenario=line-shift");
   await ready(page);
   await scenario(page, "A higher line, proved");
   await page
@@ -109,7 +109,7 @@ test("Proof Summary progressively discloses method and audit, and exports the so
 test("Guided story visits distinct fixtures and the Agent Room shows actual recorded durations", async ({
   page,
 }, info) => {
-  await page.goto("/");
+  await page.goto("/?scenario=line-shift");
   await ready(page);
   await page.getByRole("button", { name: "Guided demo", exact: false }).click();
   await page

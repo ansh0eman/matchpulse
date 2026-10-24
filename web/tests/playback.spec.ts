@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 test("forward replay retains the pitch and verified score during slow source responses", async ({
   page,
 }) => {
-  await page.goto("/");
+  await page.goto("/?scenario=line-shift");
   await expect(
     page.getByRole("button", { name: "Open Proof Lens", exact: true }),
   ).toBeEnabled({ timeout: 60000 });
@@ -57,7 +57,7 @@ test("forward replay retains the pitch and verified score during slow source res
 test("a backward seek cancels a future playback response and never resurrects its claim", async ({
   page,
 }) => {
-  await page.goto("/");
+  await page.goto("/?scenario=line-shift");
   await expect(
     page.getByRole("button", { name: "Open Proof Lens", exact: true }),
   ).toBeEnabled({ timeout: 60000 });

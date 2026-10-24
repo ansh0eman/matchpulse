@@ -4,8 +4,8 @@ import type { Story, Audience } from "../contracts";
 export function momentCopy(story: Story | undefined, audience: Audience) {
   if (!story)
     return {
-      title: "The match has more to say.",
-      detail: "Play the source replay to discover a verified moment.",
+      title: "North v South",
+      detail: "Play the match, then open a moment to explore it.",
     };
   const metric = (name: string) =>
     story.overlay.metrics.find((m) => m.name === name)?.value;
@@ -29,8 +29,7 @@ export function momentCopy(story: Story | undefined, audience: Audience) {
   ) {
     const change = metric("change")!;
     title = `${number(Math.abs(change))} metres ${change >= 0 ? "higher" : "deeper"}.`;
-    detail =
-      `${club}'s three deepest outfielders, compared in similar observed situations. Inspect the source behind the number.`;
+    detail = `${club}'s three deepest outfielders, compared in similar situations.`;
   } else if (
     story.type === "goal_context" &&
     metric("NORTH_after") !== undefined &&
@@ -42,16 +41,13 @@ export function momentCopy(story: Story | undefined, audience: Audience) {
       home === away
         ? `Level again. ${home}–${away}.`
         : `${home > away ? "North" : "South"} lead ${home}–${away}.`;
-    detail =
-      "The score transition, checked against the original source observations.";
+    detail = "Rewind the moment, or explore the events behind it.";
   } else if (story.type === "observed_shot") {
     title = `${club} take a shot.`;
-    detail =
-      "A recorded shot attempt. No goal, xG or chance rating is inferred.";
+    detail = "A shot attempt. Explore the moment for the details.";
   } else if (story.type === "high_turnover") {
     title = `A high regain for ${club}.`;
-    detail =
-      "An observed possession change, with its original evidence available.";
+    detail = "Possession changes hands high up the pitch.";
   }
   return {
     title,

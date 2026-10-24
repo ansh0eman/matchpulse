@@ -35,6 +35,25 @@ import { WorkflowGraph } from "./agents/WorkflowGraph";
 import { visibleSnapshot } from "./playback/causal";
 import { useBufferedReplay } from "./playback/useBufferedReplay";
 
+function initialReplay(mode: string) {
+  const starts: Record<string, number> = {
+    "native-goals": 1611,
+    "open-play": 356,
+    "opening-goal": 2371,
+    equalizer: 4242,
+    "line-shift": 3360,
+    withheld: 1350,
+  };
+  const requested = new URLSearchParams(window.location.search).get("scenario");
+  const scenario =
+    requested && Object.hasOwn(starts, requested)
+      ? requested
+      : mode === "studio"
+        ? "open-play"
+        : "native-goals";
+  return { scenario, clock: starts[scenario] };
+}
+
 export default function App() {
   const [mode, setMode] = useState(() => {
     const view = new URLSearchParams(window.location.search).get("view");
@@ -44,10 +63,8 @@ export default function App() {
     [tourSeconds, setTourSeconds] = useState(0),
     [tourRunning, setTourRunning] = useState(false);
   const [scenarios, setScenarios] = useState<Scenario[]>([]),
-    [scenario, setScenario] = useState(() =>
-      mode === "studio" ? "open-play" : "line-shift",
-    ),
-    [clock, setClock] = useState(() => (mode === "studio" ? 356 : 3360)),
+    [scenario, setScenario] = useState(() => initialReplay(mode).scenario),
+    [clock, setClock] = useState(() => initialReplay(mode).clock),
     [audience, setAudience] = useState<Audience>("fan"),
     [favorite, setFavorite] = useState<Team | "">("");
   const [snapshot, setData] = useState<View | null>(null),
@@ -104,13 +121,17 @@ export default function App() {
     data?.timeline.find((t) => t.id === selected) ??
     [...(data?.timeline ?? [])]
       .filter((t) => !["match_boundary", "high_turnover"].includes(t.type))
-      .sort((a, b) => b.presented_seconds - a.presented_seconds || b.priority - a.priority)[0] ??
+      .sort(
+        (a, b) =>
+          b.presented_seconds - a.presented_seconds || b.priority - a.priority,
+      )[0] ??
     data?.timeline.at(-1);
   useEffect(() => {
     const url = new URL(window.location.href);
     url.searchParams.set("view", mode);
+    url.searchParams.set("scenario", scenario);
     window.history.replaceState(null, "", url);
-  }, [mode]);
+  }, [mode, scenario]);
   useEffect(() => {
     if (tour === null || !tourRunning || !data || room) return;
     const timer = setInterval(() => setTourSeconds((s) => s + 1), 1000);
@@ -304,7 +325,7 @@ export default function App() {
     );
   return (
     <div
-      className={`app-shell ${mode !== "studio" ? "theatre-shell" : ""} ${mode === "broadcast" ? "clean-shell" : ""} ${tour !== null ? "tour-active" : ""}`}
+      className={`app-shell ${mode !== "studio" ? "theatre-shell matchday-shell" : ""} ${mode === "broadcast" ? "clean-shell" : ""} ${tour !== null ? "tour-active" : ""}`}
     >
       <header className="app-header">
         <a href="/" className="brand" aria-label="MatchPulse home">
@@ -321,7 +342,7 @@ export default function App() {
               setRoom(false);
             }}
           >
-            Theatre
+            Matchday
           </button>
           <button
             className={mode === "studio" && !room ? "active" : ""}
@@ -330,7 +351,7 @@ export default function App() {
               setRoom(false);
             }}
           >
-            Broadcast studio
+            Analysis Room
           </button>
           <button onClick={() => setRoom(true)}>
             Agent room

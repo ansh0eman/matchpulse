@@ -1,16 +1,15 @@
 import {
+  ArrowsOutIcon,
   ArrowRightIcon,
   FingerprintIcon,
-  PauseIcon,
-  PlayIcon,
-  ArrowsOutIcon,
-  ArrowCounterClockwiseIcon,
   ShieldCheckIcon,
 } from "@phosphor-icons/react";
 import type { Audience, Scenario, Story, Team, View } from "../contracts";
 import { Pitch } from "../Pitch";
 import { clockText } from "../ProofLens";
 import { momentCopy } from "./presentation";
+import { ReplayControls } from "./ReplayControls";
+import { MatchTimeline } from "./MatchTimeline";
 
 interface Props {
   data: View | null;
@@ -53,36 +52,46 @@ export function BroadcastTheatre(p: Props) {
   );
   return (
     <main
-      className={`theatre ${p.clean ? "program-output" : ""}`}
+      id="matchday"
+      className={`theatre matchday ${p.clean ? "program-output" : ""}`}
       aria-label="Broadcast Theatre"
     >
-      <div className="theatre-caption">
-        <p>
-          <strong>Proof, not just commentary.</strong>
-          <span> A synthetic match. An explanation you can inspect.</span>
-        </p>
-        <button onClick={p.toggleClean}>
-          <ArrowsOutIcon size={17} />
-          {p.clean ? "Exit program output" : "Program output"}
-        </button>
-      </div>
-      {p.error ? (
-        <section role="alert" className="theatre-error">
-          <ShieldCheckIcon size={32} />
-          <h1>The source is unavailable.</h1>
-          <p>{p.error}</p>
-          <button className="evidence-button" onClick={p.retry}>
-            Retry source connection
+      <div className="md-context theatre-caption">
+        <div>
+          <span>Matchday</span>
+          <h2>
+            North <i>v</i> South
+          </h2>
+        </div>
+        <div className="md-context-actions">
+          <span>Synthetic match replay</span>
+          <button onClick={p.toggleClean}>
+            <ArrowsOutIcon size={17} aria-hidden="true" />
+            {p.clean ? "Exit program output" : "Program output"}
           </button>
+        </div>
+      </div>
+      {p.error && (
+        <section role="alert" className="theatre-error">
+          <ShieldCheckIcon size={24} aria-hidden="true" />
+          <div>
+            <h2>The replay couldn’t load.</h2>
+            <p>{p.error}</p>
+          </div>
+          <button onClick={p.retry}>Retry source connection</button>
         </section>
-      ) : (
-        <>
-          <section
-            className={`theatre-stage editorial-stage ${positional ? "positional-stage" : ""} ${p.loading ? "is-loading" : ""}`}
-            aria-label="Observed match stage"
-          >
+      )}
+      <div className="md-arena">
+        <section
+          className={`theatre-stage ${p.loading ? "is-loading" : ""}`}
+          aria-label="Observed match stage"
+        >
+          <div className="md-score-row">
             <div className="theatre-scorebug">
-              <span className="score-club">NORTH</span>
+              <span className="score-club">
+                <i className="md-team-north" />
+                North
+              </span>
               <strong
                 data-testid="score"
                 key={`${p.data?.score.home}:${p.data?.score.away}`}
@@ -91,224 +100,185 @@ export function BroadcastTheatre(p: Props) {
                 <i>:</i>
                 {p.data?.score.away ?? "–"}
               </strong>
-              <span className="score-club">SOUTH</span>
+              <span className="score-club">
+                South
+                <i className="md-team-south" />
+              </span>
               <time data-testid="clock">
                 {clockText(p.data?.clock ?? p.clock)}
               </time>
-              <span className="score-period">P{p.data?.period ?? "–"}</span>
+              <span className="score-period">
+                {p.data ? `Half ${p.data.period}` : ""}
+              </span>
             </div>
-            <div className="theatre-source">
-              <span className="status-dot" />
-              Synthetic replay
-              <br />
-              <small>
-                {p.buffering
-                  ? "Buffering source observations · verified view retained"
-                  : p.data && p.data.clock < p.clock
-                    ? `Verified through ${clockText(p.data.clock)} · awaiting observations`
-                    : p.data?.tracking_available
-                      ? `Observed frame · ${p.data.frame_age?.toFixed(1) ?? "–"}s old`
-                      : "Event locations · no player tracking"}
-              </small>
-            </div>
-            <div className="theatre-pitch">
-              <Pitch
-                frame={p.data?.frame ?? null}
-                events={p.data?.recent_events ?? []}
-              />
-            </div>
+            <span className="theatre-source" role="status">
+              {p.buffering
+                ? "Buffering replay…"
+                : p.data
+                  ? "Recorded replay"
+                  : p.error
+                    ? "Replay unavailable"
+                    : "Loading match…"}
+            </span>
+          </div>
+          <div className="theatre-pitch">
+            <Pitch
+              frame={p.data?.frame ?? null}
+              events={p.data?.recent_events ?? []}
+            />
             {!p.data && (
               <div className="theatre-loading" role="status">
-                Reconnecting the clock to its source…
+                {p.error
+                  ? "Match observations unavailable"
+                  : "Loading the match…"}
               </div>
             )}
-            <div className="moment-lower-third" key={p.current?.id ?? "empty"}>
+            <div className="md-pitch-key">
+              <span>
+                <i className="md-team-north" />
+                North
+              </span>
+              <span>
+                <i className="md-team-south" />
+                South
+              </span>
+              <small>
+                {p.data?.tracking_available
+                  ? "Observed positions"
+                  : p.data
+                    ? "Ball locations only"
+                    : ""}
+              </small>
+            </div>
+          </div>
+          <div className="moment-lower-third" key={p.current?.id ?? "empty"}>
+            <div className="moment-copy" aria-live="polite" aria-atomic="true">
+              <span className="moment-label">
+                {withheld
+                  ? "Position review"
+                  : p.current
+                    ? `At ${clockText(p.current.source_seconds)}`
+                    : "Your matchday"}
+              </span>
+              <h1>
+                {withheld ? "Sometimes, the evidence says wait." : copy.title}
+              </h1>
+              <p>
+                {withheld
+                  ? `The latest positional evidence is ${withheld.recent_age_seconds}s old. This claim stays off air.`
+                  : copy.detail}
+              </p>
+            </div>
+            <button
+              className="evidence-button"
+              onClick={p.inspect}
+              disabled={!p.current || p.loading}
+            >
+              <FingerprintIcon size={19} aria-hidden="true" />
+              Open Proof Lens
+            </button>
+            {positional && before !== undefined && after !== undefined && (
               <div
-                className="moment-copy"
-                aria-live="polite"
-                aria-atomic="true"
+                className="stage-measurements"
+                aria-label="Verified line comparison"
               >
-                <span className={`moment-label ${withheld ? "caution" : ""}`}>
-                  {withheld
-                    ? "EVIDENCE WITHHELD"
-                    : positional
-                      ? "OBSERVED LINE CHANGE"
-                      : `${p.current?.team ?? "MATCH"} · ${p.current?.type.replaceAll("_", " ") ?? "SOURCE REPLAY"}`}
-                </span>
-                <h1>
-                  {withheld ? "Sometimes, the evidence says wait." : copy.title}
-                </h1>
+                <strong>
+                  {before.toFixed(2)}
+                  <small>m</small>
+                </strong>
+                <ArrowRightIcon size={18} aria-hidden="true" />
+                <strong>
+                  {after.toFixed(2)}
+                  <small>m</small>
+                </strong>
                 <p>
-                  {withheld
-                    ? `The latest positional evidence is ${withheld.recent_age_seconds}s old. This claim stays off air.`
-                    : copy.detail}
+                  {frameCount} original source frames · context-weighted means
                 </p>
               </div>
-              <button
-                className="evidence-button"
-                aria-label="Open Proof Lens"
-                onClick={p.inspect}
-                disabled={!p.current || p.loading}
-              >
-                <FingerprintIcon size={22} />
-                Open Proof Lens
-                <ArrowRightIcon size={20} />
-              </button>
-              {positional && before !== undefined && after !== undefined && (
-                <div
-                  className="stage-measurements"
-                  aria-label="Verified line comparison"
-                >
-                  <div>
-                    <strong>
-                      {before.toFixed(2)}
-                      <small>m</small>
-                    </strong>
-                    <span>BEFORE</span>
-                  </div>
-                  <ArrowRightIcon size={24} aria-hidden="true" />
-                  <div>
-                    <strong>
-                      {after.toFixed(2)}
-                      <small>m</small>
-                    </strong>
-                    <span>AFTER</span>
-                  </div>
-                  <p>
-                    {frameCount} original source frames · context-weighted means
-                  </p>
-                </div>
-              )}
-            </div>
-            <div className="stage-disclosure">
-              {p.scenario?.tracking
-                ? "Observed snapshots, no inferred trajectories"
-                : "Event-only fixture, no player tracking"}
-            </div>
-          </section>
-          {!p.clean && (
-            <>
-              <div className="theatre-transport">
+            )}
+          </div>
+        </section>
+        {!p.clean && (
+          <>
+            <ReplayControls
+              clock={p.clock}
+              duration={p.data?.duration ?? 0}
+              playing={p.playing}
+              disabled={!p.data || p.loading || !!p.error}
+              speed={p.speed}
+              moments={p.data?.timeline ?? []}
+              play={p.play}
+              seek={p.seek}
+              setSpeed={p.setSpeed}
+            />
+            <div className="theatre-settings">
+              <div className="theatre-audience" aria-label="Audience">
                 <button
-                  aria-label={p.playing ? "Pause replay" : "Play replay"}
-                  onClick={p.play}
-                  disabled={!p.data || p.loading}
+                  aria-pressed={p.audience === "fan"}
+                  onClick={() => p.setAudience("fan")}
                 >
-                  {p.playing ? (
-                    <PauseIcon size={22} weight="fill" />
-                  ) : (
-                    <PlayIcon size={22} weight="fill" />
-                  )}
+                  Fan view
                 </button>
                 <button
-                  aria-label="Replay from start"
-                  onClick={() => p.seek(0)}
+                  aria-pressed={p.audience === "analyst"}
+                  onClick={() => p.setAudience("analyst")}
                 >
-                  <ArrowCounterClockwiseIcon size={20} />
+                  Analyst view
                 </button>
-                <time>{clockText(p.clock)}</time>
-                <input
-                  aria-label="Replay clock"
-                  type="range"
-                  min={0}
-                  max={p.data?.duration ?? p.scenario?.start ?? 6000}
-                  step={0.25}
-                  value={p.clock}
-                  onChange={(e) => p.seek(+e.target.value)}
-                />
-                <span>{clockText(p.data?.duration ?? 0)}</span>
+              </div>
+              <label>
+                Following{" "}
                 <select
-                  aria-label="Playback speed"
-                  value={p.speed}
-                  onChange={(e) => p.setSpeed(+e.target.value)}
+                  aria-label="Favorite team"
+                  value={p.favorite}
+                  onChange={(e) => p.setFavorite(e.target.value as Team | "")}
                 >
-                  <option value={1}>1×</option>
-                  <option value={4}>4×</option>
-                  <option value={12}>12×</option>
+                  <option value="">Both teams</option>
+                  <option value="NORTH">North FC</option>
+                  <option value="SOUTH">South FC</option>
                 </select>
-              </div>
-              <div className="theatre-settings">
-                <div className="theatre-audience" aria-label="Audience">
-                  <button
-                    aria-pressed={p.audience === "fan"}
-                    onClick={() => p.setAudience("fan")}
-                  >
-                    Fan view
-                  </button>
-                  <button
-                    aria-pressed={p.audience === "analyst"}
-                    onClick={() => p.setAudience("analyst")}
-                  >
-                    Analyst view
-                  </button>
-                </div>
-                <label>
-                  Following{" "}
-                  <select
-                    aria-label="Favorite team"
-                    value={p.favorite}
-                    onChange={(e) => p.setFavorite(e.target.value as Team | "")}
-                  >
-                    <option value="">Both teams</option>
-                    <option value="NORTH">North FC</option>
-                    <option value="SOUTH">South FC</option>
-                  </select>
-                </label>
-                <span className="theatre-provenance">
-                  {p.current?.origin === "recorded_foundry"
-                    ? p.current.narration_status === "enriched"
-                      ? "Recorded Foundry · validated enrichment"
-                      : "Recorded Foundry · narration fallback"
-                    : "Source-compiled presentation"}{" "}
-                  · no live model call
-                </span>
-              </div>
-              <div
-                className="scenario-chapters"
-                aria-label="Separate synthetic scenarios"
+              </label>
+            </div>
+            <MatchTimeline
+              moments={p.data?.timeline ?? []}
+              audience={p.audience}
+              selected={p.current?.id}
+              select={p.selectStory}
+            />
+          </>
+        )}
+      </div>
+      {!p.clean && (
+        <footer className="md-library">
+          <span>Explore another match</span>
+          <nav
+            className="scenario-chapters"
+            aria-label="Separate synthetic scenarios"
+          >
+            {p.scenarios.map((s) => (
+              <button
+                key={s.id}
+                aria-label={`Select ${s.title}`}
+                aria-pressed={s.id === p.scenario?.id}
+                onClick={() => p.choose(s)}
               >
-                {p.scenarios.map((s, i) => (
-                  <button
-                    key={s.id}
-                    aria-label={`Select ${s.title}`}
-                    aria-pressed={s.id === p.scenario?.id}
-                    onClick={() => p.choose(s)}
-                  >
-                    <span>0{i + 1}</span>
-                    <div>
-                      <strong>{s.title}</strong>
-                      <small>
-                        {s.tracking
-                          ? "Observed tracking"
-                          : "Event-only fixture"}
-                      </small>
-                    </div>
-                    <ArrowRightIcon size={16} />
-                  </button>
-                ))}
-              </div>
-              <div className="theatre-available">
-                <span>AVAILABLE MOMENTS</span>
-                <div>
-                  {[...(p.data?.timeline ?? [])]
-                    .reverse()
-                    .slice(0, 5)
-                    .map((s) => (
-                      <button key={s.id} onClick={() => p.selectStory(s)}>
-                        <time>{clockText(s.presented_seconds)}</time>
-                        {momentCopy(s, p.audience).title}
-                      </button>
-                    ))}
-                </div>
-                <p>
-                  Each chapter is a separate synthetic fixture. Player labels
-                  are source IDs. Positions are observed snapshots; no movement
-                  between them is inferred.
-                </p>
-              </div>
-            </>
-          )}
-        </>
+                {s.title}
+              </button>
+            ))}
+          </nav>
+          <details className="md-replay-info">
+            <summary>About this replay</summary>
+            <p>
+              Each demo is a separate synthetic match. Player labels are source
+              IDs, not shirt numbers. Positions are original observations;
+              movement between them is not inferred.{" "}
+              {p.current?.origin === "recorded_foundry"
+                ? "This moment uses a saved Microsoft Foundry run, checked against its original match."
+                : "This presentation is compiled from verified observations."}{" "}
+              No live model call is made during playback.
+            </p>
+          </details>
+        </footer>
       )}
     </main>
   );
