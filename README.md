@@ -4,11 +4,11 @@ An evidence-first AI broadcast studio for synthetic football. Follow the match, 
 
 **Detect → Prove → Explain → Explore**
 
-![Working Broadcast Theatre](research/step3e/artifacts/theatre-laptop.png)
+![Working Matchday broadcast](research/design/after/1440-native-goal.png)
 
-The default **Theatre** opens on a genuine tracked line comparison: **21.95m →31.96m, +10.01m**, supported by 59 original frames. **Broadcast studio** retains the detailed workspace. Proof Lens has Summary, contributor inspection, Method and Audit, plus a verified JSON receipt. The roughly 80-second guided story uses clearly separate goal, tracking and stale-evidence fixtures. `/?view=broadcast` provides clean program output. Fonts and runtime notices are bundled locally.
+**Matchday** opens three source seconds before a native synthetic goal. The score, clock and original quarter-second player positions advance together without remounting the pitch. Select **A higher line, proved** for the separate tracked comparison: **21.95m → 31.96m, +10.01m**, supported by 59 original frames. **Analysis Room** retains the detailed workspace. Proof Lens has Summary, contributor inspection, Method and Audit, plus a verified JSON receipt. The 76-second guided story uses clearly separate goal, tracking and stale-evidence fixtures. `/?view=broadcast` provides clean program output. Fonts and runtime notices are bundled locally.
 
-Start locally using the commands below. Public deployment/video remain pending until final acceptance; audited release is authorized only at ₹0 out of pocket. [Release evidence](research/step3e/final-submission-evidence.md) · [Data card](DATA_CARD.md) · [Agent card](AGENT_CARD.md) · [Evaluation](EVALUATION.md) · [Evidence map](research/step3e/rubric-gap-map.md).
+Start locally using the commands below. The [audited image and canonical fixture bundle](https://github.com/ansh0eman/matchpulse/releases/tag/viewer-fixtures-v2) include checksums and notices. Public HTTPS deployment/video remain pending acceptance. The saved AMD64 image passed 33 browser cases after a save/load identity check at 0.5 CPU / 1 GiB; [exact evidence](research/step3e/artifacts/premium-release-acceptance.json). [Release evidence](research/step3e/final-submission-evidence.md) · [Data card](DATA_CARD.md) · [Agent card](AGENT_CARD.md) · [Evaluation](EVALUATION.md) · [Evidence map](research/step3e/rubric-gap-map.md).
 
 ### Five stages, one inspectable result
 
