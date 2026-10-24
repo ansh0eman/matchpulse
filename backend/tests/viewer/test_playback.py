@@ -7,7 +7,7 @@ from matchpulse.viewer.schemas import PlaybackQuery
 client = TestClient(app)
 
 
-@pytest.mark.parametrize("scenario,clock", [("open-play", 356), ("opening-goal", 2370), ("equalizer", 4241), ("line-shift", 3359), ("withheld", 1349)])
+@pytest.mark.parametrize("scenario,clock", [("open-play", 356), ("opening-goal", 2370), ("equalizer", 4241), ("line-shift", 3359), ("withheld", 1349), ("native-goals", 1613)])
 def test_prefetch_is_bounded_and_preserves_original_order_and_namespace(scenario, clock):
     p = segment(PlaybackQuery(scenario=scenario, clock=clock))
     assert p["mode"] == "prefetched_causal_replay"

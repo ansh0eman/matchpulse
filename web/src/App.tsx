@@ -103,8 +103,8 @@ export default function App() {
   const current: Story | undefined =
     data?.timeline.find((t) => t.id === selected) ??
     [...(data?.timeline ?? [])]
-      .reverse()
-      .find((t) => !["match_boundary", "high_turnover"].includes(t.type)) ??
+      .filter((t) => !["match_boundary", "high_turnover"].includes(t.type))
+      .sort((a, b) => b.presented_seconds - a.presented_seconds || b.priority - a.priority)[0] ??
     data?.timeline.at(-1);
   useEffect(() => {
     const url = new URL(window.location.href);

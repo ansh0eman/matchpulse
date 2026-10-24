@@ -288,7 +288,7 @@ time,
 }
 .scenario-chapters {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 10px;
   padding: 12px 0 22px;
 }
@@ -948,7 +948,7 @@ time,
   }
   .scenario-chapters {
     overflow: auto;
-    grid-template-columns: repeat(5, 190px);
+    grid-template-columns: repeat(6, 190px);
   }
   .theatre-provenance {
     font-size: 11px;
@@ -1096,7 +1096,7 @@ time,
   }
   .scenario-chapters {
     padding-top: 4px;
-    grid-template-columns: repeat(5, 185px);
+    grid-template-columns: repeat(6, 185px);
   }
   .theatre-available > div {
     display: grid;

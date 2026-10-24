@@ -34,6 +34,8 @@ export interface Observation {
   possession_id: string;
 }
 export interface Story {
+  /** Engine editorial ordering; never probability or confidence. */
+  priority: number;
   narration_status: string;
   overlay_status: string;
   id: string;

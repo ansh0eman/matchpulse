@@ -18,7 +18,9 @@ Read the [actual request walkthrough](research/step3e/execution-walkthrough.md),
 
 The research below preserves Step 2/2.5 outcomes, including failed broad detection targets. The UI redesign does not change those findings or establish real-match calibration.
 
-The [Product Excellence architecture and gap register](research/product-excellence/architecture.md) consolidates the system, source capabilities and next milestones. Latest continuity repair keeps the last verified prefix visible during forward playback, applies request backpressure and immediately rejects future snapshots on backward seeks. Both development and packaged-native browser regressions passed21/21; this remains recorded replay, not a live-input service.
+The [Product Excellence architecture and gap register](research/product-excellence/architecture.md) consolidates the system, source capabilities and next milestones. [Buffered replay](research/product-excellence/buffered-replay.md) keeps the pitch mounted, advances a causal source prefix without per-tick full-view requests and rejects future snapshots on backward seeks. Its packaged-native regression passed31/31. This remains recorded replay, not a live-input service.
+
+The accepted [native goal showcase](research/product-excellence/native-goal-showcase.md) adds **Goals, in motion**: two observed goals and 22,401 original quarter-second position frames from one reproducible run. Packaged browser regression passed33/33; backend198 passed with two disabled live tests skipped. The original five fixtures remain intact. Selection is explicitly a goal-bearing demo example, not new statistical evidence; the new goals compile deterministically and are separate from the historical Foundry capture.
 
 ## Broadcast studio — Step 3C
 

@@ -2,8 +2,9 @@
 
 import hashlib
 import json
+import gc
 from bisect import bisect_right
-from functools import lru_cache
+from threading import RLock
 from .catalog import SCENARIOS, CONFIG, ROOT
 from ..agents.cli import load_source
 from ..agents.schemas import Preferences, AskRequest, BroadcastArtifact, WorkflowState
@@ -24,8 +25,27 @@ def digest(path):
     return h.hexdigest()
 
 
-@lru_cache(maxsize=5)
+_sources = {}
+_source_lock = RLock()
+
+
 def source(scenario_id):
+    # One analytical match per process. Evict BEFORE loading the next large native
+    # source, not after loading it as a normal LRU would. Endpoints run on the
+    # single viewer event loop; the lock also prevents duplicate threaded loads.
+    with _source_lock:
+        if scenario_id in _sources:
+            return _sources[scenario_id]
+        if scenario_id not in SCENARIOS:
+            raise KeyError("Unknown scenario")
+        _sources.clear()
+        gc.collect()
+        result = _load_source(scenario_id)
+        _sources[scenario_id] = result
+        return result
+
+
+def _load_source(scenario_id):
     s = SCENARIOS[scenario_id]
     result = load_source(s.events, s.frames, CONFIG if s.tracking else None)
     result["event_times"] = [e.time_seconds for e in result["index"].ordered]
@@ -123,6 +143,7 @@ def render(item, result, query):
     return {
         "id": item.insight.insight_id,
         "type": item.insight.type,
+        "priority": item.insight.priority,
         "team": item.insight.team_id,
         "source_seconds": item.insight.event_time_seconds,
         "available_seconds": item.insight.as_of_seconds,

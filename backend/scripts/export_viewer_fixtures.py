@@ -1,6 +1,6 @@
 """Prepare a private, allowlisted deployment bundle; never run a model or simulator.
 
-The ignored bundle contains only the five declared canonical replay sources.
+The ignored bundle contains only the declared canonical replay sources.
 It is distinct from frozen experiments. Existing different bytes are never overwritten.
 """
 
@@ -57,4 +57,5 @@ def export(destination: Path):
 
 
 if __name__ == "__main__":
-    export(ROOT / "backend/output/viewer-bundle")
+    # The original eight-file bundle remains intact for historical reproduction.
+    export(ROOT / "backend/output/viewer-bundle-v2")

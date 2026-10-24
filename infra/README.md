@@ -7,7 +7,7 @@ This template now creates only a Consumption environment and one HTTPS app: 0–
 ## Release sequence
 
 1. Pass private product acceptance and final source/history/license/provenance audits.
-2. Commit source, build/accept the exact AMD64 image with its revision label, and save it as an ignored archive. Publish the reviewed eight-source bundle and exact image as release assets only after the audit gate.
+2. Commit source, build/accept the exact AMD64 image with its revision label, and save it as an ignored archive. Publish the reviewed current fixture bundle and exact image as release assets only after the audit gate.
 3. Make the audited repository public under the conditional authorization. The manual workflow refuses private repositories; it uses a standard no-charge public runner, validates archive SHA256/image ID/source label, smoke-tests the loaded image, and pushes that same image with a short-lived repository GITHUB_TOKEN. No rebuild, PAT, Azure credential or secret build argument.
 4. Verify GHCR package visibility and anonymous manifest/pull. Public repository visibility alone does not establish public package access. Match registry config/image identity to the locally accepted image.
 5. Recheck trial protection, register Microsoft.App if necessary, and deploy to the existing resource group with the immutable public image digest.
@@ -21,5 +21,7 @@ az deployment group create --resource-group matchpulse-hackathon-rg \
 ```
 
 Run backend/scripts/check_viewer_release.py against the actual HTTPS URL, then all browser checks. Verify startup, phone/keyboard/reduced-motion, source hashes, receipts, saved Foundry success and separate fallback. Compilation/upload alone is not deployment/submission proof. Do not delete the app/image before judging. Trial exhaustion can interrupt service; a replica limit is not a cash cap or uptime guarantee.
+
+The native goal showcase supersedes the original fixture bundle for a future release: export uses `backend/output/viewer-bundle-v2` (ten source files / 31,984,795 bytes plus manifest). The old eight-file bundle is preserved for historical reproduction. Do not publish an earlier image as if it contained buffered replay or native goals. The viewer keeps one analytical source cached per process to fit its measured 1 GiB budget; source switches have a cold-load cost and multi-user load acceptance remains pending.
 
 References: [Azure protection](https://learn.microsoft.com/azure/cost-management-billing/manage/spending-limit), [Container Apps grants/billing](https://learn.microsoft.com/azure/container-apps/billing), [GHCR billing](https://docs.github.com/en/billing/concepts/product-billing/github-packages), [release asset limits](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases). Only eligible first-party Azure consumption may draw protected credit; no separate license/support/Marketplace charge is allowed.

@@ -12,6 +12,7 @@ test("buffer prefixes equal the existing authoritative view across score, eviden
   request,
 }) => {
   for (const [scenario, start] of [
+    ["native-goals", 1613.5],
     ["opening-goal", 2370],
     ["equalizer", 4241],
     ["line-shift", 3359.5],

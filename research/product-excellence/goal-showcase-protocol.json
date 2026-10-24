@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "purpose": "Transparent goal-bearing product example selection, not a statistical evaluation or detector tuning",
+  "baseline": "The original showcase-protocol.json run finished 0-0; retain that result unchanged",
+  "seed_rule": "For i=0..7, first four big-endian SHA256 bytes of 'MatchPulse AI goal showcase v1:i', modulo 2147483646, plus 1",
+  "candidate_seeds": [1511657676, 1603656668, 638623034, 1305687199, 372914210, 651169397, 1558744101, 209735893],
+  "selection": "First candidate in declared order with an observed goal. Stop after eight candidates; no hidden rerolls. Report every attempted candidate's score and event hash. Then capture that exact run's native snapshots and require event-byte parity. No claims of representative scoring frequency or detector accuracy.",
+  "match_id": "fc02c27c-54fc-4104-b428-7e1f9018efea",
+  "upstream_commit": "39529b19c40868d66aa47db084ebc9ea29c86e70",
+  "simulation_sha256": "7307fbe83823345445ca27a153a1bb917f9fb80484f35beb8f08b05600e0f2d8",
+  "projection_sha256": "640bea2c5b332ca0327d411824eddddc350f1ba665aac01b4d02d3050a29b5dc",
+  "match_length_seconds": 5400,
+  "tick_seconds": 0.25,
+  "snapshot_selection": "Every native onSnapshot callback; no interpolation or temporal resampling",
+  "schedule": [],
+  "home_attribute_offset": 1,
+  "away_attribute_offset": -1,
+  "acceptance": ["Repeat source hashes match", "Original event/frame scores agree", "Independent claim verification", "Memory measured before viewer integration", "Existing fixtures and research unchanged"]
+}

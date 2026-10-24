@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "purpose": "Product showcase only; not a detector experiment, calibration set or untouched evaluation holdout",
+  "declared_before_generation": "2026-10-24",
+  "seed_rule": "First four big-endian SHA256 bytes of 'MatchPulse AI product showcase v1', modulo 2147483646, plus 1",
+  "seed": 1833995344,
+  "match_id": "e47cd9e6-6e99-4205-b9d4-acb578ad7ef5",
+  "upstream_commit": "39529b19c40868d66aa47db084ebc9ea29c86e70",
+  "simulation_sha256": "7307fbe83823345445ca27a153a1bb917f9fb80484f35beb8f08b05600e0f2d8",
+  "projection_sha256": "640bea2c5b332ca0327d411824eddddc350f1ba665aac01b4d02d3050a29b5dc",
+  "match_length_seconds": 5400,
+  "tick_seconds": 0.25,
+  "snapshot_selection": "Every native onSnapshot callback, including phase snapshots at repeated source times; no interpolation or temporal resampling",
+  "schedule": [],
+  "home_attribute_offset": 0,
+  "away_attribute_offset": 0,
+  "selection": "One declared run; no seed search. If no goal occurs, report that result before amending the product protocol. Select first observed goal only after generation.",
+  "acceptance": [
+    "Repeat generation has identical canonical-event and original projected-tracking bytes",
+    "Original event and frame scores agree at observed goal boundaries",
+    "Complete original sequences and independently verified story claims",
+    "Measure actual packaged memory before catalog integration",
+    "Existing source fixtures and consumed research holdout unchanged"
+  ]
+}

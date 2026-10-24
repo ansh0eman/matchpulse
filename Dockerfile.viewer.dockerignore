@@ -20,6 +20,8 @@
 !backend/output/
 !backend/output/viewer-bundle/
 !backend/output/viewer-bundle/**
+!backend/output/viewer-bundle-v2/
+!backend/output/viewer-bundle-v2/**
 !research/
 !research/step25/
 !research/step25/artifacts/

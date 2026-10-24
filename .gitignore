@@ -21,3 +21,5 @@ web/playwright-report/
 output/playwright/
 backend/output/viewer-bundle/
 backend/output/release/
+backend/output/showcase/
+backend/output/viewer-bundle-v2/

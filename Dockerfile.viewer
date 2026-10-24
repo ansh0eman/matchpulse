@@ -13,7 +13,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 MATCHPULSE_ROOT=/app \
 COPY backend/pyproject.toml backend/requirements-viewer.txt backend/requirements-viewer-lock.txt /app/backend/
 COPY backend/src /app/backend/src
 RUN pip install --no-cache-dir --upgrade pip==26.2.2 && pip install --no-cache-dir -e /app/backend -r /app/backend/requirements-viewer-lock.txt
-COPY backend/output/viewer-bundle /app/backend/output/viewer-bundle
+COPY backend/output/viewer-bundle-v2 /app/backend/output/viewer-bundle
 COPY research/step25/artifacts/selected.json /app/research/step25/artifacts/selected.json
 COPY research/step3b/artifacts/live-foundry-validation.json research/step3b/artifacts/foundry-authenticated-proof.json /app/research/step3b/artifacts/
 COPY research/step3c/artifacts/recorded-foundry-trace.json /app/research/step3c/artifacts/

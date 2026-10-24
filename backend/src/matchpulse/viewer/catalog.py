@@ -38,6 +38,15 @@ SCENARIOS = {
     s.id: s
     for s in (
         Scenario(
+            "native-goals",
+            "Goals, in motion",
+            "Goals and quarter-second positions from the same original run.",
+            "fc02c27c-54fc-4104-b428-7e1f9018efea",
+            "backend/output/showcase/goal-a",
+            True,
+            1611.0,
+        ),
+        Scenario(
             "open-play",
             "The game between the goals",
             "A complete 0–0. Find the story in the observations.",
