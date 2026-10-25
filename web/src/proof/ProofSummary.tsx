@@ -33,6 +33,11 @@ export function ProofSummary({
   const c = proof.calculation;
   const position = c.before_m !== undefined;
   const club = proof.team === "NORTH" ? "North" : proof.team === "SOUTH" ? "South" : "The match";
+  const shotObservation = proof.type === "observed_shot"
+    ? proof.observations.find((observation) => observation.action === "shot" && observation.team === proof.team)
+    : undefined;
+  const shot = !!shotObservation && proof.team !== null;
+  const shotCount = c.recomputed_shots ?? (shot ? 1 : proof.observations.length);
   const direction = (c.change_m ?? 0) >= 0 ? "farther forward" : "farther back";
   const latest = c.latest_observation ?? proof.as_of_seconds;
   return (
@@ -44,16 +49,21 @@ export function ProofSummary({
             ? "The score changed. Here is the source."
             : c.elapsed_seconds !== undefined
               ? "From regain to shot."
+              : shot
+                ? `${club} recorded a shot attempt at ${clockText(shotObservation.time_seconds)}.`
               : "The observation, checked."}
       </h3>
       <p className="summary-subtitle">
         {position
           ? "A context-weighted comparison of the three deepest observed outfielders across eligible tracking frames. This compares two sampled windows; it does not describe continuous movement."
-          : "Observed facts. Independently recomputed on this request."}
+          : shot
+            ? "The original event records a shot attempt. Its incident time is separate from the current replay clock."
+            : "Observed facts. Independently recomputed on this request."}
       </p>
       <div className="proof-time-context" aria-label="Evidence and replay time">
         <span><strong>Evidence as of</strong> {clockText(proof.as_of_seconds)}</span>
         <span><strong>Replay clock</strong> {clockText(replayClock)}</span>
+        {shot && <span><strong>Selected incident</strong> {clockText(shotObservation.time_seconds)}</span>}
         {position && <span>Latest source observation {clockText(latest)} · {c.age ?? Math.max(0, proof.as_of_seconds - latest)}s old at evidence cutoff · {Math.max(0, replayClock - latest)}s before replay</span>}
       </div>
       {position ? (
@@ -116,11 +126,11 @@ export function ProofSummary({
       ) : c.before ? (
         <div className="summary-score measurement"><div><span>BEFORE</span><strong>{c.before.home} – {c.before.away}</strong></div><ArrowRightIcon size={30} /><div><span>AFTER</span><strong>{c.after?.home} – {c.after?.away}</strong></div></div>
       ) : (
-        <div className="summary-single measurement"><strong>{c.elapsed_seconds ?? c.recomputed_shots ?? proof.observations.length}</strong><span>{c.elapsed_seconds !== undefined ? "seconds from regain to shot" : c.recomputed_shots !== undefined ? "observed shot attempts" : "original event observations"}</span></div>
+        <div className="summary-single measurement"><strong>{c.elapsed_seconds ?? c.recomputed_shots ?? (shot ? shotCount : proof.observations.length)}</strong><span>{c.elapsed_seconds !== undefined ? "seconds from regain to shot" : c.recomputed_shots !== undefined ? `observed shot attempt${c.recomputed_shots === 1 ? "" : "s"}` : shot ? `source shot attempt${shotCount === 1 ? "" : "s"}` : `original event observation${proof.observations.length === 1 ? "" : "s"}`}</span></div>
       )}
       <div className="summary-boundaries">
-        <section><h4>What this supports</h4><p>{position ? `Across comparable observed situations, ${club}’s three-deepest-outfielder proxy averaged ${Math.abs(c.change_m ?? 0).toFixed(2)} m ${direction} in the recent window.` : c.before ? "The score snapshots on the two original source events establish this recorded transition." : c.elapsed_seconds !== undefined ? "A recorded high regain was followed by a shot in the same possession, separated by the recomputed time." : "These source observations support this registered incident; inspect the method for its exact definition."}</p></section>
-        <section><h4>What it does not support</h4><p>{position ? "Observed player positioning does not establish a manager's instruction or prove pressing effectiveness." : "An event sequence alone does not establish causation, an assist or expected goals."}</p></section>
+        <section><h4>What this supports</h4><p>{position ? `Across comparable observed situations, ${club}’s three-deepest-outfielder proxy averaged ${Math.abs(c.change_m ?? 0).toFixed(2)} m ${direction} in the recent window.` : c.before ? "The score snapshots on the two original source events establish this recorded transition." : c.elapsed_seconds !== undefined ? "A recorded high regain was followed by a shot in the same possession, separated by the recomputed time." : shot ? `The original event record identifies a ${club} shot attempt at ${clockText(shotObservation.time_seconds)}.` : "These source observations support this registered incident; inspect the method for its exact definition."}</p></section>
+        <section><h4>What it does not support</h4><p>{position ? "Observed player positioning does not establish a manager's instruction or prove pressing effectiveness." : shot ? "This event record alone does not establish the shot's outcome or chance quality, an assist, or a causal link to another event." : "An event sequence alone does not establish causation, an assist or expected goals."}</p></section>
       </div>
       <div className="summary-actions">
         <button className="evidence-button" onClick={method}>How calculated<ArrowRightIcon size={19} /></button>

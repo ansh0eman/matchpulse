@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { ArrowUpRightIcon } from "@phosphor-icons/react";
 import type { Audience, Story } from "../contracts";
 import { clockText } from "../ProofLens";
@@ -20,8 +21,9 @@ export function MatchTimeline(p: {
   audience: Audience;
   selected?: string;
   latest?: string;
-  select: (story: Story) => void;
+  select: (story: Story, reveal: boolean) => void;
 }) {
+  const pointerType = useRef<string | null>(null);
   const moments = [...p.moments]
     .filter(
       (story) =>
@@ -50,7 +52,13 @@ export function MatchTimeline(p: {
               <button
                 data-story-id={story.id}
                 aria-current={p.selected === story.id ? "true" : undefined}
-                onClick={() => p.select(story)}
+                onPointerDown={(event) => { pointerType.current = event.pointerType; }}
+                onPointerCancel={() => { pointerType.current = null; }}
+                onClick={(event) => {
+                  const pointerSelection = event.detail > 0 || pointerType.current === "touch" || pointerType.current === "pen";
+                  pointerType.current = null;
+                  p.select(story, pointerSelection);
+                }}
               >
                 <time>{clockText(story.source_seconds)}</time>
                 <div>

@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import {
   ArrowsOutIcon,
   ArrowRightIcon,
@@ -39,6 +40,8 @@ interface Props {
   toggleClean: () => void;
 }
 export function BroadcastTheatre(p: Props) {
+  const [selectionRevision, setSelectionRevision] = useState(0);
+  const lowerThird = useRef<HTMLDivElement>(null);
   const copy = momentCopy(p.current, p.audience);
   const replayClock = p.data?.clock ?? p.clock;
   const availableMoments = (p.data?.timeline ?? []).filter(
@@ -59,6 +62,25 @@ export function BroadcastTheatre(p: Props) {
   const withheld = !p.explicitlySelected && p.data?.diagnostics.find((d) =>
     d.reasons.includes("stale_recent_evidence"),
   );
+  useEffect(() => {
+    if (!selectionRevision || !window.matchMedia("(max-width: 767px)").matches) return;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const frame = window.requestAnimationFrame(() => {
+      lowerThird.current?.scrollIntoView({
+        behavior: reducedMotion ? "instant" : "smooth",
+        block: "start",
+      });
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [selectionRevision]);
+  const selectStory = (story: Story, reveal: boolean) => {
+    if (!availableMoments.some((moment) => moment.id === story.id)) return;
+    p.selectStory(story);
+    if (reveal) setSelectionRevision((revision) => revision + 1);
+  };
+  const withheldExplanation = withheld
+    ? `${p.data?.tracking_available ? "Tracking observations are available for this match. " : ""}The latest relevant evidence for this positional comparison is ${withheld.recent_age_seconds}s old at ${clockText(replayClock)}. A current comparison needs recent, comparable observations, so MatchPulse cannot support a current positional claim.`
+    : null;
   return (
     <main
       id="matchday"
@@ -161,7 +183,7 @@ export function BroadcastTheatre(p: Props) {
               </small>
             </div>
           </div>
-          <div className="moment-lower-third" key={p.current?.id ?? "empty"}>
+          <div className="moment-lower-third" key={p.current?.id ?? "empty"} ref={lowerThird}>
             <div className="moment-copy" aria-live="polite" aria-atomic="true">
               <span className="moment-label">
                 {p.current && p.explicitlySelected
@@ -177,7 +199,7 @@ export function BroadcastTheatre(p: Props) {
               </h1>
               <p>
                 {withheld
-                  ? `The latest relevant positional evidence is ${withheld.recent_age_seconds}s old, too old for a current comparison. This claim stays off air. Select a historical incident in the match timeline to inspect its own evidence.`
+                  ? withheldExplanation
                   : copy.detail}
               </p>
               {p.current && !withheld && (
@@ -264,7 +286,7 @@ export function BroadcastTheatre(p: Props) {
               audience={p.audience}
               selected={p.explicitlySelected ? p.current?.id : undefined}
               latest={p.latestRecorded?.id}
-              select={p.selectStory}
+              select={selectStory}
             />
           </>
         )}

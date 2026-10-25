@@ -5,7 +5,7 @@ import type { Proof, Story, View } from "../src/contracts";
 const open = (page: Page) => page.getByRole("button", { name: "Open Proof Lens", exact: true });
 const close = (page: Page) => page.getByRole("button", { name: "Close Proof Lens", exact: true });
 const titleA = "North’s recent line estimate is 10.01 m farther forward than its earlier estimate.";
-const titleB = "The observation, checked.";
+const titleB = "South recorded a shot attempt at 54:39.";
 const frames = (page: Page) => page.evaluate(() => new Promise<void>((resolve) => {
   let remaining = 6;
   const tick = () => --remaining ? requestAnimationFrame(tick) : resolve();
@@ -168,7 +168,9 @@ test("withheld explanation has no unrelated timestamps or proof action; explicit
   page.on("request", (request) => { if (request.url().includes("/api/proof?")) proofRequests++; });
   await page.goto("/?scenario=withheld");
   await expect(page.locator(".moment-copy h1")).toHaveText("Sometimes, the evidence says wait.");
-  await expect(page.locator(".moment-copy")).toContainText("132s old, too old for a current comparison");
+  await expect(page.locator(".moment-copy")).toContainText("Tracking observations are available for this match.");
+  await expect(page.locator(".moment-copy")).toContainText("132s old at 22:30");
+  await expect(page.locator(".moment-copy")).toContainText("needs recent, comparable observations");
   await expect(page.locator(".moment-lower-third .moment-time-context")).toHaveCount(0);
   await expect(open(page)).toHaveCount(0);
   await expect(page.getByLabel("Verified line comparison")).toHaveCount(0);
@@ -180,7 +182,8 @@ test("withheld explanation has no unrelated timestamps or proof action; explicit
   await select(page, shot);
   await expect(page.locator(".moment-copy h1")).not.toHaveText("Sometimes, the evidence says wait.");
   await expect(page.getByLabel("Moment timing")).toBeVisible();
-  await inspect(page, titleB);
+  const shotClock = `${String(Math.floor(shot.source_seconds / 60)).padStart(2, "0")}:${String(Math.floor(shot.source_seconds % 60)).padStart(2, "0")}`;
+  await inspect(page, `${shot.team === "NORTH" ? "North" : "South"} recorded a shot attempt at ${shotClock}.`);
   const receipt = await savedReceipt(page);
   expect(receipt.claim_id).toBe(shot.claim_ids[0]);
   expect(receipt.match_id).toBe(view.match_id);

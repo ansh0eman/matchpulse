@@ -1,16 +1,14 @@
 # MatchPulse AI agent instructions
 
-## Current execution control — Product-Focused Development Plan v2
+## Current execution control — P4/P5 local checkpoints closed
 
-Read research/product-excellence/CURRENT_STATUS.md first: it is the authoritative current-state index. Older research reports, acceptance records and CHECKPOINT.md describe their dated revisions; preserve them without retroactively rewriting history or treating old pending statements as present status.
+Read research/product-excellence/CURRENT_STATUS.md first: it is the authoritative current-state index. Preserve dated reports and acceptance records as historical evidence; do not retroactively rewrite their claims.
 
-Product promise: **See what changed. Understand what supports it. Know what remains uncertain.** Build for a curious football fan inspecting an observed positional change; numerical verification alone does not establish usefulness or tactical meaning.
+Product promise: **See what changed. Understand what supports it. Know what remains uncertain.** Numerical verification does not establish human usefulness or tactical meaning.
 
-Only one explicitly authorized milestone may be active. Current authorization: Priority 1 (state reconciliation) only, limited to AGENTS.md, research/product-excellence/gaps.json and new research/product-excellence/CURRENT_STATUS.md. Propose any other file separately before editing. Before edits inspect Git/concurrent changes, identify exact files and acceptance checks, and preserve unrelated work. No implementation changes in Priority 1.
+Priority 4 playback reliability and Priority 5 UX have independent local technical acceptance and are recorded in separate local commits. The P4/P5 closeout commits and records are the only scope authorized by the latest user instruction. That authorization ends when this checkpoint is reported. **No milestone is currently authorized. Require a new explicit user instruction before further research, implementation, testing, commits or other project work. STOP FOR USER REVIEW.** Do not automatically advance a roadmap priority or interpret preserved research files as authorization.
 
-Every milestone ends with a concise report of changes, evidence, checks, remaining limits and one next proposal, then **STOP FOR USER REVIEW**. No automatic progression, parallel workstreams, silent expansion from review into implementation or assumption that roadmap priorities are authorized. Priority 2 is only the next proposal; await explicit approval. This policy supersedes earlier broad autonomous execution/release instructions. Historical gap ranks are not an execution queue.
-
-No Azure writes, paid inference, deployment, public release changes (including pushes to the public repository), video work, emails or portal submissions without separately scoped authorization. No new dependencies, skills or MCP servers without justification and permission. Do not commit/push/merge under Priority 1. Public testing and a read-only billing review each require separate authorization. Existing Azure hosting remains untouched; its current spend is unknown and local work does not stop possible costs. Historical credit/protection observations do not prove current spend or current billing state.
+Before any newly authorized work, inspect Git/concurrent changes, name the exact file scope and acceptance checks, and preserve unrelated work. No parallel workstreams or silent scope expansion. Public testing, Azure/billing access, paid inference, deployment, pushes, video changes and portal submission each require separately scoped authorization; do not infer them from local acceptance. Current Azure spend remains unknown unless independently rechecked under authorization. Do not create new dependencies, skills or MCP servers without justification and permission.
 
 Preserve frozen experiments, source fingerprints, consumed holdouts, negative conclusions and independent evidence verification. Use scope-appropriate local checks; documentation reconciliation does not authorize application tests, research reruns or external activity. Historical technical rules below apply within the currently authorized scope, not as instructions to start a new milestone.
 

@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from "react";
+import { useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import {
   CheckCircleIcon,
   XIcon,
@@ -30,6 +30,16 @@ export function ProofLens({
   const [tab, setTab] = useState("summary");
   const [auditTab, setAuditTab] = useState("observations");
   const [sample, setSample] = useState(0);
+  const drawerBody = useRef<HTMLDivElement>(null);
+  const sectionHeading = useRef<HTMLHeadingElement>(null);
+  const focusNextSection = useRef(false);
+  useLayoutEffect(() => {
+    if (drawerBody.current) drawerBody.current.scrollTop = 0;
+    if (focusNextSection.current) {
+      sectionHeading.current?.focus({ preventScroll: true });
+      focusNextSection.current = false;
+    }
+  }, [tab, auditTab]);
   const c = proof?.calculation;
   const current =
     proof?.samples[Math.min(sample, (proof?.samples.length ?? 1) - 1)];
@@ -89,14 +99,18 @@ export function ProofLens({
                 </button>
               ))}
             </nav>
-            <div className="drawer-body">
+            <div className="drawer-body" ref={drawerBody}>
               {tab === "summary" ? (
                 <ProofSummary
                   proof={proof}
                   replayClock={replayClock}
-                  method={() => setTab("method")}
+                  method={() => {
+                    focusNextSection.current = true;
+                    setTab("method");
+                  }}
                   audit={() => {
                     setAuditTab("observations");
+                    focusNextSection.current = true;
                     setTab("audit");
                   }}
                 />
@@ -125,7 +139,7 @@ export function ProofLens({
                   )}
                   {tab === "method" ? (
                     <>
-                      <h3>Show your working.</h3>
+                      <h3 ref={sectionHeading} tabIndex={-1}>Show your working.</h3>
                       <p className="formula">{c.formula}</p>
                       {c.before_m !== undefined ? (
                         <>
@@ -240,7 +254,7 @@ export function ProofLens({
                     </>
                   ) : auditTab === "observations" ? (
                     <>
-                      <h3>The original observations.</h3>
+                      <h3 ref={sectionHeading} tabIndex={-1}>The original observations.</h3>
                       <p>
                         Exact source IDs and coordinates. Event coordinates
                         describe the ball, not the named player's location.
@@ -327,7 +341,7 @@ export function ProofLens({
                     </>
                   ) : (
                     <>
-                      <h3>A traceable chain.</h3>
+                      <h3 ref={sectionHeading} tabIndex={-1}>A traceable chain.</h3>
                       <div className="provenance-step">
                         <FingerprintIcon size={26} />
                         <div>

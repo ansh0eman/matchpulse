@@ -1,10 +1,20 @@
 # MatchPulse — authoritative current status
 
-Reconciled **October 25, 2026 (Asia/Kolkata)**. Product-Focused Development Plan v2 authorizes **Priority 1 only**. State reconciliation is complete pending user review. No implementation, application tests, cloud/billing queries, deployment, video work, messages or publication occurred in this milestone.
+Updated **October 25, 2026 (Asia/Kolkata)** after local Priority 4 and Priority 5 checkpoint closure.
+
+## Current checkpoint
+
+- **Priority 4 — playback reliability:** independently accepted for local technical closure. Commit `f0c95c40352679abffd8fecf715ab388baa8da33`; acceptance: [priority4-acceptance.md](priority4-acceptance.md); detailed verification: [priority4-playback-verification.md](priority4-playback-verification.md).
+- **Priority 5 — UX candidate:** accepted for local technical/heuristic closure. Its source, tests, acceptance record and this control/status update are in the local P5 closeout commit. The commit itself is the revision containing this status update; see local `git log` for its ID.
+- **Checks recorded from prior acceptance work:** P4 report records TypeScript/build success, backend **37 passed**, local browser **59 passed**, and focused follow-up **12 passed**. P5 review recorded TypeScript success and **17 passed / 1 expected skip** across 1366×768 and 390×844 Chromium projects, plus inspected screenshots. These suites were **not rerun during the checkpoint-commit task**; only Git scope and whitespace were checked here.
+- The human comprehension study remains **uncollected**. These acceptances are technical and heuristic, not participant research, public deployment acceptance or proof of product usefulness.
+- **No further work is authorized.** Obtain a new explicit user instruction before another milestone. This is a stop for review, not an automatic start of Priority 6 or any other priority.
 
 **Product promise:** See what changed. Understand what supports it. Know what remains uncertain. Numerical validity, evidence strength and human usefulness are separate questions.
 
-## Revision and evidence scope
+The following sections preserve the dated Priority 1 status snapshot as historical context. Their branch revision, authorization and pending-state statements describe October 25 before P4/P5 closure and are superseded by the current checkpoint above.
+
+## Historical Priority 1 snapshot — October 25, 2026
 
 - Local branch `main`, clean before edits: **`a3275a71ec87131e99406ea52cf4372d0287d2ec`**. Read-only `git ls-remote origin refs/heads/main` returned the same latest public main SHA today. These three documentation edits are an uncommitted local layer over it.
 - Deployed product source: **`50da7eadb384890415c4c888f47a7bcc23b22622`**; deployment-template correction: `cdb3d20`. Later documentation commits do not imply a rebuilt product image.
