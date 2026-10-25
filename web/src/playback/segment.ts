@@ -24,6 +24,20 @@ const score = (s: { home: number; away: number } | null | undefined) =>
   s.away >= 0;
 const identifier = (s: unknown) =>
   typeof s === "string" && s.length > 0 && s.length <= 200;
+const optionalTiming = (n: unknown) =>
+  n === null || (typeof n === "number" && Number.isFinite(n) && n >= 0);
+
+// Compare known source fields; packets may additionally carry sequence numbers.
+function preservesSource(actual: unknown, expected: unknown): boolean {
+  if (Array.isArray(expected))
+    return Array.isArray(actual) && actual.length === expected.length &&
+      expected.every((value, i) => preservesSource(actual[i], value));
+  if (expected !== null && typeof expected === "object")
+    return actual !== null && typeof actual === "object" &&
+      Object.entries(expected).every(([key, value]) =>
+        preservesSource((actual as Record<string, unknown>)[key], value));
+  return actual === expected;
+}
 
 export function validateSegment(
   p: PlaybackSegment,
@@ -35,8 +49,10 @@ export function validateSegment(
     p.schema_version !== 1 ||
     p.mode !== "prefetched_causal_replay" ||
     p.start !== start ||
+    seed.clock !== start ||
     !Number.isFinite(p.end) ||
     p.end < p.start ||
+    (p.end === p.start && p.start < seed.duration) ||
     p.end > p.start + 16 ||
     p.end > p.base.duration ||
     p.base.clock !== p.end ||
@@ -112,7 +128,10 @@ export function validateSegment(
     p.diagnostics.some(
       (d) =>
         !Number.isFinite(d.detected_at_seconds) ||
+        d.detected_at_seconds < 0 ||
         d.detected_at_seconds > p.end ||
+        !optionalTiming(d.recent_age_seconds) ||
+        !optionalTiming(d.recent_span_seconds) ||
         !Array.isArray(d.reasons) ||
         d.reasons.some((r) => typeof r !== "string"),
     )
@@ -152,6 +171,14 @@ export function validateSegment(
     )
   )
     throw new Error("Playback claim outside its namespace/window");
+  // Ordering alone cannot detect a truncated prefix. A packet must retain the
+  // already verified observations at its anchor and cover its declared end.
+  for (const [clock, expected] of [[start, seed], [p.end, p.base]] as const) {
+    const actual = prefixView(p, clock);
+    if (["score", "period", "frame", "recent_events"].some((key) =>
+      !preservesSource(actual[key as keyof View], expected[key as keyof View])))
+      throw new Error("Playback observations do not preserve the verified boundary");
+  }
 }
 
 /** Select an original-source prefix. Never derive a goal from counts or interpolate positions. */

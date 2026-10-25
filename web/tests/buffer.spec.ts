@@ -138,6 +138,22 @@ test("invalid buffer ordering, identities, clocks, sources and viewer context fa
     (p: PlaybackSegment) => {
       p.base.timeline[0].claim_ids = ["wrong:claim:id"];
     },
+    (p: PlaybackSegment) => {
+      p.events = [];
+      p.frames = [];
+    },
+    (p: PlaybackSegment) => {
+      p.frames = p.frames.filter((f) => f.time_seconds > p.start);
+    },
+    (p: PlaybackSegment) => {
+      p.frames.pop();
+    },
+    (p: PlaybackSegment) => {
+      p.end = p.start;
+      p.base = structuredClone(seed);
+      p.events = p.events.filter((e) => e.time_seconds <= p.start);
+      p.frames = p.frames.filter((f) => f.time_seconds <= p.start);
+    },
   ];
   for (const mutate of mutations) {
     const invalid = structuredClone(packet);
@@ -178,16 +194,20 @@ test("one buffered request advances multiple source ticks without refetching the
 
 test("an invalid prefetched packet pauses with an actionable error and recovers without publishing it", async ({
   page,
+  request,
 }) => {
+  // Prepare the packet before starting the error deadline. The old route.fetch()
+  // consumed almost all five seconds of the recorded public assertion window.
+  const invalid = await (await request.get(
+    "/api/playback?scenario=line-shift&clock=3360",
+  )).json();
+  invalid.base.match_id = "wrong-match";
   await page.goto("/?scenario=line-shift");
   await expect(
     page.getByRole("button", { name: "Open Proof Lens", exact: true }),
   ).toBeEnabled({ timeout: 60000 });
   await page.route("**/api/playback?**", async (route) => {
-    const response = await route.fetch();
-    const data = await response.json();
-    data.base.match_id = "wrong-match";
-    await route.fulfill({ json: data });
+    await route.fulfill({ json: invalid });
   });
   await page.getByRole("button", { name: "Play replay", exact: true }).click();
   await expect(page.getByRole("alert")).toContainText(

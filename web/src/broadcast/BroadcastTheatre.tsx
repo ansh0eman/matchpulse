@@ -121,7 +121,7 @@ export function BroadcastTheatre(p: Props) {
                 {p.data ? `Half ${p.data.period}` : ""}
               </span>
             </div>
-            <span className="theatre-source" role="status">
+            <span className={`theatre-source${p.buffering ? " is-buffering" : ""}`} role="status">
               {p.buffering
                 ? "Buffering replay…"
                 : p.data

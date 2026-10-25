@@ -53,13 +53,14 @@ export function useBufferedReplay(options: Options) {
       if (pending || !active) return;
       pending = true;
       const anchor = cursor;
+      const anchorView = packet ? prefixView(packet, anchor) : seed;
       try {
         const next = await get<PlaybackSegment>(
           `/api/playback?${replayKey(scope, anchor)}&window_seconds=16`,
           controller.signal,
         );
         if (!active || !latest.current.playing) return;
-        validateSegment(next, scope, seed, anchor);
+        validateSegment(next, scope, anchorView, anchor);
         packet = next;
         latest.current.onView(
           prefixView(next, cursor),
