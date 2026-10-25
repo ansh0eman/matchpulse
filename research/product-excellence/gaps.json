@@ -1,15 +1,91 @@
 {
-  "schema_version": 1,
-  "baseline": "2b7097200549c264c2ceb8aeca9b68a6b1d1f973",
-  "principle": "Dependency-aware milestones; no arbitrary feature cutoff; publish only an accepted artifact at zero out-of-pocket cost",
+  "schema_version": 2,
+  "baseline": "a3275a71ec87131e99406ea52cf4372d0287d2ec",
+  "prior_baseline": "2b7097200549c264c2ceb8aeca9b68a6b1d1f973",
+  "current_status": "research/product-excellence/CURRENT_STATUS.md",
+  "principle": "One explicitly authorized milestone, one reviewable result, then stop; numerical validity, evidence strength and human usefulness are separate.",
+  "execution_control": {
+    "authorized_priority": 1,
+    "milestone": "Reconcile project state and establish control",
+    "state": "awaiting_user_review",
+    "automatic_progression": false,
+    "historical_ranks_are_execution_order": false,
+    "next_proposal": "Priority 2: exploratory usefulness review of observed positional changes; not authorized",
+    "external_actions_authorized": false,
+    "current_azure_spend": "unknown; separate read-only billing authorization required"
+  },
   "gaps": [
-    {"id":"G01","rank":1,"kind":"UX/architecture","problem":"Playback cleared the verified view on every tick and canceled slow requests","milestone":"Retain only same-context past snapshots; single-flight clock backpressure; backward-seek rejection","status":"complete: targeted4/4, full development21/21 and packaged native21/21; no AMD64/cloud claim","depends_on":[],"acceptance":"Pitch DOM identity retained through two1250ms delayed responses; max one pending playback request; no future claim after backward seek"},
-    {"id":"G02","rank":2,"kind":"architecture/performance","problem":"Recorded replay depended on per-tick request latency; no live ingestion service","milestone":"Bounded causal playback buffering, then versioned producer/consumer stream with sequence and resume contracts","status":"bounded replay accepted: packaged laptop/mobile31/31, backend194/2 live opt-out skips, TypeScript pass; same native image installed at preview8013. Live producer/SSE/resume not implemented. See buffered-replay.md","depends_on":["G01"],"acceptance":"Deterministic prefix parity, duplicate/order/corruption tests, bounded memory/backpressure, resume without future display; distinguish replay from live producer"},
-    {"id":"G03","rank":3,"kind":"data/product","problem":"Original goal and native positional demonstrations belonged to different fixtures","milestone":"New reproducible showcase with goals and native tracking from the same actual simulator run","status":"complete: same-run native quarter-second tracking plus two goals; repeat byte hashes match;192 claims verify; packaged33/33; backend198/2 live opt-out skips. Original fixtures/holdout unchanged. See native-goal-showcase.md","depends_on":["G01"],"acceptance":"Predeclared showcase selection/config/pin; exact event/frame score parity; repeat hashes; verified claims; original fixtures and consumed holdout unchanged"},
-    {"id":"G04","rank":4,"kind":"release/reliability","problem":"No accepted public HTTPS artifact yet; saved-image identity across Docker stores not yet verified","milestone":"Exact AMD64 save/load/registry identity, source bundle, protected-trial deployment and HTTPS acceptance","status":"prepared, not deployed; source/history/license audit passed within finite scope","depends_on":["G01"],"acceptance":"Zero-out-of-pocket policy recheck, anonymous immutable image pull, all fixture hashes, device tests, cold-source measurements, actual submission confirmation"},
-    {"id":"G05","rank":5,"kind":"agent/evaluation","problem":"Real-model comparative value and human usefulness remain unmeasured","milestone":"Expand same-case offline fault/grounding accounting; real-model study only under separate bounded authorization","status":"offline A/B/C exists; no new paid inference authorized","depends_on":["G02"],"acceptance":"Consistent cases and denominators; unsupported factual/causal claims rejected; tokens/cost/human ratings remain null unless genuinely measured"},
-    {"id":"G06","rank":6,"kind":"product/personalization","problem":"Player focus and broader grounded questions are absent","milestone":"Source-ID activity slice and structured retrieval over approved claims; preserve restricted fallback","status":"not implemented","depends_on":["G03"],"acceptance":"Explicit source identifiers, match/clock scope, missing-evidence refusals, no invented identities/metrics or generic generative answers"},
-    {"id":"G07","rank":7,"kind":"statistical","problem":"Frozen tactical accuracy is limited and its holdout is consumed","milestone":"Independent detector version with pre-registered fresh seed splits before any tuning","status":"not started; original F1≈0.411 is preserved","depends_on":["G03"],"acceptance":"New untouched holdout, precision/recall/F1 and unchanged-match false alarms, stratification and failures; no coaching-intent claim"},
-    {"id":"G08","rank":8,"kind":"platform","problem":"No managed agent versions or cloud trace delivery","milestone":"Evaluate operational benefit versus app-owned graph; prototype only if zero-cost useful and testable","status":"audit complete; extra infrastructure deferred","depends_on":["G05"],"acceptance":"Actual platform registration/collector delivery evidence required; never relabel local definitions or local OTLP as managed deployment"}
+    {
+      "id": "G01", "rank": 1, "kind": "UX/architecture",
+      "problem": "Playback previously cleared the verified view and canceled slow requests.",
+      "milestone": "Retain same-context verified views, reject stale responses and preserve pitch identity.",
+      "classification": ["Implemented", "Locally verified"],
+      "status": "Continuity repair implemented; final packaged ARM64 and AMD64 suites each passed 33/33. Public playback cases passed in a partial run, not full public acceptance.",
+      "depends_on": [],
+      "acceptance": "Pitch identity, delayed-response continuity and backward-seek isolation; preserve source prefix correctness."
+    },
+    {
+      "id": "G02", "rank": 2, "kind": "architecture/performance",
+      "problem": "Bounded recorded replay exists; a live producer/SSE/resume service does not.",
+      "milestone": "Preserve bounded causal replay; live ingestion is a separate future direction.",
+      "classification": ["Implemented", "Locally verified", "Incomplete or unresolved", "Deferred"],
+      "status": "Buffering and causal prefix checks locally verified. Public invalid-prefetch alert timing remains unresolved under G04. Live ingestion is deferred and not authorized.",
+      "depends_on": ["G01"],
+      "acceptance": "Bounded packets, sequence/identity/corruption rejection and no future display; do not label replay as live ingestion."
+    },
+    {
+      "id": "G03", "rank": 3, "kind": "data/product",
+      "problem": "Original goal and positional examples belonged to different fixtures.",
+      "milestone": "Reproducible native showcase with observed goals and quarter-second tracking in one run.",
+      "classification": ["Implemented", "Locally verified", "Publicly verified"],
+      "status": "Sixth fixture implemented; repeat source hashes and local 33/33 packaged suites passed. Recorded public HTTP smoke verified native goal boundary and source hashes. Public verification is limited to recorded checks, not a fresh availability check or full acceptance.",
+      "depends_on": ["G01"],
+      "acceptance": "Same-run event/frame scores and hashes; original fixtures and frozen holdout preserved. Demo selection is not detector evaluation."
+    },
+    {
+      "id": "G04", "rank": 4, "kind": "release/reliability",
+      "problem": "Deployment exists, but full public browser acceptance, current spend and final submission remain unresolved.",
+      "milestone": "Recorded image/fixture publication and Azure deployment; remaining release work requires separate authorization.",
+      "classification": ["Implemented", "Locally verified", "Publicly verified", "Incomplete or unresolved"],
+      "status": "Exact saved/load-roundtrip AMD64 identity passed; public GHCR pull and HTTPS source-proof smoke verified October 24. ACA deployed. Public browser run: 25 passed, 1 failed, 7 uncompleted. Malformed-prefetch test expected an alert within 5000ms; cause unknown. Current Azure spend unknown; no submission confirmation.",
+      "depends_on": ["G01"],
+      "acceptance": "Do not conflate deployed with fully publicly verified. Diagnose failure only when authorized; billing, public tests, cloud changes and submission each need scoped authorization."
+    },
+    {
+      "id": "G05", "rank": 5, "kind": "agent/evaluation",
+      "problem": "Genuine Foundry/MAF integration exists; comparative agent value and human usefulness are unmeasured.",
+      "milestone": "Future same-case comparison of deterministic, simple-agent and adaptive multi-agent explanations.",
+      "classification": ["Implemented", "Locally verified", "Incomplete or unresolved", "Deferred"],
+      "status": "Saved genuine enriched Foundry goal capture: 5 role-level attempts, 5 successful evidence-tool calls; HTTP count unknown. Existing offline comparisons do not establish usefulness or model superiority. Further evaluation is deferred; no new inference authorized.",
+      "depends_on": ["G02"],
+      "acceptance": "Separate integration proof, numerical validity, evidence strength and human usefulness. Any real-model study needs its own bounded authorization."
+    },
+    {
+      "id": "G06", "rank": 6, "kind": "product/personalization",
+      "problem": "Player focus and broader grounded questions are absent; Fan/Analyst, favorite team and restricted questions exist.",
+      "milestone": "Choose a narrow source-backed direction only after usefulness and journey review.",
+      "classification": ["Incomplete or unresolved", "Deferred"],
+      "status": "Broader exploration not implemented or authorized; preserve existing restricted fallback.",
+      "depends_on": ["G03"],
+      "acceptance": "Specific user problem, source contract, match/clock isolation and evidence evaluation before implementation."
+    },
+    {
+      "id": "G07", "rank": 7, "kind": "statistical",
+      "problem": "Frozen external-intervention accuracy is limited and its holdout is consumed.",
+      "milestone": "Any new detector requires separately authorized research and untouched pre-registered seed splits.",
+      "classification": ["Incomplete or unresolved", "Deferred"],
+      "status": "Frozen conclusions preserved; no tuning or new detector work. Numerical evidence validity is not broad tactical accuracy or usefulness.",
+      "depends_on": ["G03"],
+      "acceptance": "New untouched holdout for a new detector; preserve negative results and prohibit coaching-intent claims."
+    },
+    {
+      "id": "G08", "rank": 8, "kind": "platform",
+      "problem": "Managed Foundry Agent Service versions and delivered cloud traces are not established.",
+      "milestone": "Evaluate operational benefit only under separate authorization; no infrastructure for branding.",
+      "classification": ["Deferred"],
+      "status": "Platform audit exists; application-owned Foundry/MAF graph is already real. Managed registration/cloud tracing remain deferred, not prerequisites for claiming the existing integration.",
+      "depends_on": ["G05"],
+      "acceptance": "Require actual registration/collector evidence before making platform claims; do not relabel local definitions or OTLP."
+    }
   ]
 }
