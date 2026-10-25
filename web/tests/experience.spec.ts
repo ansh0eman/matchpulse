@@ -13,7 +13,7 @@ test("signature opening is readable in the first viewport with real source geome
   });
   await expect(action).toBeEnabled({ timeout: 60000 });
   await expect(page.locator(".moment-copy h1")).toHaveText(
-    "10.01 metres higher.",
+    "Line-height difference: 10.01 metres.",
   );
   await expect(page.getByLabel("Verified line comparison")).toContainText(
     "59 original source frames",
@@ -51,15 +51,15 @@ test("signature opening is readable in the first viewport with real source geome
   }
   await action.focus();
   await page.keyboard.press("Enter");
-  await expect(page.locator(".summary-delta")).toContainText("+10.01", {
+  await expect(page.locator(".aggregate-delta")).toContainText("+10.01", {
     timeout: 60000,
   });
   await page
-    .getByText("Which players contributed to these snapshots?", { exact: true })
+    .getByText("Inspect original players and coordinates", { exact: true })
     .click();
   await expect(page.locator(".contributor-inspector tbody tr")).toHaveCount(6);
   await expect(page.locator(".contributor-inspector")).toContainText(
-    "not the context-weighted aggregate",
+    "not just these snapshots",
   );
   await page.screenshot({
     path: `../output/playwright/${info.project.name}-contributors.png`,
@@ -91,13 +91,13 @@ test("reselecting the same fixture recovers and backward seeking removes the fut
   await expect(page.getByTestId("clock")).toHaveText("01:40");
   await expect(page.getByLabel("Verified line comparison")).toHaveCount(0);
   await expect(page.locator(".moment-copy h1")).not.toHaveText(
-    "10.01 metres higher.",
+    "Line-height difference: 10.01 metres.",
   );
   await page
     .getByRole("slider", { name: "Replay clock", exact: true })
     .fill("3360");
   await expect(page.locator(".moment-copy h1")).toHaveText(
-    "10.01 metres higher.",
+    "Line-height difference: 10.01 metres.",
     { timeout: 60000 },
   );
 });

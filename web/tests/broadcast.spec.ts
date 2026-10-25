@@ -127,10 +127,10 @@ test("positional Proof Lens exposes source geometry and stale evidence is withhe
   await expect(
     page.getByText("Recomputed. Verified.", { exact: true }),
   ).toBeVisible();
-  await expect(page.locator(".measurement")).toContainText("21.95");
-  await expect(page.locator(".measurement")).toContainText("31.96");
+  await expect(page.locator(".aggregate-values")).toContainText("21.95");
+  await expect(page.locator(".aggregate-values")).toContainText("31.96");
   await expect(page.locator(".drawer-body")).toContainText(
-    "41 before / 18 after",
+    "41 earlier / 18 recent",
   );
   await page.screenshot({
     animations: "disabled",
@@ -159,6 +159,124 @@ test("positional Proof Lens exposes source geometry and stale evidence is withhe
     path: `../output/playwright/${info.project.name}-withheld.png`,
     fullPage: true,
   });
+});
+
+test("the goal Proof Lens keeps its score transition path without positional presentation", async ({ page }) => {
+  await page.goto("/?view=studio");
+  await ready(page);
+  await select(page, "The opening goal");
+  await page.getByRole("button", { name: "Open Proof Lens", exact: true }).click();
+  await expect(page.locator(".proof-summary h3")).toHaveText("The score changed. Here is the source.");
+  await expect(page.locator(".summary-score")).toContainText("0 – 0");
+  await expect(page.locator(".summary-score")).toContainText("1 – 0");
+  await expect(page.getByRole("button", { name: "Save receipt", exact: true })).toBeVisible();
+});
+
+test("explicit moments stay separate from replay time and disappear before availability", async ({
+  page,
+}, info) => {
+  await page.goto("/?scenario=line-shift");
+  await ready(page);
+  const currentClock = await page.getByTestId("clock").textContent();
+  const moment = page.locator(".md-moments li button").last();
+  await expect(moment).toBeVisible();
+  const storyId = await moment.getAttribute("data-story-id");
+  expect(storyId).toBeTruthy();
+  await moment.focus();
+  await page.keyboard.press("Enter");
+  await expect(page.locator(".moment-label")).toHaveText(
+    "Selected past moment",
+  );
+  await expect(page.getByTestId("clock")).toHaveText(currentClock!);
+  await expect(moment).toHaveAttribute("aria-current", "true");
+  await expect(page.getByLabel("Moment timing")).toContainText("Recorded");
+  await expect(page.getByLabel("Moment timing")).toContainText("presented at");
+
+  const replay = page.getByRole("slider", { name: "Replay clock", exact: true });
+  await replay.fill("3400");
+  await expect(page.getByTestId("clock")).toHaveText("56:40");
+  await expect(page.locator(".moment-label")).toHaveText(
+    "Selected past moment",
+  );
+  await expect(page.locator(`[data-story-id="${storyId}"]`)).toHaveAttribute(
+    "aria-current",
+    "true",
+  );
+  if (info.project.name === "mobile") {
+    await page.screenshot({
+      animations: "disabled",
+      path: "../output/playwright/mobile-p3.1-selected-moment.png",
+      fullPage: true,
+    });
+  } else {
+    await page.screenshot({
+      animations: "disabled",
+      path: "../output/playwright/laptop-p3.1-selected-moment.png",
+      fullPage: true,
+    });
+  }
+
+  const response = await page.request.get(
+    "/api/view?scenario=line-shift&clock=3360&audience=fan",
+  );
+  expect(response.ok()).toBeTruthy();
+  const view = await response.json();
+  const story = view.timeline.find((item: { id: string }) => item.id === storyId);
+  expect(story).toBeTruthy();
+  const availableReplaySecond = Math.ceil(story.presented_seconds);
+  const earlierThanAvailability = Math.max(0, availableReplaySecond - 1);
+  await replay.fill(String(earlierThanAvailability));
+  await expect(page.locator(`[data-story-id="${storyId}"]`)).toHaveCount(0);
+  await expect(page.locator(".moment-label")).not.toHaveText(
+    "Selected past moment",
+  );
+  await expect(page.getByTestId("clock")).toHaveText(
+    `${String(Math.floor(earlierThanAvailability / 60)).padStart(2, "0")}:${String(earlierThanAvailability % 60).padStart(2, "0")}`,
+  );
+
+  await replay.fill(String(availableReplaySecond));
+  await expect(page.locator(".moment-label")).toHaveText(
+    "Selected past moment",
+  );
+  await expect(page.locator(`[data-story-id="${storyId}"]`)).toHaveAttribute(
+    "aria-current",
+    "true",
+  );
+  await expect(page.getByLabel("Moment timing")).toContainText(
+    "Recorded",
+  );
+  await expect(page.getByLabel("Moment timing")).toContainText(
+    "available at",
+  );
+  await expect(page.getByLabel("Moment timing")).toContainText("presented at");
+
+  await page
+    .getByRole("button", { name: "Select The opening goal", exact: true })
+    .click();
+  await ready(page);
+  await expect(page.locator(".moment-label")).not.toHaveText(
+    "Selected past moment",
+  );
+  await expect(page.locator(`[data-story-id="${storyId}"]`)).toHaveCount(0);
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= window.innerWidth,
+    ),
+  ).toBeTruthy();
+  if (info.project.name === "mobile") {
+    await expect(page.locator(".moment-time-context")).toBeVisible();
+    await page.screenshot({
+      animations: "disabled",
+      path: "../output/playwright/mobile-moment-timing.png",
+      fullPage: true,
+    });
+  } else {
+    await page.screenshot({
+      animations: "disabled",
+      path: "../output/playwright/desktop-moment-timing.png",
+      fullPage: true,
+    });
+  }
 });
 test("recorded agent evidence, playback and service recovery", async ({
   page,

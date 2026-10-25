@@ -80,6 +80,8 @@ export default function App() {
     [proof, setProof] = useState<Proof | null>(null),
     [proofError, setProofError] = useState<string | null>(null),
     [proofLoading, setProofLoading] = useState(false),
+    [proofContext, setProofContext] = useState(""),
+    [proofRetry, setProofRetry] = useState(0),
     [claimId, setClaimId] = useState<string | null>(null);
   const [activity, setActivity] = useState<Activity | null>(null),
     [room, setRoom] = useState(false),
@@ -87,9 +89,9 @@ export default function App() {
     [answer, setAnswer] = useState<Answer | null>(null),
     [asking, setAsking] = useState(false);
   const generation = useRef(0),
-    pendingSelection = useRef<string | null>(null),
+    proofGeneration = useRef(0),
     askController = useRef<AbortController | null>(null);
-  useDialog(drawer || room || guide);
+  const rememberDialogInvoker = useDialog(drawer || room || guide);
   const currentScenario = scenarios.find((s) => s.id === scenario);
   const params = new URLSearchParams({
     scenario,
@@ -117,15 +119,33 @@ export default function App() {
     onStop: () => setPlaying(false),
     onError: setPlaybackFault,
   });
-  const current: Story | undefined =
-    data?.timeline.find((t) => t.id === selected) ??
-    [...(data?.timeline ?? [])]
+  const availableMoments = (data?.timeline ?? []).filter(
+    (story) =>
+      data?.scenario === scenario &&
+      story.source_seconds <= clock &&
+      story.available_seconds <= clock &&
+      story.presented_seconds <= clock,
+  );
+  const latestRecorded: Story | undefined =
+    [...availableMoments]
       .filter((t) => !["match_boundary", "high_turnover"].includes(t.type))
       .sort(
         (a, b) =>
-          b.presented_seconds - a.presented_seconds || b.priority - a.priority,
+          b.presented_seconds - a.presented_seconds ||
+          (b.priority ?? 0) - (a.priority ?? 0),
       )[0] ??
-    data?.timeline.at(-1);
+    [...availableMoments].sort(
+      (a, b) =>
+        b.presented_seconds - a.presented_seconds ||
+        (b.priority ?? 0) - (a.priority ?? 0),
+    )[0];
+  const selectedMoment = availableMoments.find((story) => story.id === selected);
+  const current: Story | undefined = selectedMoment ?? latestRecorded;
+  const proofKey = JSON.stringify([params, claimId, data?.match_id]);
+  const visibleProof =
+    proofContext === proofKey && proof?.verified === true &&
+    proof.claim_id === claimId && proof.match_id === data?.match_id &&
+    proof.as_of_seconds <= clock ? proof : null;
   useEffect(() => {
     const url = new URL(window.location.href);
     url.searchParams.set("view", mode);
@@ -148,9 +168,7 @@ export default function App() {
       (s) => s.type === "observed_line_height_change",
     );
     if (item) {
-      setClaimId(item.claim_ids[0]);
-      setProof(null);
-      setDrawer(true);
+      inspect(item.claim_ids[0]);
     }
   }, [tour, data?.scenario]);
   useEffect(() => {
@@ -195,12 +213,14 @@ export default function App() {
     setAsking(false);
     setDrawer(false);
     setProof(null);
-    setSelected(pendingSelection.current);
-    pendingSelection.current = null;
   }, [scenario, clock, audience, favorite]);
   useEffect(() => {
-    if (!drawer || !claimId) return;
+    if (!drawer || !claimId || !data) return;
     const c = new AbortController();
+    const request = ++proofGeneration.current;
+    const requestedKey = proofKey;
+    const requestedMatch = data.match_id;
+    const requestedClock = clock;
     setProofLoading(true);
     setProofError(null);
     get<Proof>(
@@ -208,17 +228,25 @@ export default function App() {
       c.signal,
     )
       .then((p) => {
+        if (c.signal.aborted || request !== proofGeneration.current) return;
+        if (p.verified !== true || p.claim_id !== claimId || p.match_id !== requestedMatch ||
+            !Number.isFinite(p.as_of_seconds) || p.as_of_seconds > requestedClock) {
+          throw new Error("The returned proof does not match this incident and replay. Please retry.");
+        }
         setProof(p);
+        setProofContext(requestedKey);
         setProofLoading(false);
       })
       .catch((e) => {
-        if (e.name !== "AbortError") {
+        if (!c.signal.aborted && request === proofGeneration.current && e.name !== "AbortError") {
+          setProof(null);
+          setProofContext(requestedKey);
           setProofError(e.message);
           setProofLoading(false);
         }
       });
     return () => c.abort();
-  }, [drawer, claimId, params]);
+  }, [drawer, claimId, params, data?.match_id, proofRetry]);
   useEffect(() => {
     const close = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -232,7 +260,6 @@ export default function App() {
   }, []);
   function choose(s: Scenario) {
     setTour(null);
-    pendingSelection.current = null;
     setSelected(null);
     setPlaying(false);
     setData(null);
@@ -261,16 +288,21 @@ export default function App() {
       setTourRunning(false);
     } else goChapter(tour + 1);
   }
-  function seekStory(story: Story) {
+  function seekStory(story: Story, keepReplayClock = false) {
     setPlaying(false);
     setAnswer(null);
     setSelected(story.id);
-    if (clock !== story.presented_seconds) {
-      pendingSelection.current = story.id;
+    if (!keepReplayClock && clock !== story.presented_seconds)
       setClock(story.presented_seconds);
-    }
   }
   function inspect(id?: string) {
+    // Invalidate synchronously, before the drawer's first render or any old response.
+    proofGeneration.current++;
+    setProof(null);
+    setProofContext("");
+    setProofError(null);
+    setProofLoading(true);
+    setProofRetry((value) => value + 1);
     setPlaying(false);
     setClaimId(id ?? current?.claim_ids[0] ?? null);
     setDrawer(true);
@@ -326,6 +358,8 @@ export default function App() {
   return (
     <div
       className={`app-shell ${mode !== "studio" ? "theatre-shell matchday-shell" : ""} ${mode === "broadcast" ? "clean-shell" : ""} ${tour !== null ? "tour-active" : ""}`}
+      onClickCapture={rememberDialogInvoker}
+      tabIndex={-1}
     >
       <header className="app-header">
         <a href="/" className="brand" aria-label="MatchPulse home">
@@ -336,6 +370,7 @@ export default function App() {
         </a>
         <nav aria-label="Studio navigation">
           <button
+            data-dialog-fallback
             className={mode === "theatre" && !room ? "active" : ""}
             onClick={() => {
               setMode("theatre");
@@ -376,6 +411,8 @@ export default function App() {
         <BroadcastTheatre
           data={data}
           current={current}
+          latestRecorded={latestRecorded}
+          explicitlySelected={!!selectedMoment}
           scenario={currentScenario}
           scenarios={scenarios}
           clock={clock}
@@ -401,7 +438,10 @@ export default function App() {
             setPlaybackFault(null);
             setRetry((v) => v + 1);
           }}
-          selectStory={seekStory}
+          selectStory={(story) => {
+            if (availableMoments.some((moment) => moment.id === story.id))
+              seekStory(story, true);
+          }}
           toggleClean={() =>
             setMode(mode === "broadcast" ? "theatre" : "broadcast")
           }
@@ -912,10 +952,12 @@ export default function App() {
       {drawer && (
         <ProofLens
           key={claimId}
-          proof={proof}
+          proof={visibleProof}
+          replayClock={data?.clock ?? clock}
           close={() => setDrawer(false)}
-          loading={proofLoading}
-          error={proofError}
+          loading={proofLoading || (!visibleProof && !(proofContext === proofKey && proofError))}
+          error={proofContext === proofKey ? proofError : null}
+          retry={() => inspect(claimId ?? undefined)}
           footer={tourControls}
         />
       )}

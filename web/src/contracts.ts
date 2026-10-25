@@ -35,7 +35,7 @@ export interface Observation {
 }
 export interface Story {
   /** Engine editorial ordering; never probability or confidence. */
-  priority: number;
+  priority?: number;
   narration_status: string;
   overlay_status: string;
   id: string;
@@ -118,13 +118,15 @@ export interface Proof {
     method: string;
     unit: string;
     window: number[];
+    reference_window?: [number, number];
+    recent_window?: [number, number];
     boundary: string;
     formula: string;
     value: unknown;
     before_m?: number;
     after_m?: number;
     change_m?: number;
-    support?: { reference_frames: number; recent_frames: number };
+    support?: { reference_frames: number; recent_frames: number; common_contexts?: number };
     before?: { home: number; away: number };
     after?: { home: number; away: number };
     recomputed_shots?: number;

@@ -28,8 +28,8 @@ export function momentCopy(story: Story | undefined, audience: Audience) {
     metric("change") !== undefined
   ) {
     const change = metric("change")!;
-    title = `${number(Math.abs(change))} metres ${change >= 0 ? "higher" : "deeper"}.`;
-    detail = `${club}'s three deepest outfielders, compared in similar situations.`;
+    title = `Line-height difference: ${number(Math.abs(change))} metres.`;
+    detail = `${club}'s three deepest outfielders, compared across sampled windows in similar situations.`;
   } else if (
     story.type === "goal_context" &&
     metric("NORTH_after") !== undefined &&
@@ -52,7 +52,7 @@ export function momentCopy(story: Story | undefined, audience: Audience) {
   return {
     title,
     detail:
-      audience === "analyst"
+      audience === "analyst" && story.type !== "observed_line_height_change"
         ? story.narration.sentences.map((s) => s.text).join(" ")
         : detail,
   };

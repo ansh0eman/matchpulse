@@ -23,9 +23,17 @@ test("Theatre is source-synchronized and program output removes studio chrome", 
   ).toBeVisible();
   await expect(page.getByTestId("score")).toHaveText("0:0");
   await expect(page.locator(".moment-copy h1")).toHaveText(
-    "10.01 metres higher.",
+    "Line-height difference: 10.01 metres.",
   );
   await expect(page.getByTestId("clock")).toHaveText("56:00");
+  await expect(page.getByText("Current replay", { exact: true })).toBeVisible();
+  await expect(page.locator(".moment-label")).toHaveText(
+    "Latest recorded moment",
+  );
+  await expect(page.locator(".md-moments .moment-state").first()).toHaveText(
+    "Latest available",
+  );
+  await expect(page.getByLabel("Moment timing")).toContainText("Recorded");
   await expect(page.getByLabel("Verified line comparison")).toContainText("21.95m");
   await expect(page.getByLabel("Verified line comparison")).toContainText("31.96m");
   await expect(
@@ -66,23 +74,52 @@ test("Proof Summary progressively discloses method and audit, and exports the so
   await page.goto("/?scenario=line-shift");
   await ready(page);
   await scenario(page, "A higher line, proved");
+  await page.getByLabel("Replay clock").fill("3400");
+  await expect(page.getByTestId("clock")).toHaveText("56:40", { timeout: 15000 });
+  const replay = await (await page.request.get("/api/view?scenario=line-shift&clock=3400&audience=fan")).json();
+  const lineStory = replay.timeline.find((story: { type: string }) => story.type === "observed_line_height_change");
+  expect(lineStory?.claim_ids?.length).toBeGreaterThan(0);
+  const claimId = lineStory.claim_ids[0];
+  const futureProof = await page.request.get(`/api/proof?scenario=line-shift&clock=3359&audience=fan&claim_id=${encodeURIComponent(claimId)}`);
+  expect(futureProof.status()).toBe(400);
+  const otherMatchProof = await page.request.get(`/api/proof?scenario=open-play&clock=3400&audience=fan&claim_id=${encodeURIComponent(claimId)}`);
+  expect(otherMatchProof.status()).toBe(400);
   await page
     .getByRole("button", { name: "Open Proof Lens", exact: true })
     .click();
   await expect(page.locator(".proof-summary h3")).toHaveText(
-    "North moved higher.",
+    "North’s recent line estimate is 10.01 m farther forward than its earlier estimate.",
     { timeout: 30000 },
   );
+  await expect(page.getByRole("heading", { name: "Aggregate comparison" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Representative source frames" })).toBeVisible();
+  await expect(page.locator(".aggregate-values")).toContainText("21.95");
+  await expect(page.locator(".aggregate-values")).toContainText("31.96");
+  await expect(page.locator(".aggregate-values")).toContainText("+10.01");
+  await expect(page.locator(".summary-windows")).toContainText("after 45:10 through 53:00");
+  await expect(page.locator(".summary-windows")).toContainText("after 53:00 through 56:00");
+  await expect(page.locator(".summary-frame-proxy").first()).toContainText("Not the window mean");
+  await expect(page.locator(".proof-time-context")).toContainText("Evidence as of 56:00");
+  await expect(page.locator(".proof-time-context")).toContainText("Replay clock 56:40");
+  await expect(page.locator(".proof-time-context")).toContainText("40s before replay");
   await expect(page.locator(".summary-support")).toContainText(
-    "59 source samples",
+    "59 source frames",
   );
-  await expect(page.locator(".summary-delta")).toContainText("+10.01");
+  await expect(page.locator(".aggregate-delta")).toContainText("+10.01");
   await expect(
     page.getByText("What it does not support", { exact: true }),
   ).toBeVisible();
+  await expect(page.locator(".summary-boundaries")).toContainText("Observed player positioning does not establish a manager's instruction or prove pressing effectiveness.");
+  await expect(page.locator(".summary-support")).toContainText("not independent trials");
   await page.screenshot({
     animations: "disabled",
     path: `../output/playwright/${info.project.name}-proof-summary.png`,
+  });
+  await page.locator(".representative-frames").scrollIntoViewIfNeeded();
+  await expect(page.getByRole("heading", { name: "Representative source frames" })).toBeInViewport();
+  await page.screenshot({
+    animations: "disabled",
+    path: `../output/playwright/${info.project.name}-proof-source-frames.png`,
   });
   const saved = page.waitForEvent("download");
   await page.getByRole("button", { name: "Save receipt", exact: true }).click();
@@ -127,7 +164,7 @@ test("Guided story visits distinct fixtures and the Agent Room shows actual reco
   ).toHaveAttribute("aria-pressed", "true");
   await page.getByRole("button", { name: "Next story chapter" }).click();
   await expect(page.locator(".proof-summary h3")).toHaveText(
-    "North moved higher.",
+    "North’s recent line estimate is 10.01 m farther forward than its earlier estimate.",
     { timeout: 60000 },
   );
   const evidenceBody = await page.locator(".proof-drawer > .drawer-body").boundingBox();
@@ -141,7 +178,8 @@ test("Guided story visits distinct fixtures and the Agent Room shows actual reco
     fullPage: false,
   });
   await page.getByRole("button", { name: "Next story chapter" }).click();
-  await ready(page);
+  await expect(page.locator(".moment-copy h1")).toHaveText("Sometimes, the evidence says wait.");
+  await expect(page.getByRole("button", { name: "Open Proof Lens", exact: true })).toHaveCount(0);
   await expect(page.locator(".moment-copy")).toContainText("132s old");
   await page.getByRole("button", { name: "Finish guided story" }).click();
   await expect(page.getByLabel("Guided judge story")).toHaveCount(0);

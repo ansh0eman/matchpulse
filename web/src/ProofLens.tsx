@@ -12,15 +12,19 @@ export const clockText = (s: number) =>
   `${String(Math.floor(s / 60)).padStart(2, "0")}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
 export function ProofLens({
   proof,
+  replayClock,
   close,
   loading,
   error,
+  retry,
   footer,
 }: {
   proof: Proof | null;
+  replayClock: number;
   close: () => void;
   loading: boolean;
   error: string | null;
+  retry: () => void;
   footer?: ReactNode;
 }) {
   const [tab, setTab] = useState("summary");
@@ -61,7 +65,8 @@ export function ProofLens({
           </div>
         ) : error ? (
           <div className="drawer-body error" role="alert">
-            {error}
+            <p>{error}</p>
+            <button className="evidence-button" onClick={retry}>Retry proof</button>
           </div>
         ) : proof && c ? (
           <>
@@ -88,6 +93,7 @@ export function ProofLens({
               {tab === "summary" ? (
                 <ProofSummary
                   proof={proof}
+                  replayClock={replayClock}
                   method={() => setTab("method")}
                   audit={() => {
                     setAuditTab("observations");

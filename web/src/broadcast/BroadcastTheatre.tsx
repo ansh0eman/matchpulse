@@ -14,6 +14,8 @@ import { MatchTimeline } from "./MatchTimeline";
 interface Props {
   data: View | null;
   current: Story | undefined;
+  latestRecorded: Story | undefined;
+  explicitlySelected: boolean;
   scenario: Scenario | undefined;
   scenarios: Scenario[];
   clock: number;
@@ -38,6 +40,13 @@ interface Props {
 }
 export function BroadcastTheatre(p: Props) {
   const copy = momentCopy(p.current, p.audience);
+  const replayClock = p.data?.clock ?? p.clock;
+  const availableMoments = (p.data?.timeline ?? []).filter(
+    (story) =>
+      story.source_seconds <= replayClock &&
+      story.available_seconds <= replayClock &&
+      story.presented_seconds <= replayClock,
+  );
   const metrics = p.current?.overlay.metrics ?? [];
   const before = metrics.find((m) => m.name === "before")?.value;
   const after = metrics.find((m) => m.name === "after")?.value;
@@ -47,7 +56,7 @@ export function BroadcastTheatre(p: Props) {
       .filter((r) => r.category === "tracking")
       .map((r) => r.source_id),
   ).size;
-  const withheld = p.data?.diagnostics.find((d) =>
+  const withheld = !p.explicitlySelected && p.data?.diagnostics.find((d) =>
     d.reasons.includes("stale_recent_evidence"),
   );
   return (
@@ -104,7 +113,8 @@ export function BroadcastTheatre(p: Props) {
                 South
                 <i className="md-team-south" />
               </span>
-              <time data-testid="clock">
+              <span className="clock-context-label">Current replay</span>
+              <time data-testid="clock" aria-label="Current replay time">
                 {clockText(p.data?.clock ?? p.clock)}
               </time>
               <span className="score-period">
@@ -154,10 +164,12 @@ export function BroadcastTheatre(p: Props) {
           <div className="moment-lower-third" key={p.current?.id ?? "empty"}>
             <div className="moment-copy" aria-live="polite" aria-atomic="true">
               <span className="moment-label">
-                {withheld
+                {p.current && p.explicitlySelected
+                  ? "Selected past moment"
+                  : withheld
                   ? "Position review"
                   : p.current
-                    ? `At ${clockText(p.current.source_seconds)}`
+                    ? "Latest recorded moment"
                     : "Your matchday"}
               </span>
               <h1>
@@ -165,19 +177,26 @@ export function BroadcastTheatre(p: Props) {
               </h1>
               <p>
                 {withheld
-                  ? `The latest positional evidence is ${withheld.recent_age_seconds}s old. This claim stays off air.`
+                  ? `The latest relevant positional evidence is ${withheld.recent_age_seconds}s old, too old for a current comparison. This claim stays off air. Select a historical incident in the match timeline to inspect its own evidence.`
                   : copy.detail}
               </p>
+              {p.current && !withheld && (
+                <p className="moment-time-context" aria-label="Moment timing">
+                  Recorded {clockText(p.current.source_seconds)} · available at{" "}
+                  {clockText(p.current.available_seconds)} · presented at{" "}
+                  {clockText(p.current.presented_seconds)}
+                </p>
+              )}
             </div>
-            <button
+            {!withheld && <button
               className="evidence-button"
               onClick={p.inspect}
               disabled={!p.current || p.loading}
             >
               <FingerprintIcon size={19} aria-hidden="true" />
               Open Proof Lens
-            </button>
-            {positional && before !== undefined && after !== undefined && (
+            </button>}
+            {!withheld && positional && before !== undefined && after !== undefined && (
               <div
                 className="stage-measurements"
                 aria-label="Verified line comparison"
@@ -206,7 +225,7 @@ export function BroadcastTheatre(p: Props) {
               playing={p.playing}
               disabled={!p.data || p.loading || !!p.error}
               speed={p.speed}
-              moments={p.data?.timeline ?? []}
+              moments={availableMoments}
               play={p.play}
               seek={p.seek}
               setSpeed={p.setSpeed}
@@ -240,9 +259,11 @@ export function BroadcastTheatre(p: Props) {
               </label>
             </div>
             <MatchTimeline
-              moments={p.data?.timeline ?? []}
+              moments={availableMoments}
+              replayClock={replayClock}
               audience={p.audience}
-              selected={p.current?.id}
+              selected={p.explicitlySelected ? p.current?.id : undefined}
+              latest={p.latestRecorded?.id}
               select={p.selectStory}
             />
           </>

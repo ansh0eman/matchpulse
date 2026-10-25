@@ -125,8 +125,8 @@ export function validateSegment(
       (t) =>
         !identifier(t.id) ||
         typeof t.type !== "string" ||
-        !Number.isInteger(t.priority) ||
-        t.priority < 0 || t.priority > 100 ||
+        (t.priority !== undefined &&
+          (!Number.isInteger(t.priority) || t.priority < 0 || t.priority > 100)) ||
         !Number.isFinite(t.source_seconds) ||
         !Number.isFinite(t.available_seconds) ||
         !Number.isFinite(t.presented_seconds) ||
