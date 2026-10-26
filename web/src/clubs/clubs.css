@@ -1,0 +1,23 @@
+.club-dot{display:inline-block;flex:none;width:10px;height:10px;border:1px solid #777;border-radius:50%}
+.club-choices{border:1px solid var(--border);border-radius:14px;padding:12px;display:grid;gap:10px;margin-top:10px;min-width:0}
+.club-choices p,.club-choices small{margin:0;font-size:12px;line-height:1.5}
+.club-choices label{display:grid;gap:4px;font-size:12px}.club-choices select{width:100%;min-width:0;max-width:100%;padding:8px;border-radius:10px}
+.club-mapping-note{font-size:12px;color:var(--muted);line-height:1.5}
+.matchday .md-team-north{background:var(--club-north);border:1px solid #fff}.matchday .md-team-south{background:var(--club-south);border:1px solid #fff}
+.matchday .md-score-row{flex-wrap:wrap;gap:10px;align-items:center;padding:10px 12px}
+.match-header-preferences{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-left:auto}
+.match-header-preferences .view-mode-control{padding:3px;gap:2px}.match-header-preferences .view-mode-control button{padding:8px;font-size:11px;min-height:36px;white-space:nowrap}
+.matchday .theatre-scorebug{gap:7px;flex-wrap:wrap}.matchday .theatre-scorebug .clock-context-label{display:none}
+.matchday .theatre-source{display:none}
+.matchday .theatre-source.is-buffering,.matchday .theatre-stage.is-loading .theatre-source{display:inline-flex;position:static;flex-basis:100%;padding:3px 7px;border-radius:8px;color:var(--warning);background:var(--warning-bg);font-size:11px}
+.matchday.program-output .match-header-preferences{display:none}
+.following-control{display:flex;gap:6px;align-items:center;position:relative;font-size:11px;max-width:100%}
+.following-control>button{display:flex;gap:6px;align-items:center;padding:8px 10px;border-radius:18px;min-height:36px;background:var(--surface);color:var(--text-primary);border:1px solid var(--border);box-shadow:0 2px 0 var(--border);font:inherit;min-width:0}
+.following-control>button span{white-space:normal;overflow-wrap:anywhere}
+.following-menu{position:absolute;right:0;top:calc(100% + 8px);z-index:20;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:6px;box-shadow:var(--shadow-panel);min-width:210px;max-width:calc(100vw - 40px)}
+.following-menu button{display:flex;align-items:center;gap:8px;width:100%;text-align:left;padding:10px;border:0;border-radius:9px;background:transparent;color:var(--text-primary)}
+.following-menu button[aria-checked=true]{background:var(--surface-subtle);color:var(--action)}.following-menu button span{flex:1}
+.synthetic-disclosure-content{max-height:calc(100dvh - 130px);overflow:auto}
+@media(max-width:767px){.match-header-preferences{width:100%;margin-left:0;gap:6px}.matchday .theatre-scorebug{width:100%;gap:7px}.matchday .md-score-row{padding:8px;gap:6px}.following-control{flex:1}.following-control>span{display:none}.following-control>button{width:100%;font-size:10px;padding:8px 6px}.match-header-preferences .view-mode-control button{padding:6px;font-size:10px}.following-menu{left:auto;right:0}}
+
+.studio-layout .north-dot{background:var(--club-north)}.studio-layout .south-dot{background:var(--club-south)}.proof-drawer>.club-mapping-note{padding:8px 20px;margin:0}.club-choices button{font-size:12px}

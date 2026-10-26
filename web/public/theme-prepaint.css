@@ -1,0 +1,13 @@
+:root {
+  color-scheme: light;
+  background-color: #f7f3ff;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  background-color: #130a1b;
+}
+
+body {
+  background: transparent;
+}

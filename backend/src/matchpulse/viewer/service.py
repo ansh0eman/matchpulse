@@ -31,8 +31,8 @@ _source_lock = RLock()
 
 def source(scenario_id):
     # One analytical match per process. Evict BEFORE loading the next large native
-    # source, not after loading it as a normal LRU would. Endpoints run on the
-    # single viewer event loop; the lock also prevents duplicate threaded loads.
+    # source, not after loading it as a normal LRU would. API analytical work is
+    # serialized on one worker; the lock also prevents duplicate direct loads.
     with _source_lock:
         if scenario_id in _sources:
             return _sources[scenario_id]
@@ -245,7 +245,10 @@ def activity():
         ).read_text()
     )
     artifact, state = recorded_goal()
-    result = source("opening-goal")
+    # Revalidate the recorded artifact on every request. Its small event-only
+    # source is transient: inspecting Studio must not evict the selected match
+    # and force another full tracking parse. No proof/verification is cached.
+    result = _load_source("opening-goal")
     item = next(
         t for t in result["timeline"] if t.insight.insight_id == artifact.insight_id
     )

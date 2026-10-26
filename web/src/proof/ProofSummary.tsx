@@ -1,3 +1,4 @@
+import { useClubs } from "../clubs/Clubs";
 import { ArrowRightIcon, DownloadSimpleIcon } from "@phosphor-icons/react";
 import type { Proof } from "../contracts";
 import { Pitch } from "../Pitch";
@@ -30,9 +31,10 @@ export function ProofSummary({
   method: () => void;
   audit: () => void;
 }) {
+  const clubs = useClubs();
   const c = proof.calculation;
   const position = c.before_m !== undefined;
-  const club = proof.team === "NORTH" ? "North" : proof.team === "SOUTH" ? "South" : "The match";
+  const club = clubs.name(proof.team);
   const shotObservation = proof.type === "observed_shot"
     ? proof.observations.find((observation) => observation.action === "shot" && observation.team === proof.team)
     : undefined;
@@ -44,7 +46,7 @@ export function ProofSummary({
     <section className="proof-summary">
       <h3>
         {position
-          ? `${club}’s recent line estimate is ${Math.abs(c.change_m ?? 0).toFixed(2)} m ${direction} than its earlier estimate.`
+          ? `${club}'s sampled line comparison`
           : c.before
             ? "The score changed. Here is the source."
             : c.elapsed_seconds !== undefined
@@ -55,7 +57,7 @@ export function ProofSummary({
       </h3>
       <p className="summary-subtitle">
         {position
-          ? "A context-weighted comparison of the three deepest observed outfielders across eligible tracking frames. This compares two sampled windows; it does not describe continuous movement."
+          ? "Context-weighted comparison of the three deepest observed outfielders across eligible tracking frames. It compares sampled windows, not continuous movement."
           : shot
             ? "The original event records a shot attempt. Its incident time is separate from the current replay clock."
             : "Observed facts. Independently recomputed on this request."}
@@ -70,12 +72,11 @@ export function ProofSummary({
         <>
           <section className="aggregate-comparison" aria-label="Aggregate comparison">
             <div className="aggregate-heading">
-              <div><span className="eyebrow">WINDOW MEANS · METRES</span><h4>Aggregate comparison</h4></div>
+              <div><span className="eyebrow">Window means · metres</span><h4>Aggregate comparison</h4></div>
               <p>Context-weighted means across eligible source frames</p>
             </div>
             <div className="aggregate-values">
               <div><span>Earlier mean</span><strong>{c.before_m?.toFixed(2)}<small>m</small></strong></div>
-              <ArrowRightIcon size={22} aria-hidden="true" />
               <div><span>Recent mean</span><strong>{c.after_m?.toFixed(2)}<small>m</small></strong></div>
               <div className="aggregate-delta"><span>Recent minus earlier</span><strong>{(c.change_m ?? 0) >= 0 ? "+" : ""}{c.change_m?.toFixed(2)}<small>m</small></strong></div>
             </div>
@@ -87,7 +88,7 @@ export function ProofSummary({
           </section>
 
           <section className="representative-frames" aria-label="Representative source frames">
-            <div className="aggregate-heading"><div><span className="eyebrow">ORIGINAL TRACKING OBSERVATIONS</span><h4>Representative source frames</h4></div><p>Single-frame snapshots; positions are observed, not interpolated.</p></div>
+            <div className="aggregate-heading"><div><span className="eyebrow">Original tracking observations</span><h4>Representative source frames</h4></div><p>Single-frame snapshots; positions are observed, not interpolated.</p></div>
             <div className="summary-comparison measurement">
               {proof.frames.map((frame) => {
                 const sample = proof.samples.find((item) => item.frame_id === frame.frame_id);

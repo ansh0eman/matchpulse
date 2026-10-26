@@ -26,7 +26,7 @@ export const CHAPTERS = [
   {
     title: "The restraint",
     scenario: "withheld",
-    text: "Another fixture. Evidence 132 seconds old is withheld. Open Agent room to see genuine recorded recovery.",
+    text: "Another fixture. Evidence 132 seconds old is withheld. Open Studio to see genuine recorded recovery.",
     seconds: 18,
   },
 ];
@@ -49,7 +49,7 @@ export function GuidedStory({
   return (
     <aside className="guided-story" aria-label="Guided judge story">
       <div>
-        <span>CHAPTER {chapter + 1} / 4 · SEPARATE SYNTHETIC SCENARIOS</span>
+        <span>Chapter {chapter + 1} of 4 · Separate synthetic scenarios</span>
         <strong>{c.title}</strong>
         <p>{c.text}</p>
         <progress

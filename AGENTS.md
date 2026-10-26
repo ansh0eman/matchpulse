@@ -1,16 +1,14 @@
 # MatchPulse AI agent instructions
 
-## Current execution control — P4/P5 local checkpoints closed
+## Current execution control — sequential release plan; P12 active
 
-Read research/product-excellence/CURRENT_STATUS.md first: it is the authoritative current-state index. Preserve dated reports and acceptance records as historical evidence; do not retroactively rewrite their claims.
+Read research/product-excellence/CURRENT_STATUS.md first. Product promise: **See what changed. Understand what supports it. Know what remains uncertain.** Numerical validity is not tactical meaning or human usefulness.
 
-Product promise: **See what changed. Understand what supports it. Know what remains uncertain.** Numerical verification does not establish human usefulness or tactical meaning.
+The user's later instruction to complete the remaining work and make/follow a detailed plan authorizes sequential execution of `research/product-excellence/release-execution-plan-2026-10-26.md`. R1–R4 handoff was independently checked: raw142-pass/one-skip JSON and72 matching source fingerprints. P7 is locally accepted (`priority7-performance-acceptance.md`:215 backend passes/two live skips;30 focused browser passes). P8 original-player inspection passed14 browser checks/typecheck (`priority8-investigate-acceptance.md`). P9 same-source offline comparison is complete with human usefulness unmeasured; P10/P11 current docs/targeted cleanup are recorded. **P12 release candidate verification is active; no fresh paid inference.** One application milestone at a time; do not restart the completed repairs or rewrite historical reports.
 
-Priority 4 playback reliability and Priority 5 UX have independent local technical acceptance and are recorded in separate local commits. The P4/P5 closeout commits and records are the only scope authorized by the latest user instruction. That authorization ends when this checkpoint is reported. **No milestone is currently authorized. Require a new explicit user instruction before further research, implementation, testing, commits or other project work. STOP FOR USER REVIEW.** Do not automatically advance a roadmap priority or interpret preserved research files as authorization.
+Inspect Git/concurrent changes and name exact file/check scope before changes. Preserve unrelated/private material. Follow the plan's staged source/privacy/license/accepted-artifact/cost gates before publication or deployment. No new dependencies/global configuration, paid inference, remote speech, payment/PAYG/spending-protection changes, messages, or competing portal navigation without specific authorization. Current Azure spend is unknown; the existing portal conversation retains submission ownership. Do not infer human feedback or submission confirmation.
 
-Before any newly authorized work, inspect Git/concurrent changes, name the exact file scope and acceptance checks, and preserve unrelated work. No parallel workstreams or silent scope expansion. Public testing, Azure/billing access, paid inference, deployment, pushes, video changes and portal submission each require separately scoped authorization; do not infer them from local acceptance. Current Azure spend remains unknown unless independently rechecked under authorization. Do not create new dependencies, skills or MCP servers without justification and permission.
-
-Preserve frozen experiments, source fingerprints, consumed holdouts, negative conclusions and independent evidence verification. Use scope-appropriate local checks; documentation reconciliation does not authorize application tests, research reruns or external activity. Historical technical rules below apply within the currently authorized scope, not as instructions to start a new milestone.
+Preserve source fixtures/observations/IDs, frozen experiments/fingerprints/consumed holdout/negative conclusions, detector7m threshold and independent evidence checks. Club mapping is synthetic presentation only; raw evidence retains canonical identities. Human comprehension is UNCOLLECTED; prior user voice-sample acceptance is not participant research. Exclude Priority2 private research, Priority5 participant documents/notes, private keys and generated outputs from future commits unless explicitly reviewed.
 
 ## Preserved engineering boundaries and historical research context
 

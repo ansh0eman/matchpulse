@@ -77,8 +77,8 @@ export interface View {
   diagnostics: {
     detected_at_seconds: number;
     reasons: string[];
-    recent_age_seconds: number;
-    recent_span_seconds: number;
+    recent_age_seconds: number | null;
+    recent_span_seconds: number | null;
   }[];
   source_hashes: {
     events: string;

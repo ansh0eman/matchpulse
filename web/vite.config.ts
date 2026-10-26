@@ -8,4 +8,10 @@ export default defineConfig({
     strictPort: true,
     proxy: { "/api": "http://127.0.0.1:8010" },
   },
+  preview: {
+    host: "127.0.0.1",
+    port: 4173,
+    strictPort: true,
+    proxy: { "/api": "http://127.0.0.1:8010" },
+  },
 });

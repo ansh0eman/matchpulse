@@ -1,14 +1,36 @@
 # MatchPulse — authoritative current status
 
-Updated **October 25, 2026 (Asia/Kolkata)** after local Priority 4 and Priority 5 checkpoint closure.
+Updated **October 26, 2026 (Asia/Kolkata)** for the user-authorized sequential release plan; P7/P8 locally accepted; P9 offline comparison and P10/P11 reconciliation recorded; P12 active. Local P4/P5 checkpoints remain accepted.
 
 ## Current checkpoint
 
+- **Release-plan authority:** the user requested completion of the remaining steps and a detailed plan to follow. [Execution plan](release-execution-plan-2026-10-26.md) owns the sequence; one application milestone at a time. Repair handoff verified against raw JSON and72 fingerprints.
+- **P7–P11 local work; P12 active:** serialized background analysis keeps health/catalog responsive; independently verified recorded activity no longer evicts the selected tracking match. [P7 evidence](priority7-performance-acceptance.md):215 backend passes/two live skips,30 browser passes,31/31 measured response hashes equal. P8 original-source player inspection passed14 browser cases/typecheck ([acceptance](priority8-investigate-acceptance.md)). P9 same-source comparison independently reverified the saved artifact: evidence hook differs while metrics/geometry/limitations agree, human quality unmeasured ([review](priority9-foundry-value-review.md)). README/notices and bounded ownership cleanup recorded ([P10/P11](priority10-11-documentation-and-ownership.md)). P12 candidate verification is active. No deployment/publication performed.
+
+- **Post-review repair R1–R4 — complete locally, awaiting review:** request ownership, explicit startup readiness, pitch-first desktop layout and visible timeline context repaired. Final unfiltered result: **142 passed / 1 intentional skip / 0 failed / 0 flaky**, all 143 collected cases; typecheck/build/whitespace pass. [Repair acceptance](../design/turn-of-play/product-sprint-1-review-repair-acceptance.md), [repair ledger](../design/turn-of-play/product-sprint-1-review-repair-progress.md). Prior 116/1 suite and fresh reviewer 5/2 +1/1 failures remain separate historical records. The later user instruction authorizes the sequential release plan above.
+
 - **Priority 4 — playback reliability:** independently accepted for local technical closure. Commit `f0c95c40352679abffd8fecf715ab388baa8da33`; acceptance: [priority4-acceptance.md](priority4-acceptance.md); detailed verification: [priority4-playback-verification.md](priority4-playback-verification.md).
-- **Priority 5 — UX candidate:** accepted for local technical/heuristic closure. Its source, tests, acceptance record and this control/status update are in the local P5 closeout commit. The commit itself is the revision containing this status update; see local `git log` for its ID.
-- **Checks recorded from prior acceptance work:** P4 report records TypeScript/build success, backend **37 passed**, local browser **59 passed**, and focused follow-up **12 passed**. P5 review recorded TypeScript success and **17 passed / 1 expected skip** across 1366×768 and 390×844 Chromium projects, plus inspected screenshots. These suites were **not rerun during the checkpoint-commit task**; only Git scope and whitespace were checked here.
+- **Priority 5 — UX candidate:** accepted for local technical/heuristic closure at `6fa99c854e17e64c2b0a3934e630de817b64872f`; [acceptance record](priority5-acceptance.md). Local `main` remains four commits ahead of recorded `origin/main`; no network refresh was performed in P6.1. P4/P5 have not been pushed or deployed by this workstream.
+- **Checks recorded from prior acceptance work:** P4 report records TypeScript/build success, backend **37 passed**, local browser **59 passed**, and focused follow-up **12 passed**. P5 review recorded TypeScript success and **17 passed / 1 expected skip** across 1366×768 and 390×844 Chromium projects, plus inspected screenshots. These suites were **not rerun during checkpoint closure or P6.1**. Checkpoint closure checked Git scope and whitespace; P6.1 verification is recorded below.
 - The human comprehension study remains **uncollected**. These acceptances are technical and heuristic, not participant research, public deployment acceptance or proof of product usefulness.
-- **No further work is authorized.** Obtain a new explicit user instruction before another milestone. This is a stop for review, not an automatic start of Priority 6 or any other priority.
+- **P6 / Product Sprint 1 — complete locally, awaiting review:** the new sprint authorization superseded P6.1-only scope. Shared shell/source session, editorial/time axis, PL display clubs/header preferences and grounded local commentary are implemented. [Sprint acceptance](../design/turn-of-play/product-sprint-1-acceptance.md) and [P6 acceptance](priority6-implementation-acceptance.md) contain current evidence. Original sprint unfiltered result (historical): **116 passed / 1 intentional skip / 0 failed / 0 flaky**, all 117 cases accounted for; superseded for current repaired-source acceptance by the new repair result above. No next milestone is authorized.
+- **Turn of Play — current local UI:** Outfit/DM Sans and light/dark theme retained; proportion-preserving green-fill pitch, clustered source-time rail, independent playhead and one proof dialog. The older1 passed/2 failed/90 skipped run remains a historical failed record; this sprint retained failures and executed a fresh repaired baseline and final complete integration. Current source remains uncommitted over `6fa99c8`; no push/deployment. Existing hosted app is unchanged and was not checked in this sprint.
+- **Submission access update (user-reported):** Innovation Studio works in a private browser window. Project-editor access and actual submission remain unverified; another conversation owns portal navigation. The historical regular-session tenant error does not establish revoked access. No portal action or support message is authorized here.
+
+## Preserved roadmap — each item requires separate authorization
+
+| Milestone | Scope / status |
+|---|---|
+| P6 | Editorial eligibility and Product Sprint 1 implemented/locally verified; stop for user review |
+| P7 | Local responsiveness/source-retention correction accepted; measurements and limits recorded |
+| P8 | Original-source player inspector locally accepted:14 browser passes/typecheck |
+| P9 | Same-source offline comparison complete; human preference/quality advantage unmeasured |
+| P10 | Current README/links/notices reconciled; original README preserved |
+| P11 | Targeted ownership cleanup; no further broad rewrite justified |
+| P12 | Final candidate source/image regression active |
+| P13 | Expanded football analytics and bounded synthetic exploration; queued |
+
+Human comprehension remains uncollected. Public release acceptance, video review/publication and submission remain open, each with separate authorization requirements. Existing hosting and unknown current spend are unchanged observations, not refreshed checks. Preserve the 46 untracked Priority 2 files/private material and four Priority 5 participant documents; neither directory is approved for inclusion. **Follow the user-authorized sequential release plan; preserve release/security/cost and portal-owner gates.**
 
 **Product promise:** See what changed. Understand what supports it. Know what remains uncertain. Numerical validity, evidence strength and human usefulness are separate questions.
 

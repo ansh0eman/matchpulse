@@ -1,3 +1,5 @@
+import { follow } from "./helpers/preferences";
+import { revealMoment } from "./helpers/moments";
 import { test, expect, Page } from "@playwright/test";
 async function ready(page: Page) {
   await expect(
@@ -8,7 +10,10 @@ async function select(page: Page, name: string) {
   await page
     .getByRole("button", { name: `Select ${name}`, exact: true })
     .click();
-  await ready(page);
+  if (name === "When the evidence says wait") {
+    await expect(page.locator(".withheld")).toBeVisible();
+    await expect(page.getByRole("button", { name: "Open Proof Lens", exact: true })).toHaveCount(0);
+  } else await ready(page);
 }
 async function seek(page: Page, clock: number) {
   await page
@@ -53,10 +58,10 @@ test("broadcast, source proof, preferences and temporal score transitions", asyn
     .getByRole("button", { name: "Open Proof Lens", exact: true })
     .click();
   await expect(
-    page.getByText("Recomputed. Verified.", { exact: true }),
+    page.getByText("Source arithmetic verified", { exact: true }),
   ).toBeVisible();
-  await page.getByRole("button", { name: "audit", exact: true }).click();
-  await page.getByRole("button", { name: "observations", exact: true }).click();
+  await page.getByRole("button", { name: "Audit", exact: true }).click();
+  await page.getByRole("button", { name: "Source observations", exact: true }).click();
   await expect(
     page.getByText("The original observations.", { exact: true }),
   ).toBeVisible();
@@ -91,8 +96,8 @@ test("broadcast, source proof, preferences and temporal score transitions", asyn
   await seek(page, 2371);
   await page.getByRole("button", { name: "Analyst view", exact: true }).click();
   await expect(page.locator(".match-stage.refreshing")).toHaveCount(0);
-  await page.getByLabel("Favorite team").selectOption("NORTH");
-  await expect(page.locator(".current-story h2")).toContainText("NORTH view");
+  await follow(page,"NORTH");
+  await expect(page.locator(".current-story h2")).toContainText("Manchester City view");
   await page
     .getByRole("button", { name: "Did the coach intend this?", exact: true })
     .click();
@@ -125,7 +130,7 @@ test("positional Proof Lens exposes source geometry and stale evidence is withhe
     .getByRole("button", { name: "Open Proof Lens", exact: true })
     .click();
   await expect(
-    page.getByText("Recomputed. Verified.", { exact: true }),
+    page.getByText("Source arithmetic verified", { exact: true }),
   ).toBeVisible();
   await expect(page.locator(".aggregate-values")).toContainText("21.95");
   await expect(page.locator(".aggregate-values")).toContainText("31.96");
@@ -137,14 +142,14 @@ test("positional Proof Lens exposes source geometry and stale evidence is withhe
     path: `../output/playwright/${info.project.name}-proof-lens.png`,
     fullPage: false,
   });
-  await page.getByRole("button", { name: "audit", exact: true }).click();
-  await page.getByRole("button", { name: "observations", exact: true }).click();
+  await page.getByRole("button", { name: "Audit", exact: true }).click();
+  await page.getByRole("button", { name: "Source observations", exact: true }).click();
   await expect(
     page.getByText("Three deepest outfielders, attack-relative x:", {
       exact: true,
     }),
   ).toBeVisible();
-  await page.getByRole("button", { name: "provenance", exact: true }).click();
+  await page.getByRole("button", { name: "Provenance", exact: true }).click();
   await expect(page.locator(".proof-drawer")).toContainText(
     "f2a3e267-d3e5-4c90-ae07-b5a39607ab2d",
   );
@@ -178,25 +183,32 @@ test("explicit moments stay separate from replay time and disappear before avail
   await page.goto("/?scenario=line-shift");
   await ready(page);
   const currentClock = await page.getByTestId("clock").textContent();
-  const moment = page.locator(".md-moments li button").last();
+  const initialView = await (await page.request.get("/api/view?scenario=line-shift&clock=3360&audience=fan")).json();
+  const initialStory = initialView.timeline.find((story: {type:string})=>story.type==="observed_line_height_change");
+  const moment = await revealMoment(page,initialStory.id);
   await expect(moment).toBeVisible();
   const storyId = await moment.getAttribute("data-story-id");
   expect(storyId).toBeTruthy();
   await moment.focus();
   await page.keyboard.press("Enter");
   await expect(page.locator(".moment-label")).toHaveText(
-    "Selected past moment",
+    "Selected moment",
   );
   await expect(page.getByTestId("clock")).toHaveText(currentClock!);
   await expect(moment).toHaveAttribute("aria-current", "true");
-  await expect(page.getByLabel("Moment timing")).toContainText("Recorded");
-  await expect(page.getByLabel("Moment timing")).toContainText("presented at");
+  const timing = page.getByLabel("Incident and replay timing");
+  await expect(timing).toContainText("Incident");
+  await expect(timing).toContainText("Replay");
+  await timing.getByText("Source timing").click();
+  await expect(timing).toContainText("Recorded");
+  await expect(timing).toContainText("available");
+  await expect(timing).toContainText("presented");
 
   const replay = page.getByRole("slider", { name: "Replay clock", exact: true });
   await replay.fill("3400");
   await expect(page.getByTestId("clock")).toHaveText("56:40");
   await expect(page.locator(".moment-label")).toHaveText(
-    "Selected past moment",
+    "Selected moment",
   );
   await expect(page.locator(`[data-story-id="${storyId}"]`)).toHaveAttribute(
     "aria-current",
@@ -228,34 +240,23 @@ test("explicit moments stay separate from replay time and disappear before avail
   await replay.fill(String(earlierThanAvailability));
   await expect(page.locator(`[data-story-id="${storyId}"]`)).toHaveCount(0);
   await expect(page.locator(".moment-label")).not.toHaveText(
-    "Selected past moment",
+    "Selected moment",
   );
   await expect(page.getByTestId("clock")).toHaveText(
     `${String(Math.floor(earlierThanAvailability / 60)).padStart(2, "0")}:${String(earlierThanAvailability % 60).padStart(2, "0")}`,
   );
 
   await replay.fill(String(availableReplaySecond));
-  await expect(page.locator(".moment-label")).toHaveText(
-    "Selected past moment",
-  );
-  await expect(page.locator(`[data-story-id="${storyId}"]`)).toHaveAttribute(
-    "aria-current",
-    "true",
-  );
-  await expect(page.getByLabel("Moment timing")).toContainText(
-    "Recorded",
-  );
-  await expect(page.getByLabel("Moment timing")).toContainText(
-    "available at",
-  );
-  await expect(page.getByLabel("Moment timing")).toContainText("presented at");
-
+  await expect(page.locator(".moment-label")).not.toHaveText("Selected moment");
+  await expect(page.locator(`[data-story-id="${storyId}"]`)).not.toHaveAttribute("aria-current", "true");
+  // A cleared choice stays cleared after forward seek. The newly eligible automatic feature is distinct.
+  await expect(page.getByTestId("clock")).toHaveText("56:00");
   await page
     .getByRole("button", { name: "Select The opening goal", exact: true })
     .click();
   await ready(page);
   await expect(page.locator(".moment-label")).not.toHaveText(
-    "Selected past moment",
+    "Selected moment",
   );
   await expect(page.locator(`[data-story-id="${storyId}"]`)).toHaveCount(0);
   expect(
@@ -264,7 +265,10 @@ test("explicit moments stay separate from replay time and disappear before avail
     ),
   ).toBeTruthy();
   if (info.project.name === "mobile") {
-    await expect(page.locator(".moment-time-context")).toBeVisible();
+    await expect(page.locator(".md-moments")).toBeVisible();
+    await expect(
+      page.getByRole("slider", { name: "Replay clock", exact: true }),
+    ).toBeVisible();
     await page.screenshot({
       animations: "disabled",
       path: "../output/playwright/mobile-moment-timing.png",
@@ -293,7 +297,7 @@ test("recorded agent evidence, playback and service recovery", async ({
   await page.getByRole("button", { name: "Close guided demo" }).click();
   if (info.project.name === "mobile") {
     await page
-      .getByRole("button", { name: "Open agent room", exact: true })
+      .getByRole("button", { name: "Open Studio", exact: true })
       .click();
     await expect(page.getByRole("dialog")).toContainText(
       "4 integration checks passed",
@@ -304,7 +308,7 @@ test("recorded agent evidence, playback and service recovery", async ({
     await page.getByRole("button", { name: "Close agent room" }).click();
   } else {
     await page
-      .getByRole("button", { name: "Agent room", exact: false })
+      .getByRole("button", { name: "Studio", exact: false })
       .click();
     await expect(page.getByRole("dialog")).toContainText(
       "4 integration checks passed",

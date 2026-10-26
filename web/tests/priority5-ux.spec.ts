@@ -1,3 +1,4 @@
+import { revealMoment } from "./helpers/moments";
 import { test, expect, type Page } from "@playwright/test";
 import { mkdir } from "node:fs/promises";
 import type { Proof, Story, View } from "../src/contracts";
@@ -36,25 +37,25 @@ test("Proof Lens section changes reset only its drawer and retain logical keyboa
   await body.evaluate((element) => { element.scrollTop = element.scrollHeight; });
   expect(await body.evaluate((element) => element.scrollTop)).toBeGreaterThan(0);
 
-  await page.getByRole("button", { name: "method", exact: true }).click();
+  await page.getByRole("button", { name: "Method", exact: true }).click();
   await expect(body).toHaveJSProperty("scrollTop", 0);
-  await expect(page.getByRole("button", { name: "method", exact: true })).toBeFocused();
+  await expect(page.getByRole("button", { name: "Method", exact: true })).toBeFocused();
   expect(await headingIsInsideDrawerBody(page)).toBeTruthy();
   expect(await drawer.evaluate((element) => element.contains(document.activeElement))).toBeTruthy();
   await body.evaluate((element) => { element.scrollTop = element.scrollHeight; });
 
-  await page.getByRole("button", { name: "audit", exact: true }).click();
+  await page.getByRole("button", { name: "Audit", exact: true }).click();
   await expect(body).toHaveJSProperty("scrollTop", 0);
   expect(await headingIsInsideDrawerBody(page)).toBeTruthy();
   await body.evaluate((element) => { element.scrollTop = element.scrollHeight; });
-  await page.getByRole("button", { name: "provenance", exact: true }).click();
+  await page.getByRole("button", { name: "Provenance", exact: true }).click();
   await expect(body).toHaveJSProperty("scrollTop", 0);
-  await expect(page.getByRole("button", { name: "provenance", exact: true })).toBeFocused();
+  await expect(page.getByRole("button", { name: "Provenance", exact: true })).toBeFocused();
   expect(await headingIsInsideDrawerBody(page)).toBeTruthy();
 
-  await page.getByRole("button", { name: "summary", exact: true }).click();
+  await page.getByRole("button", { name: "Summary", exact: true }).click();
   await expect(body).toHaveJSProperty("scrollTop", 0);
-  await expect(page.getByRole("button", { name: "summary", exact: true })).toBeFocused();
+  await expect(page.getByRole("button", { name: "Summary", exact: true })).toBeFocused();
   expect(await page.evaluate(() => window.scrollY)).toBe(initialPageScroll);
 
   await body.locator(".summary-actions").scrollIntoViewIfNeeded();
@@ -63,7 +64,7 @@ test("Proof Lens section changes reset only its drawer and retain logical keyboa
   await expect(page.getByRole("heading", { name: "Show your working." })).toBeFocused();
   await mkdir("../output/playwright/p5-ux", { recursive: true });
   await page.screenshot({ animations: "disabled", path: `../output/playwright/p5-ux/${info.project.name}-proof-section-reset.png` });
-  await page.getByRole("button", { name: "summary", exact: true }).click();
+  await page.getByRole("button", { name: "Summary", exact: true }).click();
   await body.locator(".summary-actions").scrollIntoViewIfNeeded();
   await page.getByRole("button", { name: "Audit raw evidence" }).click();
   await expect(body).toHaveJSProperty("scrollTop", 0);
@@ -81,14 +82,21 @@ test("a selected shot keeps replay time and gives a source-grounded team, action
   expect(story.team).toBe("SOUTH");
   expect(proof.observations).toHaveLength(1);
   expect(proof.observations[0]).toMatchObject({ source_id: "evt_003876", time_seconds: 3279.5, team: "SOUTH", action: "shot" });
-  const row = page.locator(`.md-moments button[data-story-id="${story.id}"]`);
+  const row = await revealMoment(page, story.id);
   await row.click();
   await expect(row).toHaveAttribute("aria-current", "true");
   await expect(page.getByTestId("clock")).toHaveText("56:00");
-  await expect(page.locator(".moment-copy")).toContainText("Selected past moment");
-  await expect(page.locator(".moment-time-context")).toContainText("Recorded 54:39");
+  await expect(page.locator(".moment-copy")).toContainText("Selected moment");
+  const timing = page.getByLabel("Incident and replay timing");
+  await expect(timing.locator("span").nth(0)).toContainText("Incident");
+  await expect(timing.locator("span").nth(0).locator("time")).toHaveText("54:39");
+  await expect(timing.locator("span").nth(1)).toContainText("Replay");
+  await expect(timing.locator("span").nth(1).locator("time")).toHaveText("56:00");
+  await timing.getByText("Source timing").click();
+  const clockText = (value: number) => `${String(Math.floor(value / 60)).padStart(2, "0")}:${String(Math.floor(value % 60)).padStart(2, "0")}`;
+  await expect(timing).toContainText(`Recorded ${clockText(story.source_seconds)} · available ${clockText(story.available_seconds)} · presented ${clockText(story.presented_seconds)}`);
   await openProof(page).click();
-  await expect(page.locator(".proof-summary h3")).toHaveText("South recorded a shot attempt at 54:39.");
+  await expect(page.locator(".proof-summary h3")).toHaveText("Manchester United recorded a shot attempt at 54:39.");
   await expect(page.locator(".proof-time-context")).toContainText("Selected incident 54:39");
   await expect(page.locator(".proof-time-context")).toContainText("Replay clock 56:00");
   await expect(page.locator(".summary-single")).toContainText("source shot attempt");
@@ -98,7 +106,7 @@ test("a selected shot keeps replay time and gives a source-grounded team, action
   await expect(page.locator(".proof-summary")).not.toContainText("line estimate");
   await mkdir("../output/playwright/p5-ux", { recursive: true });
   await page.screenshot({ animations: "disabled", path: `../output/playwright/p5-ux/${info.project.name}-shot-summary.png` });
-  await page.getByRole("button", { name: "audit", exact: true }).click();
+  await page.getByRole("button", { name: "Audit", exact: true }).click();
   await expect(page.locator(".observation")).toContainText("evt_003876");
   await expect(page.locator(".observation")).toContainText("3279.5s");
 });
@@ -118,11 +126,11 @@ test("mobile pointer selection reveals the explanation without moving focus or r
   await page.goto("/?scenario=line-shift");
   await waitForMatch(page);
   const { story } = await shotAt(page, "line-shift", 3360, 3279.5);
-  const row = page.locator(`.md-moments button[data-story-id="${story.id}"]`);
+  const row = await revealMoment(page, story.id);
   await row.tap();
   await expect(row).toHaveAttribute("aria-current", "true");
-  await expect(page.locator(".moment-copy")).toContainText("South take a shot.");
-  await expect(page.locator(".moment-lower-third")).toBeInViewport();
+  await expect(page.locator(".moment-copy")).toContainText("Manchester United take a shot.");
+  await expect(page.getByRole("complementary", { name: "Selected moment investigation" })).toBeInViewport();
   await expect(openProof(page)).toBeInViewport();
   await expect(page.getByTestId("clock")).toHaveText("56:00");
   expect(await page.evaluate(() => document.activeElement?.getAttribute("data-story-id"))).toBe(story.id);
@@ -140,25 +148,24 @@ test("keyboard timeline selection keeps focus and withheld copy explains availab
   expect(view.tracking_available).toBe(true);
   const diagnostic = view.diagnostics.find((item) => item.reasons.includes("stale_recent_evidence"));
   expect(diagnostic?.recent_age_seconds).toBe(132);
-  await expect(page.locator(".moment-copy")).toContainText("Tracking observations are available for this match.");
-  await expect(page.locator(".moment-copy")).toContainText(`is ${diagnostic!.recent_age_seconds}s old at 22:30`);
-  await expect(page.locator(".moment-copy")).toContainText("needs recent, comparable observations");
-  await expect(page.locator(".moment-copy")).toContainText("cannot support a current positional claim");
+  await expect(page.locator(".moment-copy")).toContainText("Tracking observations are available.");
+  await expect(page.locator(".moment-copy")).toContainText(`recorded review at 22:30, the relevant evidence age was ${diagnostic!.recent_age_seconds} seconds`);
+  await expect(page.locator(".moment-copy")).toContainText("Recent comparable observations are needed to support a current positional comparison.");
   await expect(openProof(page)).toHaveCount(0);
   await mkdir("../output/playwright/p5-ux", { recursive: true });
   await page.screenshot({ animations: "disabled", path: `../output/playwright/p5-ux/${info.project.name}-withheld.png` });
 
   const { story, proof } = await shotAt(page, "withheld", 1350);
-  const row = page.locator(`.md-moments button[data-story-id="${story.id}"]`);
+  const row = await revealMoment(page, story.id);
   await row.focus();
   await page.keyboard.press("Enter");
   await expect(row).toHaveAttribute("aria-current", "true");
   await expect(page.getByTestId("clock")).toHaveText("22:30");
-  await expect(page.locator(".moment-copy")).toContainText(`${story.team === "SOUTH" ? "South" : "North"} take a shot.`);
+  await expect(page.locator(".moment-copy")).toContainText(`${story.team === "SOUTH" ? "Manchester United" : "Manchester City"} take a shot.`);
   expect(await page.evaluate(() => document.activeElement?.getAttribute("data-story-id"))).toBe(story.id);
   await openProof(page).click();
   await expect(page.locator(".proof-summary h3")).toContainText("recorded a shot attempt at");
-  await page.getByRole("button", { name: "audit", exact: true }).click();
+  await page.getByRole("button", { name: "Audit", exact: true }).click();
   await expect(page.locator(".observation")).toContainText(proof.observations[0].source_id);
   await mkdir("../output/playwright/p5-ux", { recursive: true });
   await page.screenshot({ animations: "disabled", path: `../output/playwright/p5-ux/${info.project.name}-withheld-and-history.png` });

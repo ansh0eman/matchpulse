@@ -10,7 +10,9 @@ test("native goal replay keeps source positions mounted through the actual score
     name: "Open Proof Lens",
     exact: true,
   });
-  await expect(proof).toBeEnabled({ timeout: 60000 });
+  await expect(page.getByRole("button",{name:"Play replay",exact:true})).toBeEnabled({timeout:60000});
+  await expect(page.locator(".moment-copy h1")).toHaveText("No new featured moment.");
+  await expect(proof).toHaveCount(0);
   await expect(page.getByTestId("clock")).toHaveText("26:51");
   await expect(page.getByTestId("score")).toHaveText("0:0");
   await expect(
@@ -43,7 +45,7 @@ test("native goal replay keeps source positions mounted through the actual score
   await page.getByRole("button", { name: "Pause replay", exact: true }).click();
   expect(await svg!.evaluate((node) => node.isConnected)).toBeTruthy();
   await expect(page.locator(".theatre-loading")).toHaveCount(0);
-  await expect(page.locator(".moment-copy h1")).toHaveText("North lead 1–0.");
+  await expect(page.locator(".moment-copy h1")).toHaveText("Manchester City lead 1–0.");
   await page.evaluate(() => window.scrollTo(0, 0));
   await page.screenshot({
     path: `../output/playwright/${info.project.name}-native-goal.png`,
@@ -59,7 +61,7 @@ test("native goal replay keeps source positions mounted through the actual score
   }
   await proof.click();
   await expect(
-    page.getByText("Recomputed. Verified.", { exact: true }),
+    page.getByText("Source arithmetic verified", { exact: true }),
   ).toBeVisible();
   await page.getByRole("button", { name: "Close Proof Lens" }).click();
   await page
@@ -67,7 +69,7 @@ test("native goal replay keeps source positions mounted through the actual score
     .fill("1613.75");
   await expect(page.getByTestId("score")).toHaveText("0:0");
   await expect(page.locator(".moment-copy h1")).not.toHaveText(
-    "North lead 1–0.",
+    "Manchester City lead 1–0.",
   );
   expect(
     await page.evaluate(

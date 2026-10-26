@@ -10,7 +10,7 @@ test("the full guided story completes automatically with real elapsed time", asy
   test.setTimeout(105000);
   await page.goto("/");
   await expect(
-    page.getByRole("button", { name: "Open Proof Lens", exact: true }),
+    page.getByRole("button", { name: "Play replay", exact: true }),
   ).toBeEnabled({ timeout: 60000 });
   await page.getByRole("button", { name: "Guided demo", exact: false }).click();
   const start = Date.now();
@@ -22,6 +22,6 @@ test("the full guided story completes automatically with real elapsed time", asy
     timeout: 90000,
   });
   expect(Date.now() - start).toBeLessThan(90000);
-  await expect(page.locator(".moment-copy")).toContainText("132s old");
+  await expect(page.locator(".moment-copy")).toContainText("recorded review at 22:30, the relevant evidence age was 132 seconds");
   await expect(page.getByRole("dialog")).toHaveCount(0);
 });

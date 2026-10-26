@@ -1,0 +1,56 @@
+.timeline-heading { display:flex; align-items:baseline; justify-content:space-between; gap:12px; padding:0 0 8px; }
+.timeline-heading h2 { font:700 13px "Outfit Variable",sans-serif; }
+.timeline-heading > span { font-size:10px; color:var(--text-muted); }
+.time-axis { position:relative; margin:14px 12px 0; height:86px; border-top:1px solid var(--border-strong); }
+.matchday .time-axis-track { position:absolute; inset:0; display:block; list-style:none; padding:0; margin:0; overflow:visible; }
+.matchday .time-axis-track::before { display:none; }
+.matchday .time-axis-track .axis-group { position:absolute; top:2px; width:0; height:38px; margin:0; padding:0; }
+.axis-group > button { position:absolute; transform:translateX(var(--anchor-shift)); min-width:40px; min-height:40px; display:flex; gap:3px; align-items:center; justify-content:center; padding:3px; border-radius:9px; color:var(--text-muted); font-size:10px; background:transparent; box-shadow:none; border:1px solid transparent; }
+.axis-group > button:not(.cluster-trigger) { width:40px; }
+.cluster-count { display:grid; place-items:center; width:22px; height:22px; border:1px solid var(--border-color); border-radius:50%; background:var(--surface-subtle); color:var(--text-primary); font-size:10px; }
+.axis-group.has-selected .cluster-count { background:var(--action); color:var(--action-contrast); }
+.axis-group > button:hover { background:var(--surface-subtle); }
+.marker-dot { width:9px; height:9px; border-radius:50%; background:var(--action); }
+.axis-group > button[aria-current="true"] { border:2px solid var(--action); }
+.incident-anchor { position:absolute; top:-5px; width:0; z-index:2; pointer-events:none; }
+.timeline-point { display:block; width:8px; height:8px; margin-left:-4px; border-radius:50%; background:var(--border-strong); border:1px solid var(--surface); }
+.incident-anchor.is-selected .timeline-point { outline:2px solid var(--action); outline-offset:2px; background:var(--surface); }
+.incident-anchor.is-arrival .timeline-point::after { content:''; display:block; position:absolute; width:18px; height:18px; top:-5px; left:-9px; border:2px solid var(--selected); border-radius:50%; animation:incident-arrival 1.8s ease-out both; }
+@keyframes incident-arrival { from{transform:scale(.6);opacity:1} to{transform:scale(1.8);opacity:0} }
+.time-axis-playhead { position:absolute; top:-17px; height:65px; border-left:2px solid var(--selected); z-index:3; pointer-events:none; }
+.time-axis-playhead time { display:block; position:absolute; top:-3px; padding:1px 4px; border-radius:5px; color:var(--selected); background:var(--canvas); font-size:10px; font-weight:750; white-space:nowrap; }
+.time-axis-graduations { position:absolute; top:69px; right:0; left:0; height:20px; pointer-events:none; }
+.time-axis-graduations time { position:absolute; color:var(--text-muted); font-size:9px; white-space:nowrap; }
+.axis-cluster-popup { position:absolute; left:0; top:41px; z-index:12; width:min(340px,100%); max-height:270px; overflow:auto; padding:14px; border:1px solid var(--border-color); border-radius:16px; background:var(--surface); box-shadow:var(--shadow-panel); }
+.axis-cluster-popup[hidden] { display:none; }
+.axis-cluster-popup strong { font:700 14px "Outfit Variable",sans-serif; }
+.axis-cluster-popup ul { list-style:none; padding:0; margin:8px 0; }
+.axis-cluster-popup li { margin:0; padding:0; }
+.axis-cluster-popup li button { display:flex; align-items:center; gap:12px; width:100%; min-height:40px; padding:8px; border-radius:9px; text-align:left; color:var(--text-primary); font-size:12px; }
+.axis-cluster-popup li button:hover,.axis-cluster-popup li button[aria-current="true"] { background:var(--surface-subtle); color:var(--action); }
+.axis-cluster-popup button em { margin-left:auto; color:var(--action); font:600 10px "DM Sans Variable",sans-serif; }
+.axis-cluster-popup .cluster-close { min-height:34px; color:var(--action); text-decoration:underline; }
+.timeline-empty { color:var(--text-muted); font-size:12px; padding:4px; }
+.sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+@media(max-width:700px) { .timeline-heading { flex-wrap:wrap; gap:4px; } .time-axis-graduations time:nth-child(even):not(:last-child) { display:none; } }
+@media(prefers-reduced-motion:reduce) { .incident-anchor.is-arrival .timeline-point::after { animation:none; } }
+.commentary-settings{grid-column:1/-1;width:100%;font-size:11px;color:var(--text-muted);padding:0 5px}
+.commentary-settings summary{cursor:pointer;width:max-content;padding:5px 0}
+.commentary-settings>div{display:flex;flex-wrap:wrap;gap:10px;align-items:end;border-top:1px solid var(--border-color);padding:10px 0}
+.commentary-settings p{width:100%;margin:0;font-size:12px}.commentary-settings label{display:grid;gap:5px;max-width:100%;font-size:11px}.commentary-settings select{max-width:100%;padding:8px}.commentary-settings button{padding:8px 12px;min-height:36px}.commentary-settings .speech-status{display:block;width:100%}
+
+.matchday .theatre-transport .commentary-settings button{height:auto;flex:0 0 auto;display:inline-flex;justify-content:center;align-items:center;white-space:normal;line-height:1.4;min-height:36px;padding:8px 12px}
+
+/* Context lives in a collision-free label lane. Exact incident anchors stay put. */
+.timeline-heading { flex-wrap:wrap; gap:4px 12px; }
+.timeline-selection { color:var(--action); font-weight:650; }
+.incident-label { position:absolute; top:37px; display:grid; gap:1px; color:var(--text-muted); font-size:11px; line-height:13px; text-align:center; pointer-events:none; z-index:4; background:var(--canvas); }
+.incident-label time { font-variant-numeric:tabular-nums; }
+.incident-label span { font-weight:650; white-space:nowrap; }
+.incident-callout { position:fixed; z-index:25; width:min(320px,calc(100vw - 16px)); padding:12px; border:1px solid var(--border-strong); border-radius:14px; color:var(--text-primary); background:var(--surface); box-shadow:var(--shadow-panel); pointer-events:none; font-size:12px; line-height:1.4; }
+.incident-callout strong { font:700 14px "Outfit Variable",sans-serif; }
+.incident-callout ul { margin:7px 0; padding-left:16px; display:grid; gap:6px; }
+.incident-callout small { color:var(--text-muted); }
+.axis-cluster-popup li button span { min-width:0; flex:1; }
+
+.boundary-description { display:block; margin-top:2px; color:var(--text-muted); font-size:11px; line-height:1.4; }

@@ -1,0 +1,13 @@
+# Priority 6 — local implementation acceptance
+
+26 October 2026. Product Sprint 1 supersedes historical P6.1-only execution scope. **Local technical PASS; stop for user review.** HEAD remains `6fa99c854e17e64c2b0a3934e630de817b64872f`; no commit, push, deployment or cloud call.
+
+The pure frontend selector runs after the causal visible snapshot. It owns history, latest-record metadata, explicit selection validity and loading/selected/featured/withheld/quiet presentation. Its30 replay-second automatic window is inclusive at 30 and expired above 30. Fixed type ranking protects goals from routine shots/unknown priorities. Later boundaries reset older automatic features; still-available intentional history remains. Backward seek before eligibility clears permanently. Diagnostics use age at their recorded review; null remains unknown. This is provisional editorial policy, not detector tuning or measured usefulness.
+
+Actual browser checks cover 29.75/30/30.25, pause/speed, continuous expiry, source0/01:47/end, original-ID clusters, future exclusion, selected historical shot/line, non-resurrection and same-incident proof identity. Source playhead/transport use one time axis; arrival animation is independent of history selection. Fan/Analyst/Following projection never relabels an old scoped View. One proof host and immutable proof cutoffs remain.
+
+The positional receipt remains21.951300813008128→31.96388888888889m, delta10.01258807588076m, **59 samples: 41 earlier/18 recent**. South shot remains `evt_003876`,3279.5s. Raw identities, observations, fixtures, backend/frozen experiments and segment validators are unchanged. Real club labels are presentation metadata on synthetic observations, with explicit source disclosure.
+
+Stage C complete run:53 pass/1 deliberate skip; final unfiltered integration: **116 passed / 1 intentional skip / 0 failed / 0 flaky**, 639.535s, all 117 intended cases accounted for. Evidence: `../../output/product-sprint-1/stage-c-complete-20261026-07/` and `../../output/product-sprint-1/stage-f-integrated-20261026-03/`. Each retains exact command, raw log, JSON/classifications, traces on failure, source hashes and exit. Earlier failed/interrupted attempts remain; no isolated rerun substitutes for integration. Final typecheck/build/whitespace pass. Detailed scope/visual/network/voice evidence: [sprint acceptance](../design/turn-of-play/product-sprint-1-acceptance.md).
+
+Human comprehension remains UNCOLLECTED. No new scientific accuracy, tactical causality, provider-quality comparison, current Azure spend, public-browser or deployment acceptance is established. Nothing automatically authorizes a next milestone.

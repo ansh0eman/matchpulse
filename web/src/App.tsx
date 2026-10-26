@@ -1,19 +1,11 @@
+import { selectEditorial, eligibleAt, type HistoricalSelection } from "./broadcast/editorial";
+import { sourceSnapshot, validateProjection, type SourceSnapshot } from "./playback/source";
+import { AppShell, AppHeader } from "./shell/AppHeader";
+import { InvestigateView } from "./views/InvestigateView";
+import { StudioDialog } from "./views/StudioDialog";
+import { GuidedDemoDialog } from "./views/GuidedDemoDialog";
 import { useEffect, useRef, useState } from "react";
-import {
-  ActivityIcon,
-  ArrowRightIcon,
-  CheckCircleIcon,
-  CaretRightIcon,
-  CircleNotchIcon,
-  FingerprintIcon,
-  FootballIcon,
-  ListIcon,
-  PauseIcon,
-  PlayIcon,
-  ShieldCheckIcon,
-  SkipBackIcon,
-  XIcon,
-} from "@phosphor-icons/react";
+
 import type {
   Activity,
   Answer,
@@ -25,15 +17,13 @@ import type {
   View,
 } from "./contracts";
 import { get } from "./api";
-import { RecordedRun } from "./RecordedRun";
 import { useDialog } from "./useDialog";
-import { Pitch } from "./Pitch";
-import { ProofLens, clockText } from "./ProofLens";
+import { ProofLens } from "./ProofLens";
 import { BroadcastTheatre } from "./broadcast/BroadcastTheatre";
 import { CHAPTERS, GuidedStory } from "./demo/GuidedStory";
-import { WorkflowGraph } from "./agents/WorkflowGraph";
 import { visibleSnapshot } from "./playback/causal";
 import { useBufferedReplay } from "./playback/useBufferedReplay";
+import { useTheme } from "./design/useTheme";
 
 function initialReplay(mode: string) {
   const starts: Record<string, number> = {
@@ -51,10 +41,12 @@ function initialReplay(mode: string) {
       : mode === "studio"
         ? "open-play"
         : "native-goals";
-  return { scenario, clock: starts[scenario] };
+  const requestedClock = Number(new URLSearchParams(window.location.search).get("clock") ?? NaN);
+  return { scenario, clock: Number.isFinite(requestedClock) && requestedClock >= 0 ? requestedClock : starts[scenario] };
 }
 
 export default function App() {
+  const { theme, toggleTheme } = useTheme();
   const [mode, setMode] = useState(() => {
     const view = new URLSearchParams(window.location.search).get("view");
     return view === "studio" || view === "broadcast" ? view : "theatre";
@@ -65,8 +57,10 @@ export default function App() {
   const [scenarios, setScenarios] = useState<Scenario[]>([]),
     [scenario, setScenario] = useState(() => initialReplay(mode).scenario),
     [clock, setClock] = useState(() => initialReplay(mode).clock),
+    [seekRevision, setSeekRevision] = useState(0),
     [audience, setAudience] = useState<Audience>("fan"),
     [favorite, setFavorite] = useState<Team | "">("");
+  const [sourceState, setSourceState] = useState<SourceSnapshot | null>(null);
   const [snapshot, setData] = useState<View | null>(null),
     [loadedParams, setLoadedParams] = useState(""),
     [error, setError] = useState<string | null>(null),
@@ -75,7 +69,7 @@ export default function App() {
     [playing, setPlaying] = useState(false),
     [speed, setSpeed] = useState(4),
     [retry, setRetry] = useState(0);
-  const [selected, setSelected] = useState<string | null>(null),
+  const [selected, setSelected] = useState<HistoricalSelection | null>(null),
     [drawer, setDrawer] = useState(false),
     [proof, setProof] = useState<Proof | null>(null),
     [proofError, setProofError] = useState<string | null>(null),
@@ -100,7 +94,9 @@ export default function App() {
     ...(favorite ? { favorite } : {}),
   }).toString();
   const data = visibleSnapshot(snapshot, loadedParams, params);
-  const blocking = loading && !data;
+  const source = sourceState?.scenario === scenario && sourceState.match_id === currentScenario?.match_id && sourceState.clock === clock ? sourceState : data ? sourceSnapshot(data) : null;
+  const blocking = loading && !data && !source;
+  const presentationPending = !data && !!source;
   const buffering = useBufferedReplay({
     playing,
     clock,
@@ -110,6 +106,7 @@ export default function App() {
     audience,
     favorite,
     seed: snapshot,
+    onSource: (value) => { setSourceState(value); setClock(value.clock); },
     onView: (v, key) => {
       setClock(v.clock);
       setData(v);
@@ -119,28 +116,12 @@ export default function App() {
     onStop: () => setPlaying(false),
     onError: setPlaybackFault,
   });
-  const availableMoments = (data?.timeline ?? []).filter(
-    (story) =>
-      data?.scenario === scenario &&
-      story.source_seconds <= clock &&
-      story.available_seconds <= clock &&
-      story.presented_seconds <= clock,
-  );
-  const latestRecorded: Story | undefined =
-    [...availableMoments]
-      .filter((t) => !["match_boundary", "high_turnover"].includes(t.type))
-      .sort(
-        (a, b) =>
-          b.presented_seconds - a.presented_seconds ||
-          (b.priority ?? 0) - (a.priority ?? 0),
-      )[0] ??
-    [...availableMoments].sort(
-      (a, b) =>
-        b.presented_seconds - a.presented_seconds ||
-        (b.priority ?? 0) - (a.priority ?? 0),
-    )[0];
-  const selectedMoment = availableMoments.find((story) => story.id === selected);
-  const current: Story | undefined = selectedMoment ?? latestRecorded;
+  const editorial = selectEditorial({ view: data, scenario, clock, matchId: currentScenario?.match_id, selection: selected });
+  const availableMoments = editorial.available;
+  const latestRecorded = editorial.latestRecorded;
+  const selectedMoment = editorial.presentation.kind === "selected" ? editorial.presentation.story : undefined;
+  const current = editorial.presentation.kind === "selected" || editorial.presentation.kind === "featured" ? editorial.presentation.story : undefined;
+  useEffect(() => { if (editorial.selectionDisposition === "clear") setSelected(null); }, [editorial.selectionDisposition]);
   const proofKey = JSON.stringify([params, claimId, data?.match_id]);
   const visibleProof =
     proofContext === proofKey && proof?.verified === true &&
@@ -191,6 +172,8 @@ export default function App() {
     get<View>(`/api/view?${params}`, c.signal)
       .then((v) => {
         if (c.signal.aborted) return;
+        validateProjection(v, { scenario, audience, favorite }, clock, currentScenario?.match_id, sourceState);
+        setSourceState(sourceSnapshot(v));
         setData(v);
         setLoadedParams(params);
         setLoading(false);
@@ -266,6 +249,7 @@ export default function App() {
     setRetry((v) => v + 1);
     setScenario(s.id);
     setClock(s.start);
+    setSeekRevision((revision) => revision + 1);
     setGuide(false);
   }
   function goChapter(index: number) {
@@ -288,14 +272,21 @@ export default function App() {
       setTourRunning(false);
     } else goChapter(tour + 1);
   }
+  function seekReplay(value: number) {
+    setSelected((intent) => intent && value < intent.eligibleAt ? null : intent);
+    setPlaying(false); setClock(value); setSeekRevision((revision) => revision + 1);
+  }
   function seekStory(story: Story, keepReplayClock = false) {
     setPlaying(false);
     setAnswer(null);
-    setSelected(story.id);
+    setSelected({ scenario, matchId: data!.match_id, storyId: story.id, eligibleAt: eligibleAt(story) });
     if (!keepReplayClock && clock !== story.presented_seconds)
       setClock(story.presented_seconds);
   }
   function inspect(id?: string) {
+    const target = id ?? current?.claim_ids[0] ?? null;
+    if (drawer && target === claimId && !proofError) return;
+    setRoom(false); setGuide(false);
     // Invalidate synchronously, before the drawer's first render or any old response.
     proofGeneration.current++;
     setProof(null);
@@ -356,60 +347,17 @@ export default function App() {
       />
     );
   return (
-    <div
+    <AppShell
       className={`app-shell ${mode !== "studio" ? "theatre-shell matchday-shell" : ""} ${mode === "broadcast" ? "clean-shell" : ""} ${tour !== null ? "tour-active" : ""}`}
       onClickCapture={rememberDialogInvoker}
-      tabIndex={-1}
     >
-      <header className="app-header">
-        <a href="/" className="brand" aria-label="MatchPulse home">
-          <span className="brand-mark">
-            <ActivityIcon size={25} weight="bold" />
-          </span>
-          matchpulse<span className="brand-ai">AI</span>
-        </a>
-        <nav aria-label="Studio navigation">
-          <button
-            data-dialog-fallback
-            className={mode === "theatre" && !room ? "active" : ""}
-            onClick={() => {
-              setMode("theatre");
-              setRoom(false);
-            }}
-          >
-            Matchday
-          </button>
-          <button
-            className={mode === "studio" && !room ? "active" : ""}
-            onClick={() => {
-              setMode("studio");
-              setRoom(false);
-            }}
-          >
-            Analysis Room
-          </button>
-          <button onClick={() => setRoom(true)}>
-            Agent room
-            <span className="nav-dot" />
-          </button>
-        </nav>
-        <div className="header-right">
-          <span className="synthetic">
-            <span />
-            SYNTHETIC MATCH LAB
-          </span>
-          <button
-            className="outline-button guide-button"
-            onClick={() => setGuide(true)}
-          >
-            <PlayIcon size={14} weight="fill" />
-            Guided demo
-          </button>
-        </div>
-      </header>
+      <AppHeader mode={mode} room={room} scenario={currentScenario} provenance={data?.provenance} theme={theme} toggleTheme={toggleTheme} navigate={(next) => { setMode(next); setRoom(false); setGuide(false); }} openStudio={() => { setDrawer(false); setGuide(false); setRoom(true); }} openGuide={() => { setDrawer(false); setRoom(false); setGuide(true); }} />
       {mode !== "studio" ? (
         <BroadcastTheatre
           data={data}
+          source={source}
+          editorial={editorial}
+          presentationPending={presentationPending}
           current={current}
           latestRecorded={latestRecorded}
           explicitlySelected={!!selectedMoment}
@@ -424,11 +372,10 @@ export default function App() {
           favorite={favorite}
           error={error ?? playbackFault}
           clean={mode === "broadcast"}
+          proofReady={!!visibleProof}
+          seekRevision={seekRevision}
           choose={choose}
-          seek={(value) => {
-            setPlaying(false);
-            setClock(value);
-          }}
+          seek={seekReplay}
           play={() => setPlaying((v) => !v)}
           setSpeed={setSpeed}
           setAudience={setAudience}
@@ -447,506 +394,7 @@ export default function App() {
           }
         />
       ) : (
-        <main className="studio-layout">
-          <aside className="scenario-rail">
-            <div className="rail-heading">
-              <span className="eyebrow">MATCH STORIES</span>
-              <button
-                onClick={() => setGuide(true)}
-                aria-label="Explore scenarios"
-              >
-                <ListIcon size={19} />
-              </button>
-            </div>
-            {scenarios.map((s, i) => (
-              <button
-                className={`scenario-button ${scenario === s.id ? "chosen" : ""}`}
-                key={s.id}
-                onClick={() => choose(s)}
-                aria-label={`Select ${s.title}`}
-              >
-                <span className="scenario-number">0{i + 1}</span>
-                <span>
-                  <strong>{s.title}</strong>
-                  <small>
-                    {s.tracking ? "Observed tracking" : "Event evidence"}
-                  </small>
-                </span>
-                <CaretRightIcon size={14} />
-              </button>
-            ))}
-            <div className="rail-note">
-              <ShieldCheckIcon size={23} />
-              <strong>
-                Every explanation
-                <br />
-                has a source.
-              </strong>
-              <p>
-                Verified observations. Explicit limits. Nothing invented to fill
-                the silence.
-              </p>
-            </div>
-            <button className="agent-shortcut" onClick={() => setRoom(true)}>
-              <ActivityIcon size={18} />
-              Foundry integration
-              <CheckCircleIcon size={15} />
-            </button>
-          </aside>
-          <section className="broadcast-main">
-            <div className="page-heading">
-              <div>
-                <span className="eyebrow">THE MATCH, EXPLAINED</span>
-                <h1>{currentScenario?.title ?? "Broadcast studio"}</h1>
-                <p>{currentScenario?.subtitle ?? "Loading source catalog…"}</p>
-              </div>
-              <span className="replay-badge">RECORDED REPLAY</span>
-            </div>
-            <div className="personalization">
-              <div className="segmented" aria-label="Audience">
-                <button
-                  aria-pressed={audience === "fan"}
-                  className={audience === "fan" ? "active" : ""}
-                  onClick={() => setAudience("fan")}
-                >
-                  Fan view
-                </button>
-                <button
-                  aria-pressed={audience === "analyst"}
-                  className={audience === "analyst" ? "active" : ""}
-                  onClick={() => setAudience("analyst")}
-                >
-                  Analyst view
-                </button>
-              </div>
-              <label>
-                Following{" "}
-                <select
-                  aria-label="Favorite team"
-                  value={favorite}
-                  onChange={(e) => setFavorite(e.target.value as Team | "")}
-                >
-                  <option value="">Both teams</option>
-                  <option value="NORTH">North FC</option>
-                  <option value="SOUTH">South FC</option>
-                </select>
-              </label>
-              <span className="local-badge">
-                Verified replay · no live model call
-              </span>
-            </div>
-            {error || playbackFault ? (
-              <section className="service-error" role="alert">
-                <ShieldCheckIcon size={30} />
-                <h2>Evidence unavailable.</h2>
-                <p>{error ?? playbackFault}</p>
-                <button
-                  className="primary-button"
-                  onClick={() => {
-                    setPlaybackFault(null);
-                    setRetry((v) => v + 1);
-                  }}
-                >
-                  Retry source connection
-                </button>
-              </section>
-            ) : (
-              <>
-                <section
-                  className={`match-stage ${blocking ? "refreshing" : ""}`}
-                  aria-label="Match replay"
-                >
-                  <div className="scoreboard">
-                    <div className="team team-home">
-                      <span className="crest north">N</span>
-                      <span>
-                        NORTH <small>FC</small>
-                      </span>
-                    </div>
-                    <div className="score-center">
-                      <span className="period">PERIOD {data?.period ?? 1}</span>
-                      <strong data-testid="score">
-                        {data?.score.home ?? "–"}
-                        <i>:</i>
-                        {data?.score.away ?? "–"}
-                      </strong>
-                      <span className="match-clock" data-testid="clock">
-                        {clockText(data?.clock ?? clock)}
-                      </span>
-                    </div>
-                    <div className="team team-away">
-                      <span>
-                        SOUTH <small>FC</small>
-                      </span>
-                      <span className="crest south">S</span>
-                    </div>
-                  </div>
-                  <div className="pitch-heading">
-                    <span>
-                      <span className="lime-dot" />
-                      {data?.tracking_available
-                        ? "OBSERVED TRACKING"
-                        : "OBSERVED EVENT LOCATIONS"}
-                    </span>
-                    <span>
-                      {data?.frame
-                        ? `Source frame ${data.frame.time_seconds}s · age ${data.frame_age?.toFixed(1)}s`
-                        : "No tracking supplied for this match"}
-                    </span>
-                  </div>
-                  {current && (
-                    <button
-                      className="stage-insight"
-                      onClick={() => inspect()}
-                      disabled={blocking}
-                    >
-                      <span>{current.narration.headline}</span>
-                      <span>
-                        <FingerprintIcon size={18} /> Inspect evidence
-                      </span>
-                    </button>
-                  )}
-                  <div className="pitch-wrap">
-                    <Pitch
-                      frame={data?.frame ?? null}
-                      events={data?.recent_events ?? []}
-                    />
-                    {!data && (
-                      <div className="pitch-loading">
-                        <CircleNotchIcon className="spin" size={30} />
-                        <span>Verifying canonical source…</span>
-                      </div>
-                    )}
-                  </div>
-                  <div className="pitch-footer">
-                    <span>
-                      <i className="team-dot north-dot" />
-                      North FC
-                      <i className="team-dot south-dot" />
-                      South FC
-                    </span>
-                    <span>
-                      {data?.tracking_available
-                        ? "Latest observation at or before the replay clock. No inferred trajectories."
-                        : "Event coordinates are ball positions. Player tracking is unavailable."}
-                    </span>
-                  </div>
-                  {!!current?.overlay.metrics.length && (
-                    <div
-                      className="broadcast-metrics"
-                      aria-label="Verified incident overlay"
-                    >
-                      <span>INCIDENT EVIDENCE</span>
-                      {current.overlay.metrics.map((metric) => (
-                        <button
-                          key={metric.name}
-                          onClick={() => inspect(metric.claim_id)}
-                          disabled={blocking}
-                        >
-                          <small>
-                            {metric.name === "regain_x"
-                              ? "Regain attack-relative x"
-                              : metric.name.replaceAll("_", " ")}
-                          </small>
-                          <strong>
-                            {Number.isInteger(metric.value)
-                              ? metric.value
-                              : metric.value.toFixed(2)}
-                            <em>{metric.unit}</em>
-                          </strong>
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                  <div className="transport">
-                    <button
-                      aria-label="Replay from start"
-                      onClick={() => {
-                        setPlaying(false);
-                        setClock(0);
-                      }}
-                    >
-                      <SkipBackIcon size={20} />
-                    </button>
-                    <button
-                      className="play-button"
-                      aria-label={playing ? "Pause replay" : "Play replay"}
-                      disabled={!data || blocking}
-                      onClick={() => setPlaying((v) => !v)}
-                    >
-                      {playing ? (
-                        <PauseIcon size={19} weight="fill" />
-                      ) : (
-                        <PlayIcon size={19} weight="fill" />
-                      )}
-                    </button>
-                    <span className="transport-time">{clockText(clock)}</span>
-                    <input
-                      aria-label="Replay clock"
-                      type="range"
-                      min="0"
-                      max={data?.duration ?? 6000}
-                      step="0.25"
-                      value={clock}
-                      onChange={(e) => {
-                        setPlaying(false);
-                        setClock(+e.target.value);
-                      }}
-                    />
-                    <span className="duration">
-                      {clockText(data?.duration ?? 0)}
-                    </span>
-                    <select
-                      aria-label="Playback speed"
-                      value={speed}
-                      onChange={(e) => setSpeed(+e.target.value)}
-                    >
-                      <option value={1}>1×</option>
-                      <option value={4}>4×</option>
-                      <option value={12}>12×</option>
-                    </select>
-                  </div>
-                </section>
-                <section
-                  className="current-story"
-                  aria-label="Current explanation"
-                >
-                  <div className="story-kicker">
-                    <span className="eyebrow">
-                      <span className="lime-dot" />
-                      IN FOCUS
-                    </span>
-                    <span>
-                      {current?.origin === "recorded_foundry"
-                        ? current.narration_status === "enriched"
-                          ? "Recorded Foundry · validated enrichment"
-                          : "Recorded Foundry · safe narration fallback"
-                        : "Source-compiled explanation"}
-                    </span>
-                  </div>
-                  {current ? (
-                    <>
-                      <h2>
-                        <button
-                          className="headline-proof"
-                          onClick={() =>
-                            inspect(
-                              current.narration.sentences[0]?.claim_ids[0],
-                            )
-                          }
-                        >
-                          {current.narration.headline}
-                          <FingerprintIcon size={18} />
-                        </button>
-                      </h2>
-                      {current.narration.sentences
-                        .filter(
-                          (s, i) =>
-                            i !== 0 ||
-                            !current.narration.headline.endsWith(s.text),
-                        )
-                        .map((s, i) => (
-                          <button
-                            className="sentence"
-                            key={i}
-                            onClick={() => inspect(s.claim_ids[0])}
-                          >
-                            <span>{s.text}</span>
-                            <FingerprintIcon size={18} />
-                          </button>
-                        ))}
-                      <div className="story-actions">
-                        <button
-                          className="primary-button"
-                          onClick={() => inspect()}
-                        >
-                          <FingerprintIcon size={18} />
-                          Open Proof Lens
-                          <ArrowRightIcon size={17} />
-                        </button>
-                        <span>
-                          <CheckCircleIcon size={15} />
-                          Source verified · {current.claim_ids.length} claim
-                        </span>
-                      </div>
-                      <div className="story-clocks">
-                        Observed {current.source_seconds}s <span>→</span>{" "}
-                        Available {current.available_seconds}s <span>→</span>{" "}
-                        Presented {current.presented_seconds}s
-                      </div>
-                      {current.origin === "recorded_foundry" && (
-                        <div className="capture-note">
-                          <ActivityIcon size={15} />
-                          <span>
-                            Genuine recorded workflow · narration:{" "}
-                            {current.narration_status} · replay:{" "}
-                            {current.overlay_status}. Reverified against this
-                            source; no new model call.
-                          </span>
-                          <button onClick={() => setRoom(true)}>
-                            Inspect run <ArrowRightIcon size={13} />
-                          </button>
-                        </div>
-                      )}
-                    </>
-                  ) : (
-                    <>
-                      <h2>Let the game breathe.</h2>
-                      <p>
-                        No eligible story at this clock. We wait for evidence
-                        rather than invent commentary.
-                      </p>
-                    </>
-                  )}
-                </section>
-                {data?.diagnostics.length ? (
-                  <section className="withheld">
-                    <ShieldCheckIcon size={24} />
-                    <div>
-                      <strong>A positional claim was withheld.</strong>
-                      <p>
-                        {data.diagnostics
-                          .at(-1)
-                          ?.reasons.map((r) => r.replaceAll("_", " "))
-                          .join(" · ")}
-                        . Recent evidence age:{" "}
-                        {data.diagnostics.at(-1)?.recent_age_seconds}s. This is
-                        a diagnostic, not a broadcast fact.
-                      </p>
-                    </div>
-                  </section>
-                ) : null}
-                <div className="lower-grid">
-                  <section className="ask-panel">
-                    <span className="eyebrow">ASK THE MATCH</span>
-                    <h3>A good question starts with evidence.</h3>
-                    <div className="question-buttons">
-                      {[
-                        ["evidence", "What supports this?"],
-                        ["before_goal", "What happened before?"],
-                        ["position_change", "Why this line change?"],
-                        ["coach_intent", "Did the coach intend this?"],
-                      ].map(([q, l]) => (
-                        <button
-                          disabled={!current || asking || blocking}
-                          key={q}
-                          onClick={() => ask(q)}
-                        >
-                          {l}
-                          <ArrowRightIcon size={14} />
-                        </button>
-                      ))}
-                    </div>
-                    {asking ? (
-                      <p role="status">Resolving source evidence…</p>
-                    ) : answer ? (
-                      <div className={`answer ${answer.status}`} role="status">
-                        <strong>
-                          {answer.status === "unsupported"
-                            ? "Not supported by these observations"
-                            : answer.status === "verified"
-                              ? "Source-verified answer"
-                              : "Unavailable at this incident"}
-                        </strong>
-                        <p>{answer.explanation}</p>
-                      </div>
-                    ) : (
-                      <p className="muted">
-                        Restricted questions. Deterministic answers. No invented
-                        tactical intent.
-                      </p>
-                    )}
-                  </section>
-                  <section className="recap-panel">
-                    <span className="eyebrow">THE STORY SO FAR</span>
-                    <h3>At a glance.</h3>
-                    {data?.recap.length ? (
-                      data.recap.slice(-3).map((r) => (
-                        <button
-                          key={r.id}
-                          onClick={() => {
-                            const story = data.timeline.find(
-                              (t) => t.id === r.id,
-                            );
-                            if (story) seekStory(story);
-                          }}
-                        >
-                          <time>{clockText(r.time)}</time>
-                          <span>{r.text}</span>
-                        </button>
-                      ))
-                    ) : (
-                      <p>No approved moments yet.</p>
-                    )}
-                    <small>
-                      Only observations available by the current clock.
-                    </small>
-                  </section>
-                </div>
-              </>
-            )}
-            <button
-              className="mobile-agent-entry"
-              onClick={() => setRoom(true)}
-            >
-              <ActivityIcon size={18} />
-              Open agent room
-              <ArrowRightIcon size={16} />
-            </button>
-            <footer className="app-footer">
-              <span>MatchPulse AI · Inside the Game 2026</span>
-              <span>Synthetic data · English · Observations, with limits.</span>
-            </footer>
-          </section>
-          <aside className="timeline-panel">
-            <header>
-              <span className="eyebrow">THE BROADCAST FEED</span>
-              <h2>Moments that matter.</h2>
-              <p>
-                <span className="lime-dot" />
-                {data?.timeline.length ?? 0} available moments ·{" "}
-                {audience === "fan" ? "Fan" : "Analyst"} view
-              </p>
-            </header>
-            <div className="timeline-scroll">
-              {data?.timeline.length ? (
-                [...data.timeline].reverse().map((t) => (
-                  <button
-                    className={`timeline-item ${current?.id === t.id ? "selected" : ""}`}
-                    key={t.id}
-                    onClick={() => seekStory(t)}
-                  >
-                    <time>{clockText(t.source_seconds)}</time>
-                    <div>
-                      <span className="timeline-kind">
-                        {t.type.replaceAll("_", " ")}
-                      </span>
-                      <strong>{t.narration.headline}</strong>
-                      <small>
-                        <CheckCircleIcon size={12} />
-                        Verified source
-                        <CaretRightIcon size={13} />
-                      </small>
-                    </div>
-                  </button>
-                ))
-              ) : (
-                <p className="empty-feed">
-                  Approved moments appear here when their presentation clock is
-                  reached.
-                </p>
-              )}
-            </div>
-            <div className="feed-footer">
-              <ShieldCheckIcon size={17} />
-              <span>
-                Every sentence links to its evidence.
-                <br />
-                Seek back to test what was known.
-              </span>
-            </div>
-          </aside>
-        </main>
+        <InvestigateView seek={seekReplay} editorial={editorial} source={source} presentationPending={presentationPending} scenarios={scenarios} scenario={scenario} currentScenario={currentScenario} data={data} audience={audience} favorite={favorite} error={error} playbackFault={playbackFault} blocking={blocking} current={current} clock={clock} playing={playing} speed={speed} answer={answer} asking={asking} choose={choose} inspect={inspect} ask={ask} seekStory={seekStory} setGuide={setGuide} setRoom={setRoom} setAudience={setAudience} setFavorite={setFavorite} setPlaybackFault={setPlaybackFault} setRetry={setRetry} setPlaying={setPlaying} setSpeed={setSpeed} />
       )}
       {!drawer && !room && tourControls}
       {drawer && (
@@ -959,184 +407,12 @@ export default function App() {
           error={proofContext === proofKey ? proofError : null}
           retry={() => inspect(claimId ?? undefined)}
           footer={tourControls}
+          theme={theme}
+          toggleTheme={toggleTheme}
         />
       )}
-      {room && (
-        <div className="modal-scrim" onClick={() => setRoom(false)}>
-          <section
-            className="agent-room"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="room-title"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className="modal-close"
-              aria-label="Close agent room"
-              onClick={() => setRoom(false)}
-              autoFocus
-            >
-              <XIcon size={23} />
-            </button>
-            <span className="eyebrow">GENUINE INTEGRATION EVIDENCE</span>
-            <h2 id="room-title">Inside the agent room.</h2>
-            <p>
-              Recorded Foundry and Microsoft Agent Framework workflows,
-              source-reverified before display. One saved goal has enriched
-              narration and replay; other cards are deterministic. Opening this
-              panel makes no model request.
-            </p>
-            {activity ? (
-              <>
-                <div className="integration-summary">
-                  <CheckCircleIcon size={28} weight="fill" />
-                  <div>
-                    <strong>
-                      {activity.tests_passed} integration checks passed
-                    </strong>
-                    <span>
-                      {activity.date} · {activity.deployment}
-                    </span>
-                  </div>
-                </div>
-                <WorkflowGraph capture={activity.capture} />
-                {activity.capture_summary && (
-                  <div className="integration-summary">
-                    <ActivityIcon size={26} />
-                    <div>
-                      <strong>
-                        Persisted, source-verified Foundry workflow ·{" "}
-                        {activity.capture_summary.elapsed_seconds.toFixed(2)}s
-                      </strong>
-                      <span>
-                        {activity.capture_summary.agent_request_attempts} agent
-                        requests · {activity.capture.tools.length} successful
-                        evidence-tool calls ·{" "}
-                        {activity.capture_summary.reported_tokens.input} input /{" "}
-                        {activity.capture_summary.reported_tokens.output} output
-                        tokens
-                      </span>
-                    </div>
-                  </div>
-                )}
-                <RecordedRun capture={activity.capture} />
-                {activity.recovery_capture && (
-                  <details>
-                    <summary>See the historical narration recovery</summary>
-                    <WorkflowGraph
-                      capture={activity.recovery_capture}
-                      label="Historical Foundry recovery"
-                    />
-                    <RecordedRun capture={activity.recovery_capture} />
-                  </details>
-                )}
-                <h3>Model-requested evidence tools</h3>
-                <div className="tool-tags">
-                  {activity.tools.map((t) => (
-                    <code key={t}>{t}</code>
-                  ))}
-                </div>
-                <div className="proof-metrics">
-                  <span>
-                    <strong>
-                      {activity.proof.latency_seconds.toFixed(2)}s
-                    </strong>
-                    minimal proof latency
-                  </span>
-                  <span>
-                    <strong>
-                      {activity.proof.usage.input_token_count} /{" "}
-                      {activity.proof.usage.output_token_count}
-                    </strong>
-                    proof input / output tokens
-                  </span>
-                </div>
-                <details>
-                  <summary>What the recorded checks establish</summary>
-                  <ul>
-                    {activity.gates.map((g) => (
-                      <li key={g}>{g}</li>
-                    ))}
-                  </ul>
-                  <code className="hash">
-                    Proof SHA-256: {activity.proof_sha256}
-                  </code>
-                </details>
-                <div className="limitations">
-                  <strong>Evidence boundary</strong>
-                  <p>
-                    {activity.limitations} A tactical agent exists but is not
-                    proved by this goal capture.
-                    {activity.capture_summary && (
-                      <>
-                        <br />
-                        {activity.capture_summary.counter_status} Agent requests
-                        and reported token counts are available; an actual
-                        network-request total is not attested.
-                      </>
-                    )}
-                  </p>
-                </div>
-              </>
-            ) : (
-              <p>Recorded integration evidence is unavailable.</p>
-            )}
-          </section>
-        </div>
-      )}
-      {guide && (
-        <div className="modal-scrim" onClick={() => setGuide(false)}>
-          <section
-            className="guide-modal"
-            role="dialog"
-            aria-modal="true"
-            aria-labelledby="guide-title"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              className="modal-close"
-              aria-label="Close guided demo"
-              onClick={() => setGuide(false)}
-              autoFocus
-            >
-              <XIcon size={23} />
-            </button>
-            <span className="eyebrow">FIVE WAYS TO TEST THE STORY</span>
-            <h2 id="guide-title">
-              Don’t just watch.
-              <br />
-              Interrogate the explanation.
-            </h2>
-            <p>
-              Choose a source-isolated scenario, seek through the match, then
-              open a sentence’s Proof Lens.
-            </p>
-            <button
-              className="evidence-button start-story"
-              onClick={() => goChapter(0)}
-              disabled={!scenarios.length}
-            >
-              <PlayIcon size={20} />
-              Watch the story · 76 seconds
-              <ArrowRightIcon size={20} />
-            </button>
-            {scenarios.map((s, i) => (
-              <button
-                className="guide-scenario"
-                key={s.id}
-                onClick={() => choose(s)}
-              >
-                <span>0{i + 1}</span>
-                <div>
-                  <strong>{s.title}</strong>
-                  <small>{s.subtitle}</small>
-                </div>
-                <ArrowRightIcon size={22} />
-              </button>
-            ))}
-          </section>
-        </div>
-      )}
-    </div>
+      {room && <StudioDialog activity={activity} onClose={() => setRoom(false)} theme={theme} toggleTheme={toggleTheme} />}
+      {guide && <GuidedDemoDialog scenarios={scenarios} choose={choose} goChapter={goChapter} onClose={() => setGuide(false)} theme={theme} toggleTheme={toggleTheme} />}
+    </AppShell>
   );
 }

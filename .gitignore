@@ -23,3 +23,10 @@ backend/output/viewer-bundle/
 backend/output/release/
 backend/output/showcase/
 backend/output/viewer-bundle-v2/
+
+# Local review traces, browser session state and protected participant material.
+/output/
+/.playwright-cli/
+/research/product-excellence/priority2/
+/research/product-excellence/priority5/
+backend/.venv-viewer/

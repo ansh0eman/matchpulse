@@ -77,6 +77,12 @@ async function oracle(request: APIRequestContext, scenario: string, rows: any[])
 test("known initial and exhausted-buffer delays preserve verified state and resume source prefixes", async ({ page, request }, info) => {
   await load(page);
   const initial = await packet(request, "line-shift", 3360);
+  const view: View = await (await request.get("/api/view?scenario=line-shift&clock=3360&audience=fan")).json();
+  const lineStory = view.timeline.find((story) => story.type === "observed_line_height_change");
+  expect(lineStory?.claim_ids?.length).toBeGreaterThan(0);
+  const proof = await (await request.get(`/api/proof?scenario=line-shift&clock=3360&audience=fan&claim_id=${encodeURIComponent(lineStory!.claim_ids[0])}`)).json();
+  const support = proof.calculation.support;
+  expect(support.reference_frames + support.recent_frames).toBe(59);
   const first = gate(), refill = gate();
   const timings: any[] = [];
   let calls = 0, refillStarted = false;
@@ -99,7 +105,9 @@ test("known initial and exhausted-buffer delays preserve verified state and resu
   await expect(source(page)).toBeVisible();
   await page.waitForTimeout(700); // Deliberate, measured transport hold.
   await expect(clock(page)).toHaveValue("3360");
-  await expect(page.getByLabel("Verified line comparison")).toContainText("59 original source frames");
+  await expect(page.getByLabel("Verified line comparison")).toContainText(
+    `${support.reference_frames + support.recent_frames} verified samples · ${support.reference_frames} earlier / ${support.recent_frames} recent`,
+  );
   first.release();
   await expect.poll(() => refillStarted).toBe(true);
   await expect(clock(page)).toHaveValue("3376");
@@ -202,7 +210,7 @@ test("a pending future packet cannot resurrect score, positions, incident or pro
   oldGate.release();
   await expect.poll(() => settled).toBe(true);
   await expect(page.getByTestId("clock")).toHaveText("01:40");
-  await expect(page.getByRole("button", { name: "Open Proof Lens", exact: true })).toBeDisabled();
+  await expect(page.getByRole("button", { name: "Open Proof Lens", exact: true })).toHaveCount(0);
   await expect(page.locator(".proof-drawer")).toHaveCount(0);
   seekGate.release();
   await expect(play(page)).toBeEnabled();
@@ -238,7 +246,7 @@ test("pending replay remains isolated when the scenario changes", async ({ page,
   await expect(play(page)).toBeEnabled();
   delayed.release();
   await expect.poll(() => settled).toBe(true);
-  await expect(page.locator(".moment-copy h1")).toHaveText("Sometimes, the evidence says wait.");
+  await expect(page.locator(".moment-copy h1")).toHaveText("The evidence says wait.");
   await expect(page.getByLabel("Verified line comparison")).toHaveCount(0);
   await expect(page.getByRole("alert")).toHaveCount(0);
   const rows = await observed(page);

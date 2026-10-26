@@ -1,3 +1,4 @@
+import { MappingNote, useClubs } from "./clubs/Clubs";
 import { useLayoutEffect, useRef, useState, type ReactNode } from "react";
 import {
   CheckCircleIcon,
@@ -8,6 +9,8 @@ import {
 import type { Proof } from "./contracts";
 import { Pitch } from "./Pitch";
 import { ProofSummary } from "./proof/ProofSummary";
+import { ThemeToggle } from "./design/ThemeToggle";
+import type { Theme } from "./design/theme";
 export const clockText = (s: number) =>
   `${String(Math.floor(s / 60)).padStart(2, "0")}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
 export function ProofLens({
@@ -18,6 +21,8 @@ export function ProofLens({
   error,
   retry,
   footer,
+  theme,
+  toggleTheme,
 }: {
   proof: Proof | null;
   replayClock: number;
@@ -26,7 +31,10 @@ export function ProofLens({
   error: string | null;
   retry: () => void;
   footer?: ReactNode;
+  theme: Theme;
+  toggleTheme: () => void;
 }) {
+  const clubs = useClubs();
   const [tab, setTab] = useState("summary");
   const [auditTab, setAuditTab] = useState("observations");
   const [sample, setSample] = useState(0);
@@ -58,7 +66,6 @@ export function ProofLens({
       >
         <header>
           <div>
-            <span className="eyebrow">FROM EXPLANATION TO OBSERVATION</span>
             <h2 id="proof-title">
               Proof Lens
               <span className="lime-dot" />
@@ -67,6 +74,7 @@ export function ProofLens({
           <button onClick={close} aria-label="Close Proof Lens" autoFocus>
             <XIcon size={22} />
           </button>
+          <ThemeToggle theme={theme} onToggle={toggleTheme} />
         </header>
         {loading ? (
           <div className="drawer-body">
@@ -83,10 +91,11 @@ export function ProofLens({
             <div className="verified-banner">
               <CheckCircleIcon size={22} weight="fill" />
               <div>
-                <strong>Recomputed. Verified.</strong>
-                <span>Source arithmetic passed on this request.</span>
+                <strong>Source arithmetic verified</strong>
+                <span>The calculation in this request passed its source checks.</span>
               </div>
             </div>
+            <MappingNote />
             <nav className="proof-tabs" aria-label="Proof sections">
               {["summary", "method", "audit"].map((t) => (
                 <button
@@ -95,7 +104,7 @@ export function ProofLens({
                   aria-pressed={tab === t}
                   onClick={() => setTab(t)}
                 >
-                  {t}
+                  {t[0].toUpperCase() + t.slice(1)}
                 </button>
               ))}
             </nav>
@@ -117,19 +126,19 @@ export function ProofLens({
               ) : (
                 <>
                   <span className="eyebrow">
-                    {proof.type.replaceAll("_", " ")} · {proof.team ?? "MATCH"}
+                    {proof.type.replaceAll("_", " ")} · {clubs.name(proof.team)} (source {proof.team ?? "MATCH"})
                   </span>
                   {tab === "audit" && (
                     <nav className="audit-tabs" aria-label="Audit detail">
                       <button
-                        aria-label="observations"
+                        aria-label="Source observations"
                         aria-pressed={auditTab === "observations"}
                         onClick={() => setAuditTab("observations")}
                       >
                         Source observations
                       </button>
                       <button
-                        aria-label="provenance"
+                        aria-label="Provenance"
                         aria-pressed={auditTab === "provenance"}
                         onClick={() => setAuditTab("provenance")}
                       >

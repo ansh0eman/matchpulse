@@ -1,3 +1,4 @@
+import { revealMoment } from "./helpers/moments";
 import { test, expect, type Page } from "@playwright/test";
 import { readFile } from "node:fs/promises";
 async function ready(page: Page) {
@@ -23,17 +24,15 @@ test("Theatre is source-synchronized and program output removes studio chrome", 
   ).toBeVisible();
   await expect(page.getByTestId("score")).toHaveText("0:0");
   await expect(page.locator(".moment-copy h1")).toHaveText(
-    "Line-height difference: 10.01 metres.",
+    "Spot the shift.",
   );
   await expect(page.getByTestId("clock")).toHaveText("56:00");
-  await expect(page.getByText("Current replay", { exact: true })).toBeVisible();
+  await expect(page.getByLabel("Replay clock", { exact: true })).toBeVisible();
   await expect(page.locator(".moment-label")).toHaveText(
-    "Latest recorded moment",
+    "Recorded moment",
   );
-  await expect(page.locator(".md-moments .moment-state").first()).toHaveText(
-    "Latest available",
-  );
-  await expect(page.getByLabel("Moment timing")).toContainText("Recorded");
+  await expect(page.getByTestId("timeline-playhead")).toHaveAttribute("data-clock","3360");
+  await expect(page.getByLabel("Incident and replay timing")).toContainText("56:00");
   await expect(page.getByLabel("Verified line comparison")).toContainText("21.95m");
   await expect(page.getByLabel("Verified line comparison")).toContainText("31.96m");
   await expect(
@@ -45,7 +44,7 @@ test("Theatre is source-synchronized and program output removes studio chrome", 
     fullPage: true,
   });
   await scenario(page, "The opening goal");
-  await expect(page.locator(".moment-copy h1")).toHaveText("North lead 1–0.");
+  await expect(page.locator(".moment-copy h1")).toHaveText("Manchester City lead 1–0.");
   await expect(
     page.getByRole("img", {
       name: "Observed event ball locations; no tracking available",
@@ -56,6 +55,11 @@ test("Theatre is source-synchronized and program output removes studio chrome", 
     .click();
   await expect(page.locator(".app-header")).toBeHidden();
   await expect(page.locator(".theatre-transport")).toHaveCount(0);
+  await expect(page.getByRole("button", {name:"Fan view",exact:true})).toBeHidden();
+  await expect(page.getByRole("button", {name:/^Favorite team:/})).toBeHidden();
+  await expect(page.locator(".program-caption")).toContainText("Synthetic replay");
+  await expect(page.locator(".program-caption h1")).toContainText("Manchester City");
+  await expect(page.locator(".program-caption h1")).not.toContainText("NORTH");
   await expect(page.getByTestId("score")).toHaveText("1:0");
   await page
     .getByRole("button", { name: "Exit program output", exact: true })
@@ -80,6 +84,7 @@ test("Proof Summary progressively discloses method and audit, and exports the so
   const lineStory = replay.timeline.find((story: { type: string }) => story.type === "observed_line_height_change");
   expect(lineStory?.claim_ids?.length).toBeGreaterThan(0);
   const claimId = lineStory.claim_ids[0];
+  await (await revealMoment(page,lineStory.id)).click();
   const futureProof = await page.request.get(`/api/proof?scenario=line-shift&clock=3359&audience=fan&claim_id=${encodeURIComponent(claimId)}`);
   expect(futureProof.status()).toBe(400);
   const otherMatchProof = await page.request.get(`/api/proof?scenario=open-play&clock=3400&audience=fan&claim_id=${encodeURIComponent(claimId)}`);
@@ -88,7 +93,7 @@ test("Proof Summary progressively discloses method and audit, and exports the so
     .getByRole("button", { name: "Open Proof Lens", exact: true })
     .click();
   await expect(page.locator(".proof-summary h3")).toHaveText(
-    "North’s recent line estimate is 10.01 m farther forward than its earlier estimate.",
+    "Manchester City's sampled line comparison",
     { timeout: 30000 },
   );
   await expect(page.getByRole("heading", { name: "Aggregate comparison" })).toBeVisible();
@@ -133,11 +138,11 @@ test("Proof Summary progressively discloses method and audit, and exports the so
     .getByRole("button", { name: "How calculated", exact: true })
     .click();
   await expect(page.locator(".formula")).toBeVisible();
-  await page.getByRole("button", { name: "audit", exact: true }).click();
+  await page.getByRole("button", { name: "Audit", exact: true }).click();
   await expect(
     page.getByText("The original observations.", { exact: true }),
   ).toBeVisible();
-  await page.getByRole("button", { name: "provenance", exact: true }).click();
+  await page.getByRole("button", { name: "Provenance", exact: true }).click();
   await expect(page.locator(".drawer-body")).toContainText(
     receipt.source_hashes.events,
   );
@@ -164,7 +169,7 @@ test("Guided story visits distinct fixtures and the Agent Room shows actual reco
   ).toHaveAttribute("aria-pressed", "true");
   await page.getByRole("button", { name: "Next story chapter" }).click();
   await expect(page.locator(".proof-summary h3")).toHaveText(
-    "North’s recent line estimate is 10.01 m farther forward than its earlier estimate.",
+    "Manchester City's sampled line comparison",
     { timeout: 60000 },
   );
   const evidenceBody = await page.locator(".proof-drawer > .drawer-body").boundingBox();
@@ -178,12 +183,12 @@ test("Guided story visits distinct fixtures and the Agent Room shows actual reco
     fullPage: false,
   });
   await page.getByRole("button", { name: "Next story chapter" }).click();
-  await expect(page.locator(".moment-copy h1")).toHaveText("Sometimes, the evidence says wait.");
+  await expect(page.locator(".moment-copy h1")).toHaveText("The evidence says wait.");
   await expect(page.getByRole("button", { name: "Open Proof Lens", exact: true })).toHaveCount(0);
-  await expect(page.locator(".moment-copy")).toContainText("132s old");
+  await expect(page.locator(".moment-copy")).toContainText("recorded review at 22:30, the relevant evidence age was 132 seconds");
   await page.getByRole("button", { name: "Finish guided story" }).click();
   await expect(page.getByLabel("Guided judge story")).toHaveCount(0);
-  await page.getByRole("button", { name: "Agent room", exact: true }).click();
+  await page.getByRole("button", { name: "Studio", exact: true }).click();
   const decisions = page.getByLabel("Recorded Foundry workflow", { exact: true }).getByLabel("Recorded agent decisions", { exact: true });
   await expect(decisions).toContainText("Challenger narrowed the scope");
   await expect(decisions).toContainText("Tactical Analyst · skipped, not failed.");

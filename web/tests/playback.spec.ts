@@ -98,7 +98,7 @@ test("a backward seek cancels a future playback response and never resurrects it
     page.getByRole("button", { name: "Play replay", exact: true }),
   ).toBeVisible();
   await expect(page.locator(".moment-copy h1")).not.toHaveText(
-    "Line-height difference: 10.01 metres.",
+    "Spot the shift.",
   );
   await expect(page.getByTestId("clock")).toHaveText("01:40");
 });

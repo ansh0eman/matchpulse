@@ -11,6 +11,10 @@ on:
       source_sha:
         description: Source commit recorded in the tested image label
         required: true
+      release_tag:
+        description: Release containing the accepted archive; preserves earlier release assets
+        required: false
+        default: viewer-fixtures-v2
 permissions:
   contents: read
   packages: write
@@ -29,9 +33,14 @@ jobs:
           ARCHIVE_SHA: ${{ inputs.asset_sha256 }}
           EXPECTED_CONFIG: ${{ inputs.config_digest }}
           SOURCE_SHA: ${{ inputs.source_sha }}
+          RELEASE_TAG: ${{ inputs.release_tag || 'viewer-fixtures-v2' }}
         run: |
           set -euo pipefail
-          gh release download viewer-fixtures-v2 --pattern viewer-image-amd64.tar.gz --dir /tmp/image --repo "$GITHUB_REPOSITORY"
+          python3 - <<'PY'
+          import os, re
+          assert re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._-]{0,127}', os.environ['RELEASE_TAG'])
+          PY
+          gh release download "$RELEASE_TAG" --pattern viewer-image-amd64.tar.gz --dir /tmp/image --repo "$GITHUB_REPOSITORY"
           python3 - <<'PY'
           import hashlib, os, pathlib, re
           assert re.fullmatch(r'[0-9a-f]{64}', os.environ['ARCHIVE_SHA'])

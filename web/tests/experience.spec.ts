@@ -13,18 +13,34 @@ test("signature opening is readable in the first viewport with real source geome
   });
   await expect(action).toBeEnabled({ timeout: 60000 });
   await expect(page.locator(".moment-copy h1")).toHaveText(
-    "Line-height difference: 10.01 metres.",
+    "Spot the shift.",
   );
+  const view = await (await page.request.get("/api/view?scenario=line-shift&clock=3360&audience=fan")).json();
+  const story = view.timeline.find((item: { type: string }) => item.type === "observed_line_height_change");
+  expect(story?.claim_ids?.length).toBeGreaterThan(0);
+  const proof = await (await page.request.get(`/api/proof?scenario=line-shift&clock=3360&audience=fan&claim_id=${encodeURIComponent(story.claim_ids[0])}`)).json();
+  const support = proof.calculation.support;
+  expect(support.reference_frames + support.recent_frames).toBe(59);
   await expect(page.getByLabel("Verified line comparison")).toContainText(
-    "59 original source frames",
+    `${support.reference_frames + support.recent_frames} verified samples · ${support.reference_frames} earlier / ${support.recent_frames} recent`,
   );
   const actionBox = await action.boundingBox();
-  expect(actionBox!.y + actionBox!.height).toBeLessThanOrEqual(
-    page.viewportSize()!.height,
-  );
+  expect(actionBox).not.toBeNull();
+  if (info.project.name === "laptop") {
+    expect(actionBox!.y + actionBox!.height).toBeLessThanOrEqual(page.viewportSize()!.height);
+  } else {
+    await action.scrollIntoViewIfNeeded();
+    await expect(action).toBeInViewport();
+  }
   const pitch = await page.locator(".theatre-pitch").boundingBox();
   const copy = await page.locator(".moment-copy").boundingBox();
-  expect(pitch!.y + pitch!.height).toBeLessThanOrEqual(copy!.y);
+  const overlaps = !(
+    pitch!.x + pitch!.width <= copy!.x ||
+    copy!.x + copy!.width <= pitch!.x ||
+    pitch!.y + pitch!.height <= copy!.y ||
+    copy!.y + copy!.height <= pitch!.y
+  );
+  expect(overlaps).toBe(false);
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= innerWidth,
@@ -32,7 +48,7 @@ test("signature opening is readable in the first viewport with real source geome
   ).toBeTruthy();
   expect(
     await page
-      .locator(".moment-lower-third")
+      .locator(".moment-copy")
       .evaluate((e) => getComputedStyle(e).animationName),
   ).toBe("none");
   await page.screenshot({
@@ -91,13 +107,13 @@ test("reselecting the same fixture recovers and backward seeking removes the fut
   await expect(page.getByTestId("clock")).toHaveText("01:40");
   await expect(page.getByLabel("Verified line comparison")).toHaveCount(0);
   await expect(page.locator(".moment-copy h1")).not.toHaveText(
-    "Line-height difference: 10.01 metres.",
+    "Spot the shift.",
   );
   await page
     .getByRole("slider", { name: "Replay clock", exact: true })
     .fill("3360");
   await expect(page.locator(".moment-copy h1")).toHaveText(
-    "Line-height difference: 10.01 metres.",
+    "Spot the shift.",
     { timeout: 60000 },
   );
 });

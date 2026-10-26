@@ -1,11 +1,12 @@
+import { revealMoment } from "./helpers/moments";
 import { test, expect, type Page } from "@playwright/test";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import type { Proof, Story, View } from "../src/contracts";
 
 const open = (page: Page) => page.getByRole("button", { name: "Open Proof Lens", exact: true });
 const close = (page: Page) => page.getByRole("button", { name: "Close Proof Lens", exact: true });
-const titleA = "North’s recent line estimate is 10.01 m farther forward than its earlier estimate.";
-const titleB = "South recorded a shot attempt at 54:39.";
+const titleA = "Manchester City's sampled line comparison";
+const titleB = "Manchester United recorded a shot attempt at 54:39.";
 const frames = (page: Page) => page.evaluate(() => new Promise<void>((resolve) => {
   let remaining = 6;
   const tick = () => --remaining ? requestAnimationFrame(tick) : resolve();
@@ -31,7 +32,7 @@ async function setup(page: Page) {
   return { a, b: b!, proofA: await receipt(a), proofB: await receipt(b!) };
 }
 async function select(page: Page, story: Story) {
-  const button = page.locator(`.md-moments button[data-story-id="${story.id}"]`);
+  const button = await revealMoment(page, story.id);
   await button.focus();
   await page.keyboard.press("Enter");
   await expect(button).toHaveAttribute("aria-current", "true");
@@ -167,10 +168,10 @@ test("withheld explanation has no unrelated timestamps or proof action; explicit
   let proofRequests = 0;
   page.on("request", (request) => { if (request.url().includes("/api/proof?")) proofRequests++; });
   await page.goto("/?scenario=withheld");
-  await expect(page.locator(".moment-copy h1")).toHaveText("Sometimes, the evidence says wait.");
-  await expect(page.locator(".moment-copy")).toContainText("Tracking observations are available for this match.");
-  await expect(page.locator(".moment-copy")).toContainText("132s old at 22:30");
-  await expect(page.locator(".moment-copy")).toContainText("needs recent, comparable observations");
+  await expect(page.locator(".moment-copy h1")).toHaveText("The evidence says wait.");
+  await expect(page.locator(".moment-copy")).toContainText("Tracking observations are available.");
+  await expect(page.locator(".moment-copy")).toContainText("recorded review at 22:30, the relevant evidence age was 132 seconds");
+  await expect(page.locator(".moment-copy")).toContainText("Recent comparable observations are needed");
   await expect(page.locator(".moment-lower-third .moment-time-context")).toHaveCount(0);
   await expect(open(page)).toHaveCount(0);
   await expect(page.getByLabel("Verified line comparison")).toHaveCount(0);
@@ -180,19 +181,19 @@ test("withheld explanation has no unrelated timestamps or proof action; explicit
   const view: View = await (await page.request.get("/api/view?scenario=withheld&clock=1350&audience=fan")).json();
   const shot = [...view.timeline].reverse().find((story) => story.type === "observed_shot")!;
   await select(page, shot);
-  await expect(page.locator(".moment-copy h1")).not.toHaveText("Sometimes, the evidence says wait.");
-  await expect(page.getByLabel("Moment timing")).toBeVisible();
+  await expect(page.locator(".moment-copy h1")).not.toHaveText("The evidence says wait.");
+  await expect(page.getByLabel("Incident and replay timing")).toBeVisible();
   const shotClock = `${String(Math.floor(shot.source_seconds / 60)).padStart(2, "0")}:${String(Math.floor(shot.source_seconds % 60)).padStart(2, "0")}`;
-  await inspect(page, `${shot.team === "NORTH" ? "North" : "South"} recorded a shot attempt at ${shotClock}.`);
+  await inspect(page, `${shot.team === "NORTH" ? "Manchester City" : "Manchester United"} recorded a shot attempt at ${shotClock}.`);
   const receipt = await savedReceipt(page);
   expect(receipt.claim_id).toBe(shot.claim_ids[0]);
   expect(receipt.match_id).toBe(view.match_id);
   await page.keyboard.press("Escape");
   await page.getByLabel("Replay clock", { exact: true }).fill("0");
   await expect(page.getByTestId("clock")).toHaveText("00:00");
-  await expect(page.locator(".moment-label")).not.toHaveText("Selected past moment");
+  await expect(page.locator(".moment-label")).not.toHaveText("Selected moment");
   await page.getByRole("button", { name: "Select A higher line, proved", exact: true }).click();
-  await expect(page.locator(".moment-copy h1")).toContainText("Line-height difference");
+  await expect(page.locator(".moment-copy h1")).toHaveText("Spot the shift.");
   await inspect(page, titleA);
   expect((await savedReceipt(page)).match_id).not.toBe(view.match_id);
 });
@@ -214,7 +215,7 @@ test("Proof Lens restores keyboard focus, contains tabs, and shares safe focus b
   await open(page).evaluate((element) => element.remove());
   await page.keyboard.press("Escape");
   await expect(page.getByRole("button", { name: "Matchday", exact: true })).toBeFocused();
-  for (const label of ["Agent room", "Guided demo"]) {
+  for (const label of ["Studio", "Guided demo"]) {
     const trigger = page.getByRole("button", { name: label, exact: true }).first();
     await trigger.focus();
     await page.keyboard.press("Enter");
@@ -222,7 +223,7 @@ test("Proof Lens restores keyboard focus, contains tabs, and shares safe focus b
     await page.keyboard.press("Escape");
     await expect(trigger).toBeFocused();
   }
-  const agentRoom = page.getByRole("button", { name: "Agent room", exact: true }).first();
+  const agentRoom = page.getByRole("button", { name: "Studio", exact: true }).first();
   await agentRoom.focus();
   await page.keyboard.press("Enter");
   await expect(page.getByRole("dialog")).toBeVisible();

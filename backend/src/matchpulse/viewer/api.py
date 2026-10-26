@@ -2,6 +2,9 @@
 
 import json
 import os
+import asyncio
+from concurrent.futures import ThreadPoolExecutor
+from functools import partial
 from starlette.applications import Starlette
 from starlette.requests import Request
 from starlette.responses import JSONResponse
@@ -17,6 +20,18 @@ from .service import catalog, view, question, activity
 from .proof import receipt
 
 
+# Process-lifetime, single analytical worker. Source loading and verification
+# remain serialized to preserve the one-large-match memory budget. The stdlib
+# executor joins this worker at process exit; no provider/client lives here.
+_analysis_worker = ThreadPoolExecutor(max_workers=1, thread_name_prefix="viewer-analysis")
+
+
+async def analytical(function, *args):
+    return await asyncio.get_running_loop().run_in_executor(
+        _analysis_worker, partial(function, *args)
+    )
+
+
 async def dispatch(request: Request):
     try:
         path = request.url.path
@@ -25,21 +40,21 @@ async def dispatch(request: Request):
         elif path == "/api/scenarios":
             result = catalog()
         elif path == "/api/activity":
-            result = activity()
+            result = await analytical(activity)
         elif path == "/api/playback":
-            result = segment(PlaybackQuery.model_validate(dict(request.query_params)))
+            result = await analytical(segment, PlaybackQuery.model_validate(dict(request.query_params)))
         elif path == "/api/ask":
             body = bytearray()
             async for chunk in request.stream():
                 if len(body) + len(chunk) > 4096:
                     raise ValueError("Request too large")
                 body.extend(chunk)
-            result = question(Question.model_validate_json(bytes(body)))
+            result = await analytical(question, Question.model_validate_json(bytes(body)))
         else:
             params = dict(request.query_params)
             claim = params.pop("claim_id", None)
             query = ViewQuery.model_validate(params)
-            result = receipt(query, claim) if path == "/api/proof" else view(query)
+            result = await analytical(receipt, query, claim) if path == "/api/proof" else await analytical(view, query)
         return JSONResponse(
             result,
             headers={"Cache-Control": "no-store", "X-Content-Type-Options": "nosniff"},

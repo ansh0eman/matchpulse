@@ -8,7 +8,9 @@ Original MatchPulse implementation is made available for source review under the
 
 ## Broadcast typography
 
-Manrope Variable (@fontsource-variable/manrope 5.3.0), copyright 2019 The Manrope Project Authors, and IBM Plex Mono (@fontsource/ibm-plex-mono 5.3.0), copyright 2017 IBM Corp., are bundled locally by Vite under the SIL Open Font License 1.1. Their full copyright and license notices are retained at web/public/licenses/Manrope-OFL.txt and web/public/licenses/IBM-Plex-Mono-OFL.txt and copied into the built viewer. No external font CDN is contacted. These components retain their original licenses.
+Turn of Play bundles Outfit Variable (@fontsource-variable/outfit 5.3.0), copyright 2021 The Outfit Project Authors, DM Sans Variable (@fontsource-variable/dm-sans 5.3.0), copyright 2014 The DM Sans Project Authors, and IBM Plex Mono (@fontsource/ibm-plex-mono 5.3.0), copyright 2017 IBM Corp., under the SIL Open Font License 1.1. Their full installed notices are retained verbatim at web/public/licenses/Outfit-OFL.txt, DM-Sans-OFL.txt and IBM-Plex-Mono-OFL.txt and copied into the built viewer. No external font CDN is contacted. These components retain their original licenses.
+
+Earlier releases bundled Manrope Variable (@fontsource-variable/manrope 5.3.0), copyright 2019 The Manrope Project Authors. Its full OFL notice remains at web/public/licenses/Manrope-OFL.txt for historical releases.
 
 ## football-simulator
 

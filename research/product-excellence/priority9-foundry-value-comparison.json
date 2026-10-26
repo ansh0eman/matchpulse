@@ -1,0 +1,241 @@
+{
+  "scope": "One genuine recorded goal compared with current deterministic compilation; no quality experiment or new inference",
+  "scenario": "opening-goal",
+  "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+  "insight_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:insight:e6e7fb2df33dccb5eecd1e77",
+  "clock": 2370.5,
+  "preferences": {
+    "audience": "fan",
+    "favorite_team": null,
+    "language": "en"
+  },
+  "source_hashes": {
+    "events": "debaa05d3aaaed3b4b01e0621c818ed8a9d8bd3e6aa75f6fec008c1437643291",
+    "tracking": null,
+    "config": null
+  },
+  "new_model_calls": 0,
+  "recorded_publication_reverified": true,
+  "claim_receipts_recomputed": 1,
+  "claim_ids": [
+    "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77"
+  ],
+  "deterministic": {
+    "plan": {
+      "schema_version": 2,
+      "claim_ids": [
+        "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77"
+      ],
+      "angle": "evidence_first",
+      "hook": "direct",
+      "depth": "brief",
+      "qualification": "synthetic"
+    },
+    "narration": {
+      "schema_version": 2,
+      "headline": "NORTH: opening goal. Score 1\u20130 (NORTH\u2013SOUTH).",
+      "sentences": [
+        {
+          "text": "NORTH: opening goal. Score 1\u20130 (NORTH\u2013SOUTH).",
+          "claim_ids": [
+            "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77"
+          ]
+        }
+      ],
+      "limitations": [
+        "Synthetic uncalibrated football; observations do not establish coach intent."
+      ]
+    },
+    "overlay": {
+      "schema_version": 2,
+      "plan": {
+        "schema_version": 2,
+        "claim_ids": [
+          "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77"
+        ],
+        "family": "scoreline_change",
+        "emphasis": "incident"
+      },
+      "references": [
+        {
+          "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+          "category": "event",
+          "source_id": "evt_002782"
+        },
+        {
+          "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+          "category": "event",
+          "source_id": "evt_002783"
+        }
+      ],
+      "replay_window": [
+        2370.0,
+        2370.5
+      ],
+      "metrics": [
+        {
+          "claim_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77",
+          "name": "NORTH_before",
+          "value": 0.0,
+          "unit": "goals"
+        },
+        {
+          "claim_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77",
+          "name": "SOUTH_before",
+          "value": 0.0,
+          "unit": "goals"
+        },
+        {
+          "claim_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77",
+          "name": "NORTH_after",
+          "value": 1.0,
+          "unit": "goals"
+        },
+        {
+          "claim_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77",
+          "name": "SOUTH_after",
+          "value": 0.0,
+          "unit": "goals"
+        }
+      ],
+      "coordinates": [
+        [
+          "evt_002782",
+          88.29,
+          27.0
+        ],
+        [
+          "evt_002783",
+          113.01,
+          31.45
+        ]
+      ],
+      "observation_semantics": "source ball/player coordinates only; interpolation is visualization"
+    }
+  },
+  "recorded_foundry": {
+    "original_director": {
+      "schema_version": 2,
+      "specialists": [
+        "match_analyst"
+      ],
+      "angle": "score_first",
+      "challenge": true,
+      "max_calls": 6
+    },
+    "challenge": {
+      "schema_version": 2,
+      "affected_claim_ids": [
+        "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77"
+      ],
+      "objections": [
+        "missing_evidence"
+      ],
+      "disposition": "narrow"
+    },
+    "final_plan": {
+      "schema_version": 2,
+      "claim_ids": [
+        "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77"
+      ],
+      "angle": "evidence_first",
+      "hook": "evidence",
+      "depth": "brief",
+      "qualification": "synthetic"
+    },
+    "narration": {
+      "schema_version": 2,
+      "headline": "The recorded observations show: NORTH: opening goal. Score 1\u20130 (NORTH\u2013SOUTH).",
+      "sentences": [
+        {
+          "text": "The recorded observations show: NORTH: opening goal. Score 1\u20130 (NORTH\u2013SOUTH).",
+          "claim_ids": [
+            "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77"
+          ]
+        }
+      ],
+      "limitations": [
+        "Synthetic uncalibrated football; observations do not establish coach intent."
+      ]
+    },
+    "overlay": {
+      "schema_version": 2,
+      "plan": {
+        "schema_version": 2,
+        "claim_ids": [
+          "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77"
+        ],
+        "family": "scoreline_change",
+        "emphasis": "incident"
+      },
+      "references": [
+        {
+          "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+          "category": "event",
+          "source_id": "evt_002782"
+        },
+        {
+          "match_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d",
+          "category": "event",
+          "source_id": "evt_002783"
+        }
+      ],
+      "replay_window": [
+        2370.0,
+        2370.5
+      ],
+      "metrics": [
+        {
+          "claim_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77",
+          "name": "NORTH_before",
+          "value": 0.0,
+          "unit": "goals"
+        },
+        {
+          "claim_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77",
+          "name": "SOUTH_before",
+          "value": 0.0,
+          "unit": "goals"
+        },
+        {
+          "claim_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77",
+          "name": "NORTH_after",
+          "value": 1.0,
+          "unit": "goals"
+        },
+        {
+          "claim_id": "02840f35-cb05-4812-aa9d-1237e4ab1b9d:claim:e6e7fb2df33dccb5eecd1e77",
+          "name": "SOUTH_after",
+          "value": 0.0,
+          "unit": "goals"
+        }
+      ],
+      "coordinates": [
+        [
+          "evt_002782",
+          88.29,
+          27.0
+        ],
+        [
+          "evt_002783",
+          113.01,
+          31.45
+        ]
+      ],
+      "observation_semantics": "source ball/player coordinates only; interpolation is visualization"
+    },
+    "role_attempts": 5,
+    "recorded_tool_rows": 5,
+    "original_http_request_count": null
+  },
+  "differences": {
+    "headline": true,
+    "sentences": true,
+    "limitations": false,
+    "overlay_metrics": false,
+    "overlay_coordinates": false
+  },
+  "human_preference": null,
+  "language_quality_superiority": null,
+  "verdict": "Recorded orchestration and narrowing demonstrated; human usefulness advantage is not established"
+}
