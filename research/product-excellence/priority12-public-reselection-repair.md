@@ -29,3 +29,9 @@ MATCHPULSE_TEST_URL=http://127.0.0.1:18151 PLAYWRIGHT_JSON_OUTPUT_NAME=../output
 ```
 
 The initial public suite against source0af30ac is retained separately. It includes a rollout-time old-HTML/new-asset404, several pending-view/support assertions and the native reselection race above. Do not relabel all failures as network delay, remove assertions, silently extend deadlines or overwrite that run. Public acceptance of the corrected image remains a separate gate.
+
+## Packaged follow-up
+
+The new0b06707 AMD64 image at0.5CPU/1GiB passed HTTP smoke and29/30browser cases. The mobile original-player fixture-switch case failed while its real line-shift view was still pending at the5second inspector assertion. Its trace shows successful native/event-only sources and a pending line-shift request, with no completed error response. The test now installs a response watcher before fixture selection, awaits that actual response and additionally validates scenario, clock and22players before the unchanged inspector assertions. No timeout was raised and no assertion removed. Both laptop/mobile follow-ups passed2/2 in22.6seconds. This is29/30plus2/2follow-up evidence, not a claim of a fresh30/30single run. All initial traces remain retained.
+
+The runtime image remains source0b06707; the response-readiness harness edit is a later local test-only change. Its saved archive/config/ordered rootfs verification passed; no detector/backend dependency or observation changed.

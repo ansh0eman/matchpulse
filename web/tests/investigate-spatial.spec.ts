@@ -44,7 +44,19 @@ test("Player inspection pauses playback and clears across source fixtures", asyn
   await expect(page.getByRole("region", { name: "Source position inspector" })).toContainText("Event-only fixtures show recorded ball locations");
   await expect(choose).toHaveCount(0);
   await expect(page.getByTestId("source-player-x")).toHaveCount(0);
+  // Fixture switching can require a cold source load. Await that real prerequisite
+  // before the short inspector assertion; preserve its existing timeout/budget.
+  const lineReady = page.waitForResponse(response => {
+    const url = new URL(response.url());
+    return url.pathname === "/api/view" && url.searchParams.get("scenario") === "line-shift" && url.searchParams.get("clock") === "3360";
+  });
   await page.getByRole("button", { name: "Select A higher line, proved", exact: true }).click();
+  const lineResponse = await lineReady;
+  expect(lineResponse.ok()).toBe(true);
+  const loadedLine: View = await lineResponse.json();
+  expect(loadedLine.scenario).toBe("line-shift");
+  expect(loadedLine.clock).toBe(3360);
+  expect(loadedLine.frame?.players).toHaveLength(22);
   await expect(choose).toBeVisible();
   await expect(choose).toHaveValue("");
   await page.getByRole("button", { name: "Switch to dark theme" }).click();
