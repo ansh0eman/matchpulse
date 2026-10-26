@@ -31,6 +31,7 @@ interface Props {
   playing: boolean;
   loading: boolean;
   buffering: boolean;
+  playbackReady: boolean;
   speed: number;
   audience: Audience;
   favorite: Team | "";
@@ -230,7 +231,7 @@ export function BroadcastTheatre(p: Props) {
               clock={p.clock}
               duration={stage?.duration ?? 0}
               playing={p.playing}
-              disabled={!stage || p.loading || !!p.error}
+              disabled={!stage || !p.playbackReady || p.loading || !!p.error}
               speed={p.speed}
               moments={availableMoments}
               play={p.play}

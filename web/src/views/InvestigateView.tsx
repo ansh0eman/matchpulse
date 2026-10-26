@@ -24,6 +24,7 @@ interface Props {
   error: string | null;
   playbackFault: string | null;
   blocking: boolean;
+  playbackReady: boolean;
   current: Story | undefined;
   clock: number;
   playing: boolean;
@@ -43,7 +44,7 @@ interface Props {
   setPlaying: Dispatch<SetStateAction<boolean>>;
   setSpeed: Dispatch<SetStateAction<number>>;
 }
-export function InvestigateView({ seek, editorial, source, presentationPending, scenarios, scenario, currentScenario, data, audience, favorite, error, playbackFault, blocking, current, clock, playing, speed, answer, asking, choose, inspect, ask, seekStory, setGuide, setRoom, setAudience, setFavorite, setPlaybackFault, setRetry, setPlaying, setSpeed }: Props) {
+export function InvestigateView({ seek, editorial, source, presentationPending, scenarios, scenario, currentScenario, data, audience, favorite, error, playbackFault, blocking, playbackReady, current, clock, playing, speed, answer, asking, choose, inspect, ask, seekStory, setGuide, setRoom, setAudience, setFavorite, setPlaybackFault, setRetry, setPlaying, setSpeed }: Props) {
   const stage = data ?? source;
   const clubs = useClubs();
   return (
@@ -223,7 +224,7 @@ export function InvestigateView({ seek, editorial, source, presentationPending, 
                     <button
                       className="play-button"
                       aria-label={playing ? "Pause replay" : "Play replay"}
-                      disabled={!stage || blocking}
+                      disabled={!stage || blocking || !playbackReady}
                       onClick={() => setPlaying((v) => !v)}
                     >
                       {playing ? (

@@ -367,6 +367,7 @@ export default function App() {
           playing={playing}
           loading={blocking}
           buffering={buffering}
+          playbackReady={snapshot !== null}
           speed={speed}
           audience={audience}
           favorite={favorite}
@@ -376,7 +377,7 @@ export default function App() {
           seekRevision={seekRevision}
           choose={choose}
           seek={seekReplay}
-          play={() => setPlaying((v) => !v)}
+          play={() => { if (snapshot) setPlaying((v) => !v); }}
           setSpeed={setSpeed}
           setAudience={setAudience}
           setFavorite={setFavorite}
@@ -394,7 +395,7 @@ export default function App() {
           }
         />
       ) : (
-        <InvestigateView seek={seekReplay} editorial={editorial} source={source} presentationPending={presentationPending} scenarios={scenarios} scenario={scenario} currentScenario={currentScenario} data={data} audience={audience} favorite={favorite} error={error} playbackFault={playbackFault} blocking={blocking} current={current} clock={clock} playing={playing} speed={speed} answer={answer} asking={asking} choose={choose} inspect={inspect} ask={ask} seekStory={seekStory} setGuide={setGuide} setRoom={setRoom} setAudience={setAudience} setFavorite={setFavorite} setPlaybackFault={setPlaybackFault} setRetry={setRetry} setPlaying={setPlaying} setSpeed={setSpeed} />
+        <InvestigateView seek={seekReplay} editorial={editorial} source={source} presentationPending={presentationPending} scenarios={scenarios} scenario={scenario} currentScenario={currentScenario} data={data} audience={audience} favorite={favorite} error={error} playbackFault={playbackFault} playbackReady={snapshot !== null} blocking={blocking} current={current} clock={clock} playing={playing} speed={speed} answer={answer} asking={asking} choose={choose} inspect={inspect} ask={ask} seekStory={seekStory} setGuide={setGuide} setRoom={setRoom} setAudience={setAudience} setFavorite={setFavorite} setPlaybackFault={setPlaybackFault} setRetry={setRetry} setPlaying={setPlaying} setSpeed={setSpeed} />
       )}
       {!drawer && !room && tourControls}
       {drawer && (
