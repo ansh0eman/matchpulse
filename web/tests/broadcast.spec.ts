@@ -1,4 +1,5 @@
 import { follow } from "./helpers/preferences";
+import { selectCanonicalFixture } from "./helpers/readiness";
 import { revealMoment } from "./helpers/moments";
 import { test, expect, Page } from "@playwright/test";
 async function ready(page: Page) {
@@ -7,13 +8,14 @@ async function ready(page: Page) {
   ).toBeEnabled({ timeout: 60000 });
 }
 async function select(page: Page, name: string) {
-  await page
-    .getByRole("button", { name: `Select ${name}`, exact: true })
-    .click();
   if (name === "When the evidence says wait") {
+    await selectCanonicalFixture(page, { name, scenario: "withheld", clock: 1350 });
     await expect(page.locator(".withheld")).toBeVisible();
     await expect(page.getByRole("button", { name: "Open Proof Lens", exact: true })).toHaveCount(0);
-  } else await ready(page);
+  } else {
+    await page.getByRole("button", { name: `Select ${name}`, exact: true }).click();
+    await ready(page);
+  }
 }
 async function seek(page: Page, clock: number) {
   await page

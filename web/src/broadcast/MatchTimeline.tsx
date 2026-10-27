@@ -1,7 +1,7 @@
 import { useClubs } from "../clubs/Clubs";
 import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from "react";
 import type { Audience, Story } from "../contracts";
-import { clockText } from "../ProofLens";
+import { clockText } from "../time";
 import { momentCopy } from "./presentation";
 import { timePercent } from "./timeAxis";
 

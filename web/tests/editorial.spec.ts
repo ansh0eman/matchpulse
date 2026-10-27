@@ -1,4 +1,4 @@
-import { openLineComparison } from "./helpers/readiness";
+import { openLineComparison, selectCanonicalFixture } from "./helpers/readiness";
 import { test, expect } from '@playwright/test';
 import type { Story, View } from '../src/contracts';
 import { selectEditorial, eligibleAt } from '../src/broadcast/editorial';
@@ -53,7 +53,7 @@ test('time axis follows the source clock, clusters original IDs, and never resur
  expect((await page.locator('.app-header').boundingBox())!.y).toBe(0);
  await page.evaluate(()=>scrollTo(0,0));
  await page.screenshot({path:info.outputPath('quiet-107.png'),animations:'disabled'});
- await page.getByRole('button',{name:'Select A higher line, proved',exact:true}).click();await expect(page.getByTestId('verified-support')).toHaveText('59 verified samples · 41 earlier / 18 recent');
+ await selectCanonicalFixture(page,{name:'A higher line, proved',scenario:'line-shift',clock:3360,support:true},info);await expect(page.getByTestId('verified-support')).toHaveText('59 verified samples · 41 earlier / 18 recent');
  await page.evaluate(()=>scrollTo(0,0));
  await page.screenshot({path:info.outputPath('featured-line.png'),animations:'disabled'});
  const line=await viewAt(request,'line-shift',3360);const shot=line.timeline.find(s=>s.type==='observed_shot'&&s.source_seconds===3279.5)!;
@@ -67,7 +67,7 @@ test('time axis follows the source clock, clusters original IDs, and never resur
  const comparison=line.timeline.find(s=>s.type==='observed_line_height_change')!;await(await revealMoment(page,comparison.id)).click();await expect(page.locator('.moment-copy h1')).toHaveText('Spot the shift.');
  await page.getByRole('button',{name:'Open Proof Lens',exact:true}).click();await expect(page.locator('.summary-support')).toContainText('59 source frames');await expect(page.locator('.aggregate-values')).toContainText('+10.01');await page.keyboard.press('Escape');
  await page.screenshot({path:info.outputPath('selected-line-history.png'),animations:'disabled'});
- await page.getByRole('button',{name:'Select When the evidence says wait',exact:true}).click();await expect(page.locator('.moment-copy')).toContainText('recorded review at 22:30');await expect(page.getByRole('button',{name:'Open Proof Lens',exact:true})).toHaveCount(0);
+ await selectCanonicalFixture(page,{name:'When the evidence says wait',scenario:'withheld',clock:1350},info);await expect(page.locator('.moment-copy')).toContainText('recorded review at 22:30');await expect(page.getByRole('button',{name:'Open Proof Lens',exact:true})).toHaveCount(0);
  await page.screenshot({path:info.outputPath('withheld-light.png'),animations:'disabled'});
  await page.getByRole('button',{name:'Switch to dark theme'}).click();await page.screenshot({path:info.outputPath('withheld-dark.png'),animations:'disabled'});
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);

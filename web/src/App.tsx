@@ -16,7 +16,7 @@ import type {
   Team,
   View,
 } from "./contracts";
-import { get } from "./api";
+import { get, readJson } from "./api";
 import { useDialog } from "./useDialog";
 import { ProofLens } from "./ProofLens";
 import { BroadcastTheatre } from "./broadcast/BroadcastTheatre";
@@ -180,7 +180,7 @@ export default function App() {
         if (v.clock >= v.duration) setPlaying(false);
       })
       .catch((e) => {
-        if (e.name !== "AbortError") {
+        if (!c.signal.aborted && e.name !== "AbortError") {
           setError(e.message);
           setLoading(false);
           setPlaying(false);
@@ -316,8 +316,7 @@ export default function App() {
         }),
         signal: c.signal,
       });
-      const a = await r.json();
-      if (!r.ok) throw new Error(a.error);
+      const a = await readJson<Answer>(r);
       if (g === generation.current) setAnswer(a);
     } catch (e) {
       if (

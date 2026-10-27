@@ -6,7 +6,7 @@ import type { Dispatch, SetStateAction } from "react";
 import { ActivityIcon, ArrowRightIcon, CheckCircleIcon, CaretRightIcon, FingerprintIcon, ListIcon, PauseIcon, PlayIcon, ShieldCheckIcon, SkipBackIcon } from "@phosphor-icons/react";
 import type { Answer, Audience, Scenario, Story, Team, View } from "../contracts";
 import { SourceFrameInspector } from "./SourceFrameInspector";
-import { clockText } from "../ProofLens";
+import { clockText } from "../time";
 import { ViewModeControl, FollowingControl } from "../shell/Preferences";
 import { Surface, TactileButton } from "../ui/Surface";
 

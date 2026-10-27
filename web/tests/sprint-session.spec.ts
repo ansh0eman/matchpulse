@@ -10,7 +10,7 @@ function gate() { let release!: () => void; const promise = new Promise<void>(r 
 test('presentation preferences retain source playback while delayed scopes cannot win', async ({ page }, info) => {
   const requests: string[] = [];
   page.on('request', r => { if (r.url().includes('/api/')) requests.push(new URL(r.url()).pathname + new URL(r.url()).search); });
-  await page.goto('/?scenario=line-shift'); await expect(openProof(page)).toBeEnabled();
+  await openLineComparison(page, info); await expect(openProof(page)).toBeEnabled();
   const view: View = await (await page.request.get('/api/view?scenario=line-shift&clock=3360&audience=fan')).json();
   const shot = view.timeline.find(s => s.type === 'observed_shot' && s.source_seconds === 3279.5)!;
   await (await revealMoment(page,shot.id)).focus(); await page.keyboard.press('Enter');
@@ -69,7 +69,7 @@ test('presentation preferences retain source playback while delayed scopes canno
 });
 
 test('shared header sticks and source disclosure, surfaces and single proof host have consistent geometry', async ({ page }, info) => {
-  await page.goto('/?scenario=line-shift'); await expect(openProof(page)).toBeEnabled();
+  await openLineComparison(page, info); await expect(openProof(page)).toBeEnabled();
   const header = await page.locator('.app-header').boundingBox();
   for (const theme of ['light', 'dark']) {
     if (theme === 'dark') await page.getByRole('button', { name: 'Switch to dark theme' }).click();

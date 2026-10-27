@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import type { Frame, Observation } from "../contracts";
 import { useClubs } from "../clubs/Clubs";
 import { Pitch } from "../Pitch";
-import { clockText } from "../ProofLens";
+import { clockText } from "../time";
 import { TactileButton } from "../ui/Surface";
 
 /** Inspect original observations; selection never creates a new analytical claim. */

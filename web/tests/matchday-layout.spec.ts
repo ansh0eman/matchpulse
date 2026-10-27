@@ -1,13 +1,14 @@
 import { test, expect } from "@playwright/test";
 import { mkdir } from "node:fs/promises";
 import type { Proof } from "../src/contracts";
+import { openLineComparison } from "./helpers/readiness";
 
 const evidenceDir = "../output/playwright/turn-of-play";
 const themeRuntime = new URL(process.env.MATCHPULSE_TEST_URL ?? "http://127.0.0.1:5173").port === "4173" ? "production" : "development";
 
 test("matchday composition is loaded, responsive and shows source-verified support", async ({ page }, info) => {
   await mkdir(evidenceDir, { recursive: true });
-  await page.goto("/?scenario=line-shift&clock=3360");
+  await openLineComparison(page, info);
   await expect(page.getByRole("img", { name: "Observed player and ball positions" })).toBeVisible();
   await expect(page.getByRole("complementary", { name: "Selected moment investigation" })).toBeVisible();
   await expect(page.locator(".theatre-transport")).toBeVisible();
@@ -84,12 +85,12 @@ test("matchday composition is loaded, responsive and shows source-verified suppo
   await page.screenshot({ path: `${evidenceDir}/${themeRuntime}-${info.project.name}-incident.png`, fullPage: true, animations: "disabled" });
 });
 
-test("support receipt is requested once per selected positional story, not per replay tick", async ({ page }) => {
+test("support receipt is requested once per selected positional story, not per replay tick", async ({ page }, info) => {
   let proofRequests = 0;
   page.on("request", (request) => {
     if (new URL(request.url()).pathname === "/api/proof") proofRequests++;
   });
-  await page.goto("/?scenario=line-shift&clock=3360");
+  await openLineComparison(page, info);
   await expect(page.getByTestId("verified-support")).toBeVisible();
   const afterReady = proofRequests;
   await page.getByRole("slider", { name: "Replay clock" }).fill("3361");

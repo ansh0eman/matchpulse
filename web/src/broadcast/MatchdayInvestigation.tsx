@@ -2,7 +2,7 @@ import { useClubs } from "../clubs/Clubs";
 import { CheckIcon, FingerprintIcon, LightbulbIcon, PlayIcon, QuestionIcon, SpeakerHighIcon } from "@phosphor-icons/react";
 import type { RefObject } from "react";
 import type { Audience, Scenario, Story, Team, View } from "../contracts";
-import { clockText } from "../ProofLens";
+import { clockText } from "../time";
 import { momentCopy } from "./presentation";
 import type { SupportState } from "./useStorySupport";
 import type { ExplorationStep } from "./useExploration";

@@ -11,8 +11,7 @@ import { Pitch } from "./Pitch";
 import { ProofSummary } from "./proof/ProofSummary";
 import { ThemeToggle } from "./design/ThemeToggle";
 import type { Theme } from "./design/theme";
-export const clockText = (s: number) =>
-  `${String(Math.floor(s / 60)).padStart(2, "0")}:${String(Math.floor(s % 60)).padStart(2, "0")}`;
+import { clockText } from "./time";
 export function ProofLens({
   proof,
   replayClock,

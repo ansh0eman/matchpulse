@@ -18,7 +18,16 @@ async function packet(request: APIRequestContext, scenario: string, start: numbe
   return response.json();
 }
 async function load(page: Page, scenario = "line-shift") {
+  const canonical = page.waitForResponse(response => {
+    const url = new URL(response.url());
+    return url.pathname === "/api/view" && url.searchParams.get("scenario") === scenario;
+  }, { timeout: 60000 });
   await page.goto(`/?scenario=${scenario}`);
+  const response = await canonical;
+  expect(response.ok()).toBe(true);
+  const view: View = await response.json();
+  expect(view.scenario).toBe(scenario);
+  expect(view.clock).toBe(Number(new URL(response.url()).searchParams.get("clock")));
   await expect(play(page)).toBeEnabled();
   await expect(source(page)).toHaveText("Recorded replay");
 }
@@ -127,29 +136,29 @@ test("known initial and exhausted-buffer delays preserve verified state and resu
   await page.unrouteAll({ behavior: "wait" });
 });
 
-test("deterministic malformed packets never publish and retry restores valid playback", async ({ page, request }, info) => {
-  const original = await packet(request, "line-shift", 3360);
-  const held = await packet(request, "withheld", 1350);
-  const goal = await packet(request, "opening-goal", 2371);
-  const cases: [string, string, PlaybackSegment, (p: any) => unknown][] = [
-    ["wrong match", "line-shift", original, (p) => p.base.match_id = "wrong-match"],
-    ["events hash", "line-shift", original, (p) => p.base.source_hashes.events = "invalid"],
-    ["tracking hash", "line-shift", original, (p) => p.base.source_hashes.tracking = "invalid"],
-    ["config hash", "line-shift", original, (p) => p.base.source_hashes.config = "invalid"],
-    ["duplicate frame", "line-shift", original, (p) => p.frames[1] = p.frames[0]],
-    ["out of order", "line-shift", original, (p) => p.frames.reverse()],
-    ["invalid number", "line-shift", original, (p) => p.frames[0].players[0].x = null],
-    ["missing field", "line-shift", original, (p) => delete p.events],
-    ["missing prefix", "line-shift", original, (p) => { p.events = []; p.frames = []; }],
-    ["future only", "line-shift", original, (p) => p.frames = p.frames.filter((f: any) => f.time_seconds > p.start)],
-    ["truncated end", "line-shift", original, (p) => p.frames.pop()],
-    ["erased observed goal", "opening-goal", goal, (p) => p.events = []],
-    ["missing diagnostic age", "withheld", held, (p) => delete p.diagnostics[0].recent_age_seconds],
-    ["invalid diagnostic span", "withheld", held, (p) => p.diagnostics[0].recent_span_seconds = "invalid"],
-    ["no progress", "line-shift", original, (p) => { p.end = p.start; p.base.clock = p.start; p.events = p.events.filter((e: any) => e.time_seconds <= p.start); p.frames = p.frames.filter((f: any) => f.time_seconds <= p.start); }],
-  ];
-  const measurements: any[] = [];
-  for (const [name, scenario, valid, mutate] of cases) {
+// Each fault owns its page, source setup and original 60s budget. A single
+// 15-fault test made >100 public requests and exhausted its budget only after
+// every corruption assertion passed, just before valid playback could resume.
+const malformedCases: [string, string, number, (p: any) => unknown][] = [
+  ["wrong match", "line-shift", 3360, (p) => p.base.match_id = "wrong-match"],
+  ["events hash", "line-shift", 3360, (p) => p.base.source_hashes.events = "invalid"],
+  ["tracking hash", "line-shift", 3360, (p) => p.base.source_hashes.tracking = "invalid"],
+  ["config hash", "line-shift", 3360, (p) => p.base.source_hashes.config = "invalid"],
+  ["duplicate frame", "line-shift", 3360, (p) => p.frames[1] = p.frames[0]],
+  ["out of order", "line-shift", 3360, (p) => p.frames.reverse()],
+  ["invalid number", "line-shift", 3360, (p) => p.frames[0].players[0].x = null],
+  ["missing field", "line-shift", 3360, (p) => delete p.events],
+  ["missing prefix", "line-shift", 3360, (p) => { p.events = []; p.frames = []; }],
+  ["future only", "line-shift", 3360, (p) => p.frames = p.frames.filter((f: any) => f.time_seconds > p.start)],
+  ["truncated end", "line-shift", 3360, (p) => p.frames.pop()],
+  ["erased observed goal", "opening-goal", 2371, (p) => p.events = []],
+  ["missing diagnostic age", "withheld", 1350, (p) => delete p.diagnostics[0].recent_age_seconds],
+  ["invalid diagnostic span", "withheld", 1350, (p) => p.diagnostics[0].recent_span_seconds = "invalid"],
+  ["no progress", "line-shift", 3360, (p) => { p.end = p.start; p.base.clock = p.start; p.events = p.events.filter((e: any) => e.time_seconds <= p.start); p.frames = p.frames.filter((f: any) => f.time_seconds <= p.start); }],
+];
+for (const [name, scenario, start, mutate] of malformedCases) {
+  test(`malformed ${name} never publishes and retry restores source-verified playback`, async ({ page, request }, info) => {
+    const valid = await packet(request, scenario, start);
     await load(page, scenario);
     const errors: string[] = [];
     const listener = (e: Error) => errors.push(e.message);
@@ -168,20 +177,24 @@ test("deterministic malformed packets never publish and retry restores valid pla
     await oracle(request, scenario, rows);
     await expect(page.getByRole("button", { name: "Retry source connection", exact: true })).toBeEnabled();
     expect(errors).toEqual([]);
-    measurements.push({ name, latencyMs, rows });
     await page.unrouteAll({ behavior: "wait" });
     await page.getByRole("button", { name: "Retry source connection", exact: true }).click();
     await expect(play(page)).toBeEnabled();
     await expect(page.getByRole("alert")).toHaveCount(0);
+    // Every fault now proves genuine valid-packet recovery, rather than only
+    // the final fault in the old loop. Check recovered positions/score too.
+    await page.getByRole("combobox", { name: "Playback speed" }).selectOption("1");
+    await watch(page);
+    await play(page).click();
+    await expect.poll(async () => Number(await clock(page).inputValue())).toBeGreaterThan(valid.start);
+    await pause(page).click();
+    const recoveryRows = await observed(page);
+    await oracle(request, scenario, recoveryRows);
+    expect(errors).toEqual([]);
     page.off("pageerror", listener);
-  }
-  // Exercise a real valid packet after rejection, not merely a successful view refresh.
-  await page.getByRole("combobox", { name: "Playback speed" }).selectOption("1");
-  await play(page).click();
-  await expect.poll(async () => Number(await clock(page).inputValue())).toBeGreaterThan(3360);
-  await pause(page).click();
-  await evidence(info, "malformed", measurements);
-});
+    await evidence(info, `malformed-${name.replaceAll(" ", "-")}`, { name, latencyMs, rows, recoveryRows });
+  });
+}
 
 test("a pending future packet cannot resurrect score, positions, incident or proof after backward seeking", async ({ page, request }, info) => {
   await load(page);

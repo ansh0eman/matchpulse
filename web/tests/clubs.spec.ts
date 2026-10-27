@@ -1,9 +1,10 @@
 import { test,expect } from '@playwright/test';
 import { clubs,contrast,inkFor } from '../src/clubs/clubRegistry';
 import { follow } from './helpers/preferences';
+import { openLineComparison } from './helpers/readiness';
 test('all twenty presentation clubs have source provenance and readable marker text',()=>{expect(clubs).toHaveLength(20);expect(new Set(clubs.map(c=>c.id)).size).toBe(20);for(const c of clubs){expect(c.sourceUrl).toMatch(/^https:\/\/resources.premierleague.com\//);expect(c.sourceSha256).toMatch(/^[a-f0-9]{64}$/);expect(contrast(c.primary,inkFor(c.primary))).toBeGreaterThanOrEqual(4.5);expect(c.sourceHexTokens.includes(c.primary)||c.notes.length>0).toBe(true)}expect(clubs.find(c=>c.id==='manchester-city')!.primary).toBe('#7AB2E1')});
 test('club mapping is display-only, menu focus works and evidence survives label changes',async({page},info)=>{
- await page.goto('/?scenario=line-shift&clock=3360');await expect(page.getByTestId('verified-support')).toContainText('59 verified samples');
+ await openLineComparison(page,info);await expect(page.getByTestId('verified-support')).toContainText('59 verified samples');
  const score=await page.getByTestId('score').textContent();const clock=await page.getByTestId('clock').textContent();
  await expect(page.locator('.md-score-row').getByRole('button',{name:'Fan view',exact:true})).toBeVisible();
  await expect(page.locator('.score-club').first()).toHaveText('MCI');await expect(page.locator('.score-club').last()).toHaveText('MUN');

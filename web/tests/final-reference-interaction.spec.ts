@@ -1,5 +1,6 @@
 import { selectStoryKind } from "./helpers/moments";
 import { expect, test } from "@playwright/test";
+import { openLineComparison } from "./helpers/readiness";
 
 test("reference shell uses the available width, layered surfaces and responsive playback order", async ({ page }, info) => {
   await page.goto("/?scenario=line-shift&clock=3360");
@@ -61,7 +62,7 @@ test("shot Proof Lens action keeps its label on one line", async ({ page }) => {
 });
 
 test("Watch, successful source comparison and Explain derive exploration progress", async ({ page }, info) => {
-  await page.goto("/?scenario=line-shift&clock=3360");
+  await openLineComparison(page, info);
   await expect(page.locator(".exploration-caption")).toHaveText("0 of 3 steps explored");
   await expect(page.getByTestId("verified-support")).toBeVisible();
   await page.getByRole("button", { name: "Watch", exact: true }).click();

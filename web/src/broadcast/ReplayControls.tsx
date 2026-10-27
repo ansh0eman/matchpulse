@@ -6,7 +6,7 @@ import {
   PlayIcon,
   SpeakerHighIcon,
 } from "@phosphor-icons/react";
-import { clockText } from "../ProofLens";
+import { clockText } from "../time";
 import type { Story } from "../contracts";
 
 export function ReplayControls(p: {

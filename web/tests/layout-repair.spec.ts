@@ -1,5 +1,5 @@
 import {test,expect} from '@playwright/test';
-import {openLineComparison} from './helpers/readiness';
+import {openLineComparison,selectCanonicalFixture} from './helpers/readiness';
 import {revealMoment} from './helpers/moments';
 test('pitch-first composition retains geometry, visible controls and readable explanation across breakpoints',async({page},info)=>{
  await page.addInitScript(()=>Object.defineProperty(window,'speechSynthesis',{value:{getVoices:()=>[],cancel:()=>{},speak:()=>{}},configurable:true}));
@@ -25,5 +25,5 @@ test('secondary details, long clubs, complete captions and history remain usable
  await page.getByLabel('Replay clock',{exact:true}).fill('3400');await expect(page.locator('.moment-copy h1')).toHaveText('No new featured moment.');await page.screenshot({path:info.outputPath('quiet.png'),animations:'disabled'});
  const view=await(await request.get('/api/view?scenario=line-shift&clock=3360&audience=fan')).json();const shot=view.timeline.find((s:any)=>s.type==='observed_shot'&&s.source_seconds===3279.5);await(await revealMoment(page,shot.id)).click();await expect(page.locator('.moment-label')).toHaveText('Selected moment');await expect(page.getByTestId('clock')).toHaveText('56:40');await page.screenshot({path:info.outputPath('selected-shot.png'),animations:'disabled'});
  await page.keyboard.press('Escape');
- await page.getByRole('button',{name:'Select When the evidence says wait',exact:true}).click();await expect(page.locator('.moment-copy h1')).toHaveText('The evidence says wait.');await expect(page.getByRole('button',{name:'Open Proof Lens',exact:true})).toHaveCount(0);await page.screenshot({path:info.outputPath('withheld.png'),animations:'disabled'});
+ await selectCanonicalFixture(page,{name:'When the evidence says wait',scenario:'withheld',clock:1350},info);await expect(page.locator('.moment-copy h1')).toHaveText('The evidence says wait.');await expect(page.getByRole('button',{name:'Open Proof Lens',exact:true})).toHaveCount(0);await page.screenshot({path:info.outputPath('withheld.png'),animations:'disabled'});
 });

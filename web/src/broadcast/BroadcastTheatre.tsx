@@ -9,7 +9,7 @@ import { useEffect, useRef, useState } from "react";
 import { ActivityIcon, ArrowsOutIcon, CaretRightIcon, ShieldCheckIcon } from "@phosphor-icons/react";
 import type { Audience, Scenario, Story, Team, View } from "../contracts";
 import { Pitch } from "../Pitch";
-import { clockText } from "../ProofLens";
+import { clockText } from "../time";
 import { ReplayControls } from "./ReplayControls";
 import { MatchTimeline } from "./MatchTimeline";
 import { MatchdayInvestigation } from "./MatchdayInvestigation";
